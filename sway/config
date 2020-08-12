@@ -78,7 +78,7 @@ assign [app_id="signal-desktop"] 5
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg ~/wallpapers/skull.jpg fill
+output "*" bg ~/wallpapers/skull-no-watermark.jpg fill
 #
 # Example configuration:
 #

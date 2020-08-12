@@ -1,5 +1,5 @@
 	* {
-	margin: -2 0 -2 1;
+	margin: -2 0 -2 2;
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
@@ -11,7 +11,7 @@ window#waybar {
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     background-color: #383c4a;
     color: #ffffff;
-    border:  0.2px solid #ffffff;
+    border:  0.2px solid #7c818c;
     /*border-bottom:  0.2px solid #ffffff;*/
     transition-property: background-color;
     transition-duration: .5s;
@@ -54,7 +54,7 @@ window#waybar.chromium {
 
 #window {
 	margin-left: 10px;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -102,7 +102,8 @@ window#waybar.chromium {
 #custom-name {
 
     background-color: #5294e2;
-	margin: 11 0 11 10;
+	margin: 10 0 10 10;
+	/* font-size: 14px; */
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     border: 1px solid #ffffff;
@@ -199,8 +200,8 @@ label:focus {
 
 #custom-weather {
 	border: 11px solid transparent;
-    background-color: #eea990;
-    padding: 0 7px 0 7px;
+    background-color: #e4908e;
+    padding: 5px 7px 0 7px;
     border-radius: 15px;
     margin: 0 -5px 0 -5px;
 }
