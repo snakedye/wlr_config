@@ -33,6 +33,6 @@ cp -r ./sway $CONFIG
 
 cp -r ./waybar $CONFIG
 
-cp -r ./wofi CONFIG
+cp -r ./wofi $CONFIG
 
 echo "Done!"
