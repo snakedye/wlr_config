@@ -1,5 +1,5 @@
 	* {
-	margin: -2 0 -2 2;
+	margin: -2 0 -2 0;
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
@@ -42,9 +42,6 @@ window#waybar.chromium {
 #workspaces button {
 	margin: 12 0 12 10;
 	font-size: 18px;
-	/* padding-left: 3px; */
-	/* padding-right: 3px; */
-	/* padding-top: 3px; */
 	padding: 2px 8px 2px 8px;
 	border-radius: 5px;
     background-color: #4b5162;
@@ -100,36 +97,27 @@ window#waybar.chromium {
 }
 
 #custom-name {
-
     background-color: #5294e2;
-	margin: 10 0 10 10;
-	/* font-size: 14px; */
+	margin: 10 0 10 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     border: 1px solid #ffffff;
-  /*  
-	border: 11px solid transparent;
-    padding: 0 7 0 7;
-    background-color: #5294e2;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;    
-    */
 }
 
 #clock {
-	border: 11px solid transparent;
     background-color: #4b5162;
+	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;    
+	border-radius: 5px;
+    
 }
 
 #battery {
-	border: 11px solid transparent;
     background-color: #CDCDCD;
-    color: #000000;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;    
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #battery.charging {
@@ -159,32 +147,35 @@ label:focus {
 }
 
 #cpu {
-	border: 11px solid transparent;
     background-color: #7c7772;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
-    /*color: #000000;*/
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #memory {
-	border: 11px solid transparent;
     background-color: #777777;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #backlight {
-	border: 11px solid transparent;
     background-color: #CDCDCD;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #network {
-	border: 11px solid transparent;
     background-color: #3e555e;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #network.disconnected {
@@ -192,18 +183,18 @@ label:focus {
 }
 
 #pulseaudio {
-	border: 11px solid transparent;
     background-color: #5076a7;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #custom-weather {
-	border: 11px solid transparent;
     background-color: #e4908e;
-    padding: 5px 7px 0 7px;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 5px 8px 3px 8px;
+	border-radius: 5px;
 }
 
 #pulseaudio.muted {
@@ -212,31 +203,36 @@ label:focus {
 }
 
 #custom-media {
-	border: 3px solid transparent;
     background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
-    border-radius: 10px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
+    margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 
 #temperature {
-	border: 11px solid transparent;
-	color: black;
     background-color: #CDCDCD;
-    /*color: #000000;*/
-    font-size: 12px;
-    padding: 7px;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #temperature.critical {
@@ -244,25 +240,26 @@ label:focus {
 }
 
 #tray {
-	border: 11px solid transparent;
     background-color: #65737e;
-    border-radius: 15px;
-    margin-left: -5px;
+	margin: 10 8 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
 }
 
 #disk {
-	  border: 11px solid transparent;
-	  padding: 0 7px 0 7px;
     background-color: #586f77;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+    margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #idle_inhibitor {
-	border: 11px solid transparent;
     background-color: #3e555e;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    
 }
 
 #idle_inhibitor.activated {
@@ -271,11 +268,11 @@ label:focus {
 }
 
 #mpd {
-	border: 11px solid transparent;
     background-color: #66cc99;
-    color: #2a5c45;
-    border-radius: 15px;
-    margin: 0 -5px 0 -5px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px;
+    border: 1px solid #ffffff;
 }
 
 
