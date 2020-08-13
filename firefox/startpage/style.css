@@ -1,9 +1,9 @@
 html,
 body {
-  background: #383c4a;
+  background: #252525;;
   color: #BBC4C8;
   height: 98%;
-  font-family: Google Sans Medium, San Francisco Text;
+  font-family: San Francisco Text;
 }
 
 .container {
@@ -33,17 +33,17 @@ body {
   display: flex;
   flex-direction: column;
   border: #191C1E;
-  border-radius: 3px;
+  border-radius: 10px;
   box-shadow: 0px 4px 5px #171D20;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  background: #2d303b;
+  background: #353535;
 }
 
 .logo {
   align-self: center;
-  padding: 15px;
+  padding: 50px;
 }
 
 .icon {
@@ -95,11 +95,11 @@ form {
 
 .search_box {
   display: flex;
-  background: #2d303b;
+  background: #353535;
   width: 600px;
   padding: 0px;
   margin-bottom: 40px;
-  border-radius: 3px 3px 3px 3px;
+  border-radius: 10px;
   box-shadow: 0px 4px 5px #171D20;
   align-self: center;
   height: 70px;

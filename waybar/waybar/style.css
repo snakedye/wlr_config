@@ -76,7 +76,6 @@ window#waybar.chromium {
 }
 
 #custom-suspend,
-#custom-exit,
 #custom-pacman,
 #custom-name,
 #clock,
@@ -99,19 +98,12 @@ window#waybar.chromium {
     color: #ffffff;
 }
 
-#custom-exit {
-	background-color: #4378a2;
-	margin: 10 8 10 0;
-	padding: 3px 8px 3px 8px;
-	border-radius: 0 5 5 0;
-}
-
 #custom-suspend {
 	background-color: #4378a2;
 	font-size: 20px;
-	margin: 10 0 10 10;
-	padding: 3px 8px 3px 8px;
-	border-radius: 5px 0 0 5px;
+	margin: 10 8 10 10;
+	padding: 3px 12px 3px 12px;
+	border-radius: 5px;
 }
 
 #custom-name {

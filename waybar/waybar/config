@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "sway/window"],
     "modules-center": [],
-    "modules-right": ["idle_inhibitor", "disk", "pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "clock", "custom/pacman", "tray", "custom/suspend", "custom/exit"],
+    "modules-right": ["idle_inhibitor", "disk", "pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "clock", "custom/pacman", "tray", "custom/suspend"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -145,7 +145,7 @@
         "interval": 3600
     },
 	"custom/pacman": {
-        "format": "{}  ",
+        "format": "{}  ",
         "interval": 3600,                     // every hour
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
@@ -168,9 +168,5 @@
     "custom/suspend": {
     	"format": "",
     	"on-click": "systemctl suspend" 
-    },
-    "custom/exit": {
-       	"format": "",
-       	"on-click": "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'" 
     }
 }
