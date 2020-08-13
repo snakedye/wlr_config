@@ -1,0 +1,80 @@
+#mpd {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #ffffff;
+}
+
+#clock {
+	border: 10px solid transparent;
+    background-color: #3e555e;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+
+#cpu {
+	border: 10px solid transparent;
+    background-color: #586f77;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+    /*color: #000000;*/
+}
+
+#memory {
+	border: 10px solid transparent;
+    background-color: #7c9096;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+
+#backlight {
+	border: 10px solid transparent;
+    background-color: #CDCDCD;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+
+#network {
+	border: 10px solid transparent;
+    background-color: #95a9ae;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+
+#pulseaudio {
+	border: 10px solid transparent;
+   	color:  #4A5356; 
+    background-color: #b9d1d9;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+
+#custom-weather {
+	  border: 10px solid transparent;
+    background-color: #95a9ae;
+    padding: 0 7px 0 7px;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+
+#tray {
+	border: 10px solid transparent;
+    background-color:  #31444B;
+    border-radius: 15px;
+    margin-left: -5px;
+}
+
+#disk {
+	  border: 10px solid transparent;
+	  padding: 0 7px 0 7px;
+    background-color: #586f77;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+
+#idle_inhibitor {
+	border: 10px solid transparent;
+    background-color: #3e555e;
+    border-radius: 15px;
+    margin: 0 -5px 0 -5px;
+}
+

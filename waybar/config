@@ -1,0 +1,176 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)		
+    "height": 43, // Waybar height (to be removed for auto height)
+    // "width": 1260, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "sway/window"],
+    "modules-center": [],
+    "modules-right": ["idle_inhibitor", "disk", "pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "clock", "custom/pacman", "tray", "custom/suspend", "custom/exit"],
+    // Modules configuration
+     "sway/workspaces": {
+         "disable-scroll": false,
+         "all-outputs": true,
+         "format": "{icon}",
+         "persistent_workspaces": {
+         	"1": [],
+         	"2": [],
+         	"3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+           //  "7": []
+         },
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "6": "",
+             // "7": "",
+             "focused": "",
+             "urgent": "",
+             "default": ""
+         }
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+	"mpd": {
+        "format": "♪ {}",
+        //"max-length": 15,
+        "interval": 10, 
+        "exec": "mpc current", 
+        "exec-if": "pgrep mpd",
+        "on-click": "mpc toggle",
+        "on-click-right": "sonata"
+    },
+    "tray": {
+        // "icon-size": 21,
+         "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+    "interval": 5,
+    "format": "{icon}",
+    "format-alt": "{percent}% {icon}",
+    "format-alt-click": "click-right",
+    "format-icons": ["🌕", "🌔", "🌓", "🌒", "🌑"],
+    "on-scroll-down": "brightnessctl -c backlight set 5%-",
+    "on-scroll-up": "brightnessctl -c backlight set +5%"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-middle": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/name": {
+      "format": " ~ bryan",
+      "on-click": "wofi --dmenu --width=20% --height=30% --yoffset=10% --xoffset=10% --show drun -I --"
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/?format=1'",
+        "interval": 3600
+    },
+	"custom/pacman": {
+        "format": "{}  ",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{percentage_free}% remaining on 2TB drive",
+        "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/"
+    },
+    "wlr/taskbar": {
+    	"format": "{icon}",
+   	    "icon-size": 14,
+   	    "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+    	"on-click": "activate",
+    	"on-click-middle": "close"
+    },
+    "custom/suspend": {
+    	"format": "",
+    	"on-click": "systemctl suspend" 
+    },
+    "custom/exit": {
+       	"format": "",
+       	"on-click": "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'" 
+    }
+}
