@@ -3,15 +3,15 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
+
     font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
-
 window#waybar {
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-    background-color: #383c4a;
+    background-color: #404552;
     color: #ffffff;
-    border:  0.2px solid #7c818c;
+    border:  2px solid #4b5162;
     /*border-bottom:  0.2px solid #ffffff;*/
     transition-property: background-color;
     transition-duration: .5s;
@@ -41,7 +41,7 @@ window#waybar.chromium {
 	
 #workspaces button {
 	margin: 12 0 12 10;
-	font-size: 18px;
+	/* font-size: 25px; */
 	padding: 2px 8px 2px 8px;
 	border-radius: 5px;
     background-color: #4b5162;
@@ -63,7 +63,7 @@ window#waybar.chromium {
 
 #workspaces button.focused {
     background-color: #5294e2;
-    border: 1px solid #ffffff;
+    border: 1px solid  #ffffff;
 }
 
 #workspaces button.urgent {
@@ -75,7 +75,10 @@ window#waybar.chromium {
     border-bottom: 3px solid #ffffff;
 }
 
-#custom-name
+#custom-suspend,
+#custom-exit,
+#custom-pacman,
+#custom-name,
 #clock,
 #battery,
 #cpu,
@@ -88,20 +91,42 @@ window#waybar.chromium {
 #tray,
 #mode,
 #idle_inhibitor,
-#custom-weather
-#disk
+#custom-weather,
+#disk,
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
 }
 
+#custom-exit {
+	background-color: #4378a2;
+	margin: 10 8 10 0;
+	padding: 3px 8px 3px 8px;
+	border-radius: 0 5 5 0;
+}
+
+#custom-suspend {
+	background-color: #4378a2;
+	font-size: 20px;
+	margin: 10 0 10 10;
+	padding: 3px 8px 3px 8px;
+	border-radius: 5px 0 0 5px;
+}
+
 #custom-name {
     background-color: #5294e2;
 	margin: 10 0 10 8;
+	padding: 3px 10px 3px 10px;
+	border-radius: 5px;
+    border: 2px solid  #85B4EA;
+}
+
+#custom-pacman {
+	background-color: #D3B67D;
+	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
-    border: 1px solid #ffffff;
 }
 
 #clock {
@@ -159,7 +184,6 @@ label:focus {
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
-    
 }
 
 #backlight {
@@ -167,15 +191,13 @@ label:focus {
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
-    
 }
 
 #network {
-    background-color: #3e555e;
+    background-color: #d08770;
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
-	border-radius: 5px;
-    
+	border-radius: 5px;    
 }
 
 #network.disconnected {
@@ -222,8 +244,7 @@ label:focus {
     background-color: #ffa000;
     margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
-	border-radius: 5px;
-    
+	border-radius: 5px;    
 }
 
 
@@ -232,7 +253,7 @@ label:focus {
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
-    
+   
 }
 
 #temperature.critical {
@@ -241,7 +262,7 @@ label:focus {
 
 #tray {
     background-color: #65737e;
-	margin: 10 8 10 10;
+	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
 }
@@ -251,15 +272,14 @@ label:focus {
     margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
-    
+   
 }
 
 #idle_inhibitor {
-    background-color: #3e555e;
+    background-color: #7c818c;
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
-	border-radius: 5px;
-    
+	border-radius: 5px;    
 }
 
 #idle_inhibitor.activated {

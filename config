@@ -1,34 +1,34 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 40, // Waybar height (to be removed for auto height)
+    "height": 43, // Waybar height (to be removed for auto height)
     // "width": 1260, // Waybar width
     // Choose the order of the modules
     "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "sway/window"],
     "modules-center": [],
-    "modules-right": ["idle_inhibitor", "disk", "custom/weather", "pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "disk", "pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "clock", "custom/pacman", "tray", "custom/suspend", "custom/exit"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
          "all-outputs": true,
          "format": "{icon}",
          "persistent_workspaces": {
-         	"1": ["HDMI-A-1"],
-         	"2": ["HDMI-A-1"],
-         	"3": ["HDMI-A-1"],
-            "4": ["HDMI-A-1"],
-            "5": ["HDMI-A-1"],
-            "6": ["HDMI-A-1"],
-            "7": ["HDMI-A-1"]
+         	"1": [],
+         	"2": [],
+         	"3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+           //  "7": []
          },
          "format-icons": {
              "1": "",
-             "2": "",
-             "3": "",
+             "2": "",
+             "3": "",
              "4": "",
              "5": "",
-             "6": "",
-             "7": "",
+             "6": "",
+             // "7": "",
              "focused": "",
              "urgent": "",
              "default": ""
@@ -37,38 +37,14 @@
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+	"mpd": {
+        "format": "♪ {}",
+        //"max-length": 15,
+        "interval": 10, 
+        "exec": "mpc current", 
+        "exec-if": "pgrep mpd",
+        "on-click": "mpc toggle",
+        "on-click-right": "sonata"
     },
     "tray": {
         // "icon-size": 21,
@@ -161,12 +137,20 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/name": {
-      "format": " bryan",
-      "on-click": "wofi --dmenu --width=10% --height=20% --yoffset=10% --xoffset=10% --show run --"
+      "format": " ~ bryan",
+      "on-click": "wofi --dmenu --width=20% --height=30% --yoffset=10% --xoffset=10% --show drun -I --"
     },
     "custom/weather": {
         "exec": "curl 'https://wttr.in/?format=1'",
         "interval": 3600
+    },
+	"custom/pacman": {
+        "format": "{}  ",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8
     },
     "disk": {
         "interval": 30,
@@ -180,5 +164,13 @@
         "tooltip-format": "{title}",
     	"on-click": "activate",
     	"on-click-middle": "close"
+    },
+    "custom/suspend": {
+    	"format": "",
+    	"on-click": "systemctl suspend" 
+    },
+    "custom/exit": {
+       	"format": "",
+       	"on-click": "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'" 
     }
 }
