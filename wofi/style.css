@@ -1,0 +1,38 @@
+window {
+margin: 5px;
+border: 2px solid #5294e2;
+border-radius: 8px;
+background-color: #383c4a;
+}
+
+#input {
+margin: 5px;
+border: 2px solid #4b5162;
+background-color: #383c4a;
+}
+
+#inner-box {
+color: #e4b86e;
+margin: 5px;
+/* border: 2px solid #7c818c; */
+background-color: #383c4a;
+}
+
+#outer-box {
+margin: 5px;
+/* border: 2px solid #383c4a; */
+background-color: #383c4a;
+}
+
+#scroll {
+margin: 5px;
+border: 2px solid #4b5162;
+border-radius: 7px;
+background-color: #383c4a;
+}
+
+#text {
+margin: 5px;
+/* border: 2px solid #5294e2; */
+background-color: none;
+} 
