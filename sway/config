@@ -10,8 +10,8 @@ exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 #exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
-exec razerd
-exec /usr/lib/polkit-kde-authentication-agent-1
+# exec razerd
+# exec /usr/lib/polkit-kde-authentication-agent-1
 
 # Floating windows
 # for_window [app_id="ulauncher"] floating enable; border none
@@ -45,8 +45,8 @@ set $menu wofi --dmenu --width=30% --height=20% --show run -I  --
 
 default_border pixel 2
 # Set inner/feher gaps
-gaps inner 15
-gaps outer 0
+gaps inner 5
+gaps outer 5
 
 # Default orientation
 
@@ -69,6 +69,7 @@ assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
 assign [app_id="signal-desktop"] 5
+assign [title="Wine System Tray"] 6
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -106,8 +107,6 @@ set $lockman exec bash ~/.config/sway/lockman.sh
 bindsym $mod+f1 exec $lockman
 
 # Sleep
-
-bindsym $mod+f12 exec sleep
 
 ### Input configuration
 #
