@@ -11,7 +11,7 @@ exec kdeconnect-indicator
 #exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
 # exec razerd
-# exec /usr/lib/polkit-kde-authentication-agent-1
+exec /usr/lib/polkit-kde-authentication-agent-1
 
 # Floating windows
 # for_window [app_id="ulauncher"] floating enable; border none

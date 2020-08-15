@@ -4,9 +4,10 @@
     "height": 44, // Waybar height (to be removed for auto height)
     // "width": 1260, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "sway/window"],
+    "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "custom/github", "custom/reddit", "custom/youtube", "custom/drive", "sway/window"],
     "modules-center": [],
-    "modules-right": ["idle_inhibitor", "disk", "pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "clock", "custom/pacman", "tray", "custom/suspend", "custom/exit"],
+    // "idle_inhibitor",
+    "modules-right": ["custom/weather","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray","clock", "custom/suspend", "custom/exit"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -154,7 +155,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": "{percentage_free}% remaining on 2TB drive",
+        "format": "{percentage_free}%",
         "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/"
     },
     "wlr/taskbar": {
@@ -167,7 +168,23 @@
     },
     "custom/suspend": {
     	"format": "",
-    	"on-click": "swaynag -t warning -m 'You pressed the sleep shortcut. Do you really want to enter sleep?' -b 'Yes, sleep' 'systemctl suspend && swaylock --clock --indicator -i ~/wallpapers/minimal_mountain.jpg --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr `%a %e/%m/%Y` --timestr `%k:%M` --indicator --indicator-radius 100 --ring-color 4b5162 --ring-ver-color 5294e2 --ring-clear-color 5294e2 --ring-wrong-color 7c818c --separator-color 5294e2 --key-hl-color 5294e2 --bs-hl-color 383c4a --font SanFranciscoText --text-color 7c818c -n -r'"
+    	"on-click": "systemctl suspend; ./.config/waybar/lockman.sh" 
+    },
+    "custom/github": {
+    	"format": "",
+    	"on-click": "xdg-open https://github.com/snakedye"
+    },
+	"custom/reddit": {
+    	"format": "",
+    	"on-click": "xdg-open https://www.reddit.com/"
+    },
+    "custom/youtube": {
+       	"format": "",
+       	"on-click": "xdg-open https://www.youtube.com/"
+    },
+    "custom/drive": {
+       	"format": "",
+        "on-click": "xdg-open https://www.youtube.com/"
     },
     "custom/exit": {
        	"format": "",
