@@ -25,4 +25,3 @@
 	<li>Add QT_QPA_PLATFORMTHEME=qt5ct and save</li>
 	<li>Refresh sway (ctrl+Shift+C)</li>
 </ol>
-For Firefox, copy both chrome and startpage inside ~/.mozilla/firefox/{randomstring}.default-release, follow <a href='https://github.com/dbuxy218/Prismatic-Night#newtab'>theses instructions</a> and restart Firefox
