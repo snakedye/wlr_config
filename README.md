@@ -1,4 +1,4 @@
-# Sway desktop configuration
+# sway
 ![Alt text](screenshot.png?raw=true "Title")
 
 
