@@ -12,6 +12,7 @@ exec kdeconnect-indicator
 # exec --no-startup-id nm-applet
 # exec razerd
 exec /usr/lib/polkit-kde-authentication-agent-1
+# exec kdeinit5
 
 # Floating windows
 # for_window [app_id="ulauncher"] floating enable; border none
@@ -21,8 +22,10 @@ for_window [app_id="Plasma"] floating enable; border none
 # for_window [app_id="krunner"] floating enable; border none
 for_window [app_id="plasmashell" window_type="notification"] floating enable 
 no_focus [app_id="plasmashell" window_type="notification"] floating enable
-for_window [title="wine"] floating enable
-for_window [title="epic"] floating enable
+for_window [title="Wine"] floating enable
+# for_window [title="Epic"] floating enable
+for_window [title="Copying"] floating enable
+for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout stacking 
 
 ### Variables
@@ -57,9 +60,9 @@ font pango:ProductSansMedium 13px
 # Window decoration
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #5294e2 #285577 #ffffff #7c818c   #5294e2
-client.focused_inactive #383c4a #5f676a #ffffff #7c818c   #383c4a
-client.unfocused        #383c4a #222222 #888888 #7c818c   #383c4a
+client.focused          #5294e2 #4985CB #ffffff #7c818c   #5294e2
+client.focused_inactive #404552 #383c4a #ffffff #7c818c   #383c4a
+client.unfocused        #404552 #383c4a #888888 #7c818c   #383c4a
 client.urgent           #7c818c #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -92,7 +95,7 @@ output "*" bg ~/wallpapers/skull-no-watermark.jpg fill
 # Example configuration:
 #
 
-set $lock swaylock --clock --indicator -i ~/wallpapers/minimal_mountain.jpg --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e/%m/%Y" --timestr "%k:%M" --indicator --indicator-radius 100 --ring-color 4b5162 --ring-ver-color 5294e2 --ring-clear-color 5294e2 --ring-wrong-color 7c818c --separator-color 5294e2 --key-hl-color 5294e2 --bs-hl-color 383c4a --font SanFranciscoText --text-color 7c818c -n -r
+set $lock exec bash ~/.config/sway/lockman.sh
 exec swayidle -w \
     timeout 600 $lock \
     timeout 570 'swaymsg "output * dpms off"' \

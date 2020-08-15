@@ -136,7 +136,7 @@ window#waybar.chromium {
 /* Tabs */
 
 #custom-exit {
-	background-color: #404552;
+	background-color: #4b5162;
 	margin: 10 8 10 0;
 	padding: 3px 8px 3px 8px;
 	border-radius: 0 5 5 0;
@@ -148,7 +148,7 @@ window#waybar.chromium {
 }
 
 #custom-suspend {
-	background-color: #404552;
+	background-color: #4b5162;
 	font-size: 20px;
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
@@ -176,9 +176,9 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #404552;
+    background-color: #4b5162;
 	margin: 10 0 10 10;
-	padding: 3px 0px 3px 8px;
+	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     font-size: 16px;
 }

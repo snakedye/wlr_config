@@ -51,6 +51,13 @@
         // "icon-size": 21,
          "spacing": 10
     },
+	 "idle_inhibitor": {
+         "format": "{icon}",
+         "format-icons": {
+             "activated": "",
+             "deactivated": ""
+         }
+     },
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -168,7 +175,7 @@
     },
     "custom/suspend": {
     	"format": "",
-    	"on-click": "systemctl suspend; ./.config/waybar/lockman.sh" 
+    	"on-click": "systemctl suspend; swaylock --clock --indicator -i ~/wallpapers/skull-no-watermark.jpg --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr '%a %e %m %Y' --timestr '%k:%M' --indicator --indicator-radius 100 --ring-color 4b5162 --ring-ver-color 5294e2 --ring-clear-color 5294e2 --ring-wrong-color 7c818c --separator-color 5294e2 --key-hl-color 5294e2 --bs-hl-color 383c4a --font ProductSansMedium --text-color 7c818c -n -r" 
     },
     "custom/github": {
     	"format": "",
