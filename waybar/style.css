@@ -11,7 +11,7 @@ window#waybar {
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     background-color: #404552;
     color: #ffffff;
-    border:  2px solid #4b5162;
+    /* border:  2px solid #4b5162; */
     /*border-bottom:  0.2px solid #ffffff;*/
     transition-property: background-color;
     transition-duration: .5s;
@@ -97,10 +97,45 @@ window#waybar.chromium {
 #idle_inhibitor,
 #custom-weather,
 #disk,
+#taskbar
+#taskbar button
+#taskbar button.active
+#taskbar button.minimized
+#taskbar button.maximized
+#taskbar button.fullscreen
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
+}
+
+/* Taskbar */
+
+#taskbar {
+    background-color:  #4b5162;
+	margin: 11 8 11 0;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+#taskbar button {
+	/* font-size: 25px; */
+	/* padding: 2px 8px 2px 8px; */
+	padding: 3 1 3 7;
+	margin: 0;
+	border-radius: 5px;
+    background-color: #4b5162;
+    color: #ffffff;
+}
+
+#taskbar button.focused {
+    background-color: #5294e2;
+}
+
+#taskbar button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+   /*  border-bottom: 3px solid #ffffff; */
 }
 
 /* Browser bookmarks */
@@ -322,7 +357,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #7c818c;
+    background-color: #A37378;
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;    

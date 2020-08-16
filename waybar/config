@@ -1,13 +1,13 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 44, // Waybar height (to be removed for auto height)
-    // "width": 1260, // Waybar width
+    // "height": 44, // Waybar height (to be removed for auto height)
+    // "width": 1200, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "custom/github", "custom/reddit", "custom/youtube", "custom/drive", "sway/window"],
+    "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "custom/github", "custom/reddit", "custom/youtube", "custom/drive", "wlr/taskbar", "sway/window"],
     "modules-center": [],
     // "idle_inhibitor",
-    "modules-right": ["custom/weather","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray","clock", "custom/suspend", "custom/exit"],
+    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray","clock", "custom/suspend", "custom/exit"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -196,5 +196,13 @@
     "custom/exit": {
        	"format": "",
        	"on-click": "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'" 
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        // "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     }
 }
