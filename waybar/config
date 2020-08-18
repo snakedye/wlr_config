@@ -4,7 +4,7 @@
     // "height": 44, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "custom/github", "custom/reddit", "custom/youtube", "custom/drive", "wlr/taskbar", "sway/window"],
+    "modules-left": ["custom/name","sway/workspaces", "sway/mode", "custom/media", "custom/github", "custom/reddit", "custom/youtube", "custom/drive", "sway/window"],
     "modules-center": [],
     // "idle_inhibitor",
     "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray","clock", "custom/suspend", "custom/exit"],
@@ -146,7 +146,7 @@
     },
     "custom/name": {
       "format": " ~ bryan",
-      "on-click": "wofi --dmenu --width=20% --height=30% --yoffset=10% --xoffset=10% --show drun -I --"
+      "on-click": "wofi --dmenu --width=15% -L=10 --yoffset=5% --xoffset=5% --show drun -I --"
     },
     "custom/weather": {
         "exec": "curl 'https://wttr.in/?format=1'",

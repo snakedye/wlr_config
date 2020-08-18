@@ -42,7 +42,7 @@ set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --dmenu --width=30% --height=20% --show run -I  --
+set $menu wofi --dmenu -W 25% -H 30% -p Search --show run -I -m -b -i -t termite -G --
 
 # Disable titlebar
 
@@ -115,12 +115,12 @@ bindsym $mod+f1 exec $lockman
 #
 # Example configuration:
 #
-   # input "1267:12377:ELAN1300:00_04F3:3059_Touchpad" {
-       # dwt enabled
-       # tap enabled
-       # natural_scroll enabled
-       # middle_emulation enabled
-   # }
+   input "1267:12377:ELAN1300:00_04F3:3059_Touchpad" {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+   }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -204,6 +204,9 @@ bindsym $mod+f1 exec $lockman
     bindsym $mod+Shift+0 move container to workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+    # Switch to next/previous workspace
+    bindsym ctrl+Alt+Right workspace next_on_output
+    bindsym ctrl+Alt+Left workspace prev_on_output
 #
 # Layout stuff:
 #
