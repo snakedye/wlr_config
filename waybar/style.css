@@ -177,9 +177,9 @@ window#waybar.chromium {
 }
 
 #custom-newtab {
-	background-color:  #5D6271;
+	background-color: #4b5162;
 	font-size: 18px;
-    margin: 11 4 11 4;
+    margin: 10 4 10 4;
     padding: 3px 12px 3px 12px;
     border-radius: 5;
 }
