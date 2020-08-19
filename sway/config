@@ -14,6 +14,15 @@ exec kdeconnect-indicator
 exec /usr/lib/polkit-kde-authentication-agent-1
 # exec kdeinit5
 
+# Applications
+
+# exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+# exec --no-startup-id i3-msg 'workspace 4; exec lutris; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 3; exec dolphin; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 5; exec signal-desktop; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 6; exec termite -e "bashtop"; workspace 1'
+
 # Floating windows
 # for_window [app_id="ulauncher"] floating enable; border none
 # for_window [app_id="Desktop — Plasma"] kill; floating enable; border none
@@ -42,7 +51,7 @@ set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --dmenu -W 25% -H 30% -p Search --show run -I -m -b -i -t termite -G --
+set $menu wofi --dmenu -W 21% -H 15% -p Search --show run -I -m -b -i -t termite -G --
 
 # Disable titlebar
 
@@ -97,8 +106,8 @@ output "*" bg ~/wallpapers/skull-no-watermark.jpg fill
 
 set $lock exec bash ~/.config/sway/lockman.sh
 exec swayidle -w \
-    timeout 600 $lock \
-    timeout 570 'swaymsg "output * dpms off"' \
+    timeout 300 $lock \
+    timeout 600 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep $lock
 
@@ -107,6 +116,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 set $lockman exec bash ~/.config/sway/lockman.sh
+
 bindsym $mod+f1 exec $lockman
 
 # Sleep

@@ -30,17 +30,17 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
+/* window#waybar.termite { */
+    /* background-color: #3F3F3F; */
+/* } */
 
 window#waybar.chromium {
     background-color: #000000;
     border: none;
 }
-	
+
 #workspaces button {
-	margin: 12 0 12 10;
+	margin: 12 4 12 4;
 	/* font-size: 25px; */
 	padding: 2px 8px 2px 8px;
 	border-radius: 5px;
@@ -50,7 +50,10 @@ window#waybar.chromium {
 }
 
 #window {
-	margin-left: 0px;
+	margin-left: 6px;
+	/* font-family:  San Francisco Text; */
+	/* font-weight: bold; */
+	padding-top: 1px;
   /* font-size: 14px; */
 }
 
@@ -82,7 +85,8 @@ window#waybar.chromium {
 #custom-github,
 #custom-reddit,
 #custom-youtube,
-#custom-drive,
+#custom-mail,
+#custom-newtab,
 #clock,
 #battery,
 #cpu,
@@ -142,30 +146,42 @@ window#waybar.chromium {
 
 #custom-github {
 	background-color: #4b5162;
-	margin: 11 0 11 12;
+	margin: 10 0 10 4;
+	/* font-size: 15px; */
 	padding: 3px 8px 3px 8px;
 	border-radius: 5 0 0 5;
 }
 
 #custom-reddit {
 	background-color: #4b5162;
-	margin: 11 0 11 0;
+	margin: 10 0 10 0;
+	font-size: 14px;
 	padding: 3px 8px 3px 8px;
 	/* border-radius: 0 5 5 0; */
 }
 
 #custom-youtube {
 	background-color: #4b5162;
-	margin: 11 0 11 0;
-	padding: 3px 8px 3px 8px;
+	/* font-size: 16px; */
+	margin: 10 0 10 0;
+	padding: 4px 8px 3px 8px;
 	/* border-radius: 0 5 5 0; */
 }
 
-#custom-drive {
+#custom-mail {
 	background-color: #4b5162;
-	margin: 11 12 11 0;
-	padding: 3px 8px 3px 8px;
+	margin: 10 4 10 0;
+	font-size: 18px;
+	padding: 4px 10px 3px 8px;
 	border-radius: 0 5 5 0;
+}
+
+#custom-newtab {
+	background-color:  #5D6271;
+	font-size: 18px;
+    margin: 11 4 11 4;
+    padding: 3px 12px 3px 12px;
+    border-radius: 5;
 }
 
 /* Tabs */
@@ -196,11 +212,13 @@ window#waybar.chromium {
 }
 
 #custom-name {
-    background-color:  #4b5162;
-	margin: 11 0 11 8;
-	padding: 4px 10px 4px 10px;
+    background-color: #4b5162;
+	margin: 11 4 11 8;
+	padding: 0px 10px 0px 10px;
 	border-radius: 5px;
-    /* border: 2px solid  #85B4EA; */
+	/* font-size: 18px; */
+	/* font-family:  San Francisco Text; */
+    border: 2px solid  #5D6271; 
 }
 
 #custom-pacman {
@@ -360,7 +378,8 @@ label:focus {
     background-color: #A37378;
 	margin: 10 0 10 10;
 	padding: 3px 8px 3px 8px;
-	border-radius: 5px;    
+	border-radius: 5px;
+	font-size: 20px;    
 }
 
 #idle_inhibitor.activated {

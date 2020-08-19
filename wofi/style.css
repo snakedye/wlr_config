@@ -1,13 +1,14 @@
 window {
 margin: 5px;
-border: 2px solid #5294e2;
+border: 3px solid #5294e2;
 border-radius: 8px;
 background-color: #383c4a;
 }
 
 #input {
+font-size: 15px;
 margin: 5px;
-border: 2px solid #4b5162;
+border: 3px solid #4b5162;
 background-color: #383c4a;
 }
 
@@ -26,13 +27,14 @@ background-color: #383c4a;
 
 #scroll {
 margin: 5px;
-border: 2px solid #4b5162;
+border: 3px solid #4b5162;
 border-radius: 7px;
 background-color: #383c4a;
 }
 
 #text {
 margin: 5px;
+/* font-size: 15px; */
 /* border: 2px solid #5294e2; */
 background-color: none;
 } 
