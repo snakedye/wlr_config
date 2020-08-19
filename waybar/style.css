@@ -3,16 +3,16 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-
     font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    /* font-size: 13px; */
 }
 window#waybar {
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     background-color: #404552;
     color: #ffffff;
+    /* border-radius: 5px; */
     /* border:  2px solid #4b5162; */
-    /*border-bottom:  0.2px solid #ffffff;*/
+    border-bottom: 3px solid transparent;
     transition-property: background-color;
     transition-duration: .5s;
 }transition
@@ -33,20 +33,20 @@ window#waybar.solo {
 /* window#waybar.termite { */
     /* background-color: #3F3F3F; */
 /* } */
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
+/*  */
+/* window#waybar.chromium { */
+    /* background-color: #000000; */
+    /* border: none; */
+/* } */
 
 #workspaces button {
-	margin: 12 4 12 4;
+	margin: 14 4 14 4;
 	/* font-size: 25px; */
-	padding: 2px 8px 2px 8px;
+	padding: 0 8 0 8;
 	border-radius: 5px;
     background-color: #4b5162;
     color: #ffffff;
-    border: 1px solid #404552;
+    /* border: 1px solid #404552; */
 }
 
 #window {
@@ -146,15 +146,15 @@ window#waybar.chromium {
 
 #custom-github {
 	background-color: #4b5162;
-	margin: 10 0 10 4;
+	margin: 12 0 12 4;
 	/* font-size: 15px; */
-	padding: 3px 8px 3px 8px;
+	padding: 3 8 3 8;
 	border-radius: 5 0 0 5;
 }
 
 #custom-reddit {
 	background-color: #4b5162;
-	margin: 10 0 10 0;
+	margin: 12 0 12 0;
 	font-size: 14px;
 	padding: 3px 8px 3px 8px;
 	/* border-radius: 0 5 5 0; */
@@ -163,14 +163,14 @@ window#waybar.chromium {
 #custom-youtube {
 	background-color: #4b5162;
 	/* font-size: 16px; */
-	margin: 10 0 10 0;
+	margin: 12 0 12 0;
 	padding: 4px 8px 3px 8px;
 	/* border-radius: 0 5 5 0; */
 }
 
 #custom-mail {
 	background-color: #4b5162;
-	margin: 10 4 10 0;
+	margin: 12 4 12 0;
 	font-size: 18px;
 	padding: 4px 10px 3px 8px;
 	border-radius: 0 5 5 0;
@@ -179,7 +179,7 @@ window#waybar.chromium {
 #custom-newtab {
 	background-color: #4b5162;
 	font-size: 18px;
-    margin: 10 4 10 4;
+	margin: 12 4 12 4;
     padding: 3px 12px 3px 12px;
     border-radius: 5;
 }
@@ -188,20 +188,15 @@ window#waybar.chromium {
 
 #custom-exit {
 	background-color: #4b5162;
-	margin: 10 8 10 0;
+	margin: 12 8 12 0;
 	padding: 3px 8px 3px 8px;
 	border-radius: 0 5 5 0;
-}
-
-#custom-exit:hover {
-   box-shadow: inherit;
-   text-shadow: inherit;
 }
 
 #custom-suspend {
 	background-color: #4b5162;
 	font-size: 20px;
-	margin: 10 0 10 10;
+	margin: 12 0 12 4;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px 0 0 5px;
 }
@@ -213,7 +208,7 @@ window#waybar.chromium {
 
 #custom-name {
     background-color: #4b5162;
-	margin: 11 4 11 8;
+	margin: 12 4 12 8;
 	padding: 0px 10px 0px 10px;
 	border-radius: 5px;
 	/* font-size: 18px; */
@@ -223,14 +218,14 @@ window#waybar.chromium {
 
 #custom-pacman {
 	background-color: #189fbd;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
 }
 
 #clock {
     background-color: #4b5162;
-	margin: 10 0 10 10;
+	margin: 12 4 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     font-size: 16px;
@@ -238,7 +233,7 @@ window#waybar.chromium {
 
 #battery {
     background-color: #CDCDCD;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     
@@ -272,7 +267,7 @@ label:focus {
 
 #cpu {
     background-color: #714656;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     
@@ -280,21 +275,21 @@ label:focus {
 
 #memory {
     background-color: #5294e2;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
 }
 
 #backlight {
     background-color: #CDCDCD;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
 }
 
 #network {
     background-color: #7c818c;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;    
 }
@@ -305,7 +300,7 @@ label:focus {
 
 #pulseaudio {
     background-color: #5076a7;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     
@@ -313,7 +308,7 @@ label:focus {
 
 #custom-weather {
     background-color: #A37378;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
 }
@@ -325,7 +320,7 @@ label:focus {
 
 #custom-media {
     background-color: #66cc99;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     
@@ -333,7 +328,7 @@ label:focus {
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     
@@ -341,7 +336,7 @@ label:focus {
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
-    margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;    
 }
@@ -349,7 +344,7 @@ label:focus {
 
 #temperature {
     background-color: #CDCDCD;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
    
@@ -361,14 +356,14 @@ label:focus {
 
 #tray {
     background-color: #4b5162;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
 }
 
 #disk {
     background-color: #9a3f45;
-    margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
    
@@ -376,10 +371,10 @@ label:focus {
 
 #idle_inhibitor {
     background-color: #A37378;
-	margin: 10 0 10 10;
-	padding: 3px 8px 3px 8px;
+	margin: 12 0 12 8;
+	padding: 3px 10px 3px 10px;
 	border-radius: 5px;
-	font-size: 20px;    
+	font-size: 20px;
 }
 
 #idle_inhibitor.activated {
@@ -389,7 +384,7 @@ label:focus {
 
 #mpd {
     background-color: #66cc99;
-	margin: 10 0 10 10;
+	margin: 12 0 12 8;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     border: 1px solid #ffffff;

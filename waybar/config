@@ -1,10 +1,11 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    // "height": 44, // Waybar height (to be removed for auto height)
+    // "height": 34, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
+     "margin-top": -3,
     // Choose the order of the modules
-    "modules-left": ["custom/name", "sway/workspaces", "sway/mode", "custom/media",  "custom/github", "custom/reddit", "custom/youtube", "custom/mail","custom/newtab", "sway/window"],
+    "modules-left": ["custom/name", "sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail","custom/newtab", "sway/window"],
     "modules-center": [],
     // "idle_inhibitor",
     "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray","clock", "custom/suspend", "custom/exit"],
