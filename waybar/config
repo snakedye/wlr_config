@@ -1,14 +1,14 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    // "height": 34, // Waybar height (to be removed for auto height)
+    //  "height": 40, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
-     "margin-top": -3,
+    // "margin-top": -3,
     // Choose the order of the modules
-    "modules-left": ["custom/name", "sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail","custom/newtab", "sway/window"],
-    "modules-center": [],
+    "modules-left": ["custom/name","clock","custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail","sway/window", ],
+    "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray","clock", "custom/suspend", "custom/exit"],
+    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray", "custom/suspend", "custom/exit"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -213,10 +213,11 @@
     },
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 14,
+        "icon-size": 16,
         // "icon-theme": "Numix-Circle",
         "tooltip-format": "{title}",
         "on-click": "activate",
+        "on-click-right": "minimize",
         "on-click-middle": "close"
     }
 }
