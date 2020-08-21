@@ -8,7 +8,7 @@
     "modules-left": ["custom/name","clock","custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail","sway/window", ],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray", "custom/suspend", "custom/exit"],
+    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -24,12 +24,12 @@
            //  "7": []
          },
          "format-icons": {
-             "1": "",
+             "1": "",
              "2": "",
              "3": "",
              "4": "",
-             "5": "",
-             "6": "",
+             "5": "",
+             "6": "",
              // "7": "",
              "focused": "",
              "urgent": "",
@@ -38,6 +38,9 @@
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+    	"max-length": 40,
     },
 	"mpd": {
         "format": "♪ {}",
@@ -112,7 +115,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-middle": "nm-connection-editor"
+        "on-click-middle": "iwgtk"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -149,7 +152,8 @@
       "format": " ~ {}",
       "exec" : "hostname -s",
       //"return-type": "json",
-      "on-click": "wofi --dmenu --width=15% -L=10 --yoffset=5% --xoffset=5% --show drun -I --"
+      "on-click": "wofi --dmenu --width=15% -L=10 --yoffset=5% --xoffset=5% --show drun -I --",
+      "tooltip": false
     },
     "custom/weather": {
         "exec": "curl 'https://wttr.in/?format=1'",
@@ -161,12 +165,14 @@
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
         "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
-        "signal": 8
+        "signal": 8,
+      "tooltip": false
     },
     "disk": {
         "interval": 30,
         "format": "{percentage_free}%",
-        "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/"
+        "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
+      "tooltip": false
     },
     "wlr/taskbar": {
     	"format": "{icon}",
@@ -179,37 +185,39 @@
     "custom/suspend": {
     	"format": "",
     	"on-click": "systemctl suspend; swaylock --clock --indicator -i ~/wallpapers/skull-no-watermark.jpg --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr '%a %e %m %Y' --timestr '%k:%M' --indicator --indicator-radius 100 --ring-color 4b5162 --ring-ver-color 5294e2 --ring-clear-color 5294e2 --ring-wrong-color 7c818c --separator-color 5294e2 --key-hl-color 5294e2 --bs-hl-color 383c4a --font ProductSansMedium --text-color 7c818c -n -r",
-    	"tooltip": "false" 
+    	"tooltip": false 
     },
     "custom/github": {
     	"format": "",
     	"on-click": "xdg-open https://github.com/snakedye",
-    	"tooltip": "false" 
+    	"tooltip": false 
     },
 	"custom/reddit": {
     	"format": "",
     	"on-click": "xdg-open https://www.reddit.com/",
-    	"tooltip": "false" 
+       	"on-middle-click": "firefox --ssb 'https://www.reddit.com/'",
+    	"tooltip": false 
     },
     "custom/youtube": {
        	"format": "",
-       	"on-click": "xdg-open https://www.youtube.com/",
-    	"tooltip": "false" 
+    	"on-click": "xdg-open https://www.youtube.com/",
+       	"on-middle-click": "firefox --ssb 'https://www.youtube.com/'",
+    	"tooltip": false 
     },
     "custom/mail": {
        	"format": "",
-        "on-click": "xdg-open https://mail.google.com/",
-    	"tooltip": "false" 
+        "on-click": "firefox --ssb https://mail.google.com/",
+    	"tooltip": false 
     },
 	"custom/newtab": {
     	"format": "",
     	"on-click": "firefox --new-window file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
-    	"tooltip": "false" 
+    	"tooltip": false 
     },
     "custom/exit": {
        	"format": "",
        	"on-click": "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'", 
-    	"tooltip": "false" 
+    	"tooltip": false 
     },
     "wlr/taskbar": {
         "format": "{icon}",

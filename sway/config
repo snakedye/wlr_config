@@ -11,6 +11,7 @@ exec kdeconnect-indicator
 #exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
 # exec razerd
+exec iwd
 exec /usr/lib/polkit-kde-authentication-agent-1
 # exec kdeinit5
 
@@ -35,7 +36,8 @@ for_window [title="Wine"] floating enable
 # for_window [title="Epic"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
-for_window [workspace="4"] layout stacking 
+for_window [workspace="4"] layout tabbed 
+for_window [workspace="6"] layout tabbed 
 
 ### Variables
 #
@@ -70,8 +72,8 @@ font pango:ProductSansMedium 13px
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #5294e2 #4985CB #ffffff #7c818c   #5294e2
-client.focused_inactive #404552 #383c4a #ffffff #7c818c   #383c4a
-client.unfocused        #404552 #383c4a #888888 #7c818c   #383c4a
+client.focused_inactive #4B5162 #383c4a #ffffff #7c818c   #383c4a
+client.unfocused        #4B5162 #383c4a #888888 #7c818c   #383c4a
 client.urgent           #7c818c #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -81,7 +83,10 @@ assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
 assign [app_id="signal-desktop"] 5
-assign [title="Wine System Tray"] 6
+assign [title="Wine System Tray"] 7
+assign [title="youtube.com"] 6
+assign [title="reddit.com"] 6
+assign [title="mail.google.com"] 6
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -216,7 +221,9 @@ bindsym $mod+f1 exec $lockman
     # We just use 1-10 as the default.
     # Switch to next/previous workspace
     bindsym ctrl+Alt+Right workspace next_on_output
+    bindsym ctrl+Alt+$right workspace next_on_output
     bindsym ctrl+Alt+Left workspace prev_on_output
+    bindsym ctrl+Alt+$left workspace prev_on_output
 #
 # Layout stuff:
 #
@@ -235,7 +242,7 @@ bindsym $mod+f1 exec $lockman
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym alt+Space floating toggle
+    bindsym ctrl+Space floating toggle
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+Alt+space focus mode_toggle
