@@ -9,7 +9,7 @@
 }
 window#waybar {
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-    background-color: #404552;
+    background-color: #3b4252;
     color: #ffffff;
     /* border-radius: 5px; */
     /* border:  2px solid #4b5162; */
@@ -85,6 +85,7 @@ window#waybar.solo {
 #custom-github,
 #custom-reddit,
 #custom-youtube,
+#custom-crunchyroll,
 #custom-mail,
 #custom-newtab,
 #clock,
@@ -148,56 +149,55 @@ window#waybar.solo {
    /*  border-bottom: 3px solid #ffffff; */
 }
 
-/* Browser bookmarks */
-
-#custom-github {
-	background-color: #383c4a;
-	/* font-size: 15px; */
-	/* margin-right: 0; */
-	/* margin-left: 0; */
-	padding: 0 12 0 12;
-	border-radius: 5;
-    box-shadow: 0px 0px 3 1 #383c4a;
-}
-
-#custom-reddit {
-	background-color: #383c4a;
-	font-size: 14px;
-	/* margin-left: 0; */
-	/* margin-right: 0; */
-	padding: 0 12 0 12;
-	border-radius: 5;
-    box-shadow: 0px 0px 3 1 #383c4a;
-}
-
-#custom-youtube {
-	background-color: #383c4a;
-	/* font-size: 16px; */
-	/* margin-left: 0; */
-	/* margin-right: 0; */
-	padding: 0 12 0 12;
-	border-radius: 5;
-    box-shadow: 0px 0px 3 1 #383c4a;
-}
-
-#custom-mail {
-	background-color: #383c4a;
-	/* margin-left: 0; */
-	font-size: 18px;
-	padding: 0 12 0 12;
-	border-radius: 5;
-    box-shadow: 0px 0px 3 1 #383c4a;
-}
+/* BROWSER BOOKMARKS */
 
 #custom-newtab {
-	background-color: #383c4a;
+	background-color: #4c566a;
 	font-size: 18px;
 	padding: 0 12 0 12;
     border-radius: 5;
     box-shadow: 0px 0px 3 1 #383c4a;
 }
 
-/* Tabs */
+#custom-github {
+	background-color: #4c566a;
+	padding: 0 12 0 12;
+	border-radius: 5;
+    box-shadow: 0px 0px 3 1 #383c4a;
+}
+
+#custom-reddit {
+	background-color: #4c566a;
+	font-size: 14px;
+	padding: 0 12 0 12;
+	border-radius: 5;
+    box-shadow: 0px 0px 3 1 #383c4a;
+}
+
+#custom-crunchyroll {
+	background-color: #4c566a;
+	font-size: 16px;
+	padding: 0 12 0 12;
+	border-radius: 5;
+    box-shadow: 0px 0px 3 1 #383c4a;
+}
+
+#custom-youtube {
+	background-color: #4c566a;
+	padding: 0 12 0 12;
+	border-radius: 5;
+    box-shadow: 0px 0px 3 1 #383c4a;
+}
+
+#custom-mail {
+	background-color: #4c566a;
+	font-size: 18px;
+	padding: 0 12 0 12;
+	border-radius: 5;
+    box-shadow: 0px 0px 3 1 #383c4a;
+}
+
+/* WIDGETS */
 
 #custom-exit {
 	background-color: #4b5162;
@@ -222,15 +222,10 @@ window#waybar.solo {
 }
 
 #custom-name {
-    background-color: #4b5162;
+    background-color: #434c5e;
 	padding: 0px 10px 0px 10px;
 	border-radius: 5px;
-	/* margin-right: 8px; */
-	/* font-size: 18px; */
-	/* font-family:  San Francisco Text; */
-    /* border: 1px solid  #A4BCCA; */
     box-shadow: 0px 0px 3 1 #383c4a;
-    /* box-shadow: 0px 0px 5 0 #4b5162 inset; */
 }
 
 #custom-pacman {
@@ -295,7 +290,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: #CDCDCD;
+    background-color: #4b5162;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;
     box-shadow: 0px 0px 3 1 #383c4a;
@@ -353,8 +348,7 @@ label:focus {
 
 
 #temperature {
-    background-color: #CDCDCD;
-	margin: 0 0 0 8;
+    background-color: #b48ead;
 	padding: 3px 8px 3px 8px;
 	border-radius: 5px;   
     box-shadow: 0px 0px 3 1 #383c4a;

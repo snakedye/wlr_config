@@ -5,10 +5,10 @@
     // "width": 1200, // Waybar width
     // "margin-top": -3,
     // Choose the order of the modules
-    "modules-left": ["custom/name","clock","custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail","sway/window", ],
+    "modules-left": ["custom/name","clock","custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll", "custom/mail","sway/window", ],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "backlight", "battery#bat2", "custom/pacman", "tray", "custom/suspend",],
+    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -207,6 +207,12 @@
     "custom/mail": {
        	"format": "",
         "on-click": "firefox --ssb https://mail.google.com/",
+    	"tooltip": false 
+    },
+	"custom/crunchyroll": {
+       	"format": "",
+       	"on-click": "firefox --ssb 'https://www.crunchyroll.com/'",
+    	// "on-click": "xdg-open https://www.crunchyroll.com/",
     	"tooltip": false 
     },
 	"custom/newtab": {
