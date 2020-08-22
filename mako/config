@@ -1,0 +1,15 @@
+font=ProductSansMedium 10
+
+background-color=#2e3440
+text-color=#e4b86e
+padding=10
+margin=3
+
+border-size=2
+border-radius=10
+border-color=#5e81ac
+
+default-timeout=5000
+
+[urgency=high]
+ignore-timeout=1

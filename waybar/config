@@ -8,7 +8,7 @@
     "modules-left": ["custom/name","clock","wlr/taskbar", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll", "custom/mail","sway/window", ],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": ["idle_inhibitor","custom/weather","pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
+    "modules-right": ["idle_inhibitor","custom/weather", "pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,

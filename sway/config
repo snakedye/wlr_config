@@ -11,6 +11,7 @@ exec kdeconnect-indicator
 #exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
 # exec razerd
+exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 # exec kdeinit5
 
@@ -51,7 +52,8 @@ set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --dmenu -W 21% -H 15% -p Search --show run -I -m -b -i -t termite -G --
+# set $menu rofi -combi-modi window,drun,ssh -theme slate -font 'hack 10' -show combi -icon-theme 'Papirus' -show-icons
+set $menu wofi --dmenu -W 21% -H 25% -p Search --show run -I -m -b -i -t termite -G --
 
 # Disable titlebar
 

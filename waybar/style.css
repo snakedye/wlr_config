@@ -54,6 +54,7 @@ window#waybar.solo {
 #workspaces button {
 	font-size: 14px;
 	border-radius: 5px;
+	padding: 0 5 0 5;
     margin-right: 8px;
     background-color: #4b5162;
     color: #ffffff;
@@ -125,6 +126,7 @@ window#waybar.solo {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
+    /* background-color: #253442; */
 }
 
 /* Taskbar */
@@ -313,7 +315,7 @@ label:focus {
 
 #custom-weather {
     background-color: #A37378;
-	padding: 0 8 0 4;
+	padding: 3 8 0 4;
 	margin: 0;
 }
 
