@@ -1,14 +1,14 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    //  "height": 40, // Waybar height (to be removed for auto height)
+    //  "height": 45, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     // "margin-top": -3,
     // Choose the order of the modules
-    "modules-left": ["custom/name","clock","custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll", "custom/mail","sway/window", ],
+    "modules-left": ["custom/name","clock","wlr/taskbar", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll", "custom/mail","sway/window", ],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": ["idle_inhibitor","pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
+    "modules-right": ["idle_inhibitor","custom/weather","pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -28,7 +28,7 @@
              "2": "",
              "3": "",
              "4": "",
-             "5": "",
+             "5": "",
              "6": "",
              // "7": "",
              "focused": "",
@@ -40,7 +40,8 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
-    	"max-length": 40,
+    	"format": {},
+    	"max-length": 30,
     },
 	"mpd": {
         "format": "♪ {}",
@@ -164,7 +165,7 @@
         "interval": 3600,                     // every hour
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
+        "on-click": "termite -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8,
       "tooltip": false
     },
@@ -172,7 +173,7 @@
         "interval": 30,
         "format": "{percentage_free}%",
         "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
-      "tooltip": false
+      	"tooltip": false
     },
     "wlr/taskbar": {
     	"format": "{icon}",
@@ -193,9 +194,9 @@
     	"tooltip": false 
     },
 	"custom/reddit": {
-    	"format": "",
+    	"format": "",
     	"on-click": "xdg-open https://www.reddit.com/",
-       	"on-middle-click": "firefox --ssb 'https://www.reddit.com/'",
+       	"on-left-click": "firefox --new-window 'https://www.reddit.com/'",
     	"tooltip": false 
     },
     "custom/youtube": {
@@ -210,9 +211,9 @@
     	"tooltip": false 
     },
 	"custom/crunchyroll": {
-       	"format": "",
-       	"on-click": "firefox --ssb 'https://www.crunchyroll.com/'",
-    	// "on-click": "xdg-open https://www.crunchyroll.com/",
+       	"format": "",
+    	"on-click": "xdg-open https://www.crunchyroll.com/",
+       	"on-left-click": "firefox --new-window 'https://www.crunchyroll.com/'",
     	"tooltip": false 
     },
 	"custom/newtab": {

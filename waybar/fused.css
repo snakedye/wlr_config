@@ -67,7 +67,7 @@ window#waybar.solo {
 #window {
 	padding: 15px;
     background-color: #4c566a;
-	padding: 10 10 10 12;
+	padding: 10 6 10 12;
     margin: 0;
     border-radius: 0 5 5 0;
 	/* margin-right: 15px; */
@@ -120,7 +120,7 @@ window#waybar.solo {
 #idle_inhibitor,
 #custom-weather,
 #disk,
-/* #taskbar */
+/* #taskbar *4 8 0 4
 #taskbar button
 #taskbar button.active
 #taskbar button.minimized
@@ -204,7 +204,7 @@ window#waybar.solo {
 #custom-mail {
 	background-color: #4c566a;
 	font-size: 18px;
-	padding: 0 2 0 12;
+	padding: 0 6 0 12;
 /* 	border-radius: 0 5 5 0; */
     margin-left: 0;
 	margin-right: 0;

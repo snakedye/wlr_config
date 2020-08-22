@@ -20,7 +20,6 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 # exec --no-startup-id i3-msg 'workspace 4; exec lutris; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec dolphin; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
-# exec --no-startup-id i3-msg 'workspace 5; exec signal-desktop; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 6; exec termite -e "bashtop"; workspace 1'
 
 # Floating windows
@@ -81,7 +80,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
-assign [app_id="signal-desktop"] 5
+assign [app_id="gnome-boxes"] 5
 assign [title="Wine System Tray"] 7
 assign [title="youtube.com"] 6
 assign [title="reddit.com"] 6
