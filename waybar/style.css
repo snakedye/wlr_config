@@ -2,22 +2,24 @@
 	margin: -2 0 -2 0;
     border: none;
     border-radius: 0;
-    padding: 5 1 5 1;
+    padding: 5 3 5 3;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif;
     /* font-size: 13px; */
 }
+/*  */
+/* :root { */
+	/* --polar-1: #2e3440; */
+	/* --polar-2: #3b4252; */
+	/* --polar-3: #434c5e; */
+	/* --polar-4: #4c566a; */
+/* } */
+
 window#waybar {
-    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     background-color: #2e3440;
-    /* background-color: rgba(56,60,74, 1); */
     color: #ffffff;
-    /* border-radius: 5px; */
-    /* border:  2px solid #4b5162; */
-    /* border-bottom: 3 solid transparent; */
     transition-property: background-color;
     transition-duration: .5s;
-    /* box-shadow: 0px 0px 10 1 #4b5162 inset; */
 }transition
 
 window#waybar.hidden {
@@ -45,29 +47,22 @@ window#waybar.solo {
 #workspaces {
     background-color: #4b5162;
     border-radius: 5px;
-    margin: 0px;
+    margin: 0 0 0 10;
 /*     padding-left: 5; */
 }
 
 #workspaces button {
 	font-size: 14px;
-	padding: 10 8 10 8;
-/* 	margin-right: 8px; */
 	border-radius: 5px;
-/*     margin-left: 10; */
     margin-right: 8px;
-/*    margin-left: 0px;
-    margin-top: 0;
-    margin-bottom: 0;*/
     background-color: #4b5162;
     color: #ffffff;
-    /* border: 1px solid #404552; */
 }
 
 #window {
 	padding: 15px;
     background-color: #4c566a;
-	padding: 10 10 10 12;
+	padding: 0 10 0 12;
     margin: 0;
     border-radius: 0 5 5 0;
 	/* margin-right: 15px; */
@@ -137,11 +132,12 @@ window#waybar.solo {
 #taskbar {
     background-color:#4b5162;
 	margin: 0;
+	padding: 0;
 }
 
 #taskbar button {
 	padding: 0 10 0 10;
-	margin: -5 0 -5 0;
+	margin: 0;
 	/* margin: 0; */
 	/* border-radius: 5px; */
     /* background-color: #404552; */
@@ -167,38 +163,33 @@ window#waybar.solo {
 	background-color: #4c566a;
 	font-size: 18px;
 	padding: 0 12 0 20;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 }
 
 #custom-github {
 	background-color: #4c566a;
 	padding: 0 12 0 12;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 }
 
 #custom-reddit {
 	background-color: #4c566a;
 /* 	font-size: 18px; */
 	padding: 0 12 0 12;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 }
 
 #custom-crunchyroll {
 	background-color: #4c566a;
 /* 	font-size: 16px; */
 	padding: 0 12 0 12;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 }
 
 #custom-youtube {
 	background-color: #4c566a;
 	padding: 0 12 0 12;
-	margin-left: 0;
-	margin-right: 0;
+	margin:0;
 }
 
 #custom-mail {
@@ -206,8 +197,7 @@ window#waybar.solo {
 	font-size: 18px;
 	padding: 0 2 0 12;
 /* 	border-radius: 0 5 5 0; */
-    margin-left: 0;
-	margin-right: 0;
+    margin: 0;
 
 }
 
@@ -215,18 +205,17 @@ window#waybar.solo {
 
 #custom-exit {
 	background-color: #4b5162;
-	padding: 3px 8px 3px 8px;
+	padding: 0px 8px 0px 8px;
 	border-radius: 5;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 }
 
 #custom-suspend {
 	background-color: #4b5162;
 	font-size: 20px;
-	padding: 3px 10px 3px 10px;
+	padding: 0px 10px 0px 10px;
 	border-radius: 0 5 5 0;
-	margin-left: 0;
+	margin: 0;
 }
 
 #custom-suspend:hover {
@@ -238,30 +227,27 @@ window#waybar.solo {
     background-color: #434c5e;
 	padding: 0px 10px 0px 10px;
     border-radius: 5 0 0 5;
-	margin-right: 0;
+	margin: 0;
 }
 
 #custom-pacman {
 	background-color: #189fbd;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
 }
 
 #clock {
     background-color: #4b5162;
-	padding: 3px 8px 3px 8px;
+	padding: 0px 8px 0px 8px;
     /* font-size: 16px; */
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 }
 
 #battery {
     background-color: #CDCDCD;
-	padding: 3px 8px 3px 8px;
+	padding: 0px 8px 0px 8px;
 	border-radius: 5px;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 }
 
 #battery.charging {
@@ -291,30 +277,27 @@ label:focus {
 
 #cpu {
     background-color: #714656;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
 }
 
 #memory {
     background-color: #5294e2;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
 }
 
 #backlight {
     background-color: #4b5162;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
 }
 
 #network {
     background-color: #7c818c;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	
 }
 
 #network.disconnected {
@@ -323,16 +306,15 @@ label:focus {
 
 #pulseaudio {
     background-color: #5076a7;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	
 }
 
 #custom-weather {
     background-color: #A37378;
-	padding: 4 8 0 4;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0 8 0 4;
+	margin: 0;
 }
 
 #pulseaudio.muted {
@@ -342,27 +324,27 @@ label:focus {
 
 #custom-media {
     background-color: #66cc99;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	
 }
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
-	padding: 3px 8px 3px 8px;
+	padding: 0px 8px 0px 8px;
 }
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
-	padding: 3px 8px 3px 8px;
+	padding: 0px 8px 0px 8px;
 	border-radius: 5px;    
 }
 
 
 #temperature {
     background-color: #b48ead;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
+	
 }
 
 #temperature.critical {
@@ -371,25 +353,25 @@ label:focus {
 
 #tray {
     background-color: #4c566a;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	
 }
 
 #disk {
     background-color: #9a3f45;
-	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	
 }
 
 #idle_inhibitor {
     background-color: #A37378;
-	padding: 3px 10px 3px 10px;
+	padding: 0px 10px 0px 10px;
 	border-radius: 5 0 0 5;
 	font-size: 20px;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
+	
 }
 
 #idle_inhibitor.activated {
@@ -400,8 +382,8 @@ label:focus {
 #mpd {
     background-color: #66cc99;
 	padding: 3px 8px 3px 8px;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
+	
 }
 
 

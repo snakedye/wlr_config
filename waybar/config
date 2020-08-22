@@ -153,7 +153,7 @@
       "format": " ~ {}",
       "exec" : "hostname -s",
       //"return-type": "json",
-      "on-click": "wofi --dmenu --width=15% -L=10 --yoffset=5% --xoffset=5% --show drun -I --",
+      "on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSansMedium 10' -show combi -icon-theme 'Papirus' -show-icons",
       "tooltip": false
     },
     "custom/weather": {
