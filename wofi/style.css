@@ -1,13 +1,23 @@
+#entry:selected {
+background-color: rgba(0,0,0,0);
+}
+ 
+#text:selected {
+color: #5e81ac;
+}
+ 
 window {
 margin: 5px;
-border-radius: 8px;
-background-color: #4b5162;
+background-color: #2e3440;
+border: 2px solid #5e81ac;
 }
 
 #input {
-font-size: 15px;
-margin: 5px;
+/* margin: 5px; */
+margin: 15;
 background-color: none;
+border: 2px solid #5e81ac;
+border-radius: 0;
 }
 
 #inner-box {
@@ -17,7 +27,7 @@ background-color: none;
 }
 
 #outer-box {
-margin: 5px;
+margin: 15px;
 background-color: none;
 }
 
@@ -30,4 +40,5 @@ background-color: none;
 #text {
 margin: 5px;
 background-color: none;
+font-familly: Product Sans Medium;
 } 
