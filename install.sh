@@ -12,7 +12,7 @@ NO="n"
 
 echo ""
 
-for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi'
+for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi' 'mako' 'micro'
 do
 	echo -e "Do you want to copy ${config}?"
 	select ans in y n; do

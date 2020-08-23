@@ -1,0 +1,15 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Alt-a": "lua:snippets.Accept",
+    "Alt-d": "lua:snippets.Cancel",
+    "Alt-s": "lua:snippets.Insert",
+    "Alt-w": "lua:snippets.Next",
+    "CtrlUnderscore": "lua:comment.comment",
+    "F5": "lua:wc.wordCount",
+    "Esc": "Quit",
+    "Ctrl-left": "DeleteWordLeft",
+    "Ctrl-right": "DeleteWordRight",
+    "Ctrl-m": "FindNext",
+    "Alt-c": "ShellMode",
+    "CtrlSpace": "command:tree ~/",
+}

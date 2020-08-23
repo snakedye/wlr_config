@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "quoter",
+    "Description": "plugin to add quotes or brackets around a text selection.",
+    "Tags": [
+      "quote", "autosurround"
+    ],
+    "Versions": [
+      {
+        "Version": "1.0.1",
+        "Url": "https://github.com/deusnefum/micro-quoter/archive/v1.0.1.zip",
+        "Require": {
+          "micro": ">=2.0.0"
+        }
+      }
+    ]
+  }
+]

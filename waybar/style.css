@@ -361,10 +361,9 @@ label:focus {
 }
 
 #disk {
-    background-color: #9a3f45;
+    background-color: #A37378;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	
 }
 
 #idle_inhibitor {
