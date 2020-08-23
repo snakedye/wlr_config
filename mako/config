@@ -1,12 +1,12 @@
-font=ProductSansMedium 10
+font=SanFranciscoText 10
 
-background-color=#2e3440
-text-color=#ffffff
+background-color=#eceff4
+text-color=#5e81ac
 padding=10
 margin=3
 
 border-size=2
-border-radius=10
+border-radius=5
 border-color=#5e81ac
 
 default-timeout=5000

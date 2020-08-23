@@ -12,6 +12,8 @@ exec kdeconnect-indicator
 # exec --no-startup-id nm-applet
 # exec razerd
 exec mako
+exec oguri
+exec dwall -s anime &
 exec /usr/lib/polkit-kde-authentication-agent-1
 # exec kdeinit5
 
@@ -60,7 +62,7 @@ set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config
 default_border pixel 2
 # Set inner/feher gaps
 gaps inner 5
-gaps outer 5
+gaps outer 3
 
 # Default orientation
 
@@ -71,7 +73,7 @@ font pango:ProductSansMedium 13px
 # Window decoration
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #5294e2 #4985CB #ffffff #7c818c   #5294e2
+client.focused          #5e81ac #4985CB #ffffff #7c818c   #5e81ac
 client.focused_inactive #4B5162 #383c4a #ffffff #7c818c   #383c4a
 client.unfocused        #4B5162 #383c4a #888888 #7c818c   #383c4a
 client.urgent           #7c818c #900000 #ffffff #900000   #900000
@@ -97,7 +99,8 @@ assign [title="crunchyroll.com"] 6
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg ~/wallpapers/skull-no-watermark.jpg fill
+# output "*" bg ~/wallpapers/skull-no-watermark.jpg fill
+swaybg_command -
 #
 # Example configuration:
 #
