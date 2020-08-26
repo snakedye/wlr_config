@@ -16,7 +16,7 @@
 /* } */
 
 window#waybar {
-    background-color: rgba(67,76,94, 0.8);
+    background-color: rgba(47,52,65, 0.7);
     /* background-color: transparent; */
     color: #ffffff;
     transition-property: background-color;
@@ -115,13 +115,13 @@ window#waybar.solo {
 #tray,
 #mode,
 idle_inhibitor,
-#custom-weather,
+##7b9b96,
 #disk,
 /* #taskbar */
 #taskbar button
 #taskbar button.active
 #taskbar button.minimized
-#taskbar button.maximized
+#taskbar #7b9b96d
 #taskbar button.fullscreen
 #mpd {
     padding: 0 10px;
@@ -285,10 +285,10 @@ label:focus {
 }
 
 #cpu {
-    background-color: #714656;
+    background-color:  #698A86;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #5A3844;
+	border-bottom: 2px solid #546e6b;
 }
 
 #memory {
@@ -305,10 +305,10 @@ label:focus {
 }
 
 #network {
-    background-color: #9B9FA7;
+    background-color: #BDA57E;
 	padding: 0px 8px 0px 8px;
 	margin: 0;	
-	border-bottom: 2px solid #7C7F85;
+	border-bottom: 2px solid #978464;
 }
 
 #network.disconnected {
@@ -323,10 +323,10 @@ label:focus {
 }
 
 #custom-weather {
-    background-color: #A37378;
-	padding: 3 8 0 4;
+    background-color: #7b9b96;
+	padding: 0 8 0 4;
 	margin: 0;
-	border-bottom: 2px solid #4b5162
+	border-bottom: 2px solid #708c86;
 }
 
 #pulseaudio.muted {
@@ -371,23 +371,23 @@ label:focus {
 }
 
 #disk {
-    background-color: #A37378;
+    background-color:   #75ACB6;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #825C60;
+	border-bottom: 2px solid #5d8991;
 }
 
 #idle_inhibitor {
-    background-color: #A37378;
+    background-color: #7b9b96;
 	padding: 0px 10px 0px 10px;
 	border-radius: 5 0 0 5;
 	font-size: 20px;
 	margin: 0;
-	border-bottom: 2px solid #825C60;
+	border-bottom: 2px solid #708c86;
 }
 
 #idle_inhibitor.activated {
-    background-color: #cdcdcd;
+    background-color: #d8dee9;
     color: #2d3436;
 }
 

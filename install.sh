@@ -5,10 +5,6 @@ set -euo pipefail
 CONFIG=~/.config/
 YES="y"
 NO="n"
-# Copy config files to .config folder
-# DIRECTORIES=('sway', 'waybar', 'wofi', 'termite')
-
-# echo "Directories will be added to ~/.config"
 
 echo ""
 

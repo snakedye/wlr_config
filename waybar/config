@@ -8,7 +8,7 @@
     "modules-left": ["custom/name","clock","wlr/taskbar", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll", "custom/mail","sway/window", ],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": ["idle_inhibitor","disk", "pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
+    "modules-right": ["idle_inhibitor","custom/weather", "disk", "pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -20,16 +20,16 @@
          	"3": [],
             "4": [],
             "5": [],
-            "6": [],
-           //  "7": []
+           // "6": [],
+           // "7": []
          },
          "format-icons": {
              "1": "",
              "2": "",
              "3": "",
              "4": "",
-             "5": "",
-             "6": "",
+             "5": "",
+             "6": "",
              // "7": "",
              "focused": "",
              "urgent": "",
@@ -157,7 +157,7 @@
       "tooltip": false
     },
     "custom/weather": {
-        "exec": "~/.config/waybar/weather.sh",
+        "exec": "curl 'https://wttr.in/?format=1'",
         "interval": 3600
     },
 	"custom/pacman": {
@@ -171,7 +171,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": "{percentage_free}%",
+        "format": "{percentage_free}% left in HDD",
         "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
       	"tooltip": false
     },
@@ -185,7 +185,7 @@
     },
     "custom/suspend": {
     	"format": "",
-    	"on-click": "systemctl suspend; swaylock --clock --indicator -i ~/wallpapers/skull-no-watermark.jpg --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr '%a %e %m %Y' --timestr '%k:%M' --indicator --indicator-radius 100 --ring-color 4b5162 --ring-ver-color 5294e2 --ring-clear-color 5294e2 --ring-wrong-color 7c818c --separator-color 5294e2 --key-hl-color 5294e2 --bs-hl-color 383c4a --font ProductSansMedium --text-color 7c818c -n -r",
+    	"on-click": "systemctl suspend; swaylock --clock --indicator -i ~/wallpapers/guitar.jpg --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr '%a %e %m %Y' --timestr '%k:%M' --indicator --indicator-radius 100 --ring-color 4b5162 --ring-ver-color 5e81ac --ring-clear-color 5e81ac --ring-wrong-color 7c818c --separator-color 5e81ac --key-hl-color 5e81ac --bs-hl-color 383c4a --font SanFranciscoText --text-color 7c818c -r",
     	"tooltip": false 
     },
     "custom/github": {
@@ -207,7 +207,7 @@
     },
     "custom/mail": {
        	"format": "",
-        "on-click": "firefox --ssb https://mail.google.com/",
+        "on-click": "thunderbird",
     	"tooltip": false 
     },
 	"custom/crunchyroll": {

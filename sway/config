@@ -16,13 +16,14 @@ exec oguri
 exec dwall -s anime &
 exec /usr/lib/polkit-kde-authentication-agent-1
 # exec kdeinit5
+# exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Applications
 
 # exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace 4; exec lutris; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec dolphin; workspace 1'
-# exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
+exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 6; exec termite -e "bashtop"; workspace 1'
 
 # Floating windows
@@ -38,7 +39,7 @@ for_window [title="Wine"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
-for_window [workspace="6"] layout tabbed 
+for_window [workspace="5"] layout tabbed 
 
 ### Variables
 #
@@ -59,7 +60,7 @@ set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config
 
 # Disable titlebar
 
-default_border pixel 2
+default_border pixel 3
 # Set inner/feher gaps
 gaps inner 5
 gaps outer 3
@@ -73,7 +74,7 @@ font pango:ProductSansMedium 13px
 # Window decoration
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #5e81ac #4985CB #ffffff #7c818c   #5e81ac
+client.focused          #5e81ac #5e81ac #ffffff #7c818c   #5e81ac
 client.focused_inactive #4B5162 #383c4a #ffffff #7c818c   #383c4a
 client.unfocused        #4B5162 #383c4a #888888 #7c818c   #383c4a
 client.urgent           #7c818c #900000 #ffffff #900000   #900000
@@ -86,10 +87,10 @@ assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
 assign [app_id="gnome-boxes"] 5
 assign [title="Wine System Tray"] 7
-assign [title="youtube.com"] 6
-assign [title="reddit.com"] 6
-assign [title="mail.google.com"] 6
-assign [title="crunchyroll.com"] 6
+# assign [title="youtube.com"] 6
+# assign [title="reddit.com"] 6
+# assign [app_id="thunderbird"] 6
+# assign [title="crunchyroll.com"] 6
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -306,7 +307,9 @@ include /etc/sway/config.d/*
 
 # Special keys
 
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
