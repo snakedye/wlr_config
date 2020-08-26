@@ -1,0 +1,412 @@
+	* {
+	margin: -2 0 -2 0;
+    border: none;
+    border-radius: 0;
+    padding: 5 3 5 3;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif;
+    /* font-size: 13px; */
+}
+/*  */
+/* :root { */
+	/* --polar-1: #2e3440; */
+	/* --polar-2: #3b4252; */
+	/* --polar-3: #434c5e; */
+	/* --polar-4: #4c566a; */
+/* } */
+
+window#waybar {
+    background-color: rgba(47,52,65, 0.7);
+    /* background-color: transparent; */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}transition
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+/* window#waybar.termite { */
+    /* background-color: #3F3F3F; */
+/* } */
+/*  */
+/* window#waybar.chromium { */
+    /* background-color: #000000; */
+    /* border: none; */
+/* } */
+
+#workspaces {
+    background-color: #4c566a;
+    border-radius: 5px;
+    margin: 0 0 0 10;
+/*     padding-left: 5; */
+	border-bottom: 2px solid #4b5162;
+}
+
+#workspaces button {
+	font-size: 14px;
+	border-radius: 5px;
+	padding: 0 5 0 5;
+    margin-right: 8px;
+    background-color: #4c566a;
+    color: #ffffff;
+}
+
+#window {
+	padding: 15px;
+    background-color: #4c566a;
+	padding: 0 10 0 12;
+    margin: 0;
+    border-radius: 0 5 5 0;
+	border-bottom: 2px solid #4b5162
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+   /*  border-bottom: 3px solid #ffffff; */
+}
+
+#workspaces button.focused {
+    background-color: #5e81ac;
+    /* border: 1px solid  #ffffff; */
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+/* #workspaces, */
+#workspaces button,
+#custom-suspend,
+#custom-exit,
+#custom-pacman,
+#custom-name,
+#custom-github,
+#custom-reddit,
+#custom-youtube,
+#custom-crunchyroll,
+#custom-mail,
+#custom-newtab,
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network, #9B9FA7,
+#custom-media,
+#tray,
+#mode,
+idle_inhibitor,
+##7b9b96,
+#disk,
+/* #taskbar */
+#taskbar button
+#taskbar button.active
+#taskbar button.minimized
+#taskbar #7b9b96d
+#taskbar button.fullscreen
+#mpd {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #ffffff;
+    /* background-color: #253442; */
+}
+
+/* Taskbar */
+
+#taskbar {
+    background-color:#4b5162;
+	margin: 0;
+	padding: 0;
+}
+
+#taskbar button {
+	padding: 0 10 0 10;
+	margin: 0;
+	/* margin: 0; */
+	/* border-radius: 5px; */
+    /* background-color: #404552; */
+}
+
+#taskbar button.active {
+    background-color:  #5e81ac;
+}
+
+#taskbar button.minimized {
+    background-color: #7c818c;
+}
+
+#taskbar button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+}
+
+/* BROWSER BOOKMARKS */
+
+#custom-newtab {
+	background-color: #4c566a;
+	font-size: 18px;
+	padding: 0 12 0 20;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-github {
+	background-color: #4c566a;
+	padding: 0 12 0 12;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-reddit {
+	background-color: #4c566a;
+/* 	font-size: 18px; */
+	padding: 0 12 0 12;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-crunchyroll {
+	background-color: #4c566a;
+/* 	font-size: 16px; */
+	padding: 0 12 0 12;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-youtube {
+	background-color: #4c566a;
+	padding: 0 12 0 12;
+	margin:0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-mail {
+	background-color: #4c566a;
+	font-size: 18px;
+	padding: 0 2 0 12;
+    margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+/* WIDGETS */
+
+#custom-exit {
+	background-color: #4b5162;
+	padding: 0px 8px 0px 8px;
+	border-radius: 5;
+	margin: 0;
+}
+
+#custom-suspend {
+	background-color: #4b5162;
+	font-size: 20px;
+	padding: 0px 10px 0px 10px;
+	border-radius: 0 5 5 0;
+	margin: 0;
+}
+
+#custom-suspend:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+
+#custom-name {
+    background-color: #434c5e;
+	padding: 0px 10px 0px 10px;
+    border-radius: 5 0 0 5;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-pacman {
+	background-color: #5e81ac;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #4b6789;
+}
+
+#clock {
+    background-color: #4b5162;
+	padding: 0px 8px 0px 8px;
+    /* font-size: 16px; */
+	margin: 0;
+	border-bottom: 2px solid #4b5162
+}
+
+#battery {
+    background-color: #CDCDCD;
+	padding: 0px 8px 0px 8px;
+	border-radius: 5px;
+	margin: 0;
+}
+
+#battery.charging {
+    color: #ffffff;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color:  #698A86;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #546e6b;
+}
+
+#memory {
+    background-color: #5294e2;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #4176B4;
+}
+
+#backlight {
+    background-color: #4b5162;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+}
+
+#network {
+    background-color: #BDA57E;
+	padding: 0px 8px 0px 8px;
+	margin: 0;	
+	border-bottom: 2px solid #978464;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio {
+    background-color: #5076a7;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #405E85;	
+}
+
+#custom-weather {
+    background-color: #7b9b96;
+	padding: 0 8 0 4;
+	margin: 0;
+	border-bottom: 2px solid #708c86;
+}
+
+#pulseaudio.muted {
+    background-color: #b1b190;
+    color: #2a5c45;
+}
+
+#custom-media {
+    background-color: #66cc99;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+	padding: 0px 8px 0px 8px;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+	padding: 0px 8px 0px 8px;
+	border-radius: 5px;    
+}
+
+
+#temperature {
+    background-color: #b48ead;
+	margin: 0;
+	
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: #4c566a;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#disk {
+    background-color:   #75ACB6;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #5d8991;
+}
+
+#idle_inhibitor {
+    background-color: #7b9b96;
+	padding: 0px 10px 0px 10px;
+	border-radius: 5 0 0 5;
+	font-size: 20px;
+	margin: 0;
+	border-bottom: 2px solid #708c86;
+}
+
+#idle_inhibitor.activated {
+    background-color: #d8dee9;
+    color: #2d3436;
+}
+
+#mpd {
+    background-color: #66cc99;
+	padding: 3px 8px 3px 8px;
+	margin: 0;
+	
+}
+
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}

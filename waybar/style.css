@@ -110,12 +110,11 @@ window#waybar.solo {
 #memory,
 #temperature,
 #backlight,
-#network, #9B9FA7,
+#network,
 #custom-media,
 #tray,
 #mode,
-idle_inhibitor,
-##7b9b96,
+#idle_inhibitor,
 #disk,
 /* #taskbar */
 #taskbar button
@@ -292,10 +291,10 @@ label:focus {
 }
 
 #memory {
-    background-color: #5294e2;
+    background-color:  #8FB3B4;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #4176B4;
+	border-bottom: 2px solid #728f90;
 }
 
 #backlight {
@@ -305,10 +304,10 @@ label:focus {
 }
 
 #network {
-    background-color: #BDA57E;
+    background-color: #81a1c1;
 	padding: 0px 8px 0px 8px;
 	margin: 0;	
-	border-bottom: 2px solid #978464;
+	border-bottom: 2px solid #67809a;
 }
 
 #network.disconnected {
@@ -316,10 +315,10 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #5076a7;
+    background-color:  #D3B67D;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #405E85;	
+	border-bottom: 2px solid #91874e;	
 }
 
 #custom-weather {
@@ -371,10 +370,10 @@ label:focus {
 }
 
 #disk {
-    background-color:   #75ACB6;
+    background-color: #AA8A7A;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #5d8991;
+	border-bottom: 2px solid  #886e61;
 }
 
 #idle_inhibitor {

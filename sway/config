@@ -12,11 +12,13 @@ exec kdeconnect-indicator
 # exec --no-startup-id nm-applet
 # exec razerd
 exec mako
-exec oguri
-exec dwall -s anime &
 exec /usr/lib/polkit-kde-authentication-agent-1
 # exec kdeinit5
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+
+# Dynamic Wallpaper
+exec oguri
+exec dwall -s anime &
 
 # Applications
 
@@ -100,7 +102,7 @@ assign [title="Wine System Tray"] 7
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output "*" bg ~/wallpapers/skull-no-watermark.jpg fill
+# output "*" bg ~/wallpapers/hitomi.png fill
 swaybg_command -
 #
 # Example configuration:
@@ -266,9 +268,11 @@ bindsym $mod+f1 exec $lockman
 
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
-
+    bindsym alt+space move scratchpad
+	
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym alt+tab scratchpad show
     bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
@@ -278,16 +282,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym alt+$left resize shrink width 10px
+    bindsym alt+$down resize grow height 10px
+    bindsym alt+$up resize shrink height 10px
+    bindsym alt+$right resize grow width 10px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym alt+Left resize shrink width 10px
+    bindsym alt+Down resize grow height 10px
+    bindsym alt+Up resize shrink height 10px
+    bindsym alt+Right resize grow width 10px
 
     # Return to default mode
     bindsym Return mode "default"
