@@ -11,11 +11,11 @@ echo ""
 for config in 'sway' 'wallapers' 'waybar' 'wofi' 'termite' 'rofi' 'mako' 'micro' 
 do
 	echo -e "Do you want to copy ${config}?"
-	select ans in y n; do
+	select ans in yes no; do
 		if [ "$ans" == "$YES" ]; then
-			if [ "$config" == "wallpapers"]; then
+			if [ "$config" == "wallpapers" ]; then
 				echo "Copying ${config} to Home"
-				# cp -r ./$config ~/
+				cp -r ./$config ~/
 				echo "Done"
 				echo ""
 				break

@@ -7,3 +7,4 @@ term=termite
 allow_markup=true
 always_parse_args=true
 layer=overlay
+allow-images

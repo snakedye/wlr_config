@@ -117,6 +117,10 @@ window#waybar.solo {
 #idle_inhibitor,
 #disk,
 /* #taskbar */
+#custom-waybar-media
+#custom-waybar-media.playing
+#custom-waybar-media.paused
+#custom-waybar-media.stopped
 #taskbar button
 #taskbar button.active
 #taskbar button.minimized
@@ -126,10 +130,38 @@ window#waybar.solo {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
-    /* background-color: #253442; */
 }
 
-/* Taskbar */
+/* WAYBAR-MEDIA */
+
+#custom-waybar-media {
+	background-color: #434c5e;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-waybar-media.playing {
+	background-color: #5e81ac;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-waybar-media.paused {
+	background-color: #81a1c1;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+
+#custom-waybar-media.stopped {
+	background-color: #4c566a;
+	padding: 0px 8px 0px 8px;
+	margin: 0;
+	border-bottom: 2px solid #4b5162;
+}
+/* TASKBAR */
 
 #taskbar {
     background-color:#4b5162;
@@ -140,9 +172,6 @@ window#waybar.solo {
 #taskbar button {
 	padding: 0 10 0 10;
 	margin: 0;
-	/* margin: 0; */
-	/* border-radius: 5px; */
-    /* background-color: #404552; */
 }
 
 #taskbar button.active {
@@ -177,7 +206,6 @@ window#waybar.solo {
 
 #custom-reddit {
 	background-color: #4c566a;
-/* 	font-size: 18px; */
 	padding: 0 12 0 12;
 	margin: 0;
 	border-bottom: 2px solid #4b5162;
@@ -185,9 +213,8 @@ window#waybar.solo {
 
 #custom-crunchyroll {
 	background-color: #4c566a;
-/* 	font-size: 16px; */
-	padding: 0 12 0 12;
-	margin: 0;
+	padding: 0 2 0 12;
+    margin: 0;
 	border-bottom: 2px solid #4b5162;
 }
 
@@ -246,7 +273,6 @@ window#waybar.solo {
 #clock {
     background-color: #4b5162;
 	padding: 0px 8px 0px 8px;
-    /* font-size: 16px; */
 	margin: 0;
 	border-bottom: 2px solid #4b5162
 }
@@ -316,14 +342,14 @@ label:focus {
 
 #pulseaudio {
     background-color:  #D3B67D;
-	padding: 0px 8px 0px 8px;
+	padding: 0px 10px 0px 10px;
 	margin: 0;
 	border-bottom: 2px solid #91874e;	
 }
 
 #custom-weather {
     background-color: #7b9b96;
-	padding: 0 8 0 4;
+	padding: 0 8 0 8;
 	margin: 0;
 	border-bottom: 2px solid #708c86;
 }
@@ -378,7 +404,7 @@ label:focus {
 
 #idle_inhibitor {
     background-color: #7b9b96;
-	padding: 0px 10px 0px 10px;
+	padding: 0px 12px 0px 12px;
 	border-radius: 5 0 0 5;
 	font-size: 20px;
 	margin: 0;

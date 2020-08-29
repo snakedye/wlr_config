@@ -36,6 +36,7 @@ for_window [app_id="Plasma"] floating enable; border none
 # for_window [app_id="krunner"] floating enable; border none
 for_window [app_id="plasmashell" window_type="notification"] floating enable 
 no_focus [app_id="plasmashell" window_type="notification"] floating enable
+for_window [title="nmtui"] floating enable
 for_window [title="Wine"] floating enable
 # for_window [title="Epic"] floating enable
 for_window [title="Copying"] floating enable
@@ -59,6 +60,9 @@ set $term termite
 # on the original workspace that the command was run on.
 # set $menu rofi -combi-modi window,drun,ssh -theme slate -font 'hack 10' -show combi -icon-theme 'Papirus' -show-icons
 set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config
+
+# Window switcher
+bindsym $mod+d exec ~/.config/wofi/windows.py
 
 # Disable titlebar
 
@@ -116,7 +120,7 @@ swaybg_command -
 # Example configuration:
 #
 
-set $lock exec bash ~/.config/sway/lockman.sh
+set $lock exec bash swaylock -C ~/.config/swaylock/config
 exec swayidle -w \
     timeout 300 $lock \
     timeout 600 'swaymsg "output * dpms off"' \
@@ -127,9 +131,7 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-set $lockman exec bash ~/.config/sway/lockman.sh
-
-bindsym $mod+f1 exec $lockman
+bindsym $mod+f1 exec bash ~/.config/sway/lockman.sh
 
 # Sleep
 
@@ -249,7 +251,7 @@ bindsym $mod+f1 exec $lockman
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym ctrl+Space floating toggle
+    bindsym alt+Space floating toggle
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+Alt+space focus mode_toggle
@@ -259,7 +261,7 @@ bindsym $mod+f1 exec $lockman
 
     # Back and Forth
 
-	bindsym $mod+d workspace back_and_forth
+	# bindsym $mod+d workspace back_and_forth
 #
 # Scratchpad:
 #
@@ -268,7 +270,6 @@ bindsym $mod+f1 exec $lockman
 
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
-    bindsym alt+space move scratchpad
 	
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
@@ -277,27 +278,29 @@ bindsym $mod+f1 exec $lockman
 #
 # Resizing containers:
 #
-mode "resize" {
+    bindsym $mod+alt+$left resize shrink width 10px
+    bindsym $mod+alt+$down resize grow height 10px
+    bindsym $mod+alt+$up resize shrink height 10px
+    bindsym $mod+alt+$right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym $mod+alt+Left resize shrink width 10px
+    bindsym $mod+alt+Down resize grow height 10px
+    bindsym $mod+alt+Up resize shrink height 10px
+    bindsym $mod+alt+Right resize grow width 10px
+
+    # Return to default mode
+    # bindsym Return mode "default"
+    # bindsym Escape mode "default"
+
+# mode resize {
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym alt+$left resize shrink width 10px
-    bindsym alt+$down resize grow height 10px
-    bindsym alt+$up resize shrink height 10px
-    bindsym alt+$right resize grow width 10px
+# }
 
-    # Ditto, with arrow keys
-    bindsym alt+Left resize shrink width 10px
-    bindsym alt+Down resize grow height 10px
-    bindsym alt+Up resize shrink height 10px
-    bindsym alt+Right resize grow width 10px
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
+# bindsym $mod+r mode "resize"
 
 #
 # Status Bar:

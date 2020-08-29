@@ -8,7 +8,8 @@
 	<li>kdeconnect</li>
 	<li>wofi</li>
 	<li>brightnessctl</li>
-  <li>swaylock-effects</li>
+	<li>swaylock-effects</li>
+	<li>oguri</li>
 	<li>material icons</li>
 	<li>product sans or google sans</li>
 </ul>
