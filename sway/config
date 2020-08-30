@@ -22,11 +22,11 @@ exec dwall -s anime &
 
 # Applications
 
-# exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace 4; exec lutris; workspace 1'
-# exec --no-startup-id i3-msg 'workspace 3; exec dolphin; workspace 1'
+exec --no-startup-id i3-msg 'workspace 3; exec termite -e ranger; workspace 1'
 exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
-# exec --no-startup-id i3-msg 'workspace 6; exec termite -e "bashtop"; workspace 1'
+exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
 
 # Floating windows
 # for_window [app_id="ulauncher"] floating enable; border none
@@ -43,7 +43,7 @@ for_window [title="Wine"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
-for_window [workspace="5"] layout tabbed 
+# for_window [workspace="5"] layout tabbed
 
 ### Variables
 #

@@ -4,13 +4,16 @@
 
 set -euo pipefail
 
-for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi' 'nwg-launchers' 'mako'
+for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi' 'nwg-launchers' 'mako' 'micro'
 do
-	cp -r ~/.config/$config ./
+	if [ "$config" == "micro" ]; then
+		cp -r ~/.config/$config/bindings.json ./micro/
+		cp -r ~/.config/$config/settings.json ./micro/
+	else
+		cp -r ~/.config/$config ./
+	fi
 done
 
 cp -r ~/wallpapers ./
 
-echo ""
-
-echo "Directory updated!"
+echo "\n Directory updated!"
