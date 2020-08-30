@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi' 'mako'
+for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi' 'nwg-launchers' 'mako'
 do
 	cp -r ~/.config/$config ./
 done

@@ -10,6 +10,7 @@
 	<li>brightnessctl</li>
 	<li>swaylock-effects</li>
 	<li>oguri</li>
+	<li><a href="https://github.com/adi1090x/dynamic-wallpaper">dynamic wallpapers</a></li>
 	<li>material icons</li>
 	<li>product sans or google sans</li>
 </ul>

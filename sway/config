@@ -36,6 +36,7 @@ for_window [app_id="Plasma"] floating enable; border none
 # for_window [app_id="krunner"] floating enable; border none
 for_window [app_id="plasmashell" window_type="notification"] floating enable 
 no_focus [app_id="plasmashell" window_type="notification"] floating enable
+for_window [title="~nwg"] border none 
 for_window [title="nmtui"] floating enable
 for_window [title="Wine"] floating enable
 # for_window [title="Epic"] floating enable
@@ -176,7 +177,8 @@ bindsym $mod+f1 exec bash ~/.config/sway/lockman.sh
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec nwgbar -o 0.2
 #
 # Moving around:
 #
@@ -279,14 +281,14 @@ bindsym $mod+f1 exec bash ~/.config/sway/lockman.sh
 # Resizing containers:
 #
     bindsym $mod+alt+$left resize shrink width 10px
-    bindsym $mod+alt+$down resize grow height 10px
-    bindsym $mod+alt+$up resize shrink height 10px
+    bindsym $mod+alt+$up resize grow height 10px
+    bindsym $mod+alt+$down resize shrink height 10px
     bindsym $mod+alt+$right resize grow width 10px
 
     # Ditto, with arrow keys
     bindsym $mod+alt+Left resize shrink width 10px
-    bindsym $mod+alt+Down resize grow height 10px
-    bindsym $mod+alt+Up resize shrink height 10px
+    bindsym $mod+alt+Up resize grow height 10px
+    bindsym $mod+alt+Down resize shrink height 10px
     bindsym $mod+alt+Right resize grow width 10px
 
     # Return to default mode

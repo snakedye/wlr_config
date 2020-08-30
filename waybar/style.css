@@ -7,13 +7,6 @@
     font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif;
     /* font-size: 13px; */
 }
-/*  */
-/* :root { */
-	/* --polar-1: #2e3440; */
-	/* --polar-2: #3b4252; */
-	/* --polar-3: #434c5e; */
-	/* --polar-4: #4c566a; */
-/* } */
 
 window#waybar {
     background-color: rgba(47,52,65, 0.7);
@@ -26,24 +19,6 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-/* window#waybar.termite { */
-    /* background-color: #3F3F3F; */
-/* } */
-/*  */
-/* window#waybar.chromium { */
-    /* background-color: #000000; */
-    /* border: none; */
-/* } */
 
 #workspaces {
     background-color: #4c566a;
@@ -121,10 +96,11 @@ window#waybar.solo {
 #custom-waybar-media.playing
 #custom-waybar-media.paused
 #custom-waybar-media.stopped
+/* #custom-waybar-mpris */
 #taskbar button
 #taskbar button.active
 #taskbar button.minimized
-#taskbar #7b9b96d
+#taskbar
 #taskbar button.fullscreen
 #mpd {
     padding: 0 10px;
@@ -161,6 +137,7 @@ window#waybar.solo {
 	margin: 0;
 	border-bottom: 2px solid #4b5162;
 }
+
 /* TASKBAR */
 
 #taskbar {

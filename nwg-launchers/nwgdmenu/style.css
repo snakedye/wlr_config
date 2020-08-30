@@ -1,0 +1,31 @@
+/* Don't delete, just in case: the menu anchor is a button */
+button {
+    background: none;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: none;
+}
+
+box {
+    border-radius: 5px;
+    /* Uncomment to set vertical margin */
+    /* margin-top: 30px; */
+    /* margin-bottom: 30px; */
+}
+
+#searchbox {
+    /* Adjust to your taste */
+    border-radius: 0px;
+    margin: 10px 10px 5px 10px;
+    border: 2px solid #5e81ac;
+}
+
+/* Menu items */
+label {
+	padding: 0px 10px 0px 10px;
+	/* color: #e4b86e; */
+    margin: 0px 10px 5px 10px;
+    border-radius: 5px;
+    /* padding-left: 5px */
+}

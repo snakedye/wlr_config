@@ -61,6 +61,20 @@
         "max-length": 12,
         "escape": true
     },
+    "custom/waybar-mpris": {
+        "return-type": "json",
+        "exec": "~/.config/waybar/waybar-mpris --position --autofocus",
+        "on-click": "~/.config/waybar/waybar-mpris --send toggle",
+        // This option will switch between players on right click.
+            "on-click-right": "~/.config/waybar/waybar-mpris --send player-next",
+        // The options below will switch the selected player on scroll
+            // "on-scroll-up": "~/.config/waybar/waybar-mpris --send player-next",
+            // "on-scroll-down": "~/.config/waybar/waybar-mpris --send player-prev",
+        // The options below will go to next/previous track on scroll
+            // "on-scroll-up": "~/.config/waybar/waybar-mpris --send next",
+            // "on-scroll-down": "~/.config/waybar/waybar-mpris --send prev",
+        "escape": true,
+    },
     "tray": {
         // "icon-size": 21,
          "spacing": 10
@@ -197,7 +211,7 @@
     },
     "custom/suspend": {
     	"format": "",
-    	"on-click": "swaylock -C ~/.config/swaylock/config; systemctl suspend",
+    	"on-click": "nwgbar -o 0.2",
 		"escape": true,
     	"tooltip": false 
     },

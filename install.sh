@@ -8,7 +8,7 @@ NO="n"
 
 echo ""
 
-for config in 'sway' 'wallapers' 'waybar' 'wofi' 'termite' 'rofi' 'mako' 'micro' 
+for config in 'sway' 'wallapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'mako' 'micro' 
 do
 	echo -e "Do you want to copy ${config}?"
 	select ans in yes no; do
