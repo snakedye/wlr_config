@@ -16,7 +16,7 @@
   },
   {
   	"name": "Suspend",
-  	"exec": "systemctl sleep && ~/.config/waybar/lock.sh",
+  	"exec": "systemctl suspend;~/.config/sway/lockman.sh",
   	"icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/panel/xfpm-brightness-lcd.svg"
   },
   {
