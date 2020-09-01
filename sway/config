@@ -1,4 +1,5 @@
-# Default config for sway
+# Default c
+# onfig for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
@@ -24,9 +25,9 @@ exec dwall -s anime &
 
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace 4; exec lutris; workspace 1'
-exec --no-startup-id i3-msg 'workspace 3; exec termite -e ranger; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 3; exec termite -e ranger; workspace 1'
 exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
-exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
 
 # Floating windows
 # for_window [app_id="ulauncher"] floating enable; border none
@@ -43,7 +44,7 @@ for_window [title="Wine"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
-# for_window [workspace="5"] layout tabbed
+for_window [workspace="5"] layout tabbed
 
 ### Variables
 #
@@ -66,20 +67,12 @@ set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config
 bindsym $mod+d exec ~/.config/wofi/windows.py
 
 # Disable titlebar
-
 default_border pixel 3
-# Set inner/feher gaps
-gaps inner 5
-gaps outer 3
-
-# Default orientation
 
 # Font
-
 font pango:ProductSansMedium 13px 
 
 # Window decoration
-
 # class                 border  backgr. text    indicator child_border
 client.focused          #5e81ac #5e81ac #ffffff #7c818c   #5e81ac
 client.focused_inactive #4B5162 #383c4a #ffffff #7c818c   #383c4a
@@ -88,21 +81,16 @@ client.urgent           #7c818c #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 #Asignments
-
 assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
-assign [app_id="gnome-boxes"] 5
+assign [app_id="gnome-boxes"] 4
 assign [title="Wine System Tray"] 7
-# assign [title="youtube.com"] 6
-# assign [title="reddit.com"] 6
-# assign [app_id="thunderbird"] 6
-# assign [title="crunchyroll.com"] 6
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
-# gaps inner 10
-# gaps outer all plus 10
+gaps inner 5
+gaps outer 3
 
 ### Output configuration
 #
@@ -134,7 +122,8 @@ exec swayidle -w \
 
 bindsym $mod+f1 exec bash ~/.config/sway/lockman.sh
 
-# Sleep
+# Screenshot with grim and swappy
+bindsym print exec grim -g "$(slurp)" - | swappy -f -
 
 ### Input configuration
 #
@@ -316,9 +305,7 @@ include /etc/sway/config.d/*
 
 # Special keys
 
-# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle

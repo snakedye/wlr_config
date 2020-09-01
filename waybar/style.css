@@ -212,39 +212,12 @@ window#waybar.hidden {
 
 /* WIDGETS */
 
-#custom-exit {
-	background-color: #4b5162;
-	padding: 0px 8px 0px 8px;
-	border-radius: 5;
-	margin: 0;
-}
-
-#custom-suspend {
-	background-color: #4b5162;
-	font-size: 20px;
-	padding: 0px 10px 0px 10px;
-	border-radius: 0 5 5 0;
-	margin: 0;
-}
-
-#custom-suspend:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-}
-
 #custom-name {
     background-color: #434c5e;
 	padding: 0px 10px 0px 10px;
     border-radius: 5 0 0 5;
 	margin: 0;
 	border-bottom: 2px solid #4b5162;
-}
-
-#custom-pacman {
-	background-color: #5e81ac;
-	padding: 0px 8px 0px 8px;
-	margin: 0;
-	border-bottom: 2px solid #4b6789;
 }
 
 #clock {
@@ -254,37 +227,18 @@ window#waybar.hidden {
 	border-bottom: 2px solid #4b5162
 }
 
-#battery {
-    background-color: #CDCDCD;
+#custom-suspend:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+
+#custom-pacman {
+	background-color: #5e81ac;
 	padding: 0px 8px 0px 8px;
-	border-radius: 5px;
 	margin: 0;
+	border-bottom: 2px solid #4b6789;
 }
 
-#battery.charging {
-    color: #ffffff;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-label:focus {
-    background-color: #000000;
-}
 
 #cpu {
     background-color:  #698A86;
@@ -322,6 +276,7 @@ label:focus {
 	padding: 0px 10px 0px 10px;
 	margin: 0;
 	border-bottom: 2px solid #91874e;	
+	border-radius: 5 0 0 5;
 }
 
 #custom-weather {
@@ -372,6 +327,38 @@ label:focus {
 	border-bottom: 2px solid #4b5162;
 }
 
+#battery {
+    background-color: #CDCDCD;
+	padding: 0px 8px 0px 8px;
+	border-radius: 5px;
+	margin: 0;
+}
+
+#battery.charging {
+    color: #ffffff;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
 #disk {
     background-color: #AA8A7A;
 	padding: 0px 8px 0px 8px;
@@ -397,7 +384,8 @@ label:focus {
     background-color: #66cc99;
 	padding: 3px 8px 3px 8px;
 	margin: 0;
-	
+	border-bottom: 2px solid #708c86;
+	border-radius: 5 0 0 5;
 }
 
 
@@ -411,4 +399,19 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
+}
+
+#custom-exit {
+	background-color: #4b5162;
+	padding: 0px 8px 0px 8px;
+	border-radius: 5;
+	margin: 0;
+}
+
+#custom-suspend {
+	background-color: #4b5162;
+	font-size: 20px;
+	padding: 0px 10px 0px 10px;
+	border-radius: 0 5 5 0;
+	margin: 0;
 }
