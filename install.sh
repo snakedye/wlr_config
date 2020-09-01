@@ -3,12 +3,12 @@
 set -euo pipefail
 
 CONFIG=~/.config/
-YES="y"
-NO="n"
+YES="yes"
+NO="no"
 
 echo ""
 
-for config in 'sway' 'wallapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'mako' 'micro' 
+for config in 'sway' 'wallapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'mako' 'micro' '.vimrc'
 do
 	echo -e "Do you want to copy ${config}?"
 	select ans in yes no; do
@@ -19,9 +19,15 @@ do
 				echo "Done"
 				echo ""
 				break
-			else
+			elif [ "$config" == ".vimrc" ]; then
+        echo "Copying ${config} to Home"
+        cp $config ~/
+        echo "Done"
+        echo ""
+        break
+      else
 				echo "Copying ${config} to ${CONFIG}"
-				# cp -r ./$config $CONFIG
+        cp -r ./$config $CONFIG
 				echo "Done"
 				echo ""
 				break
