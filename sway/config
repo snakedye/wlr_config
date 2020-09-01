@@ -61,7 +61,7 @@ set $term termite
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu rofi -combi-modi window,drun,ssh -theme slate -font 'hack 10' -show combi -icon-theme 'Papirus' -show-icons
-set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config
+set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config -I
 
 # Window switcher
 bindsym $mod+d exec ~/.config/wofi/windows.py

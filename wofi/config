@@ -1,5 +1,5 @@
 style=~/.config/wofi/style.css
-show=run
+show=drun
 width=21%
 lines=7
 # dynamic_lines=true
@@ -7,4 +7,7 @@ term=termite
 allow_markup=true
 always_parse_args=true
 layer=overlay
-allow-images
+allow-images=true
+insensitive=true
+image-size=20
+display_generic=true
