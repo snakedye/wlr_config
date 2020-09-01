@@ -14,6 +14,8 @@ do
 	fi
 done
 
+cp ~/.vimrc ./
+
 cp -r ~/wallpapers ./
 
 echo "Directory updated!"
