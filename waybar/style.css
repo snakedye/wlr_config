@@ -1,5 +1,5 @@
 * {
-	margin: 0 0 0 0;
+	/* margin: ; */
     border: none;
     border-radius: 0;
     padding: 0;
@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-    background-color: rgba(47,52,65, 0.6);
+    background-color: rgba(47,52,65, 0.0);
     /* background-color: transparent; */
     color: #ffffff;
     transition-property: background-color;
@@ -26,7 +26,7 @@ window#waybar.hidden {
     background-color: #4c566a;
     /* border-radius: 5px; */
     padding: 4;
-    margin: 0 0 0 10;
+    margin: 0 0 0 20;
 /*     padding-left: 5; */
 }
 
