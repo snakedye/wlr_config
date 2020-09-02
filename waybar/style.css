@@ -28,14 +28,13 @@ window#waybar.hidden {
     padding: 4;
     margin: 0 0 0 10;
 /*     padding-left: 5; */
-	border-bottom: 2px solid #4b5162;
 }
 
 #workspaces button {
 	font-size: 14px;
 	border-radius: 0px;
 	padding: 0 5 0 5;
-	border-bottom: 2px solid transparent;
+	border-bottom: 3px solid transparent;
     margin-right: 8px;
     background-color: #4c566a;
     color: #ffffff;
@@ -55,12 +54,12 @@ window#waybar.hidden {
     /* background: rgba(0, 0, 0, 0.2); */
     box-shadow: inherit;
     color: #81a1c1;
-    border-bottom: 2px solid #81a1c1;
+    border-bottom: 3px solid #81a1c1;
 }
 
 #workspaces button.focused {
     color: #5e81ac;
-    border-bottom: 2px solid  #5e81ac;
+    border-bottom: 3px solid  #5e81ac;
 }
 
 #workspaces button.urgent {

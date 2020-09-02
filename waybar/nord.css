@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-    background-color: rgba(47,52,65, 0.6);
+    background-color: rgba(47,52,65, 0.3);
     /* background-color: transparent; */
     color: #ffffff;
     transition-property: background-color;
@@ -28,7 +28,6 @@ window#waybar.hidden {
     padding: 4;
     margin: 0 0 0 10;
 /*     padding-left: 5; */
-	border-bottom: 2px solid #4b5162;
 }
 
 #workspaces button {
@@ -36,6 +35,7 @@ window#waybar.hidden {
 	border-radius: 0px;
 	padding: 0 5 0 5;
 	border-bottom: 3px solid transparent;
+	border-top: 3px solid transparent;
     margin-right: 8px;
     background-color: #4c566a;
     color: #ffffff;
@@ -47,7 +47,7 @@ window#waybar.hidden {
 	padding: 0 10 0 10;
     margin: 0;
     /* border-radius: 0 5 5 0; */
-	border-bottom: 3px solid #a3be8c
+	border-bottom: 3px solid #ebcb8b;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -55,12 +55,12 @@ window#waybar.hidden {
     /* background: rgba(0, 0, 0, 0.2); */
     box-shadow: inherit;
     color: #81a1c1;
-    border-bottom: 2px solid #81a1c1;
+    border-bottom: 3px solid #81a1c1;
 }
 
 #workspaces button.focused {
     color: #5e81ac;
-    border-bottom: 2px solid  #5e81ac;
+    border-bottom: 3px solid  #5e81ac;
 }
 
 #workspaces button.urgent {
@@ -119,28 +119,28 @@ window#waybar.hidden {
 	background-color: #434c5e;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #4b5162;
+	border-bottom: 3px solid #4b5162;
 }
 
 #custom-waybar-media.playing {
 	background-color: #5e81ac;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #4b5162;
+	border-bottom: 3px solid #4b5162;
 }
 
 #custom-waybar-media.paused {
 	background-color: #81a1c1;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #4b5162;
+	border-bottom: 3px solid #4b5162;
 }
 
 #custom-waybar-media.stopped {
 	background-color: #4c566a;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #4b5162;
+	border-bottom: 3px solid #4b5162;
 }
 
 /* TASKBAR */
@@ -236,21 +236,21 @@ window#waybar.hidden {
 	background-color: #5e81ac;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #4b6789;
+	border-bottom: 3px solid #4b6789;
 }
 
 #cpu {
     background-color:  #698A86;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #546e6b;
+	border-bottom: 3px solid #546e6b;
 }
 
 #memory {
     background-color:  #8FB3B4;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #728f90;
+	border-bottom: 3px solid #728f90;
 }
 
 #backlight {
@@ -263,7 +263,7 @@ window#waybar.hidden {
     background-color: #81a1c1;
 	padding: 0px 8px 0px 8px;
 	margin: 0;	
-	border-bottom: 2px solid #67809a;
+	border-bottom: 3px solid #67809a;
 }
 
 #network.disconnected {
@@ -274,15 +274,15 @@ window#waybar.hidden {
     background-color:  #D3B67D;
 	padding: 0px 10px 0px 10px;
 	margin: 0;
-	border-bottom: 2px solid #91874e;	
-	border-radius: 5 0 0 5;
+	border-bottom: 3px solid #91874e;	
+	/* border-radius: 5 0 0 5; */
 }
 
 #custom-weather {
     background-color: #7b9b96;
 	padding: 0 8 0 8;
 	margin: 0;
-	border-bottom: 2px solid #708c86;
+	border-bottom: 3px solid #708c86;
 }
 
 #pulseaudio.muted {
@@ -323,7 +323,7 @@ window#waybar.hidden {
     background-color: #4c566a;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #434c5e;
+	border-bottom: 3px solid #434c5e;
 }
 
 #battery {
@@ -362,7 +362,7 @@ label:focus {
     background-color: #AA8A7A;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid  #886e61;
+	border-bottom: 3px solid  #886e61;
 }
 
 #idle_inhibitor {
@@ -371,7 +371,7 @@ label:focus {
 	border-radius: 5 0 0 5;
 	font-size: 20px;
 	margin: 0;
-	border-bottom: 2px solid #708c86;
+	border-bottom: 3px solid #708c86;
 }
 
 #idle_inhibitor.activated {
@@ -383,7 +383,7 @@ label:focus {
     background-color: #66cc99;
 	padding: 3px 8px 3px 8px;
 	margin: 0;
-	border-bottom: 2px solid #708c86;
+	border-bottom: 3px solid #708c86;
 	border-radius: 5 0 0 5;
 }
 
@@ -412,6 +412,6 @@ label:focus {
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
 	/* border-radius: 0 5 5 0; */
-	border-bottom: 2px solid #434c5e;
+	border-bottom: 3px solid #434c5e;
 	margin: 0;
 }

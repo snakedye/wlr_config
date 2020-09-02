@@ -45,7 +45,7 @@ for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
-for_window [app_id="dolphin"] opacity 0.95
+# for_window [app_id="dolphin"] opacity 0.95
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
