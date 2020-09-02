@@ -13,4 +13,12 @@ cp ~/.vimrc ./
 
 cp -r ~/wallpapers ./
 
+# Push to Github
+
+git add ./
+
+git commit -m update
+
+git push
+
 echo "Directory updated!"

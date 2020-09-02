@@ -4,11 +4,12 @@ background-color: #4c566a;
  
 #text:selected {
 color: #e5e9f0;
+font-weight: bold;
 }
  
 window {
 margin: 5px;
-background-color: rgba(47,52,65, 0.7);
+background-color: rgba(47,52,65, 0.6);
 /* border: 2px solid #5e81ac; */
 }
 

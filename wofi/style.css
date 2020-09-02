@@ -1,10 +1,11 @@
 #entry:selected {
-background-color: rgba(0,0,0,0);
+background-color: transparent;
 border: none;
 }
  
 #text:selected {
 color: #5e81ac;
+font-weight: bold;
 }
  
 #window {

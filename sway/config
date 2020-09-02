@@ -30,9 +30,8 @@ exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
 exec --no-startup-id i3-msg 'workspace 5; exec chromium; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
 
-# Floating windows
-# for_window [app_id="ulauncher"] floating enable; border none
-# for_window [app_id="Desktop — Plasma"] kill; floating enable; border none
+# Windows Rules 
+
 for_window [app_id="plasmashell"] floating enable;
 for_window [app_id="Plasma"] floating enable; border none
 # for_window [app_id="krunner"] floating enable; border none
@@ -46,7 +45,7 @@ for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
-
+for_window [app_id="dolphin"] opacity 0.95
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
