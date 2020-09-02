@@ -96,8 +96,8 @@ gaps outer 3
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output "*" bg ~/wallpapers/mountain.png fill
-output "*" bg ~/wallpapers/hitomi4.png fill
+output "*" bg ~/wallpapers/mountain.png fill
+# output "*" bg ~/wallpapers/hitomi4.png fill
 # swaybg_command -
 #
 # Example configuration:
