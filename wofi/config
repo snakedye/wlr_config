@@ -1,5 +1,5 @@
 style=~/.config/wofi/style.css
-show=drun
+show=run
 width=18%
 lines=9
 gtk_dark=true
