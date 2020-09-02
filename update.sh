@@ -4,14 +4,9 @@
 
 set -euo pipefail
 
-for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi' 'nwg-launchers' 'mako' 'micro' 'vem'
+for config in 'sway' 'waybar' 'wofi' 'termite' 'rofi' 'nwg-launchers' 'mako' 'swaylock'
 do
-	if [ "$config" == "micro" ]; then
-		cp -r ~/.config/$config/bindings.json ./micro/
-		cp -r ~/.config/$config/settings.json ./micro/
-	else
-		cp -r ~/.config/$config ./
-	fi
+	cp -r ~/.config/$config ./
 done
 
 cp ~/.vimrc ./

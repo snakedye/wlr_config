@@ -8,7 +8,7 @@ NO="no"
 
 echo ""
 
-for config in 'sway' 'wallapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'mako' 'micro' '.vimrc'
+for config in 'sway' 'swaylock' 'wallapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'mako' 'micro' '.vimrc'
 do
 	echo -e "Do you want to copy ${config}?"
 	select ans in yes no; do

@@ -1,15 +1,17 @@
 * {
-	margin: -2 0 -2 0;
+	margin: -1 0 -1 0;
     border: none;
     border-radius: 0;
     padding: 5 3 5 3;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif;
-    /* font-size: 13px; */
+   font-size: 13px;
+   /* font-family:  Deja Vu,Arial,Noto Sans,Helvetica, sans-serif; */
+    /* font-weight: bold; */
 }
 
 window#waybar {
-    background-color: rgba(47,52,65, 0.7);
+    background-color: rgba(47,52,65, 0.6);
     /* background-color: transparent; */
     color: #ffffff;
     transition-property: background-color;
@@ -23,6 +25,7 @@ window#waybar.hidden {
 #workspaces {
     background-color: #4c566a;
     border-radius: 5px;
+    padding: 4;
     margin: 0 0 0 10;
 /*     padding-left: 5; */
 	border-bottom: 2px solid #4b5162;
@@ -30,8 +33,9 @@ window#waybar.hidden {
 
 #workspaces button {
 	font-size: 14px;
-	border-radius: 5px;
+	border-radius: 0px;
 	padding: 0 5 0 5;
+	border-bottom: 2px solid transparent;
     margin-right: 8px;
     background-color: #4c566a;
     color: #ffffff;
@@ -48,14 +52,15 @@ window#waybar.hidden {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    /* background: rgba(0, 0, 0, 0.2); */
     box-shadow: inherit;
-   /*  border-bottom: 3px solid #ffffff; */
+    color: #81a1c1;
+    border-bottom: 2px solid #81a1c1;
 }
 
 #workspaces button.focused {
-    background-color: #5e81ac;
-    /* border: 1px solid  #ffffff; */
+    color: #5e81ac;
+    border-bottom: 2px solid  #5e81ac;
 }
 
 #workspaces button.urgent {
@@ -227,18 +232,12 @@ window#waybar.hidden {
 	border-bottom: 2px solid #4b5162
 }
 
-#custom-suspend:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-}
-
 #custom-pacman {
 	background-color: #5e81ac;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
 	border-bottom: 2px solid #4b6789;
 }
-
 
 #cpu {
     background-color:  #698A86;
@@ -324,7 +323,7 @@ window#waybar.hidden {
     background-color: #4c566a;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 2px solid #4b5162;
+	border-bottom: 2px solid #434c5e;
 }
 
 #battery {
@@ -410,8 +409,9 @@ label:focus {
 
 #custom-suspend {
 	background-color: #4b5162;
-	font-size: 20px;
-	padding: 0px 10px 0px 10px;
+	font-size: 16px;
+	padding: 0px 13px 0px 13px;
 	border-radius: 0 5 5 0;
+	border-bottom: 2px solid #434c5e;
 	margin: 0;
 }

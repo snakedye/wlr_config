@@ -18,8 +18,8 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
-exec oguri
-exec dwall -s anime &
+# exec oguri
+# exec dwall -s flcl &
 
 # Applications
 
@@ -27,6 +27,7 @@ exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace 4; exec lutris; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite -e ranger; workspace 1'
 exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
+exec --no-startup-id i3-msg 'workspace 5; exec chromium; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
 
 # Floating windows
@@ -62,7 +63,7 @@ set $term termite
 # on the original workspace that the command was run on.
 # set $menu rofi -combi-modi window,drun,ssh -theme slate -font 'hack 10' -show combi -icon-theme 'Papirus' -show-icons
 set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config -I
-
+# set $menu nwgdmenu -o 0 -r 8
 # Window switcher
 bindsym $mod+d exec ~/.config/wofi/windows.py
 
@@ -95,8 +96,9 @@ gaps outer 3
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output "*" bg ~/wallpapers/hitomi.png fill
-swaybg_command -
+# output "*" bg ~/wallpapers/mountain.png fill
+output "*" bg ~/wallpapers/hitomi4.png fill
+# swaybg_command -
 #
 # Example configuration:
 #

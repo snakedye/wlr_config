@@ -9,6 +9,7 @@ button {
 
 box {
     border-radius: 5px;
+    margin: -10px;
     /* Uncomment to set vertical margin */
     /* margin-top: 30px; */
     /* margin-bottom: 30px; */

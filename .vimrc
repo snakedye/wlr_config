@@ -12,6 +12,9 @@ Plug 'arcticicestudio/nord-vim'
 "Fugitive Vim Github Wrapper
 Plug 'tpope/vim-fugitive'
 
+" Commentary
+Plug 'tpope/vim-commentary'
+
 " Status line
 Plug 'vim-airline/vim-airline'
 

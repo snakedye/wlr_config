@@ -1,16 +1,15 @@
 #entry:selected {
-background-color: rgba(0,0,0,0);
-border: none;
+background-color: #4c566a;
 }
  
 #text:selected {
-color: #5e81ac;
+color: #e5e9f0;
 }
  
-#window {
+window {
 margin: 5px;
-background-color: #2e3440;
-border: 2px solid #5e81ac;
+background-color: rgba(47,52,65, 0.7);
+/* border: 2px solid #5e81ac; */
 }
 
 #input {
@@ -24,33 +23,22 @@ border-radius: 0;
 #inner-box {
 color: #e4b86e;
 margin: 5px;
-background-color: transparent;
+background-color: none;
 }
 
 #outer-box {
 margin: 15px;
-background-color: transparent;
+background-color: none;
 }
 
 #scroll {
 margin: 5px;
 border-radius: 7px;
 background-color: none;
-border: none;
-}
-
-#scroll .box {
-
-border: none;
 }
 
 #text {
 margin: 5px;
-background-color: transparent;
+background-color: none;
 font-familly: Product Sans Medium;
-border: none;
 } 
-
-#img {
-  background-color: transparent;
-}

@@ -176,7 +176,8 @@
       "format": " ~ {}",
       "exec" : "hostname -s",
       //"return-type": "json",
-      "on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSansMedium 10' -show combi -icon-theme 'Papirus' -show-icons",
+      //"on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSansMedium 10' -show combi -icon-theme 'Papirus' -show-icons",
+      "on-click": "wofi -s ~/.config/wofi/menu.css -c ~/.config/wofi/menu -I",
       "tooltip": false
     },
     "custom/weather": {
@@ -210,7 +211,7 @@
     	"on-click-middle": "close"
     },
     "custom/suspend": {
-    	"format": "",
+    	"format": "⏻",
     	"on-click": "nwgbar -o 0.2",
 		"escape": true,
     	"tooltip": false 

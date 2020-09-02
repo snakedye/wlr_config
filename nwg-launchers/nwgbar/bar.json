@@ -5,6 +5,11 @@
     "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/actions/database-lock.svg"
   },
   {
+  	"name": "Suspend",
+  	"exec": "systemctl suspend;~/.config/sway/lockman.sh",
+  	"icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/panel/stock_weather-night-clear.svg"
+  },
+  {
     "name": "Logout",
     "exec": "swaymsg exit",
     "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/actions/application-exit.svg"
@@ -13,11 +18,6 @@
     "name": "Reboot",
     "exec": "systemctl reboot",
     "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/actions/amarok_playlist_refresh.svg"
-  },
-  {
-  	"name": "Suspend",
-  	"exec": "systemctl suspend;~/.config/sway/lockman.sh",
-  	"icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/panel/xfpm-brightness-lcd.svg"
   },
   {
     "name": "Shutdown",
