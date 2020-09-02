@@ -1,7 +1,7 @@
 style=~/.config/wofi/style.css
-show=run
+show=drun
 width=18%
-lines=7
+lines=9
 gtk_dark=true
 # dynamic_lines=true
 term=termite

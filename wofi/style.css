@@ -1,5 +1,9 @@
+#entry {
+background-color: #2e3440;
+border: none;
+}
 #entry:selected {
-background-color: transparent;
+background-color: #3b4252;
 border: none;
 }
  
@@ -16,7 +20,7 @@ border: 2px solid #5e81ac;
 
 #input {
 /* margin: 5px; */
-margin: 15;
+margin: 10 10 5 10;
 background-color: none;
 border: 2px solid #5e81ac;
 border-radius: 0;
@@ -46,7 +50,7 @@ border: none;
 }
 
 #text {
-margin: 5px;
+margin: 5 15 5 15;
 background-color: transparent;
 font-familly: Product Sans Medium;
 border: none;
