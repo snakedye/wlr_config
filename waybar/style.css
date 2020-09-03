@@ -11,8 +11,10 @@
 }
 
 window#waybar {
-    background-color: rgba(47,52,65, 0.0);
+    /* background-color: rgba(47,52,65, 0.0); */
+    background-color: #3b4252;
     /* background-color: transparent; */
+    border-radius: 5px;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -23,7 +25,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    background-color: #4c566a;
+    background-color: transparent;
     /* border-radius: 5px; */
     padding: 4;
     margin: 0 0 0 20;
@@ -34,20 +36,20 @@ window#waybar.hidden {
 	font-size: 14px;
 	border-radius: 0px;
 	padding: 0 5 0 5;
-	border-bottom: 3px solid transparent;
+	border-bottom: 2px solid transparent;
 	border-top: 3px solid transparent;
     margin-right: 8px;
-    background-color: #4c566a;
+    background-color: transparent;
     color: #ffffff;
 }
 
 #window {
 	padding: 15px;
-    background-color: #4c566a;
+    background-color: transparent;
 	padding: 0 10 0 10;
     margin: 0;
     /* border-radius: 0 5 5 0; */
-	border-bottom: 3px solid #ebcb8b;
+	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -55,12 +57,12 @@ window#waybar.hidden {
     /* background: rgba(0, 0, 0, 0.2); */
     box-shadow: inherit;
     color: #81a1c1;
-    border-bottom: 3px solid #81a1c1;
+    border-bottom: 2px solid #81a1c1;
 }
 
 #workspaces button.focused {
     color: #5e81ac;
-    border-bottom: 3px solid  #5e81ac;
+    border-bottom: 2px solid  #5e81ac;
 }
 
 #workspaces button.urgent {
@@ -172,43 +174,43 @@ window#waybar.hidden {
 /* BROWSER BOOKMARKS */
 
 #custom-newtab {
-	background-color: #4c566a;
+	background-color: transparent;
 	font-size: 18px;
-	padding: 0 12 0 20;
+	padding: 0 12 0 12;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-github {
-	background-color: #4c566a;
+	background-color: transparent;
 	padding: 0 12 0 12;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-reddit {
-	background-color: #4c566a;
+	background-color: transparent;
 	padding: 0 12 0 12;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-crunchyroll {
-	background-color: #4c566a;
-	padding: 0 1 0 12;
+	background-color: transparent;
+	padding: 0 12 0 12;
     margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-youtube {
-	background-color: #4c566a;
+	background-color: transparent;
 	padding: 0 12 0 12;
 	margin:0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-mail {
-	background-color: #4c566a;
+	background-color: transparent;
 	font-size: 18px;
 	padding: 0 2 0 12;
     margin: 0;
@@ -220,7 +222,7 @@ window#waybar.hidden {
 #custom-name {
     background-color: #434c5e;
 	padding: 0px 10px 0px 10px;
-    /* border-radius: 5 0 0 5; */
+    border-radius: 5 0 0 5;
 	margin: 0;
 	border-bottom: 3px solid #81a1c1;
 }
@@ -411,7 +413,7 @@ label:focus {
 	background-color: #4b5162;
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
-	/* border-radius: 0 5 5 0; */
+	border-radius: 0 5 5 0;
 	border-bottom: 3px solid #829870;
 	margin: 0;
 }

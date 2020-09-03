@@ -12,9 +12,8 @@
 
 window#waybar {
     /* background-color: rgba(47,52,65, 0.0); */
-    background-color: #3b4252;
-    /* background-color: transparent; */
-    border-radius: 5px;
+    /* background-color: #3b4252; */
+    background-color: transparent;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -25,8 +24,9 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    background-color: transparent;
-    /* border-radius: 5px; */
+    background-color: rgba(47,52,65, 0.7); 
+    /* background-color: transparent; */
+    border-radius: 5px;
     padding: 4;
     margin: 0 0 0 20;
 /*     padding-left: 5; */
@@ -47,7 +47,7 @@ window#waybar.hidden {
 	padding: 15px;
     background-color: transparent;
 	padding: 0 10 0 10;
-    margin: 0;
+    /* margin: 0; */
     /* border-radius: 0 5 5 0; */
 	/* border-bottom: 3px solid #ebcb8b; */
 }
@@ -66,7 +66,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: #eb4d4b;
 }
 
 #mode {
@@ -174,43 +174,51 @@ window#waybar.hidden {
 /* BROWSER BOOKMARKS */
 
 #custom-newtab {
-	background-color: transparent;
+	background-color: #4c566a;
+	/* background-color: transparent; */
 	font-size: 18px;
 	padding: 0 12 0 12;
+	border-radius: 5 0 0 5;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-github {
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: #4c566a;
 	padding: 0 12 0 12;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-reddit {
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: #4c566a;
 	padding: 0 12 0 12;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-crunchyroll {
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: #4c566a;
 	padding: 0 12 0 12;
     margin: 0;
+	border-radius: 0 5 5 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-youtube {
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: #4c566a;
 	padding: 0 12 0 12;
 	margin:0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-mail {
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: #4c566a;
 	font-size: 18px;
 	padding: 0 2 0 12;
     margin: 0;
@@ -222,15 +230,18 @@ window#waybar.hidden {
 #custom-name {
     background-color: #434c5e;
 	padding: 0px 10px 0px 10px;
-    border-radius: 5 0 0 5;
-	margin: 0;
+    /* border-radius: 5 0 0 5; */
+    border-radius: 5px;
+	margin: 0 10 0 0;
 	border-bottom: 3px solid #81a1c1;
 }
 
 #clock {
     background-color: #4b5162;
 	padding: 0px 8px 0px 8px;
-	margin: 0;
+	/* margin: 0; */
+    border-radius: 5px;
+	margin: 0 10 0 0;
 	border-bottom: 3px solid #bf616a;
 }
 
@@ -277,7 +288,7 @@ window#waybar.hidden {
 	padding: 0px 10px 0px 10px;
 	margin: 0;
 	border-bottom: 3px solid #91874e;	
-	/* border-radius: 5 0 0 5; */
+	border-radius: 5 0 0 5;
 }
 
 #custom-weather {
@@ -326,6 +337,7 @@ window#waybar.hidden {
 	padding: 0px 8px 0px 8px;
 	margin: 0;
 	border-bottom: 3px solid #90718a;
+	border-radius: 0 5 5 0;
 }
 
 #battery {
@@ -413,7 +425,7 @@ label:focus {
 	background-color: #4b5162;
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
-	border-radius: 0 5 5 0;
+	border-radius: 5;
 	border-bottom: 3px solid #829870;
-	margin: 0;
+	margin: 0 0 0 10;
 }

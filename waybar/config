@@ -1,14 +1,17 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 30, // Waybar height (to be removed for auto height)
+    // "height": 38, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
-    "margin": 8,
+    "margin-top": 8,
+    "margin-right": 8,
+    "margin-left": 8,
+    "margin-bottom": 0,
     // Choose the order of the modules
     "modules-left": ["custom/name","clock", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window", ],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": ["pulseaudio", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
+    "modules-right": [ "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -41,7 +44,7 @@
     },
     "sway/window": {
     	"format": {},
-    	// "max-length": 30,
+    	// "max-length": 40,
     },
 	"mpd": {
         "format": "♪ {}",
@@ -77,7 +80,7 @@
     },
     "tray": {
         // "icon-size": 21,
-         "spacing": 10
+         "spacing": 20
     },
 	 "idle_inhibitor": {
          "format": "{icon}",
@@ -198,7 +201,7 @@
         "interval": 30,
         "format": "{percentage_free}% left in HDD",
         "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
-      	"tooltip": false
+      	// "tooltip": false
     },
     "wlr/taskbar": {
     	"format": "{icon}",

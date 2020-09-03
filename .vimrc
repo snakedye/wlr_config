@@ -18,6 +18,9 @@ Plug 'tpope/vim-commentary'
 " Status line
 Plug 'vim-airline/vim-airline'
 
+" Autoclose
+Plug 'townk/vim-autoclose'
+
 call plug#end()
 
 " Turn on syntax highlighting.

@@ -2,7 +2,7 @@
 	margin: 0 0 0 0;
     border: none;
     border-radius: 0;
-    padding: 3 3 3 3;
+    padding: 3;
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif; */
    font-size: 13px;
@@ -11,7 +11,8 @@
 }
 
 window#waybar {
-    background-color: rgba(47,52,65, 0.6);
+    /* background-color: rgba(47,52,65, 1); */
+    background-color: #2e3440;
     /* background-color: transparent; */
     color: #ffffff;
     transition-property: background-color;
@@ -34,7 +35,8 @@ window#waybar.hidden {
 	font-size: 14px;
 	border-radius: 0px;
 	padding: 0 5 0 5;
-	border-bottom: 3px solid transparent;
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
     margin-right: 8px;
     background-color: #4c566a;
     color: #ffffff;
@@ -42,11 +44,10 @@ window#waybar.hidden {
 
 #window {
 	padding: 15px;
-    background-color: #4c566a;
+    background-color: transparent;
 	padding: 0 10 0 10;
     margin: 0;
-    border-radius: 0 5 5 0;
-	border-bottom: 2px solid #4b5162
+	/* border-bottom: 2px solid #4b5162 */
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -54,16 +55,16 @@ window#waybar.hidden {
     /* background: rgba(0, 0, 0, 0.2); */
     box-shadow: inherit;
     color: #81a1c1;
-    border-bottom: 3px solid #81a1c1;
+    border-bottom: 2px solid #81a1c1;
 }
 
 #workspaces button.focused {
     color: #5e81ac;
-    border-bottom: 3px solid  #5e81ac;
+    border-bottom: 2px solid  #5e81ac;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #bf616a;
 }
 
 #mode {
@@ -173,7 +174,7 @@ window#waybar.hidden {
 #custom-newtab {
 	background-color: #4c566a;
 	font-size: 18px;
-	padding: 0 12 0 20;
+	padding: 0 12 0 12;
 	margin: 0;
 	border-bottom: 2px solid #4b5162;
 }
@@ -194,8 +195,9 @@ window#waybar.hidden {
 
 #custom-crunchyroll {
 	background-color: #4c566a;
-	padding: 0 1 0 12;
+	padding: 0 12 0 12;
     margin: 0;
+    border-radius: 0 5 5 0;
 	border-bottom: 2px solid #4b5162;
 }
 
