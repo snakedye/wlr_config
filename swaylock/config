@@ -4,8 +4,8 @@ indicator
 daemonize
 indicator-caps-lock
 timestr=%k:%M
-datestr=%a %e-%m-%Y
-image=~/wallpapers/scenery.jpg
+datestr=%a %e %m %Y
+image=~/wallpapers/minimal.jpg
 scaling=fill
 effect-scale=0.4
 effect-vignette=0.2:0.5
@@ -13,7 +13,7 @@ effect-blur=4x2
 font=SanFranciscoText
 
 # Ring
-indicator-radius=100
+indicator-radius=90
 # line-uses-ring
 line-color=#5e81ac
 text-color=#eceff4

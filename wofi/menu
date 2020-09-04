@@ -1,9 +1,9 @@
 style=~/.config/wofi/style.css
 show=drun
-width=15%
-height=100%
-x=0%
-y=0%
+width=10%
+height=40%
+x=4%
+y=4%
 # dynamic_lines=true
 term=termite
 allow_markup=true

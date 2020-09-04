@@ -1,9 +1,9 @@
 #entry {
-background-color: #2e3440;
+background-color: transparent;
 border: none;
 }
 #entry:selected {
-background-color: #3b4252;
+background-color: #2e3440;
 border: none;
 }
  
@@ -14,15 +14,16 @@ font-weight: bold;
  
 #window {
 margin: 5px;
-background-color: #2e3440;
+background-color: #404552;
 border: 2px solid #5e81ac;
+border-radius: 9px;
 }
 
 #input {
 /* margin: 5px; */
 margin: 10 10 5 10;
 background-color: none;
-border: 2px solid #5e81ac;
+border: 2px solid #4c566a;
 border-radius: 0;
 }
 
@@ -52,7 +53,7 @@ border: none;
 #text {
 margin: 5 15 5 15;
 background-color: transparent;
-font-familly: Product Sans Medium;
+font-family: Ubuntu;
 border: none;
 } 
 

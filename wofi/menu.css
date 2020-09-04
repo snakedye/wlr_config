@@ -9,8 +9,9 @@ font-weight: bold;
  
 window {
 margin: 5px;
-background-color: rgba(47,52,65, 1);
-/* border: 2px solid #5e81ac; */
+background-color: #404552;
+border: 2px solid #5e81ac;
+border-radius: 5px;
 }
 
 #input {
@@ -39,7 +40,7 @@ background-color: none;
 }
 
 #text {
-margin: 5px;
+margin: 5 15 5 15;
 background-color: none;
-font-familly: Product Sans Medium;
+font-family: Ubuntu;
 } 

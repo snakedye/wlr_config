@@ -3,15 +3,15 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
     // "height": 38, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
-    "margin-top": 8,
-    "margin-right": 8,
-    "margin-left": 8,
+    "margin-top": 0,
+    "margin-right": 0,
+    "margin-left": 0,
     "margin-bottom": 0,
     // Choose the order of the modules
     "modules-left": ["custom/name","clock", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window", ],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": [ "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
+    "modules-right": [ "pulseaudio","custom/weather","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -80,7 +80,7 @@
     },
     "tray": {
         // "icon-size": 21,
-         "spacing": 20
+         "spacing": 15
     },
 	 "idle_inhibitor": {
          "format": "{icon}",

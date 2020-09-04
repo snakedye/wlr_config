@@ -95,7 +95,7 @@ gaps outer 3
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg ~/wallpapers/progressive.png fill
+output "*" bg ~/wallpapers/minimal.jpg fill
 # swaybg_command -
 #
 # Example configuration:
