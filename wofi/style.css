@@ -14,7 +14,7 @@ font-weight: bold;
  
 #window {
 margin: 5px;
-background-color: #434c5e;
+background-color: #2e3440;
 border: 2px solid #5e81ac;
 border-radius: 0px;
 }
@@ -51,7 +51,7 @@ border: none;
 }
 
 #text {
-margin: 5 15 5 15;
+margin: 5 10 5 10;
 background-color: transparent;
 border: none;
 } 

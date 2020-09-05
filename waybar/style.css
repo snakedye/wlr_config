@@ -58,13 +58,13 @@ window#waybar.hidden {
 #workspaces button:hover {
     /* background: rgba(0, 0, 0, 0.2); */
     box-shadow: inherit;
-    color: #81a1c1;
-    border-bottom: 2px solid #81a1c1;
+    color: #5e81ac;
+    border-bottom: 2px solid #5e81ac;
 }
 
 #workspaces button.focused {
-    color: #5e81ac;
-    border-bottom: 2px solid  #5e81ac;
+    color: #81a1c1;
+    border-bottom: 2px solid  #81a1c1;
 }
 
 #workspaces button.urgent {
