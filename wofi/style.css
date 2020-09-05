@@ -14,9 +14,9 @@ font-weight: bold;
  
 #window {
 margin: 5px;
-background-color: #404552;
+background-color: #434c5e;
 border: 2px solid #5e81ac;
-border-radius: 9px;
+border-radius: 0px;
 }
 
 #input {
@@ -53,7 +53,6 @@ border: none;
 #text {
 margin: 5 15 5 15;
 background-color: transparent;
-font-family: Ubuntu;
 border: none;
 } 
 

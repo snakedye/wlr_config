@@ -11,7 +11,7 @@ window {
 margin: 5px;
 background-color: #404552;
 border: 2px solid #5e81ac;
-border-radius: 5px;
+border-radius: 0px;
 }
 
 #input {
@@ -42,5 +42,4 @@ background-color: none;
 #text {
 margin: 5 15 5 15;
 background-color: none;
-font-family: Ubuntu;
 } 

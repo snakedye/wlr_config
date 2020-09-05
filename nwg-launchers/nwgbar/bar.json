@@ -1,7 +1,7 @@
 [
   {
     "name": "Lock screen",
-    "exec": "swaylock -f -c 000000",
+    "exec": "~/.config/sway/lockman.sh",
     "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/actions/database-lock.svg"
   },
   {

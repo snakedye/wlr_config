@@ -3,15 +3,12 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
     // "height": 38, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
-    "margin-top": 0,
-    "margin-right": 0,
-    "margin-left": 0,
-    "margin-bottom": 0,
+    "margin": 0,
     // Choose the order of the modules
-    "modules-left": ["custom/name","clock", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window", ],
+    "modules-left": ["custom/name","clock", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window",],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": [ "pulseaudio","custom/weather","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
+    "modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -21,19 +18,19 @@
          	"1": [],
          	"2": [],
          	"3": [],
-            "4": [],
-            "5": [],
-           // "6": [],
-           // "7": []
+          "4": [],
+          "5": [],
+          "6": [],
+         // "7": []
          },
          "format-icons": {
-             "1": "",
+             "1": "",
              "2": "",
              "3": "",
              "4": "",
-             "5": "",
-             "6": "",
-             // "7": "",
+             "5": "",
+             "6": "",
+             "7": "",
              "focused": "",
              "urgent": "",
              "default": ""
@@ -61,7 +58,7 @@
         "on-click": "~/.config/waybar/waybar-media.py playpause",
         "on-scroll-up": "~/.config/waybar/waybar-media.py previous",
         "on-scroll-down": "~/.config/waybar/waybar-media.py next",
-        "max-length": 12,
+        // "max-length": 12,
         "escape": true
     },
     "custom/waybar-mpris": {
@@ -74,8 +71,9 @@
             // "on-scroll-up": "~/.config/waybar/waybar-mpris --send player-next",
             // "on-scroll-down": "~/.config/waybar/waybar-mpris --send player-prev",
         // The options below will go to next/previous track on scroll
-            // "on-scroll-up": "~/.config/waybar/waybar-mpris --send next",
-            // "on-scroll-down": "~/.config/waybar/waybar-mpris --send prev",
+            "on-scroll-up": "~/.config/waybar/waybar-mpris --send next",
+            "on-scroll-down": "~/.config/waybar/waybar-mpris --send prev",
+    	 "max-length": 70,
         "escape": true,
     },
     "tray": {
@@ -249,7 +247,7 @@
     },
 	"custom/newtab": {
     	"format": "",
-    	"on-click": "firefox --new-window file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
+    	"on-click": "xdg-open file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
     	"tooltip": false 
     },
     "custom/exit": {
