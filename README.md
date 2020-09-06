@@ -8,7 +8,7 @@
 	<li>waybar</li>
 	<li>kdeconnect</li>
 	<li>wofi</li>
-	<li><a href="https://aur.archlinux.org/packages/rofi-lbonn-wayland-git/"</a>rofi</li>
+	<li><a href="https://aur.archlinux.org/packages/rofi-lbonn-wayland-git/"></a>rofi</li>
 	<li>brightnessctl</li>
 	<li>grim</li>
 	<li>slurp</li>
