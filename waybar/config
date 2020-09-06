@@ -34,7 +34,8 @@
              "focused": "",
              "urgent": "",
              "default": ""
-         }
+         },
+         "icon-size": 15
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"

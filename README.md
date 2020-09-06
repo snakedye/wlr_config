@@ -1,6 +1,6 @@
 # sway
 ![Alt text](screenshot.png?raw=true "Title")
-![Alt text](screenshot_alt.png?raw=true "Title")
+<!-- ![Alt text](screenshot_alt.png?raw=true "Title") -->
 
 
 <h5>Optionnal but recommended</h5>
@@ -9,7 +9,9 @@
 	<li>kdeconnect</li>
 	<li>wofi</li>
 	<li>brightnessctl</li>
-	<li>swaylock-effects</li>
+	<li>grim</li>
+	<li>slurp</li>
+	<li>swappy</li><li>swaylock-effects</li>
 	<li>oguri</li>
 	<li>nwg-launchers</li>
 	<li><a href="https://github.com/adi1090x/dynamic-wallpaper">dynamic wallpapers</a></li>
