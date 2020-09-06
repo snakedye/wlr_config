@@ -1,0 +1,27 @@
+clock
+indicator
+# no-unlock-indicator
+daemonize
+indicator-caps-lock
+timestr=%k:%M
+datestr=%a %e %m %Y
+image=~/wallpapers/progressive.png
+scaling=fill
+effect-scale=0.4
+effect-vignette=0.2:0.5
+effect-blur=4x2
+font=SanFranciscoText
+
+# Ring
+indicator-radius=100
+# line-uses-ring
+line-color=#83c0cb
+text-color=#eceff4
+# inside-color=#3d7f8d
+inside-ver-color=#4d3d7f8d
+line-ver-color=#4D3d7f8d
+ring-color=#3d7f8d
+key-hl-color=#385e68
+separator-color=#83c0cb
+layout-text-color=#4e5158
+line-wrong-color=#9c8cbc
