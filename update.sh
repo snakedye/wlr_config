@@ -9,6 +9,7 @@ CONFIG=$(ls ~/sway_config)
 for dir in $CONFIG
 do
   if [[ "$dir" == "wallpapers" || "$dir" == "rofi-spotlight" ]]; then
+    echo "Update ${dir}"
     cp -r ~/$dir ./
   elif [[ "$dir" == "install.sh" || "$dir" == "update.sh" || "$dir" == "LICENSE" || "$dir" == "screenshot.png" || "$dir" == "README.md" || "$dir" == "micro" ]]; then
     continue
@@ -18,7 +19,7 @@ do
   fi
 done
 
-
+echo ""
 echo "Directory updated!"
 echo ""
 
