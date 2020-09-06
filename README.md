@@ -11,7 +11,8 @@
 	<li>brightnessctl</li>
 	<li>grim</li>
 	<li>slurp</li>
-	<li>swappy</li><li>swaylock-effects</li>
+	<li>swappy</li>
+  <li>swaylock-effects</li>
 	<li>oguri</li>
 	<li>nwg-launchers</li>
 	<li><a href="https://github.com/adi1090x/dynamic-wallpaper">dynamic wallpapers</a></li>
