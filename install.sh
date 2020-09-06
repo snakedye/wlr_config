@@ -8,26 +8,24 @@ NO="no"
 
 echo ""
 
-for config in 'sway' 'swaylock' 'wallapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'mako' 'micro' '.vimrc'
+for config in 'sway' 'swaylock' 'wallpapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'rofi-spotlight' 'mako' 'micro' '.vimrc'
 do
 	echo -e "Do you want to copy ${config}?"
 	select ans in yes no; do
 		if [ "$ans" == "$YES" ]; then
-			if [ "$config" == "wallpapers" ]; then
+			if [[ "$config" == "wallpapers" || "$config" == "rofi-spotlight" || "$config" == ".vimrc" ]]; then
 				echo "Copying ${config} to Home"
-				cp -r ./$config ~/
+        if [ "$config" == ".vimrc"  ]; then
+          cp $config ~/
+        else
+				  cp -r ./$config ~/
+        fi
 				echo "Done"
 				echo ""
 				break
-			elif [ "$config" == ".vimrc" ]; then
-        echo "Copying ${config} to Home"
-        cp $config ~/
-        echo "Done"
-        echo ""
-        break
       else
 				echo "Copying ${config} to ${CONFIG}"
-        cp -r ./$config $CONFIG
+        # cp -r ./$config $CONFIG
 				echo "Done"
 				echo ""
 				break

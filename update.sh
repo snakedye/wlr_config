@@ -13,6 +13,8 @@ cp ~/.vimrc ./
 
 cp -r ~/wallpapers ./
 
+cp -r ~/rofi-spotlight ./
+
 # Push to Github
 
 git add ./
