@@ -9,35 +9,34 @@ CONFIG=~/.config/
 
 for config in $INSTALL 
 do
-  if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $dir == "LICENSE" ]] ; then
+  if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $config == "LICENSE" ]] ; then
     continue
   else
     echo -e "Do you want to copy "$config" (y/n)"
     read ans
-    $prompt
     while [ "$ans" != "n" ]
     do
-        if [[ $ans == "n" ]]; then
+      if [[ $ans == "n" ]]; then
+        break
+      elif [[ $ans == "y" ]]; then
+        if [[ $config == "rofi-spotlight" || "$config" == "wallpapers" ]]; then
+          cp -r ./$config ~/
           break
-        elif [[ $ans == "y" ]]; then
-            if [[ $config == "rofi-spotlight" || "$config" == "wallpapers" ]]; then
-                cp -r ./$config ~/
-                break
-            elif [[ $config =~ rc$ ]] ; then
-                cp ./$config ~/.$config
-                break
-            else
-                cp ./$config $CONFIG
-                break
-            fi
+        elif [[ $config =~ rc$ ]] ; then
+          cp ./$config ~/.$config
+          break
         else
-                echo -e "Do you want to copy "$config" (y/n)"
-                read ans
+          cp ./$config $CONFIG
+          break
         fi
-        echo "Done!"
-    done
-    echo ""
-  fi
+      else
+        echo -e "Do you want to copy "$config" (y/n)"
+        read ans
+      fi
+    echo "Done!"
+  done
+  echo ""
+fi
 done
 
 echo "Installation finished!"
