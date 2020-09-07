@@ -1,0 +1,4 @@
+! fire
+!install arch
+!nord theme
+!himeno chainsawman
