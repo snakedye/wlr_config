@@ -26,7 +26,7 @@ do
           cp ./$config ~/.$config
           break
         else
-          cp ./$config $CONFIG
+          cp -r ./$config $CONFIG
           break
         fi
       else
