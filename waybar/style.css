@@ -339,9 +339,9 @@ window#waybar.hidden {
 }
 
 #battery {
-    background-color: #CDCDCD;
 	padding: 0px 8px 0px 8px;
-	border-radius: 5px;
+  background-color: transparent;
+	border-bottom: 3px solid #90718a;
 	/* margin: 0; */
 }
 
