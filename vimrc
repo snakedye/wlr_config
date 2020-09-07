@@ -4,23 +4,27 @@ set nocompatible
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
 
-"call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Nord Theme
-"Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 
 "Fugitive Vim Github Wrapper
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
+
+" Commentary
+Plug 'tpope/vim-commentary'
 
 " Status line
-"Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
-"call plug#end()
+" Autoclose
+Plug 'townk/vim-autoclose'
+
+call plug#end()
 
 " Turn on syntax highlighting.
 syntax on
-" Fugutive plugin
-let g:fugitive_no_maps = 1
 
 " For plug-ins to load correctly.
 filetype plugin indent on

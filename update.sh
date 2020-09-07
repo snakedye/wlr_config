@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 # This is only meant to be used by me
 
@@ -8,14 +8,17 @@ CONFIG=$(ls ~/sway_config)
 
 for dir in $CONFIG
 do
-  if [[ "$dir" == "wallpapers" || "$dir" == "rofi-spotlight" ]]; then
-    echo "Update ${dir}"
+  if [[ $dir =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $dir == "wallpapers" || $dir == "LICENSE" || $dir == "micro" ]]  ; then
+    continue
+  elif [[ -d ~/.config/$dir ]] ; then
+    cp -r ~/.config/$dir ./ 
+    continue
+  elif [[ -d ~/$dir ]] ; then
     cp -r ~/$dir ./
-  elif [[ "$dir" == "install.sh" || "$dir" == "update.sh" || "$dir" == "LICENSE" || "$dir" == "screenshot.png" || "$dir" == "README.md" || "$dir" == "micro" ]]; then
     continue
   else
-    echo "Update ${dir}"
-    cp -r ~/.config/$dir ./
+    cp ~/".$dir" ./"$dir"
+    continue
   fi
 done
 
@@ -26,7 +29,5 @@ echo ""
 # Push to Github
 
 git add ./
-
-git commit -m update
-
+git commit -a
 git push

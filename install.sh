@@ -2,42 +2,42 @@
 
 set -euo pipefail
 
+echo ""
+
+INSTALL=$(ls ./)
 CONFIG=~/.config/
-YES="yes"
-NO="no"
 
-echo ""
-
-for config in 'sway' 'swaylock' 'wallpapers' 'waybar' 'wofi' 'termite' 'nwg-launchers' 'rofi' 'rofi-spotlight' 'mako' 'micro' '.vimrc'
+for config in $INSTALL 
 do
-	echo -e "Do you want to copy ${config}?"
-	select ans in yes no; do
-		if [ "$ans" == "$YES" ]; then
-			if [[ "$config" == "wallpapers" || "$config" == "rofi-spotlight" || "$config" == ".vimrc" ]]; then
-				echo "Copying ${config} to Home"
-        if [ "$config" == ".vimrc"  ]; then
-          cp $config ~/
+  if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $dir == "LICENSE" ]] ; then
+    continue
+  else
+    echo -e "Do you want to copy "$config" (y/n)"
+    read ans
+    $prompt
+    while [ "$ans" != "n" ]
+    do
+        if [[ $ans == "n" ]]; then
+          break
+        elif [[ $ans == "y" ]]; then
+            if [[ $config == "rofi-spotlight" || "$config" == "wallpapers" ]]; then
+                cp -r ./$config ~/
+                break
+            elif [[ $config =~ rc$ ]] ; then
+                cp ./$config ~/.$config
+                break
+            else
+                cp ./$config $CONFIG
+                break
+            fi
         else
-				  cp -r ./$config ~/
+                echo -e "Do you want to copy "$config" (y/n)"
+                read ans
         fi
-				echo "Done"
-				echo ""
-				break
-      else
-				echo "Copying ${config} to ${CONFIG}"
-        # cp -r ./$config $CONFIG
-				echo "Done"
-				echo ""
-				break
-			fi
-		elif [ "$ans" == "$NO" ]; then
-			break
-		fi
-	done
-	# continue
+        echo "Done!"
+    done
+    echo ""
+  fi
 done
-
-echo ""
-
 
 echo "Installation finished!"
