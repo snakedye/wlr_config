@@ -265,8 +265,9 @@ window#waybar.hidden {
 }
 
 #backlight {
-    background-color: #4b5162;
+    background-color:  transparent;
 	padding: 0px 8px 0px 8px;
+	border-bottom: 3px solid #4b5162;
 	/* margin: 0; */
 }
 
@@ -322,7 +323,8 @@ window#waybar.hidden {
 
 
 #temperature {
-    background-color: #b48ead;
+    background-color: transparent;
+	border-bottom: 3px solid #b48ead;
 	/* margin: 0; */
 	
 }
