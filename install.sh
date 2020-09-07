@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-echo ""
+# Wallpapers are not installed ny default
 
 INSTALL=$(ls ./)
 CONFIG=~/.config/
