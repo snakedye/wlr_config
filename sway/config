@@ -9,6 +9,7 @@
 
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
+# exec kwikdisk
 #exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
 # exec razerd
@@ -61,7 +62,7 @@ set $term termite
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu rofi -combi-modi window,drun,ssh -theme slate -font 'hack 10' -show combi -icon-theme 'Papirus' -show-icons
-# set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config
+# set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config -I
 # set $menu nwgdmenu -o 0 -r 8
 set $menu rofi -show drun -config ~/rofi-spotlight/rofi.rasi
 # Window switcher
@@ -124,6 +125,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 bindsym $mod+f1 exec bash ~/.config/sway/lockman.sh
+bindsym $mod+f12 exec bash ~/.config/sway/lockman.sh
 
 # Screenshot with grim and swappy
 bindsym print exec grim -g "$(slurp)" - | swappy -f -

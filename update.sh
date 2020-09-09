@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-CONFIG=$(ls ~/sway_config)
+CONFIG=$(ls ./)
 
 for dir in $CONFIG
 do
@@ -25,9 +25,3 @@ done
 echo ""
 echo "Directory updated!"
 echo ""
-
-# Push to Github
-
-git add ./
-git commit -a
-git push

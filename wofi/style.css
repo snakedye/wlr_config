@@ -1,61 +1,61 @@
 #entry {
-background-color: transparent;
-border: none;
+/* background-color: transparent; */
+border-radius: 5;
+padding: 4px 5px 4px 5px;
 }
+
 #entry:selected {
-background-color: #2e3440;
-border: none;
+background-color: #5e81ac;
+/* border: none; */
 }
  
 #text:selected {
-color: #5e81ac;
+color: #d8dee9;
 font-weight: bold;
 }
  
 #window {
 margin: 5px;
 background-color: #2e3440;
-border: 2px solid #5e81ac;
-border-radius: 0px;
+border-radius: 10px;
+font-family: Inter Regular;
 }
 
 #input {
 /* margin: 5px; */
-margin: 10 10 5 10;
-background-color: none;
-border: 2px solid #4c566a;
-border-radius: 0;
+/* margin: 10 10 5 10; */
+background-color: #4c566a;
+padding: 10px;
+border-color: none;
+border-radius: 5px;
 }
 
 #inner-box {
-color: #e4b86e;
-margin: 5px;
+color: #d8dee9;
+/* margin-top: 20px; */
 background-color: transparent;
 }
 
 #outer-box {
-margin: 15px;
+margin: 20px;
 background-color: transparent;
 }
 
 #scroll {
-margin: 5px;
-border-radius: 7px;
-background-color: none;
-border: none;
-}
-
-#scroll .box {
-
+margin-top: 20px;
+/* border-radius: 7px; */
+/* background-color: none; */
 border: none;
 }
 
 #text {
-margin: 5 10 5 10;
+/* margin: 5 10 5 10; */
+padding: 10px;
+font-size: 14px;
 background-color: transparent;
-border: none;
 } 
 
 #img {
   background-color: transparent;
+  padding: 5px;
 }

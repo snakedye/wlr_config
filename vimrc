@@ -4,6 +4,9 @@ set nocompatible
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
 
+" 4 space tabs
+set tabstop=4
+
 call plug#begin('~/.vim/plugged')
 
 " Nord Theme

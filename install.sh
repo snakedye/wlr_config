@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-# Wallpapers are not installed ny default
-
 INSTALL=$(ls ./)
 CONFIG=~/.config/
 
@@ -16,9 +14,7 @@ do
     read ans
     while [ "$ans" != "n" ]
     do
-      if [[ $ans == "n" ]]; then
-        break
-      elif [[ $ans == "y" ]]; then
+      if [[ $ans == "y" ]]; then
         if [[ $config == "rofi-spotlight" || "$config" == "wallpapers" ]]; then
           cp -r ./$config ~/
           break
