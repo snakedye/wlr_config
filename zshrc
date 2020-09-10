@@ -281,7 +281,7 @@ projects () {
 
 # Config folder
 config () {
-  cd ~/.config/ && cdd  "$1"
+  cd ~/.config/ && cdd  "$1" && r
 }
 
 # Create a directory and move into it

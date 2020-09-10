@@ -16,7 +16,7 @@ font-weight: bold;
  
 #window {
 margin: 5px;
-background-color: #2e3440;
+background-color: rgba(46,52,64,0.9);
 border-radius: 10px;
 font-family: Inter Regular;
 }

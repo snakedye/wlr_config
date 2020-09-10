@@ -15,7 +15,7 @@ do
     while [ "$ans" != "n" ]
     do
       if [[ $ans == "y" ]]; then
-        if [[ $config == "rofi-spotlight" || "$config" == "wallpapers" ]]; then
+        if [[ $config == "arc-theme" || "$config" == "wallpapers" ]]; then
           cp -r ./$config ~/
           break
         elif [[ $config =~ rc$ ]] ; then

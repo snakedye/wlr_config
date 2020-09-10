@@ -2,26 +2,26 @@
   {
     "name": "Lock screen",
     "exec": "~/.config/sway/lockman.sh",
-    "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/actions/database-lock.svg"
+    "icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/lock.svg"
   },
   {
   	"name": "Suspend",
   	"exec": "systemctl suspend;~/.config/sway/lockman.sh",
-  	"icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/panel/stock_weather-night-clear.svg"
+  	"icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/suspend.svg"
   },
   {
     "name": "Logout",
     "exec": "swaymsg exit",
-    "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/actions/application-exit.svg"
+    "icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/logout.svg"
   },
   {
     "name": "Reboot",
     "exec": "systemctl reboot",
-    "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/actions/amarok_playlist_refresh.svg"
+    "icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/reboot.svg"
   },
   {
     "name": "Shutdown",
     "exec": "systemctl -i poweroff",
-    "icon": "/home/bryan/.local/share/icons/Papirus-Dark/24x24/panel/system-devices-panel.svg"
+    "icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/shutdown.svg"
   }
 ]
