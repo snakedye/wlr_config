@@ -179,7 +179,7 @@
       "exec" : "hostname -s",
       //"return-type": "json",
       //"on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSansMedium 10' -show combi -icon-theme 'Papirus' -show-icons",
-      "on-click": "wofi -s ~/.config/wofi/menu.css -c ~/.config/wofi/menu -I",
+      "on-click": "wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I",
       "tooltip": false
     },
     "custom/weather": {
