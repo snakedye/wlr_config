@@ -8,8 +8,8 @@ configuration {
 }
 
 * {
-	background:                     #2e3440;
-	background-color:               #2e3440;
+	background:                     rgba(46,52,64,0.6);
+	background-color:               rgba(46,52,64,0.6);
 	background-entry:               #434c5e;
 	background-alt:                 #5e81ac;
 	foreground:                     #d8dee9;

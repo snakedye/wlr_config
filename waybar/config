@@ -202,16 +202,6 @@
         "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
       	// "tooltip": false
     },
-    "wlr/taskbar": {
-    	"format": "{icon}",
-    	"all-outputs" : false,
-    	"active-first" : false,
-   	    "icon-size": 14,
-   	    "icon-theme": "Numix-Circle",
-        "tooltip-format": "{title}",
-    	"on-click": "activate",
-    	"on-click-middle": "close"
-    },
     "custom/suspend": {
     	"format": "⏻",
     	"on-click": "nwgbar -o 0.2",
@@ -259,7 +249,6 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 16,
-        // "icon-theme": "Numix-Circle",
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-right": "minimize",
