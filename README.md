@@ -17,7 +17,7 @@
 	<li>oguri</li>
 	<li>nwg-launchers</li>
 	<li><a href="https://github.com/adi1090x/dynamic-wallpaper">dynamic wallpapers</a></li>
-	<li>material icons</li>
+	<li>material icons (already in fonts)</li>
 	<li>product sans or google sans</li>
 </ul>
 <h5>Install config files</h5>
@@ -25,6 +25,7 @@
 	<li>git clone https://github.com/snakedye/sway_config.git</li>
 	<li>chmod +x install.sh</li>
 	<li>./install.sh</li>
+  <li><a href="https://wiki.archlinux.org/index.php/Fonts#Installation">font installation</a></li>
 </ol> 
 <h5>If you have Qt apps that aren't displayed in the desired theme</h5>
 <ol>

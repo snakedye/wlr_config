@@ -15,7 +15,7 @@ do
     while [ "$ans" != "n" ]
     do
       if [[ $ans == "y" ]]; then
-        if [[ $config == "arc-theme" || "$config" == "wallpapers" ]]; then
+        if [[ $config == "arc-theme" || "$config" == "wallpapers" || "$config" == "fonts" ]]; then
           cp -r ./$config ~/
           break
         elif [[ $config =~ rc$ ]] ; then
