@@ -8,7 +8,7 @@ CONFIG=$(ls ./)
 
 for dir in $CONFIG
 do
-  if [[ $dir =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $dir == "wallpapers" || $dir == "LICENSE" || $dir == "micro" || $dir == "arc-theme" || $dir == "oguri" ]]  ; then
+  if [[ $dir =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $dir == "wallpapers" || $dir == "LICENSE" || $dir == "micro" || $dir == "arc-theme" || $dir == "fonts" ]]  ; then
     continue
   elif [[ -d ~/.config/$dir ]] ; then
     cp -r ~/.config/$dir ./ 
