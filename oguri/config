@@ -1,5 +1,5 @@
 [output *]
-image=/usr/share/dynamic-wallpaper/images/anime
+image=/usr/share/dynamic-wallpaper/images/flcl
 filter=best
 scaling-mode=fill
 anchor=center
