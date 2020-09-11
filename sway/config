@@ -1,5 +1,4 @@
-# Default c
-# onfig for sway
+# Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
@@ -9,7 +8,7 @@
 
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-# exec kwikdisk
+exec nextcloud
 #exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
 # exec razerd
@@ -311,12 +310,15 @@ include /etc/sway/config.d/*
 
 # Special keys
 
+# /usr/include/xkbcommon/xkbcommon-keysyms.h
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +1%
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 1%-
+bindsym XF86KbdBrightnessUp exec brightnessctl -c backlight set +1%
+bindsym XF86KbdBrightnessDown exec brightnessctl -c backlight set 1%-
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
