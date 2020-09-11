@@ -14,19 +14,22 @@
 	<li>slurp</li>
 	<li>swappy</li>
   <li>swaylock-effects</li>
-	<li>oguri</li>
+	<li>oguri (for dynamic wallpaper)</li>
 	<li>nwg-launchers</li>
 	<li><a href="https://github.com/adi1090x/dynamic-wallpaper">dynamic wallpapers</a></li>
-	<li>material icons (already in fonts)</li>
-	<li>product sans or google sans</li>
+	<li>font awesome (i noticed it a bit to late)</li>
 </ul>
 <h5>Install config files</h5>
 <ol>
 	<li>git clone https://github.com/snakedye/sway_config.git</li>
 	<li>chmod +x install.sh</li>
 	<li>./install.sh</li>
-  <li><a href="https://wiki.archlinux.org/index.php/Fonts#Installation">font installation</a></li>
 </ol> 
+For Arc Theme, install sass and run theses command in the arc-dark directory:
+<ol>
+	<li>```./autogen.sh --prefix=/usr --disable-gnome-shell --disable-cinnamon --disable-metacity --disable-plank --disable-unity --disable-xfwm```</li>
+	<li>sudo make install</li>
+</ol>
 <h5>If you have Qt apps that aren't displayed in the desired theme</h5>
 <ol>
 	<li>Install qt5ct</li>
