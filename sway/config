@@ -8,7 +8,7 @@
 
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-exec nextcloud
+# exec nextcloud
 # exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
 # exec razerd

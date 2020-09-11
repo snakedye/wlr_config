@@ -393,10 +393,11 @@ label:focus {
 
 #custom-suspend {
 	background-color: #a3be8c;
-	/* font-size: 16px; */
+	/* font-size: 18px; */
 	padding: 0px 13px 0px 13px;
 	/* border-radius: 0 5 5 0; */
 	/* border-bottom: 3px solid #829870; */
+  font-weight: bold;
 	margin-right: 0;
 }
 
