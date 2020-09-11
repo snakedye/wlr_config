@@ -1,0 +1,53 @@
+VPATH =
+
+targets := $(shell cat $(srcdir)/assets.txt)
+normal := $(patsubst %,assets/%.png,$(targets))
+hidpi := $(patsubst %,assets/%@2.png,$(targets))
+
+normal: $(normal)
+hidpi: $(hidpi)
+
+assets light dark darker lighter:
+	$(MKDIR_P) "$@"/
+
+clean:
+	rm -rf assets/ light/ dark/ darker/ lighter/
+
+$(normal): $(srcdir)/assets.svg | assets
+if INKSCAPE_1_0_OR_NEWER
+	$(INKSCAPE) --export-id-only --export-filename="$@" --export-id="$(basename $(notdir $@))" --export-dpi=96 "$<" >/dev/null
+else !INKSCAPE_1_0_OR_NEWER
+	$(INKSCAPE) --export-id-only --export-png="$@" --export-id="$(basename $(notdir $@))" --export-dpi=96 "$<" >/dev/null
+endif
+if OPTIPNG
+	$(OPTIPNG) -o7 --quiet "$@"
+endif
+
+$(hidpi): $(srcdir)/assets.svg | assets
+if INKSCAPE_1_0_OR_NEWER
+	$(INKSCAPE) --export-id-only --export-filename="$@" --export-id="$(patsubst %@2,%,$(basename $(notdir $@)))" --export-dpi=192 "$<" >/dev/null
+else !INKSCAPE_1_0_OR_NEWER
+	$(INKSCAPE) --export-id-only --export-png="$@" --export-id="$(patsubst %@2,%,$(basename $(notdir $@)))" --export-dpi=192 "$<" >/dev/null
+endif
+if OPTIPNG
+	$(OPTIPNG) -o7 --quiet "$@"
+endif
+
+.PHONY: normal hidpi clean
+
+if ENABLE_TRANSPARENCY
+%.css: FORCE
+	$(SASSC) "$(srcdir)/sass/$*.scss" "$@"
+else
+gtk.css: FORCE
+	$(SASSC) "$(srcdir)/sass/gtk-solid.scss" "$@"
+gtk-%.css: FORCE
+	$(SASSC) "$(srcdir)/sass/gtk-solid-$*.scss" "$@"
+endif
+
+FORCE:
+
+EXTRA_DIST = \
+	assets.txt \
+	assets.svg \
+	sass
