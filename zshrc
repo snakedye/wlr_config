@@ -299,3 +299,4 @@ mvl () {
   mv -- "$1" "$2" && cd -- "$2" && ls
 }
 
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

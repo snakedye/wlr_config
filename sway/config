@@ -9,7 +9,7 @@
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 exec nextcloud
-#exec ulauncher --hide-window
+# exec ulauncher --hide-window
 # exec --no-startup-id nm-applet
 # exec razerd
 exec mako
@@ -23,11 +23,11 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 
 # Applications
 
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+# exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace 4; exec lutris; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite -e ranger; workspace 1'
-exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
-exec --no-startup-id i3-msg 'workspace 5; exec chromium; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 2; exec termite; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 5; exec chromium; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
 
 # Windows Rules 
@@ -42,6 +42,7 @@ for_window [title="nmtui"] floating enable
 for_window [title="Wine"] floating enable
 # for_window [title="Epic"] floating enable
 for_window [title="Copying"] floating enable
+for_window [title="Authentication Required"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
@@ -72,7 +73,7 @@ bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/ro
 default_border pixel 3
 
 # Font
-font pango:ProductSansMedium 13px 
+font pango:Cantarell 13px 
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
@@ -97,7 +98,7 @@ gaps outer 3
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg ~/wallpapers/minimal.jpg fill
+output "*" bg ~/wallpapers/firenord.png fill
 # swaybg_command -
 #
 # Example configuration:
@@ -225,10 +226,10 @@ bindsym Shift+print exec grim - | swappy -f -
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
     # Switch to next/previous workspace
-    bindsym ctrl+Alt+Right workspace next_on_output
-    bindsym ctrl+Alt+$right workspace next_on_output
-    bindsym ctrl+Alt+Left workspace prev_on_output
-    bindsym ctrl+Alt+$left workspace prev_on_output
+    bindsym ctrl+$mod+Right workspace next_on_output
+    bindsym ctrl+$mod+$right workspace next_on_output
+    bindsym ctrl+$mod+Left workspace prev_on_output
+    bindsym ctrl+$mod+$left workspace prev_on_output
 #
 # Layout stuff:
 #
@@ -310,15 +311,12 @@ include /etc/sway/config.d/*
 
 # Special keys
 
-# /usr/include/xkbcommon/xkbcommon-keysyms.h
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +1%
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 1%-
-bindsym XF86KbdBrightnessUp exec brightnessctl -c backlight set +1%
-bindsym XF86KbdBrightnessDown exec brightnessctl -c backlight set 1%-
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous

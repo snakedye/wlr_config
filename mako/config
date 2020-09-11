@@ -6,7 +6,7 @@ padding=10
 margin=3
 
 border-size=3
-border-radius=0
+border-radius=8
 border-color=#5e81ac
 
 default-timeout=9000
