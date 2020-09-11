@@ -27,7 +27,7 @@
 </ol> 
 For Arc Theme, install sass and run theses command in the arc-dark directory:
 <ol>
-	<li>```./autogen.sh --prefix=/usr --disable-gnome-shell --disable-cinnamon --disable-metacity --disable-plank --disable-unity --disable-xfwm```</li>
+	<li>./autogen.sh --prefix=/usr --disable-gnome-shell --disable-cinnamon --disable-metacity --disable-plank --disable-unity --disable-xfwm</li>
 	<li>sudo make install</li>
 </ol>
 <h5>If you have Qt apps that aren't displayed in the desired theme</h5>
