@@ -5,10 +5,10 @@
     // "width": 1200, // Waybar width
     "margin": 0,
     // Choose the order of the modules
-    "modules-left": ["custom/name","clock", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window",],
+    "modules-left": ["custom/name","clock", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window",],
     "modules-center": ["sway/workspaces"],
     // "idle_inhibitor",
-    "modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery", "custom/pacman", "backlight", "tray", "custom/suspend",],
+    "modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/suspend",],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": false,
@@ -19,15 +19,21 @@
          	"2": [],
          	"3": [],
           "4": [],
+          "5": [],
+          "6": [],
+         // "7": []
          },
          "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "🖿",
-             "4": "🗩",
-             //"focused": "",
-             //"urgent": "",
-             //"default": ""
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "6": "",
+             "7": "",
+             "focused": "",
+             "urgent": "",
+             "default": ""
          },
          "icon-size": 15
      },
@@ -78,8 +84,8 @@
 	 "idle_inhibitor": {
          "format": "{icon}",
          "format-icons": {
-             "activated": "",
-             "deactivated": ""
+             "activated": "",
+             "deactivated": ""
          }
      },
     "clock": {
@@ -169,8 +175,8 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/name": {
-      "format": " ~ {}",
-      "exec" : "hostname",
+      "format": " ~ {}",
+      "exec" : "hostname -s",
       //"return-type": "json",
       //"on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSansMedium 10' -show combi -icon-theme 'Papirus' -show-icons",
       "on-click": "wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I",
@@ -182,11 +188,11 @@
     	"max-length": 10
     },
 	"custom/pacman": {
-        "format": "{}  ",
+        "format": "{}  ",
         "interval": 3600,                     // every hour
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "pamac", // update system
+        "on-click": "termite -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8,
       "tooltip": false
     },
@@ -197,7 +203,7 @@
       	// "tooltip": false
     },
     "custom/suspend": {
-    	"format": "",
+    	"format": "⏻",
     	"on-click": "nwgbar -o 0.2",
 		"escape": true,
     	"tooltip": false 
