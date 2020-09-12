@@ -193,7 +193,7 @@ window#waybar.hidden {
 #custom-github {
 	background-color: transparent;
 	padding: 0 12 0 12;
-	margin-right: 0;
+	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
@@ -265,10 +265,9 @@ window#waybar.hidden {
 }
 
 #backlight {
-  background-color: transparent;
+    background-color: #4b5162;
 	padding: 0px 8px 0px 8px;
-	border-bottom: 3px solid #90718a;
-	margin-right: 0;
+	/* margin: 0; */
 }
 
 #network {
@@ -323,8 +322,8 @@ window#waybar.hidden {
 
 
 #temperature {
-    background-color: transparent;
-	border-bottom: 3px solid #b48ead;
+    background-color: #b48ead;
+	/* margin: 0; */
 	
 }
 
@@ -335,14 +334,14 @@ window#waybar.hidden {
 #tray {
     background-color: transparent;
 	padding: 0px 8px 0px 8px;
-	margin-left: 0;
+	/* margin: 0; */
 	border-bottom: 3px solid #90718a;
 }
 
 #battery {
 	padding: 0px 8px 0px 8px;
   background-color: transparent;
-	border-bottom: 3px solid #bf616a;
+	border-bottom: 3px solid #90718a;
 	/* margin: 0; */
 }
 
@@ -381,7 +380,7 @@ label:focus {
 #idle_inhibitor {
     background-color: transparent;
 /* 	padding: 0px 12px 0px 12px; */
-	/* font-size: 20px; */
+	font-size: 20px;
 	/* margin: 0; */
     margin: 0 4 0 4;
 	border-bottom: 3px solid #7b9b96;
@@ -393,11 +392,10 @@ label:focus {
 
 #custom-suspend {
 	background-color: #a3be8c;
-	/* font-size: 18px; */
+	font-size: 16px;
 	padding: 0px 13px 0px 13px;
 	/* border-radius: 0 5 5 0; */
 	/* border-bottom: 3px solid #829870; */
-  font-weight: bold;
 	margin-right: 0;
 }
 

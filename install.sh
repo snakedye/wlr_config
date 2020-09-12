@@ -18,7 +18,7 @@ do
         if [[ $config == "arc-theme" || "$config" == "wallpapers" || "$config" == "fonts" ]]; then
           cp -r ./$config ~/
           break
-        elif [[ $config =~ rc$ ]] ; then
+        elif [[ $config == "vimrc" || "$config" == "zshrc" ]] ; then
           cp ./$config ~/.$config
           break
         else
