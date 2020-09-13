@@ -26,11 +26,15 @@
          "format-icons": {
              "1": "",
              "2": "",
+             // "2": "",
              "3": "",
              "4": "",
+             // "4": "",
              "5": "",
+             // 5": "",
              "6": "",
-             "7": "",
+             // "6": "",
+             "7": "",
              "focused": "",
              "urgent": "",
              "default": ""
@@ -209,12 +213,12 @@
     	"tooltip": false 
     },
     "custom/github": {
-    	"format": "",
-    	"on-click": "xdg-open https://github.com/snakedye",
+    	"format": "",
+    	"on-click": "xdg-open https://github.com",
     	"tooltip": false 
     },
 	"custom/reddit": {
-    	"format": "",
+    	"format": "",
     	"on-click": "xdg-open https://www.reddit.com/",
        	"on-left-click": "firefox --new-window 'https://www.reddit.com/'",
     	"tooltip": false 
@@ -231,19 +235,15 @@
     	"tooltip": false 
     },
 	"custom/crunchyroll": {
-       	"format": "",
+       	"format": "",
     	"on-click": "xdg-open https://www.crunchyroll.com/",
        	"on-left-click": "firefox --new-window 'https://www.crunchyroll.com/'",
     	"tooltip": false 
     },
 	"custom/newtab": {
-    	"format": "",
+    	// "format": "",
+    	"format": "",
     	"on-click": "xdg-open file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
-    	"tooltip": false 
-    },
-    "custom/exit": {
-       	"format": "",
-       	"on-click": "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'", 
     	"tooltip": false 
     },
     "wlr/taskbar": {
