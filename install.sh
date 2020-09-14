@@ -5,7 +5,7 @@ set -euo pipefail
 INSTALL=$(ls ./)
 CONFIG=~/.config/
 HOME=("wallpapers" "fonts")
-EXTRAS=("azote" "grim" "slurp" "swappy" "brightnessctl")
+EXTRAS=[]
 
 # Confirmation prompt
 prompt () {
@@ -18,11 +18,8 @@ if [[ ! -f /usr/bin/"$1" ]]; then
   ans=""
   prompt install $1
   if [[ $ans == "y"  ]]; then
-    if [[ ! -f /usr/bin/yay ]]; then
-      sudo pacman -S yay
-    fi
     if [[ $1 == "arc-theme" ]]; then
-      if [[ ! -f /usr/bin/yay ]]; then
+      if [[ ! -f /usr/bin/sass ]]; then
         sudo pacman -S sass
       fi
       cd arc-theme
@@ -30,7 +27,7 @@ if [[ ! -f /usr/bin/"$1" ]]; then
       make install
       cd ..
     else
-      sudo yay -S "$1"
+      sudo pacman -S $1
     fi
   fi
   echo ""
@@ -76,7 +73,7 @@ done
 # Extra packages
 echo "Optionnal but recommended"
 echo ""
-for pkg in $EXTRAS
+for pkg in "azote" "grim" "slurp" "swappy" "brightnessctl"
 do
   install $pkg
 done
