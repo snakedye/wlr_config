@@ -21,15 +21,14 @@
 	<li>font awesome (i noticed it a bit to late)</li>
 </ul>
 <h5>Install config files</h5>
-The script is written for pacman. If you use another package manager simply delete line 14 to 17 and add ```pkgmanager "$1"``` below the if statement.
+The script is written for pacman. It will install config files but not packages.
+<br>
+<br>
 <ol>
 	<li>git clone https://github.com/snakedye/sway_config.git</li>
 	<li>chmod +x install.sh</li>
 	<li>./install.sh</li>
 </ol> 
-For Arc Theme, install sass and run theses command in the arc-dark directory: <br><br>
-1.	```./autogen.sh --prefix=/usr --disable-gnome-shell --disable-cinnamon --disable-plank --disable-unity --disable-xfwm``` <br>
-2.	```sudo make install``` <br>
 <h5>If you have Qt apps that aren't displayed in the desired theme</h5>
 <ol>
 	<li>Install qt5ct</li>
