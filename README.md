@@ -21,7 +21,7 @@
 	<li>font awesome (i noticed it a bit to late)</li>
 </ul>
 <h5>Install config files</h5>
-The script is written for pacman. If you use another package manager simply delete line 14 to 17 and add 'pkgmanager "$1"' below the if statement.
+The script is written for pacman. If you use another package manager simply delete line 14 to 17 and add 'pkgmanager "$1"' below the if statement. <br>
 <ol>
 	<li>git clone https://github.com/snakedye/sway_config.git</li>
 	<li>chmod +x install.sh</li>

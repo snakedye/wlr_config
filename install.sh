@@ -5,6 +5,7 @@ set -euo pipefail
 INSTALL=$(ls ./)
 CONFIG=~/.config/
 HOME=("wallpapers" "fonts")
+EXTRAS=("azote" "grim" "slurp" "swappy" "brightnessctl")
 
 # Confirmation prompt
 prompt () {
@@ -36,6 +37,7 @@ if [[ ! -f /usr/bin/"$1" ]]; then
 fi
 }
 
+# Installing configuration files
 for config in $INSTALL 
 do
   if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $config == "LICENSE" ]]; then
@@ -66,9 +68,17 @@ do
         prompt install $config
       fi
     echo "Done!"
-  done
+    done
   echo ""
 fi
+done
+
+# Extra packages
+echo "Optionnal but recommended"
+echo ""
+for pkg in $EXTRAS
+do
+  install $pkg
 done
 
 # Success message
