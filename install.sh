@@ -4,6 +4,7 @@ set -euo pipefail
 
 INSTALL=$(ls ./)
 CONFIG=~/.config/
+HOME= ("arc-theme" "wallapers" "fonts")
 
 for config in $INSTALL 
 do
@@ -15,7 +16,7 @@ do
     while [ "$ans" != "n" ]
     do
       if [[ $ans == "y" ]]; then
-        if [[ $config == "arc-theme" || "$config" == "wallpapers" || "$config" == "fonts" ]]; then
+        if [[ " ${HOME[@]} " =~ " ${config} " ]]; then
           cp -r ./$config ~/
           break
         elif [[ $config == "vimrc" || "$config" == "zshrc" ]] ; then
@@ -24,6 +25,13 @@ do
         else
           cp -r ./$config $CONFIG
           break
+        fi
+        if [[ ! -f /usr/bin/$config && -d ~/.config/$config ]]; then
+          echo -e "Do you want to install "$config" (y/n)"
+          read ans
+          if [[ $ans == "yes"  ]]; then
+            yay $config
+          fi
         fi
       else
         echo -e "Do you want to copy "$config" (y/n)"

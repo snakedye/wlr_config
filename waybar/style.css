@@ -184,7 +184,7 @@ window#waybar.hidden {
 
 #custom-newtab {
 	background-color: transparent;
-	font-size: 18px;
+	font-size: 14px;
 	padding: 0 12 0 12;
 	margin-right: 0;
 	border-bottom: 3px solid #ebcb8b;
@@ -199,7 +199,7 @@ window#waybar.hidden {
 
 #custom-reddit {
 	background-color: transparent;
-	padding: 0 12 0 12;
+	padding: 0 12 1 12;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
@@ -391,7 +391,7 @@ label:focus {
 }
 
 #custom-suspend {
-	background-color: #a3be8c;
+	background-color: #92ab7e;
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
 	/* border-radius: 0 5 5 0; */
