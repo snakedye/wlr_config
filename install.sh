@@ -4,29 +4,48 @@ set -euo pipefail
 
 INSTALL=$(ls ./)
 CONFIG=~/.config/
-HOME=("arc-theme" "wallpapers" "fonts")
+HOME=("wallpapers" "fonts")
+
+# Confirmation prompt
+prompt () {
+  echo -e "Do you want to $1 $2 (y/n)"
+  read ans
+}
 
 install () {
 if [[ ! -f /usr/bin/"$1" ]]; then
-  echo -e "Do you want to install "$config" (y/n)"
-  read ans
+  ans=""
+  prompt install $1
   if [[ $ans == "y"  ]]; then
     if [[ ! -f /usr/bin/yay ]]; then
       sudo pacman -S yay
     fi
-    yay -S "$1"
-    break
+    if [[ $1 == "arc-theme" ]]; then
+      if [[ ! -f /usr/bin/yay ]]; then
+        sudo pacman -S sass
+      fi
+      cd arc-theme
+      ./autogen.sh --prefix=$HOME/.local --disable-gnome-shell --disable-cinnamon --disable-plank --disable-unity --disable-xfwm
+      make install
+      cd ..
+    else
+      sudo yay -S "$1"
+    fi
   fi
+  echo ""
 fi
 }
 
 for config in $INSTALL 
 do
-  if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $config == "LICENSE" ]] ; then
+  if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $config == "LICENSE" ]]; then
+    continue
+  elif [[ $config =~ "arc-theme" ]]; then
+    install $config
     continue
   else
-    echo -e "Do you want to copy "$config" (y/n)"
-    read ans
+    ans=""
+    prompt copy $config
     while [ "$ans" != "n" ]
     do
       if [[ $ans == "y" ]]; then
@@ -44,8 +63,7 @@ do
         fi
         break
       else
-        echo -e "Do you want to copy "$config" (y/n)"
-        read ans
+        prompt install $config
       fi
     echo "Done!"
   done
@@ -53,5 +71,5 @@ do
 fi
 done
 
-
+# Success message
 echo "Installation finished!"
