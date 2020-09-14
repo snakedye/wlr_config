@@ -23,6 +23,7 @@
 <h5>Install config files</h5>
 The script is written for pacman. It will install config files but not packages.
 <br>
+<br>
 <ol>
 	<li>git clone https://github.com/snakedye/sway_config.git</li>
 	<li>chmod +x install.sh</li>
