@@ -27,9 +27,11 @@ The script is written for pacman. If you use another package manager simply dele
 	<li>chmod +x install.sh</li>
 	<li>./install.sh</li>
 </ol> 
-For Arc Theme, install sass and run theses command in the arc-dark directory: <br><br>
-1.	`./autogen.sh --prefix=/usr --disable-gnome-shell --disable-cinnamon --disable-plank --disable-unity --disable-xfwm` <br>
-2.	`sudo make install` <br>
+<h5>For Arc Theme, install sass and run theses command in the arc-dark directory:</h5> 
+<ol>
+    <li>./autogen.sh --prefix=/usr --disable-gnome-shell --disable-cinnamon --disable-plank --disable-unity --disable-xfwm <\li>
+    <li>sudo make install<\li>
+</ol>
 <h5>If you have Qt apps that aren't displayed in the desired theme</h5>
 <ol>
 	<li>Install qt5ct</li>
