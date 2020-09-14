@@ -11,7 +11,10 @@ if [[ ! -f /usr/bin/"$1" ]]; then
   echo -e "Do you want to install "$config" (y/n)"
   read ans
   if [[ $ans == "y"  ]]; then
-    sudo pacman -S "$1"
+    if [[ ! -f /usr/bin/yay ]]; then
+      sudo pacman -S yay
+    fi
+    yay -S "$1"
     break
   fi
 fi
@@ -33,7 +36,11 @@ do
           cp ./$config ~/.$config
         else
           cp -r ./$config $CONFIG
-          install $config
+          if [[ $config == "rofi"  ]]; then
+            install rofi-lbonn-wayland
+          else
+            install $config
+          fi
         fi
         break
       else
