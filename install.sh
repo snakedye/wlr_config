@@ -4,7 +4,7 @@ set -euo pipefail
 
 INSTALL=$(ls ./)
 CONFIG=~/.config/
-HOME= ("arc-theme" "wallapers" "fonts")
+HOME=("arc-theme" "wallpapers" "fonts")
 
 for config in $INSTALL 
 do
