@@ -6,6 +6,17 @@ INSTALL=$(ls ./)
 CONFIG=~/.config/
 HOME=("arc-theme" "wallpapers" "fonts")
 
+install () {
+if [[ ! -f /usr/bin/"$1" ]]; then
+  echo -e "Do you want to install "$config" (y/n)"
+  read ans
+  if [[ $ans == "y"  ]]; then
+    sudo pacman -S "$1"
+    break
+  fi
+fi
+}
+
 for config in $INSTALL 
 do
   if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $config == "LICENSE" ]] ; then
@@ -18,21 +29,13 @@ do
       if [[ $ans == "y" ]]; then
         if [[ " ${HOME[@]} " =~ " ${config} " ]]; then
           cp -r ./$config ~/
-          break
         elif [[ $config == "vimrc" || "$config" == "zshrc" ]] ; then
           cp ./$config ~/.$config
-          break
         else
           cp -r ./$config $CONFIG
-          break
+          install $config
         fi
-        if [[ ! -f /usr/bin/$config && -d ~/.config/$config ]]; then
-          echo -e "Do you want to install "$config" (y/n)"
-          read ans
-          if [[ $ans == "yes"  ]]; then
-            yay $config
-          fi
-        fi
+        break
       else
         echo -e "Do you want to copy "$config" (y/n)"
         read ans
@@ -42,5 +45,6 @@ do
   echo ""
 fi
 done
+
 
 echo "Installation finished!"
