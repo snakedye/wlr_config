@@ -5,10 +5,10 @@
 set -euo pipefail
 
 CONFIG=$(ls ./)
-
+EXCLUDE=("arc-theme" "wallpapers" "LICENCE" "micro" "dolphinrc")
 for dir in $CONFIG
 do
-  if [[ $dir =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $dir == "wallpapers" || $dir == "LICENSE" || $dir == "micro" || $dir == "arc-theme" || $dir == "fonts" ]]  ; then
+  if [[ $dir =~ ^[a-zA-Z0-9]+\.[a-z]+$ || " ${EXCLUDE[@]} " =~ " ${dir} " ]]  ; then
     continue
   elif [[ -d ~/.config/$dir ]] ; then
     cp -r ~/.config/$dir ./ 
