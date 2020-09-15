@@ -55,7 +55,8 @@ do
         else
           cp -r ./$config $CONFIG
           if [[ $config == "rofi"  ]]; then
-            install rofi-lbonn-wayland
+            # install rofi-lbonn-wayland
+            break
           else
             install $config
           fi
@@ -71,12 +72,14 @@ fi
 done
 
 # Extra packages
-echo "Optionnal but recommended"
-echo ""
-for pkg in "azote" "grim" "slurp" "swappy" "brightnessctl"
-do
-  install $pkg
-done
+# They are all on the AUR, I'll have to work on that
+
+# echo "Optionnal but recommended"
+# echo ""
+# for pkg in "azote" "grim" "slurp" "swappy" "brightnessctl"
+# do
+#   install $pkg
+# done
 
 # Success message
 echo "Installation finished!"
