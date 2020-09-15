@@ -4,8 +4,6 @@ set -euo pipefail
 
 INSTALL=$(ls ./)
 CONFIG=~/.config/
-HOME=("wallpapers" "fonts")
-EXTRAS=[]
 
 # Confirmation prompt
 prompt () {
@@ -13,11 +11,15 @@ prompt () {
   read ans
 }
 
+# Pacman
 install () {
 if [[ ! -f /usr/bin/"$1" ]]; then
   ans=""
   prompt install $1
   if [[ $ans == "y"  ]]; then
+    if [[ ! -f /usr/bin/yay ]]; then
+    sudo pacman -S yay
+    fi
     if [[ $1 == "arc-theme" ]]; then
       if [[ ! -f /usr/bin/sass ]]; then
         sudo pacman -S sass
@@ -27,7 +29,7 @@ if [[ ! -f /usr/bin/"$1" ]]; then
       make install
       cd ..
     else
-      sudo pacman -S $1
+      yay -S $1
     fi
   fi
   echo ""
@@ -35,7 +37,7 @@ fi
 }
 
 # Installing configuration files
-for config in $INSTALL 
+for config in $INSTALL
 do
   if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $config == "LICENSE" ]]; then
     continue
@@ -48,14 +50,15 @@ do
     while [ "$ans" != "n" ]
     do
       if [[ $ans == "y" ]]; then
-        if [[ " ${HOME[@]} " =~ " ${config} " ]]; then
-          cp -r ./$config ~/
-        elif [[ $config == "vimrc" || "$config" == "zshrc" ]] ; then
+        if [[ $config == "vimrc" || "$config" == "zshrc" ]] ; then
           cp ./$config ~/.$config
         else
           cp -r ./$config $CONFIG
           if [[ $config == "rofi"  ]]; then
-            # install rofi-lbonn-wayland
+            install rofi-lbonn-wayland
+            break
+          elif [[ $config == "swaylock"  ]]; then
+            install swaylock-effects
             break
           else
             install $config
@@ -72,14 +75,15 @@ fi
 done
 
 # Extra packages
-# They are all on the AUR, I'll have to work on that
 
-# echo "Optionnal but recommended"
-# echo ""
-# for pkg in "azote" "grim" "slurp" "swappy" "brightnessctl"
-# do
-#   install $pkg
-# done
+echo "Optionnal but recommended"
+echo ""
+for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect"
+do
+  if ! install $pkg; then
+    continue
+  fi
+done
 
 # Success message
 echo "Installation finished!"

@@ -21,8 +21,7 @@
 	<li>font awesome (i noticed it a bit to late)</li>
 </ul>
 <h5>Install config files</h5>
-The script is written for pacman. It will install config files but not packages.
-<br>
+<p>The script is written for pacman. If you use another package manager it will install config files but not packages.
 <br>
 <ol>
 	<li>git clone https://github.com/snakedye/sway_config.git</li>
