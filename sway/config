@@ -25,8 +25,8 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 
 # Applications
 
-# exec --no-startup-id sway-msg 'workspace 1; exec firefox; workspace 1'
-# exec --no-startup-id sway-msg 'workspace 2; exec termite; workspace 1'
+exec --no-startup-id 'workspace 1; exec firefox'
+# exec --no-startup-id 'workspace 2; exec termite; workspace 1'
 # exec --no-startup-id sway-msg 'workspace 5; exec chromium; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
 
@@ -46,7 +46,7 @@ for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
-# for_window [app_id="dolphin"] opacity 0.95
+for_window [app_id="dolphin"] opacity 0.97
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -112,13 +112,11 @@ gaps outer 3
 # Example configuration:
 #
 
-set $lock exec bash swaylock -C ~/.config/swaylock/config
-
-exec swayidle -w \
-    timeout 600 $lock \
+exec swayidle -w\
+    timeout 600 ‘exec bash swaylock -C ~/.config/swaylock/config’\
     timeout 570 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep $lock
+    before-sleep ‘exec bash swaylock -C ~/.config/swaylock/config’
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
