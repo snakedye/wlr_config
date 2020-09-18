@@ -4,10 +4,11 @@
     border-radius: 0;
     padding: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Ubuntu, MesloLGS NF, Arial, sans-serif;
+    /* font-family: San Francisco Text, MesloLGS NF, Arial, sans-serif; */
+  /* font-family: JetBrains Mono, Ubuntu Mono; */
    font-size: 13px;
    /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
-    /* font-weight: bold; */
+    font-weight: 500;
 }
 
 window#waybar {
@@ -78,7 +79,7 @@ window#waybar.hidden {
 
 /* #workspaces, */
 #workspaces button,
-#custom-suspend,
+#custom-power,
 #custom-exit,
 #custom-pacman,
 #custom-name,
@@ -193,6 +194,7 @@ window#waybar.hidden {
 #custom-github {
 	background-color: transparent;
 	padding: 0 12 0 12;
+	font-size: 13px;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
@@ -200,6 +202,7 @@ window#waybar.hidden {
 #custom-reddit {
 	background-color: transparent;
 	padding: 0 12 1 12;
+	font-size: 13px;
 	margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
@@ -207,6 +210,7 @@ window#waybar.hidden {
 #custom-crunchyroll {
 	background-color: transparent;
 	padding: 0 12 0 12;
+	font-size: 13px;
     margin: 0;
 	border-bottom: 3px solid #ebcb8b;
 }
@@ -214,13 +218,14 @@ window#waybar.hidden {
 #custom-youtube {
 	background-color: transparent;
 	padding: 0 12 0 12;
+	font-size: 13px;
 	margin:0;
 	border-bottom: 3px solid #ebcb8b;
 }
 
 #custom-mail {
 	background-color: transparent;
-	font-size: 18px;
+	font-size: 13px;
 	padding: 0 2 0 12;
     margin: 0;
 	border-bottom: 3px solid #ebcb8b;
@@ -229,6 +234,9 @@ window#waybar.hidden {
 /* WIDGETS */
 
 #custom-name {
+  font-family: Ubuntu;
+  font-size: 13px;
+    font-weight: normal;
     background-color: transparent;
 	padding: 0px 10px 0px 10px;
     /* border-radius: 5 0 0 5; */
@@ -258,16 +266,17 @@ window#waybar.hidden {
 }
 
 #memory {
-    background-color:  transparent;
+  background-color:  transparent;
 	padding: 0px 8px 0px 8px;
 	/* margin: 0; */
 	border-bottom: 3px solid #88c0d0;
 }
 
 #backlight {
-    background-color: #4b5162;
+  background-color:  transparent;
 	padding: 0px 8px 0px 8px;
-	/* margin: 0; */
+	border-bottom: 3px solid #90718a;
+	margin-right: 0;
 }
 
 #network {
@@ -323,8 +332,9 @@ window#waybar.hidden {
 
 
 #temperature {
-    background-color: #b48ead;
+    background-color: transparent;
 	/* margin: 0; */
+	border-bottom: 3px solid #b48ead;
 	
 }
 
@@ -375,13 +385,14 @@ label:focus {
     background-color: transparent;
 /* 	padding: 0px 8px 0px 8px; */
 	margin: 0 4 0 4;
-	border-bottom: 3px solid #bf616a;
+	border-bottom: 3px solid #DB8E9D;
 }
 
 #idle_inhibitor {
     background-color: transparent;
 /* 	padding: 0px 12px 0px 12px; */
 	font-size: 20px;
+  color: #d8dee9;
 	/* margin: 0; */
     margin: 0 4 0 4;
 	border-bottom: 3px solid #7b9b96;
@@ -389,15 +400,18 @@ label:focus {
 
 #idle_inhibitor.activated {
 	border-bottom: 3px solid #d8dee9;
+  color: #ffffff;
 }
 
-#custom-suspend {
-	background-color: #92ab7e;
+#custom-power {
+  /* background-color: transparent; */
+	background-color: #829870;
+    font-weight: normal;
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
 	/* border-radius: 0 5 5 0; */
 	/* border-bottom: 3px solid #829870; */
-	margin-right: 0;
+  margin-right: 0px;
 }
 
 #mpd {
@@ -419,9 +433,3 @@ label:focus {
     background-color: #51a37a;
 }
 
-#custom-exit {
-	background-color: #4b5162;
-	padding: 0px 8px 0px 8px;
-	border-radius: 5;
-	/* margin: 0; */
-}

@@ -4,7 +4,7 @@
  */
 
 configuration {
-	display-drun:    "Activate";
+	display-drun:    "Menu";
 	display-run:     "Execute";
 	display-window:  "Window";
 	show-icons:      true;
@@ -12,12 +12,12 @@ configuration {
 }
 
 * {
-	background-color:            rgba(47,52,65, 0.3);
+	background-color:            #353b49;
 	text-color:                  #d3d7cf;
-	selbg:                       #5294e2;
+	selbg:                       #81a1c1;
 	actbg:                       #262626;
 	urgbg:                       #e53935;
-	winbg:			     #5294e2;
+	winbg:			     #81a1c1;
 
 	selected-normal-foreground:  @winbg;
 	normal-foreground:           @text-color;
@@ -46,12 +46,13 @@ window {
 	location:	 west;
 	anchor:		 west;
 	height:		 100%;
-	width:		 22%;
+	width:		 20%;
 	orientation: horizontal;
 	children:	 [mainbox];
 }
 
 mainbox {
+  padding: 10px;
 	spacing:  0.8em;
 	children: [ entry,listview,mode-switcher ];
 }
@@ -64,8 +65,8 @@ button selected {
 }
 
 inputbar {
-	padding: 5px;
-	spacing: 5px;
+	padding: 9px;
+	spacing: 9px;
 }
 
 listview {
@@ -129,3 +130,7 @@ element alternate.active {
 	background-color: @active-background;
 	text-color:       @active-foreground;
 }
+
+element-icon { size: 2ch ; }
+
+element-text { margin-left: 15px;  }

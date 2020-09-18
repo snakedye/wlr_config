@@ -41,11 +41,14 @@ for_window [title="~nwg"] border none
 for_window [title="nmtui"] floating enable
 for_window [title="Wine"] floating enable
 for_window [title="Authentication required"] floating enable
+for_window [title="Authorization is required"] floating enable
 # for_window [title="Epic"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
+for_window [workspace="3"] layout tabbed 
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
+for_window [workspace="6"] fullscreen toggle
 for_window [app_id="dolphin"] opacity 0.97
 ### Variables
 #
@@ -61,8 +64,8 @@ set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-# set $menu rofi -combi-modi window,drun,ssh -theme slate -font 'hack 10' -show combi -icon-theme 'Papirus' -show-icons
-set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/config -I
+set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
+# set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I
 # set $menu nwgdmenu -o 0 -r 8
 # set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
 # Window switcher
@@ -73,21 +76,24 @@ bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/ro
 default_border pixel 3
 
 # Font
-font pango:ProductSansMedium 13px 
+# font pango:ProductSansMedium 13px 
+font pango:SanFranciscoText 13px 
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
 client.focused          #5e81ac #5e81ac #ffffff #7c818c   #5e81ac
-client.focused_inactive #4B5162 #383c4a #ffffff #7c818c   #383c4a
-client.unfocused        #4B5162 #383c4a #888888 #7c818c   #383c4a
-client.urgent           #7c818c #900000 #ffffff #900000   #900000
+client.focused_inactive #d8dee9 #383c4a #ffffff #7c818c   #383c4a
+client.unfocused        #d8dee9 #383c4a #888888 #7c818c   #383c4a
+client.urgent           #7c818c #bf616a #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 #Asignments
 assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
-assign [app_id="gnome-boxes"] 7
+assign [app_id="gnome-boxes"] 6
+assign [app_id="signal"] 5
+assign [app_id="discord"] 5
 assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -113,17 +119,17 @@ gaps outer 3
 #
 
 exec swayidle -w\
-    timeout 600 ‘exec bash swaylock -C ~/.config/swaylock/config’\
+    timeout 600 ‘exec swaylock -C ~/.config/swaylock/config’\
     timeout 570 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep ‘exec bash swaylock -C ~/.config/swaylock/config’
+    before-sleep ‘exec swaylock -C ~/.config/swaylock/config’
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-bindsym $mod+f1 exec bash ~/.config/sway/lockman.sh
-bindsym $mod+f12 exec bash ~/.config/sway/lockman.sh
+bindsym $mod+f1 exec ~/.config/sway/lockman.sh
+bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 
 # Screenshot with grim and swappy
 bindsym print exec grim -g "$(slurp)" - | swappy -f -

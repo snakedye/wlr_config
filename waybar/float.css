@@ -12,9 +12,8 @@
 
 window#waybar {
     /* background-color: rgba(47,52,65, 0.0); */
-    background-color: #3b4252;
-    /* background-color: transparent; */
-    /* border-radius: 5px; */
+    /* background-color: #3b4252; */
+    background-color: transparent;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -25,8 +24,9 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    background-color: transparent;
-    /* border-radius: 5px; */
+    background-color: rgba(47,52,65, 0.7); 
+    /* background-color: transparent; */
+    border-radius: 5px;
     padding: 4;
     margin: 0 0 0 20;
 /*     padding-left: 5; */
@@ -47,11 +47,15 @@ window#waybar.hidden {
 	padding: 15px;
     background-color: transparent;
 	padding: 0 10 0 10;
-    margin: 0;
+    /* margin: 0; */
     /* border-radius: 0 5 5 0; */
 	/* border-bottom: 3px solid #ebcb8b; */
 }
 
+window#waybar .empty {
+    background-color: rgba(47,52,65, 0.7); 
+    border-radius: 5px;
+}
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     /* background: rgba(0, 0, 0, 0.2); */
@@ -66,7 +70,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: #eb4d4b;
 }
 
 #mode {
@@ -121,21 +125,21 @@ window#waybar.hidden {
 	background-color: #434c5e;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid #4b5162;
+	/* border-bottom: 3px solid #4b5162; */
 }
 
 #custom-waybar-media.playing {
 	background-color: #5e81ac;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid #4b5162;
+	/* border-bottom: 3px solid #4b5162; */
 }
 
 #custom-waybar-media.paused {
 	background-color: #81a1c1;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid #4b5162;
+	/* border-bottom: 3px solid #4b5162; */
 }
 
 #custom-waybar-media.stopped {
@@ -148,7 +152,7 @@ window#waybar.hidden {
 /* TASKBAR */
 
 #taskbar {
-    background-color:#4b5162;
+  background-color:#4b5162;
 	margin: 0;
 	padding: 0;
 }
@@ -174,85 +178,90 @@ window#waybar.hidden {
 /* BROWSER BOOKMARKS */
 
 #custom-newtab {
-	background-color: transparent;
+	background-color: #434c5e;
 	font-size: 18px;
 	padding: 0 12 0 12;
 	margin: 0;
-	border-bottom: 3px solid #ebcb8b;
+    border-radius: 5 0 0 5;
+	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 #custom-github {
-	background-color: transparent;
+	background-color: #434c5e;
 	padding: 0 12 0 12;
 	margin: 0;
-	border-bottom: 3px solid #ebcb8b;
+	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 #custom-reddit {
-	background-color: transparent;
+	background-color: #434c5e;
 	padding: 0 12 0 12;
 	margin: 0;
-	border-bottom: 3px solid #ebcb8b;
+	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 #custom-crunchyroll {
-	background-color: transparent;
+	background-color: #434c5e;
 	padding: 0 12 0 12;
     margin: 0;
-	border-bottom: 3px solid #ebcb8b;
+    border-radius: 0 5 5 0;
+	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 #custom-youtube {
-	background-color: transparent;
+	background-color: #434c5e;
 	padding: 0 12 0 12;
 	margin:0;
-	border-bottom: 3px solid #ebcb8b;
+	/* border-bottom: 3px solid #ebcb8b; */
 }
-
 #custom-mail {
-	background-color: transparent;
+	/* background-color: #434c5e; */
+	background-color: #4c566a;
 	font-size: 18px;
 	padding: 0 2 0 12;
     margin: 0;
-	border-bottom: 3px solid #ebcb8b;
+	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 /* WIDGETS */
 
 #custom-name {
-    background-color: #434c5e;
+    background-color: #5e81ac;
 	padding: 0px 10px 0px 10px;
     /* border-radius: 5 0 0 5; */
-	margin: 0;
-	border-bottom: 3px solid #81a1c1;
+    border-radius: 5px;
+	margin: 0 10 0 0;
+	/* border-bottom: 3px solid #81a1c1; */
 }
 
 #clock {
-    background-color: #4b5162;
+    background-color: #3b4252;
 	padding: 0px 8px 0px 8px;
-	margin: 0;
-	border-bottom: 3px solid #bf616a;
+	/* margin: 0; */
+    border-radius: 5px;
+	margin: 0 10 0 0;
+	/* border-bottom: 3px solid #bf616a; */
 }
 
 #custom-pacman {
 	background-color: #5e81ac;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid #4b6789;
+	/* border-bottom: 3px solid #4b6789; */
 }
 
 #cpu {
     background-color:  #698A86;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid #546e6b;
+	/* border-bottom: 3px solid #546e6b; */
 }
 
 #memory {
     background-color:  #8FB3B4;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid #728f90;
+	/* border-bottom: 3px solid #728f90; */
 }
 
 #backlight {
@@ -265,7 +274,7 @@ window#waybar.hidden {
     background-color: #81a1c1;
 	padding: 0px 8px 0px 8px;
 	margin: 0;	
-	border-bottom: 3px solid #67809a;
+	/* border-bottom: 3px solid #67809a; */
 }
 
 #network.disconnected {
@@ -276,15 +285,15 @@ window#waybar.hidden {
     background-color:  #D3B67D;
 	padding: 0px 10px 0px 10px;
 	margin: 0;
-	border-bottom: 3px solid #91874e;	
-	/* border-radius: 5 0 0 5; */
+	/* border-bottom: 3px solid #91874e; */	
+	border-radius: 5 0 0 5;
 }
 
 #custom-weather {
     background-color: #7b9b96;
 	padding: 0 8 0 8;
 	margin: 0;
-	border-bottom: 3px solid #708c86;
+	/* border-bottom: 3px solid #708c86; */
 }
 
 #pulseaudio.muted {
@@ -322,10 +331,11 @@ window#waybar.hidden {
 }
 
 #tray {
-    background-color: #4c566a;
+    background-color: #90718a;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid #90718a;
+	/* border-bottom: 3px solid #90718a; */
+	border-radius: 0 5 5 0;
 }
 
 #battery {
@@ -364,7 +374,7 @@ label:focus {
     background-color: #AA8A7A;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-	border-bottom: 3px solid  #886e61;
+	/* border-bottom: 3px solid  #886e61; */
 }
 
 #idle_inhibitor {
@@ -373,7 +383,7 @@ label:focus {
 	border-radius: 5 0 0 5;
 	font-size: 20px;
 	margin: 0;
-	border-bottom: 3px solid #708c86;
+	/* border-bottom: 3px solid #708c86; */
 }
 
 #idle_inhibitor.activated {
@@ -385,7 +395,7 @@ label:focus {
     background-color: #66cc99;
 	padding: 3px 8px 3px 8px;
 	margin: 0;
-	border-bottom: 3px solid #708c86;
+	/* border-bottom: 3px solid #708c86; */
 	border-radius: 5 0 0 5;
 }
 
@@ -410,10 +420,10 @@ label:focus {
 }
 
 #custom-suspend {
-	background-color: #4b5162;
+	background-color: #829870;
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
-	/* border-radius: 0 5 5 0; */
-	border-bottom: 3px solid #829870;
-	margin: 0;
+	border-radius: 5;
+	/* border-bottom: 3px solid #829870; */
+	margin: 0 0 0 10;
 }

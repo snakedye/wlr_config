@@ -1,0 +1,7 @@
+* {
+	background: rgba(46,52,64,1);
+	background-alt: rgba(46,52,64,1);
+	foreground: #434c5e;
+	white: #e5e9f0;
+	accent:#81a1c1;
+}

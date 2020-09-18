@@ -5,7 +5,7 @@ daemonize
 indicator-caps-lock
 timestr=%k:%M
 datestr=%a %e %m %Y
-image=~/wallpapers/minimal.jpg
+image=~/wallpapers/1.jpg
 scaling=fill
 effect-scale=0.4
 effect-vignette=0.2:0.5
@@ -18,10 +18,11 @@ indicator-radius=90
 line-color=#5e81ac
 text-color=#eceff4
 # inside-color=#3d7f8d
-inside-ver-color=#b48ead
-line-ver-color=#a3be8c
-ring-color=#81a1c1
-key-hl-color=#5e81ac
-separator-color=#5e81ac
+inside-ver-color=#81a1c1
+line-ver-color=#81a1c1
+ring-ver-color=#81a1c1
+ring-color=#7490ad
+key-hl-color=#67809a
+separator-color=#67809a
 layout-text-color=#eceff4
 line-wrong-color=#bf616a
