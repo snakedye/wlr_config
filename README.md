@@ -1,6 +1,6 @@
 # sway
 ![Alt text](screenshot.png?raw=true "Title")
-<!-- ![Alt text](screenshot_alt.png?raw=true "Title") -->
+![Alt text](screenshot_alt.png?raw=true "Title")
 
 
 <h5>Optionnal but recommended</h5>

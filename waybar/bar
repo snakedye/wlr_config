@@ -1,0 +1,256 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)		
+    // "height": 38, // Waybar height (to be removed for auto height)
+    // "width": 1200, // Waybar width
+    "margin": 0,
+    // Choose the order of the modules
+    "modules-left": ["custom/name","clock", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window",],
+    "modules-center": ["sway/workspaces"],
+    // "idle_inhibitor",
+    "modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "custom/pacman", "backlight", "tray", "custom/power",],
+    // Modules configuration
+     "sway/workspaces": {
+         "disable-scroll": false,
+         "all-outputs": true,
+         "format": "{icon}",
+         "persistent_workspaces": {
+         	"1": [],
+         	"2": [],
+         	"3": [],
+          "4": [],
+         // "5": [],
+         //"6": [],
+         // "7": []
+         },
+         "format-icons": {
+             "1": "",
+             "2": "",
+             // "2": "",
+             "3": "",
+             // "4": "",
+             "4": "",
+             // 5": "",
+             "5": "",
+             // "6": "",
+             "6": "",
+             "focused": "",
+             "urgent": "",
+             "default": ""
+         },
+         "icon-size": 15
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+    	"format": {},
+    	// "max-length": 40,
+    },
+	"mpd": {
+        "format": "♪ {}",
+        //"max-length": 15,
+        "interval": 10, 
+        "exec": "mpc current", 
+        "exec-if": "pgrep mpd",
+        "on-click": "mpc toggle",
+        "on-click-right": "sonata"
+    },
+	"custom/waybar-media": {
+        "return-type": "json",
+        "exec": "~/.config/waybar/waybar-media.py status",
+        "on-click": "~/.config/waybar/waybar-media.py playpause",
+        "on-scroll-up": "~/.config/waybar/waybar-media.py previous",
+        "on-scroll-down": "~/.config/waybar/waybar-media.py next",
+        // "max-length": 12,
+        "escape": true
+    },
+    "custom/waybar-mpris": {
+        "return-type": "json",
+        "exec": "~/.config/waybar/waybar-mpris --position --autofocus",
+        "on-click": "~/.config/waybar/waybar-mpris --send toggle",
+        // This option will switch between players on right click.
+            "on-click-right": "~/.config/waybar/waybar-mpris --send player-next",
+        // The options below will switch the selected player on scroll
+            // "on-scroll-up": "~/.config/waybar/waybar-mpris --send player-next",
+            // "on-scroll-down": "~/.config/waybar/waybar-mpris --send player-prev",
+        // The options below will go to next/previous track on scroll
+            "on-scroll-up": "~/.config/waybar/waybar-mpris --send next",
+            "on-scroll-down": "~/.config/waybar/waybar-mpris --send prev",
+    	 "max-length": 70,
+        "escape": true,
+    },
+    "tray": {
+        // "icon-size": 21,
+         "spacing": 15
+    },
+	 "idle_inhibitor": {
+         "format": "{icon}",
+         "format-icons": {
+             "activated": "",
+             "deactivated": ""
+         }
+     },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+    "interval": 5,
+    "format": "{icon}",
+    "format-alt": "{percent}% {icon}",
+    "format-alt-click": "click-right",
+    "format-icons": ["🌕", "🌔", "🌓", "🌒", "🌑"],
+    "on-scroll-down": "brightnessctl -c backlight set 5%-",
+    "on-scroll-up": "brightnessctl -c backlight set +5%"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        "interface": "wlan0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-middle": "exec termite -e nmtui"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/name": {
+      "format": " ~ {}",
+      "exec" : "hostname",
+      //"return-type": "json",
+      "on-click": "rofi -combi-modi window,drun,ssh -theme sidetab -font 'ProductSans 10' -show combi -icon-theme 'Papirus' -show-icons",
+      // "on-click": "wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I",
+      "tooltip": false
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/?format=1'",
+        "interval": 3600,
+    	"max-length": 10
+    },
+	"custom/pacman": {
+        "format": "{}  ",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "termite -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+      "tooltip": false
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{percentage_free}% left in HDD",
+        "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
+      	// "tooltip": false
+    },
+    "custom/power": {
+    	"format": "⏻",
+    	"on-click": "nwgbar -o 0.2",
+		"escape": true,
+    	"tooltip": false 
+    },
+    "custom/github": {
+    	"format": "",
+    	"on-click": "xdg-open https://github.com",
+    	"tooltip": false 
+    },
+	"custom/reddit": {
+    	"format": "",
+    	"on-click": "xdg-open https://www.reddit.com/",
+       	"on-left-click": "firefox --new-window 'https://www.reddit.com/'",
+    	"tooltip": false 
+    },
+    "custom/youtube": {
+       	"format": "",
+    	"on-click": "xdg-open https://www.youtube.com/",
+       	"on-middle-click": "firefox --ssb 'https://www.youtube.com/'",
+    	"tooltip": false 
+    },
+    "custom/mail": {
+       	"format": "",
+        "on-click": "thunderbird",
+    	"tooltip": false 
+    },
+	"custom/crunchyroll": {
+       	"format": "",
+    	"on-click": "xdg-open https://www.crunchyroll.com/",
+       	"on-left-click": "firefox --new-window 'https://www.crunchyroll.com/'",
+    	"tooltip": false 
+    },
+	"custom/newtab": {
+    	// "format": "",
+    	"format": "",
+    	"on-click": "xdg-open file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
+    	"tooltip": false 
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-right": "minimize",
+        "on-click-middle": "close"
+    }
+}

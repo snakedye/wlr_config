@@ -1,6 +1,6 @@
 #entry {
 /* background-color: transparent; */
-border-radius: 0;
+border-radius: 5;
 padding: 4px 5px 4px 5px;
 }
 
@@ -17,10 +17,10 @@ font-weight: bold;
 #window {
 padding: 9px;
 background-color: #353b49;
-border: 3px solid #3b4252;
+/* border: 3px solid #3b4252; */
 border-top: none;
 border-left: none;
-/* border-radius: 3px; */
+border-radius: 8px;
 font-family: Product Sans;
 }
 
@@ -31,7 +31,7 @@ text-align: center;
 border: 2px solid #5e81ac;
 background-color: #4c566a;
 padding: 6 10 6 10;
-border-radius: 2px;
+border-radius: 5px;
 }
 
 #inner-box {
