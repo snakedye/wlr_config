@@ -78,7 +78,7 @@ done
 
 echo "Optionnal but recommended"
 echo ""
-for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect"
+for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts" "autotiling"
 do
   if ! install $pkg; then
     continue

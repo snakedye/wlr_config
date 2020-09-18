@@ -18,7 +18,7 @@
 	<li>oguri (for dynamic wallpaper)</li>
 	<li>nwg-launchers</li>
 	<li><a href="https://github.com/adi1090x/dynamic-wallpaper">dynamic wallpapers</a></li>
-	<li>font awesome (i noticed it a bit to late)</li>
+	<li>font awesome & nerd-fonts (i noticed it a bit to late)</li>
 </ul>
 <h5>Install config files</h5>
 <p>The script is written for pacman. If you use another package manager it will install config files but not packages.
