@@ -4,15 +4,15 @@
     border-radius: 0;
     padding: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    /* font-family: Product Sans Medium,Google Sans Medium, San Francisco Text,Roboto, Helvetica, Arial, sans-serif; */
+    font-family: Ubuntu, MesloLGS NF, Arial, sans-serif;
    font-size: 13px;
-   font-family: Ubuntu ,Arial, Helvetica, sans-serif;
+   /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
     /* font-weight: bold; */
 }
 
 window#waybar {
-    /* background-color: rgba(47,52,65, 0.0); */
-    background-color: #3b4252;
+    background-color: rgba(59,66,82,0.9);
+    /* background-color: #3b4252; */
     /* background-color: transparent; */
     /* border-radius: 5px; */
     color: #ffffff;
@@ -278,7 +278,8 @@ window#waybar.hidden {
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+  background-color: #bf616a;
+	border-bottom: 3px solid #bf616a;
 }
 
 #pulseaudio {
@@ -374,7 +375,7 @@ label:focus {
     background-color: transparent;
 /* 	padding: 0px 8px 0px 8px; */
 	margin: 0 4 0 4;
-	border-bottom: 3px solid #AA8A7A;
+	border-bottom: 3px solid #bf616a;
 }
 
 #idle_inhibitor {
