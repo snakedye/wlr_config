@@ -28,8 +28,10 @@ if [[ ! -f /usr/bin/"$1" ]]; then
       ./autogen.sh --prefix=$HOME/.local --disable-gnome-shell --disable-cinnamon --disable-plank --disable-unity --disable-xfwm
       make install
       cd ..
+    elif yay -S $1; then
+      continue
     else
-      yay -S $1
+      continue
     fi
   fi
   echo ""
@@ -39,7 +41,7 @@ fi
 # Installing configuration files
 for config in $INSTALL
 do
-  if [[ $config =~ ^[a-zA-Z0-9]+\.[a-z]+$ || $config == "LICENSE" ]]; then
+  if [[ $config =~ ^[a-zA-Z0-9_]+\.[a-z]+$ || $config == "LICENSE" ]]; then
     continue
   elif [[ $config =~ "arc-theme" ]]; then
     install $config
@@ -56,9 +58,6 @@ do
           cp -r ./$config $CONFIG
           if [[ $config == "rofi"  ]]; then
             install rofi-lbonn-wayland
-            break
-          elif [[ $config == "swaylock"  ]]; then
-            install swaylock-effects
             break
           else
             install $config
