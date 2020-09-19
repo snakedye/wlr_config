@@ -16,7 +16,6 @@ exec ~/.azotebg
 exec autotiling
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
-# exec kdeinit5
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
@@ -25,7 +24,7 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 
 # Applications
 
-exec --no-startup-id 'workspace 1; exec firefox'
+# exec --no-startup-id 'workspace 1; exec firefox'
 # exec --no-startup-id 'workspace 2; exec termite; workspace 1'
 # exec --no-startup-id sway-msg 'workspace 5; exec chromium; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
@@ -119,10 +118,10 @@ gaps outer 3
 #
 
 exec swayidle -w\
-    timeout 600 ‘exec swaylock -C ~/.config/swaylock/config’\
+    timeout 600 'swaylock -f -C ~/.config/swaylock/config'\
     timeout 570 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep ‘exec swaylock -C ~/.config/swaylock/config’
+    before-sleep 'exec "swaylock -f -C ~/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
