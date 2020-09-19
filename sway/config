@@ -121,7 +121,7 @@ exec swayidle -w\
     timeout 600 'swaylock -f -C ~/.config/swaylock/config'\
     timeout 570 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'exec "swaylock -f -C ~/.config/swaylock/config'
+    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -229,13 +229,9 @@ bindsym Shift+print exec grim - | swappy -f -
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
     # Switch to next/previous workspace
-    bindsym ctrl+$mod+Right workspace next_on_output
     bindsym ctrl+Alt+Right workspace next_on_output
-    bindsym ctrl+$mod+$right workspace next_on_output
     bindsym ctrl+Alt+$right workspace next_on_output
-    bindsym ctrl+$mod+Left workspace prev_on_output
     bindsym ctrl+Alt+Left workspace prev_on_output
-    bindsym ctrl+$mod+$left workspace prev_on_output
     bindsym ctrl+Alt+$left workspace prev_on_output
 #
 # Layout stuff:
