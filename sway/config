@@ -230,9 +230,13 @@ bindsym Shift+print exec grim - | swappy -f -
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
     # Switch to next/previous workspace
+    bindsym ctrl+$mod+Right workspace next_on_output
     bindsym ctrl+Alt+Right workspace next_on_output
+    bindsym ctrl+$mod+$right workspace next_on_output
     bindsym ctrl+Alt+$right workspace next_on_output
+    bindsym ctrl+$mod+Left workspace prev_on_output
     bindsym ctrl+Alt+Left workspace prev_on_output
+    bindsym ctrl+$mod+$left workspace prev_on_output
     bindsym ctrl+Alt+$left workspace prev_on_output
 #
 # Layout stuff:
