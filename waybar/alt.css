@@ -8,7 +8,8 @@
    font-size: 13px;
    margin: 0;
    /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
-    font-weight: 500;
+   font-family: Product Sans ,Arial, Helvetica, sans-serif;
+   font-weight: 500;
 }
 
 window#waybar {
@@ -42,6 +43,8 @@ window#waybar.hidden {
   margin: 0;
   padding: 5px;
   background-color: transparent;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
   color: #ffffff;
 }
 
@@ -125,16 +128,20 @@ window#waybar.hidden {
 /* WAYBAR-MEDIA */
 
 #custom-waybar-media {
-	padding: 0px 8px 0px 8px;
-	margin: 0;
+  background-color:  #3b4252;
+  padding: 0 15 0 15;
+  border-radius: 15px;
+	/* padding: 0px 8px 0px 8px; */
 }
 
 #custom-waybar-media.playing {
+  background-color:  #5e81ac;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
 }
 
 #custom-waybar-media.paused {
+  background-color:  #3b4252;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
 }
@@ -209,6 +216,7 @@ window#waybar.hidden {
   margin: 0;
 	color: #a3be8c;
       border-radius: 0 15px 15px 0;
+	margin-right: 10;
 }
 
 #custom-youtube {
@@ -233,13 +241,15 @@ window#waybar.hidden {
   border-radius: 10px;
   padding: 0px 8px 0px 8px;
   margin-right: 7;
+  font-weight: 600;
 }
 
 #custom-pacman {
   background-color:  #3b4252;
 	padding: 0px 8px 0px 8px;
 	margin: 0;
-    color: #ebcb8b;
+  color: #ebcb8b;
+  font-weight: 600;
 }
 
 #cpu {

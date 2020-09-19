@@ -1,14 +1,14 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 40, // Waybar height (to be removed for auto height)
+    "height": 38, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     "margin-top": 8,
     "margin-right": 8,
     "margin-left": 8,
     "margin-bottom": 0,
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","sway/window",],
+    "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","custom/waybar-media"],
     "modules-center": [],
     // "idle_inhibitor",
     "modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
@@ -48,16 +48,32 @@
     },
     "sway/window": {
     	"format": {},
-    	// "max-length": 40,
+    	"max-length": 35,
     },
 	"mpd": {
-        "format": "♪ {}",
-        //"max-length": 15,
-        "interval": 10, 
-        "exec": "mpc current", 
-        "exec-if": "pgrep mpd",
-        "on-click": "mpc toggle",
-        "on-click-right": "sonata"
+    	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    	"format-disconnected": "Disconnected ",
+    	"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    	"interval": 2,
+    	"consume-icons": {
+    		"on": " " // Icon shows only when "consume" is on
+    	},
+    	"random-icons": {
+    		"off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+    		"on": " "
+    	},
+    	"repeat-icons": {
+    		"on": " "
+    	},
+    	"single-icons": {
+    		"on": "1 "
+    	},
+    	"state-icons": {
+    		"paused": "",
+    		"playing": ""
+    	},
+    	"tooltip-format": "MPD (connected)",
+    	"tooltip-format-disconnected": "MPD (disconnected)"
     },
 	"custom/waybar-media": {
         "return-type": "json",
@@ -250,7 +266,7 @@
     },
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 16,
+        "icon-size": 14,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-right": "minimize",
