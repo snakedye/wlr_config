@@ -5,11 +5,11 @@
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: San Francisco Text, MesloLGS NF, Arial, sans-serif; */
   /* font-family: JetBrains Mono, Ubuntu Mono; */
-   font-size: 13px;
+   /* font-size: 13px; */
    margin: 0;
    /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
    font-family: Product Sans ,Arial, Helvetica, sans-serif;
-   font-weight: 500;
+   /* font-weight: 500; */
 }
 
 window#waybar {
@@ -31,7 +31,7 @@ window#waybar.hidden {
 #workspaces {
   background-color:  #3b4252;
   padding: 0 10 0 10;
-  font-size: 15px;
+  font-size: 25px;
   border-radius: 15px;
   margin-right: 7;
 /*     padding-left: 5; */
@@ -186,7 +186,6 @@ window#waybar.hidden {
 
 #custom-newtab {	
   background-color:  #3b4252;
-	font-size: 14px;
 	padding: 0 12 0 12;
 	margin-right: 0;
 	color: #bf616a;
@@ -196,7 +195,6 @@ window#waybar.hidden {
 #custom-github {
   background-color:  #3b4252;
 	padding: 0 12 0 12;
-	font-size: 13px;
 	margin: 0;
 	color: #d08770;
 }
@@ -204,7 +202,6 @@ window#waybar.hidden {
 #custom-reddit {
   background-color:  #3b4252;
 	padding: 0 12 1 12;
-	font-size: 13px;
 	margin: 0;
 	color: #ebcb8b;
 }
@@ -212,7 +209,6 @@ window#waybar.hidden {
 #custom-crunchyroll {
   background-color:  #3b4252;
 	padding: 0 12 0 12;
-	font-size: 13px;
   margin: 0;
 	color: #a3be8c;
       border-radius: 0 15px 15px 0;
@@ -222,7 +218,6 @@ window#waybar.hidden {
 #custom-youtube {
   background-color:  #3b4252;
 	padding: 0 12 0 12;
-	font-size: 13px;
 	margin:0;
 	color: #b48ead;
 }
@@ -230,7 +225,6 @@ window#waybar.hidden {
 #custom-mail {
   margin: 0;
   background-color:  #3b4252;
-	font-size: 13px;
 	padding: 0 2 0 12;
 	color: #88c0d0;
 }
@@ -320,6 +314,7 @@ window#waybar.hidden {
 
 #temperature {
   background-color: #3b4252 ;
+  margin: 0;
 }
 
 #temperature.critical {
