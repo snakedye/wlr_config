@@ -1,27 +1,18 @@
 * {
-	/* margin: ; */
-    border: none;
-    padding: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    /* font-family: San Francisco Text, MesloLGS NF, Arial, sans-serif; */
-  /* font-family: JetBrains Mono, Ubuntu Mono; */
-   /* font-size: 13px; */
+   border: none;
+   padding: 0;
+   font-size: 13px;
    margin: 0;
-   /* font-family: Ubuntu ,Arial, Helvetica, sans-serif; */
    font-family: Product Sans ,Arial, Helvetica, sans-serif;
-   /* font-weight: 500; */
+   font-weight: 500;
 }
 
 window#waybar {
-    background-color: transparent;
-    /* background-color: #3b4252; */
-    /*  */
-    /* border-radius: 5px; */
-    /* border-radius: 5; */
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
-    box-shadow: 0px 0px 8px 10px #0d0d0d;
+   background-color: transparent;
+   color: #ffffff;
+   transition-property: background-color;
+   transition-duration: .5s;
+   box-shadow: 0px 0px 8px 10px #0d0d0d;
 }transition
 
 window#waybar.hidden {
@@ -31,10 +22,9 @@ window#waybar.hidden {
 #workspaces {
   background-color:  #3b4252;
   padding: 0 10 0 10;
-  font-size: 25px;
+  font-size: 15px;
   border-radius: 15px;
   margin-right: 7;
-/*     padding-left: 5; */
 }
 
 #workspaces button {
@@ -50,19 +40,16 @@ window#waybar.hidden {
 
 #window {
   background-color: transparent;
-  color: #3b4252;
+  color: #4c566a;
 	padding: 15px;
 	padding: 0 10 0 10;
   margin: 0;
   font-size: 14px;
   font-weight: 700;
-  /* border-radius: 0 5 5 0; */
-	/* border-bottom: 3px solid #ebcb8b; */
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    /* background: rgba(0, 0, 0, 0.2); */
     box-shadow: inherit;
     color: #5e81ac;
     border-top: 3px solid transparent;
@@ -131,7 +118,6 @@ window#waybar.hidden {
   background-color:  #3b4252;
   padding: 0 15 0 15;
   border-radius: 15px;
-	/* padding: 0px 8px 0px 8px; */
 }
 
 #custom-waybar-media.playing {
@@ -159,7 +145,7 @@ window#waybar.hidden {
 /* TASKBAR */
 
 #taskbar {
-    background-color:#4b5162;
+  background-color:#4b5162;
 	margin: 0;
 	padding: 0;
 }
@@ -170,31 +156,33 @@ window#waybar.hidden {
 }
 
 #taskbar button.active {
-    background-color:  #5e81ac;
+  background-color:  #5e81ac;
 }
 
 #taskbar button.minimized {
-    background-color: #7c818c;
+  background-color: #7c818c;
 }
 
 #taskbar button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inherit;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inherit;
 }
 
 /* BROWSER BOOKMARKS */
 
 #custom-newtab {	
   background-color:  #3b4252;
+	font-size: 14px;
 	padding: 0 12 0 12;
 	margin-right: 0;
 	color: #bf616a;
-    border-radius: 15px 0 0 15px;
+  border-radius: 15px 0 0 15px;
 }
 
 #custom-github {
   background-color:  #3b4252;
 	padding: 0 12 0 12;
+	font-size: 13px;
 	margin: 0;
 	color: #d08770;
 }
@@ -202,6 +190,7 @@ window#waybar.hidden {
 #custom-reddit {
   background-color:  #3b4252;
 	padding: 0 12 1 12;
+	font-size: 13px;
 	margin: 0;
 	color: #ebcb8b;
 }
@@ -209,15 +198,17 @@ window#waybar.hidden {
 #custom-crunchyroll {
   background-color:  #3b4252;
 	padding: 0 12 0 12;
+	font-size: 13px;
   margin: 0;
 	color: #a3be8c;
-      border-radius: 0 15px 15px 0;
+  border-radius: 0 15px 15px 0;
 	margin-right: 10;
 }
 
 #custom-youtube {
   background-color:  #3b4252;
 	padding: 0 12 0 12;
+	font-size: 13px;
 	margin:0;
 	color: #b48ead;
 }
@@ -225,7 +216,7 @@ window#waybar.hidden {
 #custom-mail {
   margin: 0;
   background-color:  #3b4252;
-	padding: 0 2 0 12;
+	padding: 0 12 0 12;
 	color: #88c0d0;
 }
 
@@ -285,8 +276,6 @@ window#waybar.hidden {
   margin: 0;
   background-color: #3b4252 ;
 	padding: 0 8 0 8;
-/* 	marginj: 0; */
-	border-bottom: 3px solid #7b9b96;
 }
 
 #pulseaudio.muted {
@@ -318,16 +307,16 @@ window#waybar.hidden {
 }
 
 #temperature.critical {
-  background-color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #tray {
   margin: 0;
   background-color: #3b4252 ;
 	padding: 0px 12px 0px 8px;
-    border-radius: 0 15px 15px 0;
-    margin-right: 7;
-    color: #8fbcbb;
+  border-radius: 0 15px 15px 0;
+  margin-right: 7;
+  color: #8fbcbb;
 }
 
 #battery {
@@ -337,7 +326,7 @@ window#waybar.hidden {
 }
 
 #battery.charging {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 @keyframes blink {
@@ -373,6 +362,7 @@ label:focus {
   color: #6f7787;
   padding-left: 12px;
   border-radius: 15px 0 0 15px;
+	margin-left: 10;
 }
 
 #idle_inhibitor.activated {
@@ -381,11 +371,9 @@ label:focus {
 
 #custom-power {
   background-color:  #DB8E9D;
-  /* background-color: #3b4252 ; */
   font-weight: normal;
 	font-size: 16px;
 	padding: 0px 13px 0px 13px;
-  /* border-radius: 0 15px 15px 0; */
   border-radius: 10px;
 }
 

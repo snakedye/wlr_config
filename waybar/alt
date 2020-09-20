@@ -8,47 +8,49 @@
     "margin-left": 8,
     "margin-bottom": 0,
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/crunchyroll","custom/waybar-media"],
+    "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll", "sway/window"],
     "modules-center": [],
-    // "idle_inhibitor",
-    "modules-right": [ "idle_inhibitor", "pulseaudio","disk", "network", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
+    "modules-right": [ "custom/waybar-media", "idle_inhibitor", "custom/weather", "pulseaudio","disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
     // Modules configuration
-     "sway/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": true,
-         "format": "{icon}",
-         "persistent_workspaces": {
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "persistent_workspaces": {
          	"1": [],
          	"2": [],
-         	"3": [],
-          "4": [],
-         // "5": [],
-         //"6": [],
-         // "7": []
-         },
-         "format-icons": {
-             "1": "",
-             "2": "",
-             // "2": "",
-             "3": "",
-             // "4": "",
-             "4": "",
-             // 5": "",
-             "5": "",
-             // "6": "",
-             "6": "",
-             "focused": "",
-             "urgent": "",
-             "default": ""
-         },
-         "icon-size": 15
-     },
+			"3": [],
+        // "4": [],
+        // "5": [],
+        // "6": [],
+        // "7": []
+        },
+        "format-icons": {
+            "1": "",
+            "2": "",
+            // "2": "",
+            "3": "",
+            // "4": "",
+            "4": "",
+            // 5": "",
+            "5": "",
+            // "6": "",
+            "6": "",
+            "focused": "",
+            "urgent": "",
+            "default": ""
+        },
+        "icon-size": 15
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "custom/nm": {
+        "exec": "timeout 5s ~/.config/sway/nm-tray.sh",
+    },
     "sway/window": {
     	"format": {},
-    	"max-length": 35,
+    	"max-length": 30,
     },
 	"mpd": {
     	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
@@ -81,7 +83,6 @@
         "on-click": "~/.config/waybar/waybar-media.py playpause",
         "on-scroll-up": "~/.config/waybar/waybar-media.py previous",
         "on-scroll-down": "~/.config/waybar/waybar-media.py next",
-        // "max-length": 12,
         "escape": true
     },
     "custom/waybar-mpris": {
@@ -101,7 +102,7 @@
     },
     "tray": {
         // "icon-size": 21,
-         "spacing": 15
+         "spacing": 15,
     },
 	 "idle_inhibitor": {
          "format": "{icon}",
@@ -123,11 +124,12 @@
         "format": "{}% "
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
+        "interval": 60,
         "format-icons": ["", "", ""]
     },
     "backlight": {
@@ -187,7 +189,7 @@
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
-        "max-length": 40,
+        // "max-length": 40,
         "format-icons": {
             "spotify": "",
             "default": "🎜"
@@ -206,8 +208,7 @@
     },
     "custom/weather": {
         "exec": "curl 'https://wttr.in/?format=1'",
-        "interval": 3600,
-    	"max-length": 10
+        "interval": 60,
     },
 	"custom/pacman": {
         "format": "{}  ",
@@ -222,7 +223,6 @@
         "interval": 30,
         "format": "{percentage_free}% left in HDD",
         "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
-      	// "tooltip": false
     },
     "custom/power": {
     	"format": "⏻",
@@ -248,8 +248,8 @@
     	"tooltip": false 
     },
     "custom/mail": {
-       	"format": "",
-        "on-click": "thunderbird",
+       	"format": "",
+        "on-click": "xdg-open https://mail.google.com/mail/u/0/",
     	"tooltip": false 
     },
 	"custom/crunchyroll": {
@@ -263,6 +263,16 @@
     	"format": "",
     	"on-click": "xdg-open file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
     	"tooltip": false 
+    },
+    "custom/events": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 300,
+        "format-icons": {
+            "default": ""
+        },
+        "exec": "~/.config/waybar/waybar-khal.py",
+        "return-type": "json"
     },
     "wlr/taskbar": {
         "format": "{icon}",
