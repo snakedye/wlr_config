@@ -2,7 +2,7 @@
 FontWeight=50
 
 [Desktop Entry]
-DefaultProfile=Profile 1.profile
+DefaultProfile=clean.profile
 
 [DetailsMode]
 FontWeight=50
@@ -20,19 +20,30 @@ ViewPropsTimestamp=2020,9,10,20,20,58
 FontWeight=50
 
 [KPropertiesDialog]
+DP-3 Height 1080=550
+DP-3 Width 1920=433
 Height 1080=575
 Width 1920=494
 
 [MainWindow]
+DP-3 Height 1080=763
+DP-3 Width 1920=952
 Height 1080=1080
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAwAAAAAAAAC0AAADBPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAABABAAAJ+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAADBAAAAFEBAAAJAAAAAQAAAL4AAAME/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAQAAAAAAAAMEAAABDQEAAAkAAAADAAAHRAAAAPn8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawEAAAAmAAAHRAAAAKkBAAAJAAAF0AAAAwQAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAA=
+State=AAAA/wAAAAD9AAAAAwAAAAAAAABdAAACxvwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAABABAAAJ+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAACxgAAAGMBAAAJAAAAAQAAALYAAALG/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAQAAAAAAAALGAAABNAEAAAkAAAADAAADkgAAADT8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawEAAAAmAAADkgAAAKkBAAAJAAACfQAAAsYAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAA=
 ToolBarsMovable=Disabled
 Width 1920=1920
 Window-Maximized 1080x1920=true
+XWAYLAND0 Window-Maximized 1080x1920=true
+XWAYLAND0 XPosition=966
+XWAYLAND0 YPosition=54
 
 [MainWindow][Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
+
+[Open-with settings]
+CompletionMode=1
+History=xou
 
 [PreviewSettings]
 Plugins=svgthumbnail,kraorathumbnail,opendocumentthumbnail,audiothumbnail,exrthumbnail,windowsexethumbnail,imagethumbnail,ebookthumbnail,jpegthumbnail,comicbookthumbnail,windowsimagethumbnail,resvgthumbnailer,appimagethumbnail,directorythumbnail,djvuthumbnail,cursorthumbnail

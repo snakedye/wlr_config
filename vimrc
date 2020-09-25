@@ -24,6 +24,9 @@ Plug 'vim-airline/vim-airline'
 " Autoclose
 Plug 'townk/vim-autoclose'
 
+" Install ansible plugin 
+Plug 'pearofducks/ansible-vim'
+
 call plug#end()
 
 " Turn on syntax highlighting.

@@ -1,13 +1,13 @@
 font=SanFranciscoFont 10
 
-background-color=#e5e9f0
+background-color=#3b4252
 progress-color=source #81a1c1
-text-color=#5e81ac
+text-color=#e5e9f0
 padding=10
 margin=5
 
 border-size=0
-border-radius=3
+border-radius=9
 border-color=#81a1c1
 
 default-timeout=9000

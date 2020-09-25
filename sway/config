@@ -5,13 +5,9 @@
 # Read `man 5 sway` for a complete reference.
 
 # Autostart
-
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-# exec nextcloud
 #exec ulauncher --hide-window
-# exec --no-startup-id nm-applet
-# exec razerd
 exec ~/.azotebg
 exec autotiling
 exec mako
@@ -22,26 +18,19 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 # exec oguri
 # exec dwall -s flcl &
 
-# Applications
-
+# Startup applications
 # exec --no-startup-id 'workspace 1; exec firefox'
 # exec --no-startup-id 'workspace 2; exec termite; workspace 1'
 # exec --no-startup-id sway-msg 'workspace 5; exec chromium; workspace 1'
 # exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
 
 # Windows Rules 
-
-for_window [app_id="plasmashell"] floating enable;
-for_window [app_id="Plasma"] floating enable; border none
 # for_window [app_id="krunner"] floating enable; border none
-for_window [app_id="plasmashell" window_type="notification"] floating enable 
-no_focus [app_id="plasmashell" window_type="notification"] floating enable
 for_window [title="~nwg"] border none 
-for_window [title="nmtui"] floating enable
+for_window [app_id="nm-tray"] floating enable
 for_window [title="Wine"] floating enable
 for_window [title="Authentication"] floating enable
-for_window [title="Authorization is required"] floating enable
-# for_window [title="Epic"] floating enable
+for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
 for_window [title="Copying"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="3"] layout tabbed 
@@ -49,6 +38,7 @@ for_window [workspace="4"] layout tabbed
 for_window [workspace="5"] layout tabbed
 for_window [workspace="6"] fullscreen toggle
 for_window [app_id="dolphin"] opacity 0.97
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -63,11 +53,12 @@ set $term termite
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
+#
 # set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
 set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I
 # set $menu nwgdmenu -o 0 -r 8
 # set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
-# Window switcher
+# Rofi Spotlight
 bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/rofi-spotlight.sh" -show "Global Search" \
 -config ~/.config/rofi/rofi-spotlight/rofi.rasi
 
@@ -118,10 +109,10 @@ gaps outer 3
 #
 
 exec swayidle -w\
-    timeout 600 'swaylock -f -C ~/.config/swaylock/config'\
-    timeout 570 'swaymsg "output * dpms off"' \
+    timeout 800 'swaylock -f -C ~/.config/swaylock/config'\
+    timeout 770 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
+    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config & pulseaudio -k'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when

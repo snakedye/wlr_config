@@ -20,15 +20,7 @@ if [[ ! -f /usr/bin/"$1" ]]; then
     if [[ ! -f /usr/bin/yay ]]; then
     sudo pacman -S yay
     fi
-    if [[ $1 == "arc-theme" ]]; then
-      if [[ ! -f /usr/bin/sass ]]; then
-        sudo pacman -S sass
-      fi
-      cd arc-theme
-      ./autogen.sh --prefix=$HOME/.local --disable-gnome-shell --disable-cinnamon --disable-plank --disable-unity --disable-xfwm
-      make install
-      cd ..
-    elif yay -S $1; then
+    if yay -S $1; then
       continue
     else
       continue
@@ -42,9 +34,6 @@ fi
 for config in $INSTALL
 do
   if [[ $config =~ ^[a-zA-Z0-9_]+\.[a-z]+$ || $config == "LICENSE" ]]; then
-    continue
-  elif [[ $config =~ "arc-theme" ]]; then
-    install $config
     continue
   else
     ans=""
