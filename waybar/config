@@ -1,7 +1,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 38, // Waybar height (to be removed for auto height)
+    "height": 35, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     "margin-top": 8,
     "margin-right": 8,
@@ -9,8 +9,8 @@
     "margin-bottom": 0,
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",],
-    "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "custom/weather", "pulseaudio","disk", "custom/events", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
+    "modules-center": ["clock"],
+    "modules-right": ["idle_inhibitor", "custom/weather", "pulseaudio","disk", "custom/events", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","custom/power",],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": false,
@@ -21,20 +21,13 @@
          	"2": [],
 			    "3": [],
           "4": [],
-        // "5": [],
-        // "6": [],
-        // "7": []
         },
         "format-icons": {
             "1": "",
             "2": "",
-            // "2": "",
             "3": "",
-            // "4": "",
             "4": "",
-            // 5": "",
             "5": "",
-            // "6": "",
             "6": "",
             "focused": "",
             "urgent": "",
@@ -44,10 +37,6 @@
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "custom/nm": {
-        "exec": "timeout 5s ~/.config/sway/nm-tray.sh",
-        "escape": true,
     },
     "sway/window": {
     	"format": "{}",
@@ -63,7 +52,7 @@
     },
     "tray": {
         // "icon-size": 21,
-         "spacing": 15,
+         "spacing": 14,
     },
 	 "idle_inhibitor": {
          "format": "{icon}",
@@ -74,8 +63,10 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+        "format": "{:%A, %B %d at %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "on-click": "wldash",
+        // "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -155,8 +146,10 @@
         "tooltip": false
     },
     "custom/weather": {
-        "exec": "curl 'https://wttr.in/?format=1'",
-        "interval": 3600
+        "exec": "~/.config/waybar/weather.sh Terrebonne",
+        "format": "{}",
+        "return-type": "json",
+        "interval": 600
     },
 	  "custom/pacman": {
         "format": "{}  ",
@@ -212,16 +205,6 @@
     	  "on-click": "xdg-open file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
     	  "tooltip": false 
     },
-    "custom/playerctl": {
-  		  "format": "{}",
-	  	  "return-type": "json",
-	  	  "max-length": 40,
-	  	  "exec": "$HOME/.local/lib/waybar/playerctl.sh 2> /dev/null",
-  		  "on-click": "$HOME/.local/lib/waybar/playerctl.sh play-pause",
-  	  	"on-right-click": "sys-notif media",
-    		"on-scroll-up": "$HOME/.local/lib/waybar/playerctl.sh position 3+",
-    		"on-scroll-down": "$HOME/.local/lib/waybar/playerctl.sh position 3-"
-	  },
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 14,

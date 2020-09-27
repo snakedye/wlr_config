@@ -16,8 +16,8 @@ window#waybar {
   background-color:  #3b4252;
   padding: 0 10 0 10;
   font-size: 15px;
-  border-radius: 15px;
-  margin-right: 7;
+  border-radius: 10px;
+  margin-right: 10;
 }
 
 #workspaces button {
@@ -129,7 +129,7 @@ window#waybar {
 
 #custom-newtab {
   color: #bf616a;
-  border-radius: 15px 0 0 15px;
+  border-radius: 10px 0 0 10px;
 }
 
 #custom-github {
@@ -144,7 +144,7 @@ window#waybar {
   font-size: 13px;
   color: #a3be8c;
   margin-right: 15px;
-  border-radius: 0 15px 15px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 #custom-youtube {
@@ -163,18 +163,17 @@ window#waybar {
   margin-right: 10;
 }
 
-#clock {
-  background-color: #5e81ac;
-  border-radius: 10px;
-  padding: 0px 8px 0px 8px;
-  margin-right: 7;
-  font-weight: 600;
-}
-
-#cpu, #custom-pacman, #custom-playerctl, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #custom-media, #temperature, #mpd {
+#cpu, #clock, #custom-pacman, #custom-playerctl, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #custom-media, #temperature, #mpd {
   margin: 0;
   background-color:  #3b4252;
   padding: 0px 10px 0px 10px;
+}
+
+#clock {
+  background-color:  transparent;
+  color: #3b4252;
+  font-size: 14;
+  font-weight: 600;
 }
 
 #custom-weather {
@@ -211,8 +210,8 @@ window#waybar {
   margin: 0;
   background-color: #3b4252 ;
 	padding: 0px 12px 0px 8px;
-  border-radius: 0 15px 15px 0;
-  margin-right: 7;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10;
   color: #8fbcbb;
 }
 
@@ -252,9 +251,8 @@ label:focus {
   background-color: #3b4252 ;
   font-size: 20px;
   color: #6f7787;
-  padding-left: 12px;
-  padding-right: 12px;
-  border-radius: 15px 0 0 15px;
+  padding: 0 12 0 12;
+  border-radius: 10px 0 0 10px;
   margin-left: 10;
 }
 

@@ -10,6 +10,7 @@ exec kdeconnect-indicator
 #exec ulauncher --hide-window
 exec ~/.azotebg
 exec autotiling
+# exec wlr-brightness
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
@@ -109,10 +110,10 @@ gaps outer 3
 #
 
 exec swayidle -w\
-    timeout 800 'swaylock -f -C ~/.config/swaylock/config'\
+    timeout 1070 'swaylock -f -C ~/.config/swaylock/config;pulseaudio -k'\
     timeout 770 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config & pulseaudio -k'
+    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -313,7 +314,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
 # bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wobbindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +1%
+# bindsym XF86MonBrightnessUp exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.increase 0.1
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 1%-
+# bindsym XF86MonBrightnessDown exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.decrease 0.1
 bindsym XF86KbdBrightnessUp exec brightnessctl -c backlight set +1%
 bindsym XF86KbdBrightnessDown exec brightnessctl -c backlight set 1%-
 bindsym XF86AudioPlay exec playerctl play-pause
