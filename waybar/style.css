@@ -4,12 +4,13 @@
    font-size: 13px;
    margin: 0;
    font-family: Product Sans ,Arial, Helvetica, sans-serif;
+  padding: 2;
    /* font-weight: 500; */
 }
 
 window#waybar {
-   background-color: transparent;
-   color: #ffffff;
+  background-color: rgba(76,86,106,1);
+  color: #ffffff;
 }
 
 #workspaces {
@@ -61,22 +62,6 @@ window#waybar {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
-}
-
-/* WAYBAR-MEDIA */
-
-#custom-waybar-media {
-  background-color:  #3b4252;
-  padding: 0 15 0 15;
-  border-radius: 15px;
-}
-
-#custom-waybar-media.playing {
-  background-color:  #5e81ac;
-}
-
-#custom-waybar-media.paused {
-  background-color:  #3b4252;
 }
 
 /* TASKBAR */
@@ -163,21 +148,32 @@ window#waybar {
   margin-right: 10;
 }
 
-#cpu, #clock, #custom-pacman, #custom-playerctl, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #custom-media, #temperature, #mpd {
+#cpu, #custom-media, #clock, #custom-pacman, #custom-playerctl, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #custom-media, #temperature, #mpd {
   margin: 0;
-  background-color:  #3b4252;
+  background-color: #3b4252;
   padding: 0px 10px 0px 10px;
 }
 
 #clock {
-  background-color:  transparent;
-  color: #3b4252;
-  font-size: 14;
-  font-weight: 600;
+  background-color: transparent;
+  border-radius: 10px;
+  margin-right: 10;
+  /* font-weight: 600; */
 }
 
 #custom-weather {
-  /* padding-top: 4px; */
+  padding-top: 4px;
+}
+
+#custom-media {
+  border-radius: 10px;
+}
+
+#custom-media.playing {
+  background-color: #5e81ac;
+}
+
+#custom-media.paused {
 }
 
 #custom-pacman {
@@ -188,6 +184,10 @@ window#waybar {
 
 #custom-playerctl {
   border-radius: 15px
+}
+
+#pulseaudio {
+  border-radius: 10px 0 0 10px;
 }
 
 #pulseaudio.muted {
@@ -261,12 +261,11 @@ label:focus {
 }
 
 #custom-power {
-  background-color:  #DB8E9D;
-  font-weight: normal;
+  background-color: #3b4252;
   font-size: 16px;
-  padding: 0px 13px 0px 13px;
-  border-radius: 10px;
-  margin-right: 0;
+  padding: 0px 12px 0px 12px;
+  border-radius: 10;
+  /* margin: 1 0 1 0; */
 }
 
 #mpd.disconnected {
