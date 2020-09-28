@@ -10,7 +10,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",],
     "modules-center": ["custom/media"],
-    "modules-right": ["pulseaudio","custom/weather", "disk", "custom/events", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
+    "modules-right": ["pulseaudio", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": false,
@@ -67,7 +67,6 @@
         "format": "{:%I:%M %p}",
         "format-alt": "{:%A, %B %d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "on-middle-click": "wldash",
         // "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {

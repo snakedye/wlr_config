@@ -21,9 +21,7 @@ if [[ ! -f /usr/bin/"$1" ]]; then
     sudo pacman -S yay
     fi
     if yay -S $1; then
-      continue
     else
-      continue
     fi
   fi
   echo ""

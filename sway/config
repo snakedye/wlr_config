@@ -9,6 +9,7 @@ exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 #exec ulauncher --hide-window
 exec ~/.azotebg
+exec syncthing -no-browser
 exec autotiling
 # exec wlr-brightness
 exec mako
@@ -28,8 +29,8 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 # Windows Rules 
 # for_window [app_id="krunner"] floating enable; border none
 for_window [title="~nwg"] border none 
-for_window [app_id="nm-tray"] floating enable
 for_window [title="Wine"] floating enable
+for_window [app_id="ark"] floating enable
 for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
 for_window [title="Copying"] floating enable

@@ -158,7 +158,7 @@ window#waybar {
   background-color: transparent;
   border-radius: 10px;
   margin-right: 10;
-  /* font-weight: 600; */
+  padding: 0px 8px 0px 8px;
 }
 
 #custom-weather {
