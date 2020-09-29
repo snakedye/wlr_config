@@ -1,12 +1,8 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 42, // Waybar height (to be removed for auto height)
+    "height": 45, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
-    //"margin-top": 8,
-    //"margin-right": 8,
-    //"margin-left": 8,
-    //"margin-bottom": 0,
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",],
     "modules-center": ["custom/media"],
@@ -163,7 +159,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": " {used} / {total}",
+        "format": "   {used} / {total}",
         "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
     },
     "custom/power": {

@@ -1,10 +1,8 @@
 * {
    border: none;
-   padding: 0;
    font-size: 13px;
-   margin: 0;
+   margin: 2;
    font-family: Product Sans ,Arial, Helvetica, sans-serif;
-  padding: 2;
    /* font-weight: 500; */
 }
 
@@ -60,7 +58,6 @@ window#waybar {
 
 #mpd {
     padding: 0 10px;
-    margin: 0 4px;
     color: #ffffff;
 }
 
@@ -108,7 +105,8 @@ window#waybar {
 #custom-newtab, #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail {	
   background-color:  #3b4252;
   font-size: 14px;
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
   padding: 0 13 0 13;
 }
 
@@ -148,8 +146,9 @@ window#waybar {
   margin-right: 10;
 }
 
-#cpu, #custom-media, #clock, #custom-pacman, #custom-playerctl, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #custom-media, #temperature, #mpd {
-  margin: 0;
+#cpu, #idle_inhibitor, #custom-media, #clock, #custom-pacman, #custom-playerctl, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #custom-media, #temperature, #mpd {
+  margin-left: 0;
+  margin-right: 0;
   background-color: #3b4252;
   padding: 0px 10px 0px 10px;
 }
@@ -158,7 +157,8 @@ window#waybar {
   background-color: transparent;
   border-radius: 10px;
   margin-right: 10;
-  padding: 0px 8px 0px 8px;
+  font-size: 14px;
+  padding: 0px 0px 0px 8px;
 }
 
 #custom-weather {
@@ -207,7 +207,8 @@ window#waybar {
 }
 
 #tray {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
   background-color: #3b4252 ;
 	padding: 0px 12px 0px 8px;
   border-radius: 0 10px 10px 0;
@@ -216,7 +217,6 @@ window#waybar {
 }
 
 #battery {
-  margin: 0;
   background-color: #3b4252 ;
 	padding: 0px 8px 0px 8px;
 }
@@ -247,7 +247,6 @@ label:focus {
 }
 
 #idle_inhibitor {
-  margin: 0;
   background-color: #3b4252 ;
   font-size: 20px;
   color: #6f7787;
@@ -261,9 +260,10 @@ label:focus {
 }
 
 #custom-power {
-  background-color: #3b4252;
-  font-size: 16px;
+  /* background-color: #3b4252; */
+  font-size: 20px;
   padding: 0px 12px 0px 12px;
+  color: #a3be8c;
   border-radius: 10;
   /* margin: 1 0 1 0; */
 }
