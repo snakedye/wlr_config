@@ -205,11 +205,17 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 . /etc/profile.d/vte.sh
 
+# Custom fetch
+alias neofetch='neofetch --source /home/bryan/tux'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Default text editor
 export EDITOR=vim
+
+# Screencast
+alias screencast="~/screencast.sh"
 
 # NNN
 export NNN_PLUG='f:finder;o:fzopen;d:diffs;t:nmount;k:kdeconnect;m:-mediainf'
@@ -237,7 +243,7 @@ alias sw="vim ~/.config/sway/config"
 
 # Move in a directory 
 cdd () {
-  cd -- "$1" && ll
+  cd -- "$1" && r
 }
 
 # Remove software
@@ -281,7 +287,7 @@ projects () {
 
 # Config folder
 config () {
-  cd ~/.config/ && cdd  "$1" && r
+  cd ~/.config/ && cdd  "$1"
 }
 
 # Create a directory and move into it

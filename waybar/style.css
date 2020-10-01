@@ -42,14 +42,10 @@ window#waybar {
 #workspaces button:hover {
     box-shadow: inherit;
     color: #5e81ac;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid #5e81ac;
 }
 
 #workspaces button.focused {
     color: #81a1c1;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid #81a1c1;
 }
 
 #workspaces button.urgent {
@@ -265,7 +261,6 @@ label:focus {
   padding: 0px 12px 0px 12px;
   color: #a3be8c;
   border-radius: 10;
-  /* margin: 1 0 1 0; */
 }
 
 #mpd.disconnected {
