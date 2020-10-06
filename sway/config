@@ -9,11 +9,11 @@ exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 #exec ulauncher --hide-window
 exec ~/.azotebg
-exec autotiling
 exec syncthing -no-browser
-exec nm-applet --indicator
+exec autotiling
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
+exec nm-applet --indicator
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
@@ -21,25 +21,22 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 # exec dwall -s flcl &
 
 # Startup applications
-# exec --no-startup-id 'workspace 1; exec firefox'
-# exec --no-startup-id 'workspace 2; exec termite; workspace 1'
-# exec --no-startup-id sway-msg 'workspace 5; exec chromium; workspace 1'
-# exec --no-startup-id i3-msg 'workspace 3; exec termite; workspace 1'
+
 
 # Windows Rules 
-# for_window [app_id="krunner"] floating enable; border none
 for_window [title="~nwg"] border none 
-for_window [app_id="nm-tray"] floating enable
 for_window [title="Wine"] floating enable
+for_window [class="(?i)ark"] floating enable
+for_window [class="(?i)urxvt"] floating enable
+for_window [class="(?i)mpv"] floating enable
 for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
 for_window [title="Copying"] floating enable
+for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
-for_window [workspace="3"] layout tabbed 
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
 for_window [workspace="6"] fullscreen toggle
-for_window [app_id="dolphin"] opacity 0.97
 
 ### Variables
 #
@@ -57,7 +54,7 @@ set $term termite
 # on the original workspace that the command was run on.
 #
 # set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
-set $menu wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I
+set $menu ~/.config/wofi/wofi.sh
 # set $menu nwgdmenu -o 0 -r 8
 # set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
 # Rofi Spotlight
@@ -110,11 +107,11 @@ gaps outer 3
 # Example configuration:
 #
 
-exec swayidle -w\
-    timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
-    timeout 770 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
+# exec swayidle -w\
+    # timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
+    # timeout 770 'swaymsg "output * dpms off"' \
+    # resume 'swaymsg "output * dpms on"' \
+    # before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when

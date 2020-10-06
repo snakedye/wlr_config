@@ -1,12 +1,12 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 45, // Waybar height (to be removed for auto height)
+    "height": 44, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",],
     "modules-center": ["custom/media"],
-    "modules-right": ["pulseaudio", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
+    "modules-right": ["pulseaudio","custom/weather", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman", "tray","clock","custom/power",],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": false,
@@ -43,8 +43,8 @@
        "return-type": "json",
        "max-length":55,
        "interval":1,
-       "exec":"$HOME/.config/waybar/mediaplayer.sh", // Script in resources folder
-       "exec-on-event":"$HOME/.config/waybar/mediaplayer.sh", // Script in resources folder
+       "exec":"$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+       "exec-on-event":"$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
        "on-click": "playerctl play-pause"
      },
     "tray": {
@@ -119,7 +119,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -154,17 +154,17 @@
         // "restart-interval": 3600,
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "termite -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
+        "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8,
     },
     "disk": {
         "interval": 30,
         "format": "   {used} / {total}",
-        "path": "/run/media/bryan/6331d39c-2e68-4798-a70e-0aa11b783705/",
+        "path": "/run/media/bryan/",
     },
     "custom/power": {
       	"format": "⏻",
-      	"on-click": "nwgbar -o 0.2",
+      	"on-click": "nwgbar -o 0.0",
 		    "escape": true,
     	  "tooltip": false 
     },
