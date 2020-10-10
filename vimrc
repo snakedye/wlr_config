@@ -82,6 +82,9 @@ set scrolloff=5
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
+" Control key modifier
+
+
 " Speed up scrolling in Vim
 set ttyfast
 " standard shortcuts

@@ -11,7 +11,7 @@
   },
   {
     "name": "Logout",
-    "exec": "swaymsg exit",
+    "exec": "loginctl terminate-user $USER",
     "icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/logout.svg"
   },
   {
