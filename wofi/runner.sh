@@ -2,7 +2,7 @@
 
 # Wofi file browser
 
-DIR="/home/bryan"
+DIR="/home/$USER"
 ENTRY="Home"
 
 lsi () {
