@@ -54,12 +54,11 @@ set $term termite
 # on the original workspace that the command was run on.
 #
 # set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
-set $menu ~/.config/wofi/wofi.sh
+set $menu wofi -c ~/.config/wofi/config -s ~/.config/wofi/style.css -I
 # set $menu nwgdmenu -o 0 -r 8
 # set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
-# Rofi Spotlight
-bindsym $mod+d exec rofi -modi "Global Search":"~/.config/rofi/rofi-spotlight/rofi-spotlight.sh" -show "Global Search" \
--config ~/.config/rofi/rofi-spotlight/rofi.rasi
+# Wofi Spotlight
+bindsym $mod+d exec ~/.config/wofi/runner.sh
 
 # Disable titlebar
 default_border pixel 3

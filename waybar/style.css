@@ -254,10 +254,8 @@ label:focus {
 }
 
 #custom-power {
-  /* background-color: #3b4252; */
-  font-size: 20px;
-  padding: 0px 12px 0px 12px;
-  color: #a3be8c;
+  font-size: 17px;
+  padding: 0px 10px 0px 10px;
   border-radius: 10;
 }
 
