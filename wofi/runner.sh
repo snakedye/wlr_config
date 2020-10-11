@@ -2,8 +2,8 @@
 
 # Wofi file browser
 
-OUT="/home/bryan"
-NAME="Home"
+DIR="/home/bryan"
+ENTRY="Home"
 
 lsi () {
   echo ".."
@@ -26,30 +26,30 @@ lsi () {
   done
 }
 
-while [ "$NAME" != "" ]
+while [ "$ENTRY" != "" ]
 do
-  NAME=$( lsi "$OUT" | wofi --dmenu -i -p "$NAME" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' )
-  OUT=$OUT"/"$NAME
-  if [ ! -d "$OUT" ]; then
-    if [[ $NAME =~ \.(sh|c|js|txt|)$ ]]; then
-      termite -e "vim $OUT" 2> /dev/null
+  ENTRY=$( lsi "$DIR" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' )
+  DIR=$DIR"/"$ENTRY
+  if [ ! -d "$DIR" ]; then
+    if [[ $ENTRY =~ \.(sh|c|js|txt|)$ ]]; then
+      termite -e "vim $DIR" 2> /dev/null
       break
-    elif [[ $NAME =~ \.(jpg|png|svg|webp)$ ]]; then
-      feh $OUT 2> /dev/null
+    elif [[ $ENTRY =~ \.(jpg|png|svg|webp)$ ]]; then
+      feh $DIR 2> /dev/null
       break
-    elif [[ $NAME =~ \.(pdf)$ ]]; then
-      zathura $OUT 2> /dev/null
+    elif [[ $ENTRY =~ \.(pdf)$ ]]; then
+      zathura $DIR 2> /dev/null
       break
-    elif [[ $NAME == ".." ]]; then
-      OUT=$( echo $OUT | sed 's/(\/[a-zA-Z0-9]){2}$//' )
+    elif [[ $ENTRY == ".." ]]; then
+      DIR=$( echo $DIR | sed 's/(\/[a-zA-Z0-9]){2}$//' )
       break
-    elif [[ $NAME =~ ^[~]*/+ ]]; then
-      OUT=$( echo $NAME | sed 's/~/\/home\/bryan/' )
+    elif [[ $ENTRY =~ ^[~]*/+ ]]; then
+      DIR=$( echo $ENTRY | sed 's/~/\/home\/bryan/' )
     else
-      xdg-open "$OUT" 2> /dev/null
+      xdg-open "$DIR" 2> /dev/null
       break
     fi
   fi
 done
 
-echo "$OUT"
+echo "$DIR"
