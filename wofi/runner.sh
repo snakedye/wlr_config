@@ -10,7 +10,7 @@ do
   NAME=$( ls "$OUT" | wofi --dmenu -c ~/.config/wofi/runner -s ~/.config/wofi/style.css )
   OUT=$OUT"/"$NAME
   if [ ! -d "$OUT" ]; then
-    if [[ $NAME =~ \.(mp4|pdf)$ ]]; then
+    if [[ $NAME =~ \.(mp4|pdf|html)$ ]]; then
       xdg-open "$OUT" 2> /dev/null
       break
     elif [[ $NAME =~ \.(jpg|png|svg|webp)$ ]]; then
@@ -31,5 +31,3 @@ do
     fi
   fi
 done
-
-echo "$OUT"
