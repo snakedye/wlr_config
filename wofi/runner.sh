@@ -51,5 +51,3 @@ do
     fi
   fi
 done
-
-echo "$DIR"
