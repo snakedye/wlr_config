@@ -1,5 +1,5 @@
 style=~/.config/wofi/style.css
-show=run
+show=drun
 width=25%
 lines=10
 dynamic_lines=true
@@ -10,7 +10,7 @@ always_parse_args=true
 show_all=true
 print_command=true
 layer=overlay
-allow-images=true
+# allow-images=true
 insensitive=true
 prompt=
 image_size=25
