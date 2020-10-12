@@ -3,6 +3,7 @@
 # Wofi file browser
 
 DIR="/home/$USER"
+TERM=termite
 ENTRY="Home"
 EDITOR=vim
 FM=dolphin
@@ -59,7 +60,7 @@ menu () {
     $LOC 2> /dev/null
     exit
   elif [[ $OPTIONS =~ ^Edit ]]; then
-    echo "$EDITOR $LOC"
+    $TERM -e "$EDITOR $LOC"
     exit
   elif [[ $OPTIONS =~ ^Launch ]]; then
     launcher "$1" "$2"
