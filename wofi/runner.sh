@@ -37,7 +37,7 @@ menu () {
   elif [[ $OPTIONS =~ ^Edit ]]; then
     termite -e "$EDITOR $1/$2" 
   elif [[ $OPTIONS =~ ^Launch ]]; then
-    launcher $1 $2
+    launcher "$1" "$2"
   elif [[ $OPTIONS =~ ^Open ]]; then
     termite -e "$FM $1"
   elif [[ $OPTIONS =~ ^Copy ]]; then
@@ -59,7 +59,7 @@ menu () {
 launcher () {
 # 1: DIR; 2: ENTRY 
   if [[ $2 =~ \.(jpg|jpeg|png|svg|webp)$ ]]; then
-    feh $1/$2
+    feh "$1/$2"
     break
   else
     xdg-open "$1/$2"
@@ -71,7 +71,7 @@ while [ "$ENTRY" != "" ]
 do
   ENTRY=$( lsi "$DIR" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' )
   if [ -f "$DIR/$ENTRY" ]; then
-    menu $DIR $ENTRY
+    menu "$DIR" "$ENTRY"
   elif [[ $ENTRY =~ \.\. && $DIR != "/" ]]; then
     DIR=$( echo $DIR | sed 's|[a-zA-Z0-9_\.-]*/*$||' )
   elif [[ $ENTRY =~ ^[~]*/+ ]]; then
