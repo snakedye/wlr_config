@@ -2,8 +2,10 @@
 
 # Wofi file browser
 
-DIR="/home/bryan"
+DIR="/home/$USER"
 ENTRY="Home"
+EDITOR=micro
+FM=ranger
 
 lsi () {
   echo ".."
@@ -26,30 +28,49 @@ lsi () {
   done
 }
 
-while [ "$ENTRY" != "" ]
-do
-  ENTRY=$( lsi "$DIR" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' )
-  DIR=$DIR"/"$ENTRY
-  if [ ! -d "$DIR" ]; then
-    if [[ $ENTRY =~ \.(sh|c|js|txt|)$ ]]; then
-      termite -e "vim $DIR" 2> /dev/null
+menu () {
+# 1: DIR; 2: ENTRY
+  OPTIONS=$( printf "  Launch $2 \n  Edit in $EDITOR \n  Execute $2\n  Open directory in $FM \n  Delete $2" | wofi --dmenu -i -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' );
+  if [[ $OPTIONS =~ ^Execute ]]; then
+    $1/$2 2> /dev/null
+  elif [[ $OPTIONS =~ ^Edit ]]; then
+    termite -e "$EDITOR $1/$2" 
+  elif [[ $OPTIONS =~ ^Launch ]]; then
+    launcher $1 $2
+  elif [[ $OPTIONS =~ ^Open ]]; then
+    termite -e "$FM $1"
+  elif [[ $OPTIONS =~ ^Delete ]]; then
+    rm $1/$2 2> /dev/null
+  else
+    break
+  fi
+}
+
+launcher () {
+# 1: DIR; 2: ENTRY 
+  if [ ! -d "$1" ]; then
+    if [[ $2 =~ \.(jpg|png|svg|webp)$ ]]; then
+      feh $1/$2
       break
-    elif [[ $ENTRY =~ \.(jpg|png|svg|webp)$ ]]; then
-      feh $DIR 2> /dev/null
-      break
-    elif [[ $ENTRY =~ \.(pdf)$ ]]; then
-      zathura $DIR 2> /dev/null
-      break
-    elif [[ $ENTRY == ".." ]]; then
-      DIR=$( echo $DIR | sed 's/(\/[a-zA-Z0-9]){2}$//' )
-      break
-    elif [[ $ENTRY =~ ^[~]*/+ ]]; then
-      DIR=$( echo $ENTRY | sed 's/~/\/home\/bryan/' )
     else
-      xdg-open "$DIR" 2> /dev/null
+      xdg-open "$1/$2"
       break
     fi
   fi
+}
+
+while [ "$ENTRY" != "" ]
+do
+  ENTRY=$( lsi "$DIR" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' )
+  if [ -f "$DIR/$ENTRY" ]; then
+    menu $DIR $ENTRY
+  elif [[ $ENTRY =~ \.\. && $DIR != "/" ]]; then
+    DIR=$( echo $DIR | sed 's|[a-zA-Z0-9_\.-]*/*$||' )
+  elif [[ $ENTRY =~ ^[~]*/+ ]]; then
+    DIR=$( echo $ENTRY | sed 's/~/\/home\/bryan/' )
+  else
+    DIR=$DIR"/"$ENTRY
+  fi
+  echo "$ENTRY"
 done
 
-echo "$DIR"
