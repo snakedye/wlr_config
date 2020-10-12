@@ -31,6 +31,7 @@ lsi () {
 
 prompt () {
   if [[ "$3" == "-r"  ]]; then
+    1=$(echo $1 | sed 's|[^home/$USER]/||')
     echo "  Open directory in $FM "
     echo "  Copy $1"
     echo "  Move $1"
