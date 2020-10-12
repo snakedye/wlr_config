@@ -41,16 +41,19 @@ menu () {
   elif [[ $OPTIONS =~ ^Open ]]; then
     termite -e "$FM $1"
   elif [[ $OPTIONS =~ ^Copy ]]; then
-    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/~/\/home\/bryan/' )
+    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css \
+    | sed 's/~/\/home\/$USER/' )
     cp $1/$2 $LOCATION 
   elif [[ $OPTIONS =~ ^Move ]]; then
-    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/~/\/home\/bryan/' )
+    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css \
+    | sed 's/~/\/home\/$USER/' )
     mv $1/$2 $LOCATION 
   elif [[ $OPTIONS =~ ^Delete ]]; then
     rm $1/$2 2> /dev/null
   else
     break
   fi
+  exit
 }
 
 launcher () {
