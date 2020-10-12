@@ -4,7 +4,7 @@
 
 DIR="/home/$USER"
 ENTRY="Home"
-EDITOR=micro
+EDITOR=vim
 FM=ranger
 
 lsi () {
@@ -30,7 +30,8 @@ lsi () {
 
 menu () {
 # 1: DIR; 2: ENTRY
-  OPTIONS=$( printf "  Launch $2 \n  Edit in $EDITOR \n  Execute $2\n  Open directory in $FM \n  Delete $2" | wofi --dmenu -i -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' );
+  OPTIONS=$( printf "  Launch $2\n  Edit in $EDITOR\n  Execute $2\n  Open directory in $FM\n  Copy $2\n  Move $2\n  Delete $2"\
+  			| wofi --dmenu -i -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' );
   if [[ $OPTIONS =~ ^Execute ]]; then
     $1/$2 2> /dev/null
   elif [[ $OPTIONS =~ ^Edit ]]; then
@@ -39,6 +40,12 @@ menu () {
     launcher $1 $2
   elif [[ $OPTIONS =~ ^Open ]]; then
     termite -e "$FM $1"
+  elif [[ $OPTIONS =~ ^Copy ]]; then
+    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/~/\/home\/bryan/' )
+    cp $1/$2 $LOCATION 
+  elif [[ $OPTIONS =~ ^Move ]]; then
+    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/~/\/home\/bryan/' )
+    mv $1/$2 $LOCATION 
   elif [[ $OPTIONS =~ ^Delete ]]; then
     rm $1/$2 2> /dev/null
   else
@@ -48,14 +55,12 @@ menu () {
 
 launcher () {
 # 1: DIR; 2: ENTRY 
-  if [ ! -d "$1" ]; then
-    if [[ $2 =~ \.(jpg|png|svg|webp)$ ]]; then
-      feh $1/$2
-      break
-    else
-      xdg-open "$1/$2"
-      break
-    fi
+  if [[ $2 =~ \.(jpg|jpeg|png|svg|webp)$ ]]; then
+    feh $1/$2
+    break
+  else
+    xdg-open "$1/$2"
+    break
   fi
 }
 
