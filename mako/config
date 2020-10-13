@@ -6,9 +6,9 @@ text-color=#e5e9f0
 padding=10
 margin=5
 
-border-size=0
+border-size=3
 border-radius=9
-border-color=#81a1c1
+border-color=#4c566a
 
 default-timeout=9000
 

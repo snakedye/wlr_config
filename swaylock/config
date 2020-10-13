@@ -5,12 +5,12 @@ daemonize
 indicator-caps-lock
 timestr=%k:%M
 datestr=%a %e %m %Y
-image=~/wallpapers/tree.jpg
+image=~/wallpapers/s_nord.png
 scaling=fill
 effect-scale=0.4
 effect-vignette=0.2:0.5
 effect-blur=4x2
-font=SanFranciscoText
+font=ProductSans
 
 # Ring
 indicator-radius=90

@@ -36,7 +36,7 @@ for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
-for_window [workspace="6"] fullscreen toggle
+# for_window [workspace="6"] fullscreen toggle
 
 ### Variables
 #
@@ -54,11 +54,11 @@ set $term termite
 # on the original workspace that the command was run on.
 #
 # set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
-set $menu wofi -c ~/.config/wofi/config -s ~/.config/wofi/style.css -I
-# set $menu nwgdmenu -o 0 -r 8
+# set $menu wofi -c ~/.config/wofi/config -s ~/.config/wofi/style.css -I
+set $menu nwggrid -o 0.9 -b 434c5e
 # set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
 # Wofi Spotlight
-bindsym $mod+d exec ~/.config/wofi/runner.sh
+bindsym $mod+d exec ~/wofer/wofer.sh
 
 # Disable titlebar
 default_border pixel 3
@@ -79,7 +79,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
-assign [app_id="gnome-boxes"] 6
+assign [app_id="virt-manager"] 6
 assign [app_id="signal"] 5
 assign [app_id="discord"] 5
 assign [title="Wine System Tray"] scratchpad
