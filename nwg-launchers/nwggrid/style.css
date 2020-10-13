@@ -1,8 +1,13 @@
+* {
+	font-family: Product Sans;
+	    font-size: 16px;
+}
+
 button, label, image {
     background: none;
     border-style: none;
     box-shadow: none;
-    color: #999;
+    color: #e5e9f0;
 }
 
 button {
@@ -11,11 +16,10 @@ button {
 }
 
 button:hover {
-    background-color: rgba (255, 255, 255, 0.1);
+    background-color: #5e81ac;
 }
 
 button:focus {
-    box-shadow: 0 0 2px;
 }
 
 #searchbox {

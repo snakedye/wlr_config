@@ -37,7 +37,7 @@ background-color: transparent;
 }
 
 #outer-box {
-margin: 10px;
+margin: 15px;
 background-color: transparent;
 }
 
@@ -48,7 +48,7 @@ border: none;
 }
 
 #text {
-padding: 5px;
+padding: 6px;
 font-size: 14px;
 background-color: transparent;
 } 

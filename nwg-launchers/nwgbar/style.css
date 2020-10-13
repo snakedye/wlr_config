@@ -6,7 +6,7 @@ button, image {
     background: none;
     border-style: none;
     box-shadow: none;
-    color: #999
+    color:#eceff4;
 }
 
 button {
@@ -16,11 +16,10 @@ button {
 }
 
 button:hover {
-    background-color: rgba (216, 222, 233, 0.1)
+    background-color: #5e81ac;
 }
 
 button:focus {
-    box-shadow: 0 0 2px;
 }
 
 grid {

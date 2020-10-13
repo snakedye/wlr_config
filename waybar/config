@@ -1,7 +1,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
-    "height": 44, // Waybar height (to be removed for auto height)
+    // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",],
@@ -159,12 +159,12 @@
     },
     "disk": {
         "interval": 30,
-        "format": "   {used} / {total}",
+        "format": "   {percentage_free}%",
         "path": "/run/media/bryan/",
     },
     "custom/power": {
       	"format": "⏻",
-      	"on-click": "nwgbar -o 0.0",
+      	"on-click": "nwgbar -o 0.2",
 		    "escape": true,
     	  "tooltip": false 
     },
@@ -197,8 +197,7 @@
     	  "tooltip": false 
     },
 	"custom/newtab": {
-    	// "format": "",
-    	  "format": "",
+    	 "format": "",
     	  "on-click": "xdg-open file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
     	  "tooltip": false 
     },

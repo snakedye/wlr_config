@@ -3,17 +3,16 @@
    font-size: 13px;
    margin: 2;
    font-family: Product Sans ,Arial, Helvetica, sans-serif;
-   /* font-weight: 500; */
 }
 
 window#waybar {
-  background-color: rgba(76,86,106,0.95);
+  background-color: #3b4252;
   color: #ffffff;
 }
 
 #workspaces {
-  background-color:  #3b4252;
-  padding: 0 10 0 10;
+  background-color:  #434c5e;
+  padding: 1 5 1 5;
   font-size: 15px;
   border-radius: 10px;
   margin-right: 10;
@@ -23,10 +22,7 @@ window#waybar {
   font-size: 14px;
   border-radius: 0px;
   margin: 0;
-  padding: 0 12 0 12;
   background-color: transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
   color: #ffffff;
 }
 
@@ -106,6 +102,7 @@ window#waybar {
 
 #custom-newtab {
   color: #bf616a;
+  font-size: 18px;
   border-radius: 10px 0 0 10px;
 }
 
@@ -140,19 +137,32 @@ window#waybar {
   margin-right: 10;
 }
 
-#cpu, #idle_inhibitor, #custom-media, #clock, #custom-pacman, #custom-playerctl, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #custom-media, #temperature, #mpd {
+#cpu, #idle_inhibitor, #custom-media, #clock, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
   margin-left: 0;
   margin-right: 0;
-  background-color: #3b4252;
   padding: 0px 10px 0px 10px;
+}
+
+#disk {
+  color:#b48ead;
+}
+
+#memory {
+  color:#d08770;
+}
+
+#cpu {
+  color:#bf616a;
+}
+
+#custom-weather {
+  color:#81a1c1;
 }
 
 #clock {
   background-color: transparent;
   border-radius: 10px;
-  margin-right: 10;
   font-size: 14px;
-  padding: 0px 0px 0px 8px;
 }
 
 #custom-weather {
@@ -164,7 +174,7 @@ window#waybar {
 }
 
 #custom-media.playing {
-  background-color: #5e81ac;
+  background-color: #434c5e;
 }
 
 #custom-media.paused {
@@ -181,6 +191,7 @@ window#waybar {
 }
 
 #pulseaudio {
+  color:#ebcb8b;
   border-radius: 10px 0 0 10px;
 }
 
@@ -206,7 +217,6 @@ window#waybar {
   background-color: #3b4252 ;
 	padding: 0px 12px 0px 8px;
   border-radius: 0 10px 10px 0;
-  margin-right: 10;
   color: #8fbcbb;
 }
 
