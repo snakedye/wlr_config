@@ -3,9 +3,10 @@
 # Wofi file browser
 
 DIR="/home/$USER"
+TERM=termite
 ENTRY="Home"
 EDITOR=vim
-FM=ranger
+FM=dolphin
 
 lsi () {
   echo ".."
@@ -26,37 +27,66 @@ lsi () {
       echo "  $entry"
     fi
   done
+  echo "漣  Options"
+}
+
+prompt () {
+  if [[ "$3" == "-r"  ]]; then
+    1=$(echo $1 | sed 's|[^home/$USER]/||')
+    echo "  Open directory in $FM "
+    echo "  Copy $1"
+    echo "  Move $1"
+    echo "  Delete $1"
+  else
+    echo "  Launch $2"
+    echo "  Edit $2 in $EDITOR"
+    echo "  Copy $2"
+    echo "  Move $2"
+    echo "  Delete $2"
+  fi
 }
 
 menu () {
-# 1: DIR; 2: ENTRY
-  OPTIONS=$( printf "  Launch $2\n  Edit in $EDITOR\n  Execute $2\n  Open directory in $FM\n  Copy $2\n  Move $2\n  Delete $2"\
+# 1: DIR; 2: ENTRY; 3: -r
+  OPTIONS=$( prompt $1 $2 $3\
   			| wofi --dmenu -i -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' );
-  if [[ $OPTIONS =~ ^Execute ]]; then
-    $1/$2 2> /dev/null
-  elif [[ $OPTIONS =~ ^Edit ]]; then
-    termite -e "$EDITOR $1/$2" 
-  elif [[ $OPTIONS =~ ^Launch ]]; then
-    launcher $1 $2
-  elif [[ $OPTIONS =~ ^Open ]]; then
-    termite -e "$FM $1"
-  elif [[ $OPTIONS =~ ^Copy ]]; then
-    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/~/\/home\/bryan/' )
-    cp $1/$2 $LOCATION 
-  elif [[ $OPTIONS =~ ^Move ]]; then
-    LOCATION=$( echo "  Enter the location of the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/~/\/home\/bryan/' )
-    mv $1/$2 $LOCATION 
-  elif [[ $OPTIONS =~ ^Delete ]]; then
-    rm $1/$2 2> /dev/null
+  LOC=""
+  if [[ "$3" == "-r" ]]; then
+    LOC="$3 $1"
   else
-    break
+    LOC="$1/$2"
+  fi
+  if [[ $OPTIONS =~ ^Execute ]]; then
+    $LOC 2> /dev/null
+    exit
+  elif [[ $OPTIONS =~ ^Edit ]]; then
+    $TERM -e "$EDITOR $LOC"
+    exit
+  elif [[ $OPTIONS =~ ^Launch ]]; then
+    launcher "$1" "$2"
+    exit
+  elif [[ $OPTIONS =~ ^Open ]]; then
+    $FM $1
+    exit
+  elif [[ $OPTIONS =~ ^Copy ]]; then
+    DESTINATION=$( echo "  Enter the full path to the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css \
+    | sed 's/~/\/home\/$USER/' )
+    cp $LOC $DESTINATION 
+  elif [[ $OPTIONS =~ ^Move ]]; then
+    DESTINATION=$( echo "  Enter the full path to the directory" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css \
+    | sed 's/~/\/home\/$USER/' )
+    mv $LOC $DESTINATION 
+  elif [[ $OPTIONS =~ ^Delete ]]; then
+    rm $LOC 2> /dev/null
+  else
+    :
   fi
 }
 
 launcher () {
 # 1: DIR; 2: ENTRY 
   if [[ $2 =~ \.(jpg|jpeg|png|svg|webp)$ ]]; then
-    feh $1/$2
+    feh "$1/$2"
     break
   else
     xdg-open "$1/$2"
@@ -68,7 +98,9 @@ while [ "$ENTRY" != "" ]
 do
   ENTRY=$( lsi "$DIR" | wofi --dmenu -i -p "$ENTRY" -c ~/.config/wofi/config -s ~/.config/wofi/style.css | sed 's/^[^a-zA-Z0-9\.~//]*//' )
   if [ -f "$DIR/$ENTRY" ]; then
-    menu $DIR $ENTRY
+    menu "$DIR" "$ENTRY"
+  elif [[ $ENTRY =~ ^Options ]]; then
+    menu "$DIR" "$ENTRY" "-r"
   elif [[ $ENTRY =~ \.\. && $DIR != "/" ]]; then
     DIR=$( echo $DIR | sed 's|[a-zA-Z0-9_\.-]*/*$||' )
   elif [[ $ENTRY =~ ^[~]*/+ ]]; then
