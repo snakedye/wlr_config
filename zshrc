@@ -297,14 +297,15 @@ add_manga() {
   NEW=$(ls -t ~/.mangas | head -1)
 
   if [[ "$OLD" != "$NEW" ]]; then
-    echo "$1" > "~/.mangas/$NEW/url"
+    touch ~/.mangas/$NEW/.url
+    echo "$1" > ~/.mangas/$NEW/.url
   fi
 }
 
 update_mangas() {
   ls ~/.mangas/ | while read manga; do
     echo "$manga"
-    URL=$( cat ~/.mangas/$manga/url )
+    URL=$( cat ~/.mangas/$manga/.url )
     CHAP=$(ls ~/.mangas/$manga | sort -r | sed -n "2p" | grep -o "^[a-z0-9]*" | sed "s/[a-z]//g" | sed "s/0*//")
     CHAP="$(($CHAP+1))"
     add_manga $URL $CHAP
