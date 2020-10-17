@@ -160,7 +160,6 @@ window#waybar {
 }
 
 #clock {
-  background-color: transparent;
   border-radius: 10px;
   font-size: 14px;
 }
@@ -200,12 +199,9 @@ window#waybar {
   color: #2a5c45;
 }
 
-#custom-media.custom-vlc {
-  background-color: #3b4252 ;
-	padding: 0px 8px 0px 8px;
-	border-radius: 5px;    
+#temperature{
+  color: #88c0d0;
 }
-
 
 #temperature.critical {
   color: #eb4d4b;
@@ -221,7 +217,7 @@ window#waybar {
 }
 
 #battery {
-  background-color: #3b4252 ;
+  color: #8fbcbb;
 	padding: 0px 8px 0px 8px;
 }
 
@@ -251,12 +247,8 @@ label:focus {
 }
 
 #idle_inhibitor {
-  background-color: #3b4252 ;
   font-size: 20px;
   color: #6f7787;
-  padding: 0 12 0 12;
-  border-radius: 10px 0 0 10px;
-  margin-left: 10;
 }
 
 #idle_inhibitor.activated {

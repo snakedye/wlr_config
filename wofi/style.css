@@ -1,14 +1,17 @@
 #entry {
+/* background-color: transparent; */
 border-radius: 3;
 padding: 2px 3px 2px 3px;
 }
 
 #entry:selected {
 background-color: #5e81ac;
+/* border: none; */
 }
  
 #text:selected {
 color: #d8dee9;
+font-weight: bold;
 }
  
 #window {

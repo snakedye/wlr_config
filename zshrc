@@ -290,6 +290,27 @@ config () {
   cd ~/.config/ && cdd  "$1"
 }
 
+# Add a manga
+add_manga() {
+  OLD=$(ls -t ~/.mangas | head -1)
+  printf "$1\n$2" | ./mangadex-dl.py
+  NEW=$(ls -t ~/.mangas | head -1)
+
+  if [[ "$OLD" != "$NEW" ]]; then
+    echo "$1" > "~/.mangas/$NEW/url"
+  fi
+}
+
+update_mangas() {
+  ls ~/.mangas/ | while read manga; do
+    echo "$manga"
+    URL=$( cat ~/.mangas/$manga/url )
+    CHAP=$(ls ~/.mangas/$manga | sort -r | sed -n "2p" | grep -o "^[a-z0-9]*" | sed "s/[a-z]//g" | sed "s/0*//")
+    CHAP="$(($CHAP+1))"
+    add_manga $URL $CHAP
+  done
+}
+
 # Create a directory and move into it
 mcd () {
   mkdir -p -- "$1" && cd -P -- "$1"
@@ -306,3 +327,4 @@ mvl () {
 }
 
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+if [ -e /home/bryan/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bryan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

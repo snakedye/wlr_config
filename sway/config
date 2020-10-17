@@ -14,6 +14,7 @@ exec autotiling
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
+exec update_mangas
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
@@ -58,7 +59,7 @@ set $term termite
 set $menu nwggrid -o 0.9 -b 434c5e
 # set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
 # Wofi Spotlight
-bindsym $mod+d exec ~/wofer/wofer.sh
+bindsym $mod+backspace exec ~/wofer/wofer.sh
 
 # Disable titlebar
 default_border pixel 3
@@ -80,8 +81,10 @@ assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
 assign [app_id="virt-manager"] 6
+assign [app_id="virtualbox"] 6
 assign [app_id="signal"] 5
-assign [app_id="discord"] 5
+assign [app_id="ripcord"] 5
+assign [app_id="caprine"] 5
 assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
