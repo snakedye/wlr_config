@@ -290,6 +290,12 @@ config () {
   cd ~/.config/ && cdd  "$1"
 }
 
+# Wofer
+wofer () {
+  cd "$1"
+  ~/wofer/wofer.sh
+}
+
 # Add a manga
 add_manga() {
   OLD=$(ls -t ~/.mangas | head -1)
@@ -298,18 +304,39 @@ add_manga() {
 
   if [[ "$OLD" != "$NEW" ]]; then
     touch ~/.mangas/$NEW/.url
+    mkdir ~/.mangas/$NEW/.chapter
     echo "$1" > ~/.mangas/$NEW/.url
   fi
+  chap=$(ls -t ~/.mangas/$NEW/ | head -1 )
+  dir="'/home/$USER/.mangas/$NEW/$chap'"
+  echo "
+[Desktop Entry]
+Type=Application
+Name=$NEW Ch.$2
+Icon=/home/$USER/.mangas/.covers/$NEW.jpg
+Exec=cd $dir ; ls ./ | imv
+Categories=Manga" > ~/.mangas/$NEW/.chapter/c$2.desktop
 }
 
 update_mangas() {
   ls ~/.mangas/ | while read manga; do
     echo "$manga"
     URL=$( cat ~/.mangas/$manga/.url )
-    CHAP=$(ls ~/.mangas/$manga | sort -r | sed -n "2p" | grep -o "^[a-z0-9]*" | sed "s/[a-z]//g" | sed "s/0*//")
+    CHAP=$(ls ~/.mangas/$manga | sort -r | sed -n "1p" | grep -o "^[a-z0-9]*" | sed "s/[a-z]//g" | sed "s/0*//")
     CHAP="$(($CHAP+1))"
     add_manga $URL $CHAP
   done
+}
+
+manga_menu() {
+  args=""
+  ls /home/$USER/.mangas/ | while read manga
+  do
+    args+="/home/$USER/.mangas/$manga/.chapter/:"
+  done
+  # args="'$(echo "$args" | sed "s/:$//")'"
+  echo "nwggrid -d $args -s 250"
+  nwggrid -d "':$args'" -s 200 -o 0.9 -b 434c5e
 }
 
 # Create a directory and move into it

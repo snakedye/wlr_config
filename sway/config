@@ -14,7 +14,7 @@ exec autotiling
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
-exec update_mangas
+exec /bin/zsh -i -c update_mangas
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
@@ -28,7 +28,7 @@ exec update_mangas
 for_window [title="~nwg"] border none 
 for_window [title="Wine"] floating enable
 for_window [class="(?i)ark"] floating enable
-for_window [class="(?i)urxvt"] floating enable
+for_window [app_id="imv"] floating enable
 for_window [class="(?i)mpv"] floating enable
 for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
@@ -49,7 +49,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term termite
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -57,9 +57,8 @@ set $term termite
 # set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
 # set $menu wofi -c ~/.config/wofi/config -s ~/.config/wofi/style.css -I
 set $menu nwggrid -o 0.9 -b 434c5e
-# set $menu rofi -show drun -config ~/.config/rofi/rofi-spotlight/rofi.rasi
-# Wofi Spotlight
-bindsym $mod+backspace exec ~/wofer/wofer.sh
+bindsym $mod+backspace exec /bin/zsh -i -c wofer
+bindsym $mod+m exec /bin/zsh -i -c manga_menu
 
 # Disable titlebar
 default_border pixel 3
