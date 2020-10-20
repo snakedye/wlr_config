@@ -305,12 +305,13 @@ add_manga() {
   if [[ "$OLD" != "$NEW" ]]; then
     touch ~/.mangas/$NEW/.url
     mkdir ~/.mangas/$NEW/.chapter
+    url=$(curl "$1/covers/" | grep -o 'https://mangadex.org/images/covers.*?' | sed 's/["].*//'| sort -r  |head -1)
+    curl -o "/home/$USER/.mangas/.covers/$NEW.jpg" $url
     echo "$1" > ~/.mangas/$NEW/.url
   fi
   chap=$(ls -t ~/.mangas/$NEW/ | head -1 )
   dir="'/home/$USER/.mangas/$NEW/$chap'"
-  echo "
-[Desktop Entry]
+  echo "[Desktop Entry]
 Type=Application
 Name=$NEW Ch.$2
 Icon=/home/$USER/.mangas/.covers/$NEW.jpg
@@ -332,11 +333,11 @@ manga_menu() {
   args=""
   ls /home/$USER/.mangas/ | while read manga
   do
-    args+="/home/$USER/.mangas/$manga/.chapter/:"
+    args+="/home/$USER/.mangas/$manga/.chapter:"
   done
-  # args="'$(echo "$args" | sed "s/:$//")'"
+  args=$(echo "$args" | sed "s/:$//")
   echo "nwggrid -d $args -s 250"
-  nwggrid -d "':$args'" -s 200 -o 0.9 -b 434c5e
+  nwggrid -d $args -s 200 -o 0.9 -b 434c5e
 }
 
 # Create a directory and move into it
