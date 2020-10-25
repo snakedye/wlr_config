@@ -26,12 +26,12 @@ exec /bin/zsh -i -c update_mangas
 
 # Windows Rules 
 for_window [title="~nwg"] border none 
-for_window [title="Wine"] floating enable
+# for_window [title="Wine"] floating enable
 for_window [class="(?i)ark"] floating enable
-for_window [app_id="imv"] floating enable
-for_window [app_id="imv"] resize shrink width 600px
+# for_window [app_id="imv"] floating enable
+# for_window [app_id="imv"] resize shrink width 600px
 for_window [class="(?i)mpv"] floating enable
-for_window [title="Authentication"] floating enable
+# for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
 for_window [title="Copying"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
@@ -83,7 +83,7 @@ assign [app_id="gamehub"] 4
 assign [app_id="steam"] 4
 assign [app_id="virt-manager"] 6
 assign [app_id="virtualbox"] 6
-assign [app_id="signal"] 5
+assign [app_id="signal-desktop"] 5
 assign [app_id="ripcord"] 5
 assign [app_id="caprine"] 5
 assign [title="Wine System Tray"] scratchpad

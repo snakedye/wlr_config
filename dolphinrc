@@ -20,18 +20,18 @@ ViewPropsTimestamp=2020,9,10,20,20,58
 FontWeight=50
 
 [KPropertiesDialog]
-DP-3 Height 1080=550
-DP-3 Width 1920=433
+DP-3 Height 1080=451
+DP-3 Width 1920=408
 Height 1080=575
 Width 1920=494
 
 [MainWindow]
-DP-3 Height 1080=1080
-DP-3 Width 1920=1920
-DP-3 Window-Maximized 1080x1920=true
+DP-3 Height 1080=768
+DP-3 Width 1920=952
 Height 1080=1080
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAwAAAAAAAABdAAADMfwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAABABAAAJ+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAADMQAAAGMBAAAJAAAAAQAAALYAAAMx/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAQAAAAAAAAMxAAABGAEAAAkAAAADAAADiQAAALD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawEAAAAmAAADiQAAAKkBAAAJAAACdAAAAzEAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAA=
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAwAAAAAAAABaAAADAPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAIA////+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAADAAAAAFwA////AAAAAQAAALIAAAMA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAQAAAAAAAAMAAAABEQD///8AAAADAAADeQAAANX8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAA2AAADeQAAAIsA////AAACbgAAAwAAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAA=
 ToolBarsMovable=Disabled
 Width 1920=1920
 Window-Maximized 1080x1920=true
@@ -39,21 +39,24 @@ XWAYLAND0 Height 1080=765
 XWAYLAND0 Width 1920=952
 XWAYLAND0 Window-Maximized 1080x1920=true
 XWAYLAND0 XPosition=966
-XWAYLAND0 YPosition=53
+XWAYLAND0 YPosition=51
+XWAYLAND2 Height 1080=765
+XWAYLAND2 Width 1920=952
+XWAYLAND2 XPosition=484
+XWAYLAND2 YPosition=179
 
 [MainWindow][Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
 
 [Open-with settings]
 CompletionMode=1
-History=kate,base,xou
+History=kate,imv -r,okula,base,xou
 
 [PreviewSettings]
-Plugins=svgthumbnail,kraorathumbnail,opendocumentthumbnail,audiothumbnail,exrthumbnail,windowsexethumbnail,imagethumbnail,ebookthumbnail,jpegthumbnail,comicbookthumbnail,windowsimagethumbnail,resvgthumbnailer,appimagethumbnail,directorythumbnail,djvuthumbnail,cursorthumbnail
-
-[Search]
-Location=Everywhere
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail
 
 [SettingsDialog]
+DP-3 Height 1080=492
+DP-3 Width 1920=615
 Height 1080=522
 Width 1920=644

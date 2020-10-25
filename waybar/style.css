@@ -28,10 +28,9 @@ window#waybar {
 
 #window {
   background-color: transparent;
-  color: #2e3440;
 	padding-right: 10px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -152,7 +151,7 @@ window#waybar {
 }
 
 #cpu {
-  color:#bf616a;
+  color:#c57078;
 }
 
 #custom-weather {
@@ -172,11 +171,11 @@ window#waybar {
   border-radius: 10px;
 }
 
-#custom-media.playing {
+#custom-media.Playing {
   background-color: #434c5e;
 }
 
-#custom-media.paused {
+#custom-media.Paused {
 }
 
 #custom-pacman {

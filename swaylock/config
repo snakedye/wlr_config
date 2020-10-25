@@ -5,7 +5,7 @@ daemonize
 indicator-caps-lock
 timestr=%k:%M
 datestr=%a %e %m %Y
-image=~/wallpapers/s_nord.png
+image=~/wallpapers/nier.jpg
 scaling=fill
 effect-scale=0.4
 effect-vignette=0.2:0.5
@@ -15,14 +15,14 @@ font=ProductSans
 # Ring
 indicator-radius=90
 # line-uses-ring
-line-color=#5e81ac
+line-color=#c57078
 text-color=#eceff4
 # inside-color=#3d7f8d
-inside-ver-color=#81a1c1
-line-ver-color=#81a1c1
-ring-ver-color=#81a1c1
-ring-color=#7490ad
-key-hl-color=#67809a
-separator-color=#67809a
+inside-ver-color=#bf616a
+line-ver-color=#bf616a
+ring-ver-color=#bf616a
+ring-color=#ab575f
+key-hl-color=#c57078
+separator-color=#ab575f
 layout-text-color=#eceff4
-line-wrong-color=#bf616a
+line-wrong-color=#d08770

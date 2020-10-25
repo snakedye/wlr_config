@@ -206,13 +206,14 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 . /etc/profile.d/vte.sh
 
 # Custom fetch
-alias neofetch='neofetch --source /home/bryan/tux'
+# alias neofetch='neofetch --source /home/bryan/tux'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Default text editor
-export EDITOR=vim
+alias vim='nvim'
+export EDITOR=nvim
 
 # Screencast
 alias screencast="~/screencast.sh"
@@ -226,11 +227,6 @@ alias n="nnn"
 export NNN_FIFO=/tmp/nnn.fifo
 
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
-
-# Append images
-# append () {
-  # convert -- "$1" "$2" -append rice
-# }
 
 # RANGER
 alias r="ranger"
@@ -308,6 +304,7 @@ add_manga() {
     url=$(curl "$1/covers/" | grep -o 'https://mangadex.org/images/covers.*?' | sed 's/["].*//'| sort -r  |head -1)
     curl -o "/home/$USER/.mangas/.covers/$NEW.jpg" $url
     echo "$1" > ~/.mangas/$NEW/.url
+  else 
   fi
   chap=$(ls -t ~/.mangas/$NEW/ | head -1 )
   dir="'/home/$USER/.mangas/$NEW/$chap'"
@@ -316,7 +313,7 @@ Type=Application
 Name=$NEW Ch.$2
 Icon=/home/$USER/.mangas/.covers/$NEW.jpg
 Exec=cd $dir ; ls ./ | imv
-Categories=Manga" > ~/.mangas/$NEW/.chapter/c$2.desktop
+Categories=Manga" > ~/.mangas/$NEW/.chapter/$NEW$2.desktop
 }
 
 update_mangas() {
@@ -335,8 +332,8 @@ manga_menu() {
   do
     args+="/home/$USER/.mangas/$manga/.chapter:"
   done
+  echo $args
   args=$(echo "$args" | sed "s/:$//")
-  echo "nwggrid -d $args -s 250"
   nwggrid -d $args -s 200 -o 0.9 -b 434c5e
 }
 

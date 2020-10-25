@@ -24,6 +24,9 @@ Plug 'vim-airline/vim-airline'
 " Autoclose
 Plug 'townk/vim-autoclose'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " Install ansible plugin 
 Plug 'pearofducks/ansible-vim'
 
@@ -79,11 +82,14 @@ set noshiftround
 
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
+
+" Wayland clipborad
+set clipboard+=unnamedplus
+
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
-" Control key modifier
-
+" Wayland clipboard
 
 " Speed up scrolling in Vim
 set ttyfast
