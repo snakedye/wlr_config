@@ -14,7 +14,7 @@ exec autotiling
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
-exec /bin/zsh -i -c update_mangas
+exec fish -c update_mangas
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
@@ -59,8 +59,8 @@ set $term alacritty
 # set $menu wofi -c ~/.config/wofi/config -s ~/.config/wofi/style.css -I
 set $menu nwggrid -o 0.9 -b 434c5e
 bindsym $mod+backspace exec /bin/zsh -i -c wofer
-bindsym $mod+d exec /bin/zsh -i -c wofer
-bindsym $mod+m exec /bin/zsh -i -c manga_menu
+bindsym $mod+d exec fish -c wofer
+bindsym $mod+m exec fish -c manga_menu
 
 # Disable titlebar
 default_border pixel 3
