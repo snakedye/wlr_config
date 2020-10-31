@@ -2,8 +2,7 @@
 
 set -euo pipefail
 
-INSTALL=$(ls ./)
-CONFIG=~/.config/
+INSTALL=$(ls -A ./)
 
 # Confirmation prompt
 prompt () {
@@ -39,19 +38,14 @@ do
     while [ "$ans" != "n" ]
     do
       if [[ $ans == "y" ]]; then
-        if [[ $config == "vimrc" || "$config" == "zshrc" ]] ; then
-          cp ./$config ~/.$config
-        else
-          cp -r ./$config $CONFIG
-          if [[ $config == "rofi"  ]]; then
-            install rofi-lbonn-wayland
-            break
-          else
-            install $config
-          fi
-        fi
-        break
-      else
+        case $config in
+          .vimrc | .zshrc | wallpapers)
+            cp ./$config ~/
+            ;;
+          *)
+            cp -r ./$config ~/.config/
+            ;;
+        esac
         prompt install $config
       fi
     echo "Done!"
@@ -61,10 +55,10 @@ fi
 done
 
 # Extra packages
-
 echo "Optionnal but recommended"
 echo ""
-for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts" "autotiling"
+
+for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts-symbols" "autotiling"
 do
   if ! install $pkg; then
     continue
