@@ -10,10 +10,10 @@ exec kdeconnect-indicator
 #exec ulauncher --hide-window
 exec ~/.azotebg
 exec syncthing -no-browser
-exec autotiling
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
+exec autotiling
 exec fish -c update_mangas
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
@@ -21,15 +21,10 @@ exec fish -c update_mangas
 # exec oguri
 # exec dwall -s flcl &
 
-# Startup applications
-
-
 # Windows Rules 
+for_window [app_id=".*"] split toggle 
 for_window [title="~nwg"] border none 
-# for_window [title="Wine"] floating enable
 for_window [class="(?i)ark"] floating enable
-# for_window [app_id="imv"] floating enable
-# for_window [app_id="imv"] resize shrink width 600px
 for_window [class="(?i)mpv"] floating enable
 # for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
@@ -38,7 +33,6 @@ for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed 
 for_window [workspace="5"] layout tabbed
-# for_window [workspace="6"] fullscreen toggle
 
 ### Variables
 #
@@ -55,10 +49,8 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #
-# set $menu rofi -show drun -config ~/.config/rofi/sidetab.rasi -font 'ProductSans 10'
-# set $menu wofi -c ~/.config/wofi/config -s ~/.config/wofi/style.css -I
 set $menu nwggrid -o 0.9 -b 434c5e
-bindsym $mod+backspace exec /bin/zsh -i -c wofer
+bindsym $mod+backspace exec fish -c wofer
 bindsym $mod+d exec fish -c wofer
 bindsym $mod+m exec fish -c manga_menu
 
@@ -67,13 +59,12 @@ default_border pixel 3
 
 # Font
 font pango:ProductSansMedium 13px 
-# font pango:SanFranciscoText 13px 
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #5e81ac #5e81ac #ffffff #7c818c   #5e81ac
-client.focused_inactive #4c566a #383c4a #ffffff #7c818c   #6f7787
-client.unfocused        #4c566a #383c4a #888888 #7c818c   #6f7787
+client.focused          #5e81ac #5e81ac #ffffff #88c0d0   #81a1c1
+client.focused_inactive #4c566a #4c566a #ffffff #88c0d0   #434c5e
+client.unfocused        #4c566a #4c566a #888888 #ebcb8b   #434c5e
 client.urgent           #7c818c #bf616a #ffffff #900000   #bf616a
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -84,12 +75,11 @@ assign [app_id="steam"] 4
 assign [app_id="virt-manager"] 6
 assign [app_id="virtualbox"] 6
 assign [app_id="signal-desktop"] 5
-assign [app_id="ripcord"] 5
+assign [app_id="firefox" title="discord.com"] 5
 assign [app_id="caprine"] 5
 assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
 gaps inner 5
 gaps outer 3
 
@@ -306,18 +296,12 @@ bar {
 include /etc/sway/config.d/*
 
 # Special keys
-
 # /usr/include/xkbcommon/xkbcommon-keysyms.h
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-# bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
-# bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
-# bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wobbindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +1%
-# bindsym XF86MonBrightnessUp exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.increase 0.1
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 1%-
-# bindsym XF86MonBrightnessDown exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.decrease 0.1
 bindsym XF86KbdBrightnessUp exec brightnessctl -c backlight set +1%
 bindsym XF86KbdBrightnessDown exec brightnessctl -c backlight set 1%-
 bindsym XF86AudioPlay exec playerctl play-pause

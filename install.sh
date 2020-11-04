@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-INSTALL=$(ls -A ./)
+AUTOMATIC='no'
 
 # Confirmation prompt
 prompt () {
@@ -28,13 +28,17 @@ fi
 }
 
 # Installing configuration files
-for config in $INSTALL
+for config in $(ls -A ./)
 do
-  if [[ $config =~ ^[a-zA-Z0-9_]+\.[a-z]+$ || $config == "LICENSE" ]]; then
+  if [[ $config =~ ^.+\.[a-z]+$|.git || $config == "LICENSE" ]]; then
     continue
   else
     ans=""
-    prompt copy $config
+    if [[ $AUTOMATIC =~ 'no' ]]; then
+      prompt copy $config
+    else
+      ans="y"
+    fi
     while [ "$ans" != "n" ]
     do
       if [[ $ans == "y" ]]; then

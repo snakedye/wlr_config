@@ -137,8 +137,6 @@ window#waybar {
 }
 
 #cpu, #idle_inhibitor, #custom-media, #clock, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
-  margin-left: 0;
-  margin-right: 0;
   padding: 0px 10px 0px 10px;
 }
 
@@ -159,6 +157,7 @@ window#waybar {
 }
 
 #clock {
+  padding-right: 0;
   border-radius: 10px;
   font-size: 14px;
 }
@@ -172,14 +171,14 @@ window#waybar {
 }
 
 #custom-media.Playing {
-  background-color: #434c5e;
+  color: #434c5e;
+  background-color: #81a1c1;
 }
 
 #custom-media.Paused {
 }
 
 #custom-pacman {
-	padding: 0px 8px 0px 8px;
   color: #ebcb8b;
   font-weight: 600;
 }
@@ -207,11 +206,9 @@ window#waybar {
 }
 
 #tray {
-  margin-left: 0;
-  margin-right: 0;
-  background-color: #3b4252 ;
+  background-color: #4c566a;
 	padding: 0px 12px 0px 8px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px;
   color: #8fbcbb;
 }
 
