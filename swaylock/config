@@ -4,7 +4,7 @@ indicator
 daemonize
 indicator-caps-lock
 timestr=%k:%M
-datestr=%a %e %m %Y
+datestr=%B %d %Y
 image=~/wallpapers/ilya.png
 scaling=fill
 effect-scale=0.4

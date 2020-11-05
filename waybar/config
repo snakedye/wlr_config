@@ -4,7 +4,7 @@
     // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1200, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "custom/newtab", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",],
+    "modules-left": ["sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",],
     "modules-center": ["custom/media"],
     "modules-right": ["pulseaudio","custom/weather", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman","tray","clock","custom/power",],
     // Modules configuration
@@ -175,7 +175,7 @@
 	  "custom/reddit": {
     	  "format": "",
     	  "on-click": "xdg-open https://www.reddit.com/",
-       	"on-left-click": "firefox --new-window 'https://www.reddit.com/'",
+       	"on-left-click": "xdg-open 'https://www.reddit.com/'",
     	  "tooltip": false 
     },
     "custom/youtube": {
@@ -193,11 +193,6 @@
        	"format": "",
     	  "on-click": "xdg-open https://www.crunchyroll.com/",
        	"on-left-click": "firefox --new-window 'https://www.crunchyroll.com/'",
-    	  "tooltip": false 
-    },
-	"custom/newtab": {
-    	 "format": "",
-    	  "on-click": "xdg-open file:///home/bryan/.mozilla/firefox/8rcyo1iq.default-release/startpage/index.html",
     	  "tooltip": false 
     },
     "wlr/taskbar": {

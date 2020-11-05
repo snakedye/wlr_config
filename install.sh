@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-AUTOMATIC='no'
+AUTOMATIC="$1"
 
 # Confirmation prompt
 prompt () {
@@ -34,7 +34,7 @@ do
     continue
   else
     ans=""
-    if [[ $AUTOMATIC =~ 'no' ]]; then
+    if [[ $AUTOMATIC != 'y' ]]; then
       prompt copy $config
     else
       ans="y"
@@ -52,9 +52,8 @@ do
         esac
         prompt install $config
       fi
-    echo "Done!"
+    echo "Done!\n"
     done
-  echo ""
 fi
 done
 

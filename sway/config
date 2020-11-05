@@ -13,8 +13,8 @@ exec syncthing -no-browser
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
-exec autotiling
 exec fish -c update_mangas
+# exec autotiling
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
@@ -22,7 +22,7 @@ exec fish -c update_mangas
 # exec dwall -s flcl &
 
 # Windows Rules 
-for_window [app_id=".*"] split toggle 
+for_window [app_id=".*" workspace="[^45]"] split toggle 
 for_window [title="~nwg"] border none 
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
@@ -31,7 +31,7 @@ for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable
 for_window [title="Copying"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
-for_window [workspace="4"] layout tabbed 
+for_window [workspace="4"] layout tabbed
 for_window [workspace="5"] layout tabbed
 
 ### Variables
@@ -237,7 +237,7 @@ bindsym Shift+print exec grim - | swappy -f -
     bindsym alt+Space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+Alt+space focus mode_toggle
+    bindsym ctrl+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
