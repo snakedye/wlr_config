@@ -7,25 +7,24 @@
 # Autostart
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-#exec ulauncher --hide-window
-exec ~/.azotebg
 exec syncthing -no-browser
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
 exec fish -c update_mangas
-# exec autotiling
+exec autotiling
+# exec ~/.azotebg
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 # Dynamic Wallpaper
-# exec oguri
+exec oguri -c ~/.config/oguri/config
 # exec dwall -s flcl &
 
 # Windows Rules 
-for_window [app_id=".*" workspace="[^45]"] split toggle 
 for_window [title="~nwg"] border none 
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
+for_window [app_id="imv"] floating enable, resize height 800px, resize width 500px
 # for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
 for_window [title="Copying"] floating enable
@@ -49,9 +48,10 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #
-set $menu nwggrid -o 0.9 -b 434c5e
+set $menu nwggrid -o 1 -b 3b4252 -n 7 -s 90 -f -p
 bindsym $mod+backspace exec fish -c wofer
-bindsym $mod+d exec fish -c wofer
+bindsym $mod+c exec fish -c wofer
+bindsym $mod+d exec wofi-emoji
 bindsym $mod+m exec fish -c manga_menu
 
 # Disable titlebar
@@ -100,11 +100,11 @@ gaps outer 3
 # Example configuration:
 #
 
-# exec swayidle -w\
-    # timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
-    # timeout 770 'swaymsg "output * dpms off"' \
-    # resume 'swaymsg "output * dpms on"' \
-    # before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
+exec swayidle -w\
+    timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
+    timeout 770 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -114,8 +114,8 @@ bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 
 # Screenshot with grim and swappy
-bindsym print exec grim -g "$(slurp)" - | swappy -f -
-bindsym Shift+print exec grim - | swappy -f -
+bindsym print exec grim -q 100 -g "$(slurp)" - | swappy -f -
+bindsym Shift+print exec grim -q 100 - | swappy -f -
 
 ### Input configuration
 #
@@ -222,8 +222,8 @@ bindsym Shift+print exec grim - | swappy -f -
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+v splith
-    bindsym $mod+c splitv
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking

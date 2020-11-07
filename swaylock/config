@@ -5,7 +5,7 @@ daemonize
 indicator-caps-lock
 timestr=%k:%M
 datestr=%B %d %Y
-image=~/wallpapers/ilya.png
+image=~/wallpapers/cop.gif
 scaling=fill
 effect-scale=0.4
 effect-vignette=0.2:0.5

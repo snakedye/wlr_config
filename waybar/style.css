@@ -183,10 +183,6 @@ window#waybar {
   font-weight: 600;
 }
 
-#custom-playerctl {
-  border-radius: 15px
-}
-
 #pulseaudio {
   color:#ebcb8b;
   border-radius: 10px 0 0 10px;
@@ -207,7 +203,7 @@ window#waybar {
 
 #tray {
   background-color: #4c566a;
-	padding: 0px 12px 0px 8px;
+	padding: 2px 8px 2px 8px;
   border-radius: 10px;
   color: #8fbcbb;
 }

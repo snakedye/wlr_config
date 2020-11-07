@@ -21,6 +21,6 @@ function addmanga --description "Add manga to my library"
 Type=Application
 Name=$new Ch.$number
 Icon=$HOME/.mangas/.covers/$new.jpg
-Exec=cd $dir ; ls ./ | feh
+Exec=cd $dir ; ls ./ | imv
 Categories=Manga" > ~/.mangas/$new/.chapter/$new$number.desktop
 end
