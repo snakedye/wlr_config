@@ -1,5 +1,7 @@
 # sway
 
+![rice](screenshot.jpg)
+
 ##### Optional but recommended
 
 - waybar
