@@ -24,11 +24,12 @@ exec oguri -c ~/.config/oguri/config
 for_window [title="~nwg"] border none 
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
-for_window [app_id="imv"] floating enable, resize height 800px, resize width 500px
+for_window [app_id="imv"] floating enable
 # for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
 for_window [title="Copying"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
+for_window [app_id="marker"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed
 for_window [workspace="5"] layout tabbed
@@ -114,8 +115,8 @@ bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 
 # Screenshot with grim and swappy
-bindsym print exec grim -q 100 -g "$(slurp)" - | swappy -f -
-bindsym Shift+print exec grim -q 100 - | swappy -f -
+bindsym print exec grim -g "$(slurp)" - | swappy -f -
+bindsym Shift+print exec grim - | swappy -f -
 
 ### Input configuration
 #

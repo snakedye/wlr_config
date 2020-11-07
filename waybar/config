@@ -9,48 +9,51 @@
     "modules-right": ["idle_inhibitor","pulseaudio","custom/weather", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman","tray","clock","custom/power",],
     // Modules configuration
     "sway/workspaces": {
-        "disable-scroll": false,
-        "all-outputs": true,
-        "format": "{icon}",
-        "persistent_workspaces": {
-         	"1": [],
-         	"2": [],
-			    "3": [],
-          "4": [],
-        },
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "focused": "",
-            "urgent": "",
-            "default": ""
-        },
-        "icon-size": 15
+      "disable-scroll": false,
+      "all-outputs": true,
+      "format": "{icon}",
+      "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+      },
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "focused": "",
+        "urgent": "",
+        "default": ""
+      },
+      "icon-size": 15
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+      "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
     	"format": "{}",
       "max-length": 50
     },
-	 "custom/media": {
-       "format":"{}",
+    "custom/media": {
+       "format":"{icon}   {}",
        "return-type": "json",
+       "format-icons": {
+          "Playing": "",
+          "Paused": "",
+       },
        "max-length":55,
        "interval":1,
-       "exec": "$HOME/.config/waybar/mediaplayer.sh", // Script in resources folder
-       "exec-on-event":"$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+       "exec": "$HOME/.config/waybar/mediaplayer.sh",
+       "exec-on-event":"$HOME/.config/waybar/mediaplayer.sh",
        "on-click": "playerctl play-pause"
-     },
+    },
     "tray": {
-        // "icon-size": 21,
          "spacing": 10,
     },
-	 "idle_inhibitor": {
+    "idle_inhibitor": {
          "format": "{icon}",
          "format-icons": {
          "activated": "",
@@ -189,7 +192,7 @@
         "on-click": "xdg-open https://mail.google.com/mail/u/0/",
     	  "tooltip": false 
     },
-	"custom/crunchyroll": {
+    "custom/crunchyroll": {
        	"format": "",
     	  "on-click": "xdg-open https://www.crunchyroll.com/",
        	"on-left-click": "firefox --new-window 'https://www.crunchyroll.com/'",

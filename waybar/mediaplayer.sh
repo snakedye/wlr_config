@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo '{"text": "'$(playerctl metadata title)'", "tooltip": "'$(playerctl metadata title)'", "class": "'$(playerctl status)'" }' | sed -e 's/" - "/""/'
+echo '{"text": "'$(playerctl metadata title)'", "alt": "'$(playerctl status)'", "tooltip": "'$(playerctl metadata --format "{{ playerName }} : {{ artist }} - {{ title }}")'", "class": "'$(playerctl status)'" }'

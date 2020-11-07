@@ -37,10 +37,9 @@ button:focus {
 }
 
 #separator {
-    color: #d8dee9;
-    background-color: #d8dee9;
-    margin-left: 500px;
-    margin-right: 500px;
+    background-color: #4c566a;
+    margin-left: 100px;
+    margin-right: 100px;
     margin-top: 10px;
     margin-bottom: 10px
 }

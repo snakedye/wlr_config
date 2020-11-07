@@ -171,8 +171,10 @@ window#waybar {
 }
 
 #custom-media.Playing {
-  color: #434c5e;
-  background-color: #81a1c1;
+  color: #81a1c1;
+  border-radius: 0px;
+  font-weight: 500;
+  border-bottom: 1px solid #81a1c1;
 }
 
 #custom-media.Paused {

@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-INSTALL=$(ls ./)
-CONFIG=~/.config/
+INSTALL=$(ls -A ./)
+CONFIG=~/.config
 
 # Confirmation prompt
 prompt () {
@@ -12,28 +12,21 @@ prompt () {
 }
 
 # Update configuration files
-for config in $INSTALL
+for config in $(ls -A ./)
 do
-  if [[ $config =~ ^[a-zA-Z0-9_]+\.[a-z]+$ || $config == "LICENSE" || $config == "wallpapers" ]]; then
-    continue
-  else
-    ans=""
-    prompt update $config
-    while [ "$ans" != "n" ]
-    do
-      if [[ $ans == "y" ]]; then
-        if [[ $config == "vimrc" || "$config" == "zshrc" ]] ; then
-          cp ~/.$config ./$config
-        else
-          cp -r $CONFIG$config ./
-        fi
-        break
-      fi
-    echo "Done!"
-    done
-  echo ""
-fi
+  if [[ -d "$HOME/$config" || -f "$HOME/$config" ]]; then
+    if ! cp $HOME/$config ./ 2> /dev/null; then
+      cp -r $HOME/$config ./
+    fi
+    echo "$config copied"
+  elif [[ -d "$CONFIG/$config" || -f "$CONFIG/$config" ]]; then
+    if ! cp $CONFIG/$config ./ 2> /dev/null; then
+      cp -r $CONFIG/$config ./
+    fi
+    echo "$config copied"
+  fi
 done
 
 # Success message
+echo ""
 echo "Update finished!"

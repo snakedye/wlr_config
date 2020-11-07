@@ -30,6 +30,9 @@ Plug 'rust-lang/rust.vim'
 " Install ansible plugin 
 Plug 'pearofducks/ansible-vim'
 
+" Ranger integration
+Plug 'francoiscabrol/ranger.vim'
+
 call plug#end()
 
 " Turn on syntax highlighting.
@@ -89,7 +92,8 @@ set clipboard+=unnamedplus
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
-" Wayland clipboard
+" Ranger shortcut
+:nnoremap <C-space> :RangerCurrentDirectory<CR>
 
 " Speed up scrolling in Vim
 set ttyfast
