@@ -1,6 +1,6 @@
 # sway
 
-##### Optionnal but recommended
+##### Optional but recommended
 
 - waybar
 
