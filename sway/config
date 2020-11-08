@@ -49,7 +49,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #
-set $menu nwggrid -o 1 -b 3b4252 -n 7 -s 90 -f -p
+set $menu nwggrid -o 0.9 -b 3b4252 -n 7 -s 90 -f -p
 bindsym $mod+backspace exec fish -c wofer
 bindsym $mod+c exec fish -c wofer
 bindsym $mod+d exec wofi-emoji
