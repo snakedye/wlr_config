@@ -15,7 +15,6 @@ window#waybar {
   padding: 1 5 1 5;
   font-size: 15px;
   border-radius: 10px;
-  margin-right: 10;
 }
 
 #workspaces button {
@@ -94,8 +93,6 @@ window#waybar {
 #custom-newtab, #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail {	
   background-color:  #3b4252;
   font-size: 14px;
-  margin-left: 0;
-  margin-right: 0;
   padding: 0 13 0 13;
 }
 
@@ -116,7 +113,6 @@ window#waybar {
 #custom-crunchyroll {
   font-size: 13px;
   color: #a3be8c;
-  margin-right: 15px;
   border-radius: 0 10px 10px 0;
 }
 
@@ -177,7 +173,11 @@ window#waybar {
   border-bottom: 1px solid #81a1c1;
 }
 
-#custom-media.Paused {
+#custom-media.Music {
+  color: #b48ead;
+  border-radius: 0px;
+  font-weight: 500;
+  border-bottom: 1px solid #b48ead;
 }
 
 #custom-pacman {

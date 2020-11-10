@@ -5,7 +5,8 @@ daemonize
 indicator-caps-lock
 timestr=%k:%M
 datestr=%B %d %Y
-image=~/wallpapers/cop.gif
+# image=~/wallpapers/cop.gif
+screenshots
 scaling=fill
 effect-scale=0.4
 effect-vignette=0.2:0.5
@@ -13,7 +14,7 @@ effect-blur=4x2
 font=ProductSans
 
 # Ring
-indicator-radius=90
+indicator-radius=100
 # line-uses-ring
 line-color=#88c0d0
 text-color=#eceff4

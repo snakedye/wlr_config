@@ -19,15 +19,13 @@ do
       cp -r $HOME/$config ./
     fi
     echo "$config copied"
-  elif [[ -d "$CONFIG/$config" || -f "$CONFIG/$config" || $config != "micro" ]]; then
+  elif [[ -d "$CONFIG/$config" || -f "$CONFIG/$config" ]]; then
     if ! cp $CONFIG/$config ./ 2> /dev/null; then
       cp -r $CONFIG/$config ./
     fi
     echo "$config copied"
   fi
 done
-
-rm -r 
 
 # Success message
 echo ""

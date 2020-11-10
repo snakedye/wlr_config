@@ -43,12 +43,14 @@
        "format-icons": {
           "Playing": "",
           "Paused": "",
+          "Music": ""
        },
        "max-length":55,
-       "interval":1,
-       "exec": "$HOME/.config/waybar/mediaplayer.sh",
-       "exec-on-event":"$HOME/.config/waybar/mediaplayer.sh",
-       "on-click": "playerctl play-pause"
+       "interval":2,
+       "exec": "fish -c playerstatus | tail -1",
+       "exec-on-event":"fish -c playerstatus | tail -1",
+       "on-click": "playerctl play-pause",
+       "on-click-right": "cmus-remote -u",
     },
     "tray": {
          "spacing": 10,
@@ -121,7 +123,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -137,12 +139,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/name": {
-        "format": " ~ {}",
-        "exec" : "hostname",
-        "on-click": "wofi -s ~/.config/wofi/style.css -c ~/.config/wofi/menu -I",
-        "tooltip": false
     },
     "custom/weather": {
         "exec": "~/.config/waybar/weather.sh Terrebonne",

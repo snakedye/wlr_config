@@ -7,12 +7,12 @@
 # Autostart
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-exec syncthing -no-browser
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
 exec fish -c update_mangas
 exec autotiling
+# exec syncthing -no-browser
 # exec ~/.azotebg
 # exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
@@ -49,7 +49,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #
-set $menu nwggrid -o 0.9 -b 3b4252 -n 7 -s 90 -f -p
+set $menu nwggrid -o 0.9 -b 3b4252 -n 7 -s 90 -f -p -c style.css
 bindsym $mod+backspace exec fish -c wofer
 bindsym $mod+c exec fish -c wofer
 bindsym $mod+d exec wofi-emoji
@@ -92,7 +92,12 @@ gaps outer 3
 #
 # Example configuration:
 #
-#   output DP-3 resolution 1920x1080 position 1920,0
+  output HDMI-A-1 {
+    pos 0 0
+    res 2560x1440
+    scale 1
+  }
+  # output HDMI-A-1 resolution 2560x1440 position 0,0 scale
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -105,7 +110,7 @@ exec swayidle -w\
     timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
     timeout 770 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'exec swaylock -f -C ~/.config/swaylock/config'
+    before-sleep 'exec swaylock -C ~/.config/swaylock/config'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
