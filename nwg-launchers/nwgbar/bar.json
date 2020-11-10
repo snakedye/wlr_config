@@ -1,12 +1,12 @@
 [
   {
     "name": "Lock screen",
-    "exec": "~/.config/sway/lockman.sh",
+    "exec": "swaylock -C ~/.config/swaylock/config",
     "icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/lock.svg"
   },
   {
   	"name": "Suspend",
-  	"exec": "systemctl suspend;~/.config/sway/lockman.sh",
+  	"exec": "systemctl suspend;swaylock -C ~/.config/swaylock/config",
   	"icon": "/home/bryan/.config/nwg-launchers/nwgbar/images/suspend.svg"
   },
   {

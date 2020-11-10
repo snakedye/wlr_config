@@ -24,12 +24,11 @@ exec oguri -c ~/.config/oguri/config
 for_window [title="~nwg"] border none 
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
-for_window [app_id="imv"] floating enable
+for_window [app_id="imv"] floating enable; resize shrink width 10000px; resize grow width 600px; resize shrink height 10000px; resize grow height 1000px
 # for_window [title="Authentication"] floating enable
 for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
 for_window [title="Copying"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
-for_window [app_id="marker"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="4"] layout tabbed
 for_window [workspace="5"] layout tabbed
@@ -105,13 +104,11 @@ gaps outer 3
 #
 # Example configuration:
 #
-
-exec swayidle -w\
-    timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
-    timeout 770 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep 'exec swaylock -C ~/.config/swaylock/config'
-
+# exec swayidle -w\
+#     timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
+#     timeout 770 'swaymsg "output * dpms off"' \
+#     resume 'swaymsg "output * dpms on"' \
+#     before-sleep 'exec swaylock -C ~/.config/swaylock/config'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.

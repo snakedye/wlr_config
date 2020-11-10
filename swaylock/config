@@ -1,7 +1,7 @@
 clock
 indicator
 # no-unlock-indicator
-daemonize
+# daemonize
 indicator-caps-lock
 timestr=%k:%M
 datestr=%B %d %Y
