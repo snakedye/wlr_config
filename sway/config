@@ -10,7 +10,7 @@ exec kdeconnect-indicator
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
-exec fish -c update_mangas
+# exec fish -c update_mangas
 exec autotiling
 # exec syncthing -no-browser
 # exec ~/.azotebg

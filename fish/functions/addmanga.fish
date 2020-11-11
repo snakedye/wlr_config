@@ -1,26 +1,33 @@
 # Add manga to library
 
 function addmanga --description "Add manga to my library"
-  set -l old (ls -t ~/.mangas | head -1)
+  set -l old (ls -t ~/.mangas | wc -l)
+  set title (ls -t ~/.mangas | head -1)
   set -l url "$argv[1]"
-  set -l number "$argv[2]"
-  printf "$url\n$number" | ./mangadex-dl.py
-  set -l new (ls -t ~/.mangas | head -1)
-
-  if test "$old" != "$new"
-    touch ~/.mangas/$new/.url
-    mkdir ~/.mangas/$new/.chapter
-    set url (curl "$url/covers/" | grep -o 'https://mangadex.org/images/covers.*?' | sed 's/["].*//'| sort -r  |head -1)
-    curl -o "$HOME/.mangas/.covers/$new.jpg" $url
-    echo "$url" > ~/.mangas/$new/.url
+  set -l number (math $argv[2]+1)
+  if echo $url | grep -o 'mangadex'
+    printf "$url\n$number" | ./mangadex-dl.py
+  else
+    ~/.mangadl-bash/mangadl $url -d ~/.mangas/ -r $number
   end
-  set chap (ls -t ~/.mangas/$new/ | head -1 )
-  set dir "'$HOME/.mangas/$new/$chap'"
-  touch ~/.mangas/$new/.chapter/$new$number.desktop
+  set -l new (ls -t ~/.mangas | wc -l)
+  if test $new -gt $old
+    set title (ls -t ~/.mangas | head -1)
+    mkdir ~/.mangas/$title/.chapter/
+    if echo $url | grep -o 'mangadex'
+      echo "$url" > ~/.mangas/$title/.url
+      set url (curl -s "$url/covers/" | grep -o 'https://mangadex.org/images/covers.*?' | sed 's/["].*//'| sort -r  |head -1)
+      curl -o "$HOME/.mangas/.covers/$title.jpg" $url
+    end
+  end
+  set chap (ls -t ~/.mangas/$title/ | head -1 )
+  set dir "'$HOME/.mangas/$title/$chap'"
+  set number (math $number-1)
+  touch ~/.mangas/$title/.chapter/$title$number.desktop
   echo "[Desktop Entry]
 Type=Application
-Name=$new Ch.$number
-Icon=$HOME/.mangas/.covers/$new.jpg
-Exec=cd $dir ; ls ./ | imv
-Categories=Manga" > ~/.mangas/$new/.chapter/$new$number.desktop
+Name=$title Ch.$number
+Icon=$HOME/.mangas/.covers/$title.jpg
+Exec=cd $dir ; ls ./ | sort -n | imv
+Categories=Manga" > ~/.mangas/$title/.chapter/$title$number.desktop
 end

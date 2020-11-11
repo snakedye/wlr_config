@@ -12,6 +12,9 @@ call plug#begin('~/.vim/plugged')
 " Nord Theme
 Plug 'arcticicestudio/nord-vim'
 
+"Markdown plugins
+Plug 'gabrielelana/vim-markdown'
+
 "Fugitive Vim Github Wrapper
 Plug 'tpope/vim-fugitive'
 
