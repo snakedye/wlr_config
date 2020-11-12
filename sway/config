@@ -10,14 +10,14 @@ exec kdeconnect-indicator
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
-# exec fish -c update_mangas
 exec autotiling
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc3b4252' --bar-color '#ff5e81ac'
+exec ~/.azotebg
 # exec syncthing -no-browser
-# exec ~/.azotebg
-# exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+# exec fish -c update_mangas
 
 # Dynamic Wallpaper
-exec oguri -c ~/.config/oguri/config
+# exec oguri -c ~/.config/oguri/config
 # exec dwall -s flcl &
 
 # Windows Rules 
@@ -76,7 +76,7 @@ assign [app_id="virt-manager"] 6
 assign [app_id="virtualbox"] 6
 assign [app_id="signal-desktop"] 5
 assign [app_id="firefox" title="discord.com"] 5
-assign [app_id="caprine"] 5
+assign [app_id="discord"] 5
 assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -300,9 +300,9 @@ include /etc/sway/config.d/*
 
 # Special keys
 # /usr/include/xkbcommon/xkbcommon-keysyms.h
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +1%
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 1%-
 bindsym XF86KbdBrightnessUp exec brightnessctl -c backlight set +1%
