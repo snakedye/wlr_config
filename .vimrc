@@ -15,6 +15,9 @@ Plug 'arcticicestudio/nord-vim'
 "Markdown plugins
 Plug 'gabrielelana/vim-markdown'
 
+"Illuminate
+Plug 'oknozor/illumination', { 'dir': '~/.illumination', 'do': '.install.sh' }
+
 "Fugitive Vim Github Wrapper
 Plug 'tpope/vim-fugitive'
 

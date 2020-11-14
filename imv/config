@@ -10,7 +10,7 @@ suppress_default_binds = true
 
 scaling_mode = full
 
-background = 1F1F21
+background = 2B2F3A
 
 title_text = $(xdotool getactivewindow set_window --name "[ $imv_current_index / $imv_file_count ] : $(echo "${PWD##*/}")"; echo "$imv_current_index" > ~/.cache/imv/$(echo $PWD | base64 -w0) )
 

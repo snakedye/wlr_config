@@ -14,7 +14,9 @@ prompt () {
 # Update configuration files
 for config in $(ls -A ./)
 do
-  if [[ -d "$HOME/$config" || -f "$HOME/$config" ]]; then
+  if [[ "$@" =~ $config ]]; then
+    :
+  elif [[ -d "$HOME/$config" || -f "$HOME/$config" ]]; then
     if ! cp $HOME/$config ./ 2> /dev/null; then
       cp -r $HOME/$config ./
     fi

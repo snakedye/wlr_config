@@ -187,12 +187,12 @@ window#waybar {
 
 #pulseaudio {
   color:#ebcb8b;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
 }
 
 #pulseaudio.muted {
-  background-color: #b1b190;
-  color: #2a5c45;
+  background-color: #ebcb8b;
+  color: #4c566a;
 }
 
 #temperature{
