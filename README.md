@@ -1,6 +1,6 @@
 # sway
 
-![rice](screenshot.jpg)
+![rice](screenshot.png)
 
 ##### Optional but recommended
 
