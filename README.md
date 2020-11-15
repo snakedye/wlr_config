@@ -56,7 +56,7 @@ Dependancies
 
 5. [mangadexdl](https://github.com/frozenpandaman/mangadex-dl) (optionnal)
 
-You need to set the `$HOME/.mangas directory first` otherwise the command will fail.
+You need to set the `$HOME/.mangas` directory first otherwise the command will fail.
 
 - `addmanga` adds mangas to the .mangas directory. If you have mangadexdl it will also curl the covers.
 - `update_mangas` will update your library.
