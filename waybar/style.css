@@ -6,12 +6,12 @@
 }
 
 window#waybar {
-  background-color: #3b4252;
+  background-color: #353b49;
   color: #ffffff;
 }
 
 #workspaces {
-  background-color:  #434c5e;
+  background-color: #2e3440;
   padding: 1 5 1 5;
   font-size: 15px;
   border-radius: 10px;
@@ -26,10 +26,15 @@ window#waybar {
 }
 
 #window {
+	border-radius: 10px;
+  margin: 0 5 0 5;
+	padding: 0px 6px 0px 6px;
+  background-color: #2e3440;
+  color: #81a1c1;
+}
+
+#window.empty {
   background-color: transparent;
-	padding-right: 10px;
-  font-size: 14px;
-  font-weight: 500;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -54,52 +59,41 @@ window#waybar {
 /* TASKBAR */
 
 #taskbar {
-  background-color: transparent;
-  font-size: 15px;
-  border-radius: 15px;
-  margin-right: 7;
+  margin: 0;
 }
 
 #taskbar button {
-	border-radius: 0px;
-  margin: 0;
-	padding: 0 8 0 8;
-  background-color: transparent;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
+	border-radius: 10px;
+  margin: 0 5 0 5;
+	padding: 0px 6px 0px 6px;
+  background-color: #2e3440;
 }
 
 #taskbar button.active {
-    color: #81a1c1;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid #81a1c1;
+  color: #81a1c1;
 }
 
 #taskbar button.minimized {
-    color: #7c818c;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid #7c818c;
+  color: #ebcb8b;
 }
 
 #taskbar button:hover {
-    box-shadow: inherit;
-    color: #5e81ac;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid #5e81ac;
+  box-shadow: inherit;
+  background-color: rgba(35,39,49,0.1);
 }
 
 /* BROWSER BOOKMARKS */
 
 #custom-newtab, #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail {	
-  background-color:  #3b4252;
+  background-color: transparent;
   font-size: 14px;
-  padding: 0 13 0 13;
+  padding: 0px 13px 0px  13px ;
 }
 
 #custom-newtab {
   color: #bf616a;
   font-size: 18px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 0px  0px  10px;
 }
 
 #custom-github {
@@ -113,7 +107,7 @@ window#waybar {
 #custom-crunchyroll {
   font-size: 13px;
   color: #a3be8c;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0px  10px 10px 0px ;
 }
 
 #custom-youtube {
@@ -127,13 +121,10 @@ window#waybar {
 
 /* WIDGETS */
 
-#custom-name {
-  border-radius: 15px;
-  margin-right: 10;
-}
-
-#cpu, #idle_inhibitor, #custom-media, #clock, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
-  padding: 0px 10px 0px 10px;
+#cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
+  background-color: #2e3440;
+  padding: 0px 12px 0px 12px;
+  margin: 2 0 2 0;
 }
 
 #disk {
@@ -150,12 +141,6 @@ window#waybar {
 
 #custom-weather {
   color:#81a1c1;
-}
-
-#clock {
-  padding-right: 0;
-  border-radius: 10px;
-  font-size: 14px;
 }
 
 #custom-weather {
@@ -182,16 +167,18 @@ window#waybar {
 
 #custom-pacman {
   color: #ebcb8b;
+  border-radius: 0 10 10 0;
   font-weight: 600;
+  margin-right: 5px;
 }
 
 #pulseaudio {
-  color:#ebcb8b;
-  border-radius: 10px;
+  color: #8fbcbb;
+  border-radius: 10 0 0 10;
 }
 
 #pulseaudio.muted {
-  background-color: #ebcb8b;
+  border-radius: 10px;
   color: #4c566a;
 }
 
@@ -201,13 +188,6 @@ window#waybar {
 
 #temperature.critical {
   color: #eb4d4b;
-}
-
-#tray {
-  background-color: #4c566a;
-	padding: 2px 8px 2px 8px;
-  border-radius: 10px;
-  color: #8fbcbb;
 }
 
 #battery {
@@ -249,10 +229,25 @@ label:focus {
   color: #ffffff;
 }
 
+#clock, #custom-power, #tray {
+  background-color: #3b4252;
+	padding: 2px 10px 2px 10px;
+  margin: 2 0 2 0;
+}
+
+#clock {
+  font-size: 14px;
+}
+
+#tray {
+  border-radius: 10 0 0 10;
+  margin-left: 5px;
+  color: #8fbcbb;
+}
+
 #custom-power {
   font-size: 17px;
-  padding: 0px 10px 0px 10px;
-  border-radius: 10;
+  border-radius: 0 10 10 0;
 }
 
 #mpd.disconnected {

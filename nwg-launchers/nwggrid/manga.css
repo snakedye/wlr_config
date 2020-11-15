@@ -11,6 +11,7 @@ button, label, image {
 }
 
 button {
+    background-color: #2e3440;
     padding: 25px;
     margin: 20px;
     border-radius: 10px;
@@ -26,7 +27,7 @@ button:focus {
 
 #searchbox {
     border: none;
-    background-color: #4c566a;
+    background-color: #2e3440;
     border-radius: 5px;
     padding: 10px;
     border-color: #999;

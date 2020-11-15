@@ -5,25 +5,25 @@ indicator
 indicator-caps-lock
 timestr=%k:%M
 datestr=%B %d %Y
-# image=~/wallpapers/cop.gif
-screenshots
+image=~/wallpapers/arch.png
+# screenshots
 scaling=fill
 effect-scale=0.4
 effect-vignette=0.2:0.5
-effect-blur=4x2
+effect-blur=4x4
 font=ProductSans
 
 # Ring
 indicator-radius=100
 # line-uses-ring
-line-color=#88c0d0
+line-color=#3b4252
 text-color=#eceff4
 # inside-color=#3d7f8d
-inside-ver-color=#8fbcbb
-line-ver-color=#8fbcbb
-ring-ver-color=#8fbcbb
-ring-color=#81a1c1
-key-hl-color=#88c0d0
-separator-color=#88c0d0
+inside-ver-color=#5e81ac
+line-ver-color=#5e81ac
+ring-ver-color=#5e81ac
+ring-color=#4c566a
+key-hl-color=#5e81ac
+separator-color=#5e81ac
 layout-text-color=#eceff4
 line-wrong-color=#d08770
