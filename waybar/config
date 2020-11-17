@@ -3,9 +3,8 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)		
     // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 2560, // Waybar width
-    "margin-right": 2,
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll","custom/media"],
+    "modules-left": ["sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll", "custom/media"],
     "modules-center": ["wlr/taskbar"],
     "modules-right": ["pulseaudio","custom/weather", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman","tray","clock","custom/power",],
     // Modules configuration
@@ -36,7 +35,6 @@
     },
     "sway/window": {
     	"format": "{}",
-      "max-length": 50
     },
     "custom/media": {
        "format":"{icon}   {}",
@@ -46,7 +44,7 @@
           "Paused": "",
           "Music": ""
        },
-       "max-length":35,
+       // "max-length":35,
        "interval":2,
        "exec": "fish -c playerstatus | tail -1",
        "exec-on-event":"fish -c playerstatus | tail -1",
@@ -167,7 +165,6 @@
     "custom/power": {
       	"format": "⏻",
       	"on-click": "nwgbar -o 0.4",
-		    "escape": true,
     	  "tooltip": false 
     },
     "custom/github": {
@@ -178,13 +175,11 @@
 	  "custom/reddit": {
     	  "format": "",
     	  "on-click": "xdg-open https://www.reddit.com/",
-       	"on-left-click": "xdg-open 'https://www.reddit.com/'",
     	  "tooltip": false 
     },
     "custom/youtube": {
       	"format": "",
     	  "on-click": "xdg-open https://www.youtube.com/",
-       	"on-middle-click": "firefox --ssb 'https://www.youtube.com/'",
     	  "tooltip": false 
     },
     "custom/mail": {
@@ -197,9 +192,15 @@
     	  "on-click": "firefox 'ext+container:name=Crunchyroll&url=https://www.crunchyroll.com/'",
     	  "tooltip": false 
     },
+    "custom/library": {
+        "format": "",
+        "on-click": "fish -c manga_menu",
+    	  "tooltip": false 
+    },
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-theme": "Papirus",
+        "icon-size": 15,
         "on-click": "activate",
         "markup": true,
         "max-length": 7,

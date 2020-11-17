@@ -26,11 +26,9 @@ window#waybar {
 }
 
 #window {
+  margin: 0;
 	border-radius: 10px;
-  margin: 0 5 0 5;
 	padding: 0px 6px 0px 6px;
-  background-color: #2e3440;
-  color: #81a1c1;
 }
 
 #window.empty {
@@ -59,7 +57,7 @@ window#waybar {
 /* TASKBAR */
 
 #taskbar {
-  margin: 0;
+  margin: 2 0 2 0;
 }
 
 #taskbar button {
@@ -70,6 +68,7 @@ window#waybar {
 }
 
 #taskbar button.active {
+  background-color: #3b4252;
   color: #81a1c1;
 }
 
@@ -84,16 +83,16 @@ window#waybar {
 
 /* BROWSER BOOKMARKS */
 
-#custom-newtab, #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail {	
+#custom-newtab, #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail, #custom-library {	
   background-color: transparent;
   font-size: 14px;
-  padding: 0px 13px 0px  13px ;
+  padding: 0px 12px 0px  12px ;
 }
 
 #custom-newtab {
   color: #bf616a;
   font-size: 18px;
-  border-radius: 10px 0px  0px  10px;
+  /* border-radius: 10px 0px  0px  10px; */
 }
 
 #custom-github {
@@ -104,10 +103,14 @@ window#waybar {
 	color: #ebcb8b;
 }
 
+#custom-library {
+  color: #c57078;
+}
+
 #custom-crunchyroll {
   font-size: 13px;
   color: #a3be8c;
-  border-radius: 0px  10px 10px 0px ;
+  /* border-radius: 0px  10px 10px 0px ; */
 }
 
 #custom-youtube {
@@ -123,7 +126,7 @@ window#waybar {
 
 #cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
   background-color: #2e3440;
-  padding: 0px 12px 0px 12px;
+  padding: 0px 14px 0px 14px;
   margin: 2 0 2 0;
 }
 
@@ -149,20 +152,19 @@ window#waybar {
 
 #custom-media {
   border-radius: 10px;
+  margin-left: 5;
 }
 
 #custom-media.Playing {
   color: #81a1c1;
   border-radius: 0px;
   font-weight: 500;
-  border-bottom: 1px solid #81a1c1;
 }
 
 #custom-media.Music {
   color: #b48ead;
   border-radius: 0px;
   font-weight: 500;
-  border-bottom: 1px solid #b48ead;
 }
 
 #custom-pacman {
@@ -241,13 +243,14 @@ label:focus {
 
 #tray {
   border-radius: 10 0 0 10;
-  margin-left: 5px;
+  margin-left: 8px;
   color: #8fbcbb;
 }
 
 #custom-power {
   font-size: 17px;
   border-radius: 0 10 10 0;
+  margin-right: 2px;
 }
 
 #mpd.disconnected {
