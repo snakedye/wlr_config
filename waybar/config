@@ -49,6 +49,7 @@
        "exec": "fish -c playerstatus | tail -1",
        "exec-on-event":"fish -c playerstatus | tail -1",
        "on-click": "playerctl play-pause",
+       "on-click-middle": "sleep 1; fish -c playerstatus | tail -1",
        "on-click-right": "cmus-remote -u",
     },
     "tray": {
@@ -199,6 +200,7 @@
     },
     "wlr/taskbar": {
         "format": "{icon}",
+        // "format": "{title:.16}",
         "icon-theme": "Papirus",
         "icon-size": 15,
         "on-click": "activate",
