@@ -83,8 +83,8 @@ assign [title="discord"] 5
 assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-gaps inner 5
-gaps outer 3
+gaps inner 10
+gaps outer 5
 
 ### Output configuration
 #
@@ -94,7 +94,7 @@ gaps outer 3
 #
 # Example configuration:
 #
-  output DP-3 {
+  output HDMI-A-I {
     pos 0 0
     res 2560x1440
     adaptive_sync off

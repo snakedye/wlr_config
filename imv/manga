@@ -1,0 +1,69 @@
+# vi: set ft=dosini :
+
+# Default config for imv
+
+[options]
+
+overlay = true
+
+# Suppress built-in key bindings, and specify them explicitly in this
+# config file.
+suppress_default_binds = true
+
+scaling_mode = full
+
+width = 822
+
+height = 1200
+
+background = 2B2F3A
+
+initial_pan = 0 0
+
+[aliases]
+# Define aliases here. Any arguments passed to an alias are appended to the
+# command.
+# alias = command to run
+
+[binds]
+# Define some key bindings
+q = quit
+
+# Image navigation
+gg = goto 0
+<Shift+G> = goto -1
+h = prev
+l = next
+
+# Panning
+j = pan 0 -50
+k = pan 0 50
+<Left> = pan 50 0
+<Right> = pan -50 0
+
+# Zooming
+<Up> = zoom 1
+<Shift+plus> = zoom 1
+i = zoom 1
+<Down> = zoom -1
+<minus> = zoom -1
+o = zoom -1
+
+# Other commands
+# x = close
+f = fullscreen
+d = overlay
+p = exec echo $imv_current_file
+c = center
+s = scaling next
+<Shift+S> = upscaling next
+a = zoom actual
+r = reset
+
+# Gif playback
+<period> = next_frame
+<space> = toggle_playing
+
+# Slideshow control
+t = slideshow +1
+<Shift+T> = slideshow -1
