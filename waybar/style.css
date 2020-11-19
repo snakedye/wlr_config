@@ -64,11 +64,11 @@ window#waybar {
 	border-radius: 10px;
   margin: 0 5 0 5;
 	padding: 0px 6px 0px 6px;
-  background-color: #2e3440;
+  /* background-color: #2e3440; */
 }
 
 #taskbar button.active {
-  background-color: #3b4252;
+  /* background-color: #3b4252; */
   color: #81a1c1;
 }
 
@@ -78,7 +78,7 @@ window#waybar {
 
 #taskbar button:hover {
   box-shadow: inherit;
-  background-color: rgba(35,39,49,0.1);
+  background-color: rgba(35,39,49,0.4);
 }
 
 /* BROWSER BOOKMARKS */

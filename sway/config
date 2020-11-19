@@ -54,7 +54,7 @@ set $menu nwggrid -o 1.00 -b 353b49 -c style.css
 bindsym $mod+backspace exec fish -c wofer
 bindsym $mod+c exec fish -c wofer
 bindsym $mod+d exec wofi-emoji
-bindsym $mod+m exec fish -c manga_menu 0.95
+bindsym $mod+m exec fish -c 'manga_menu 1.0'
 
 # Disable titlebar
 default_border pixel 3
