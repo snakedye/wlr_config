@@ -10,11 +10,7 @@ suppress_default_binds = true
 
 scaling_mode = full
 
-width = 800
-
-height = 1200
-
-background = 2B2F3A
+background = 434c5e
 
 initial_pan = 0 0
 
