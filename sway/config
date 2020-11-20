@@ -166,7 +166,7 @@ bindsym Shift+print exec grim - | swappy -f -
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+e exec nwgbar -o 0.2
+    bindsym $mod+Shift+e exec nwgbar -o 0.4
 #
 # Moving around:
 #

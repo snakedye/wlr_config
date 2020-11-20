@@ -7,7 +7,7 @@
 
 window#waybar {
   background-color: #353b49;
-  color: #ffffff;
+  color: #d8dee9;
 }
 
 #workspaces {
@@ -26,6 +26,7 @@ window#waybar {
 }
 
 #window {
+  color: #d8dee9;
   margin: 0;
 	border-radius: 10px;
 	padding: 0px 6px 0px 6px;
@@ -151,6 +152,7 @@ window#waybar {
 }
 
 #custom-media {
+  color: #818896;
   border-radius: 10px;
   margin-left: 5;
 }

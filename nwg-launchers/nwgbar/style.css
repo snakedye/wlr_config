@@ -1,5 +1,7 @@
 #bar {
-    margin: 30px /* affects top/bottom & left/right alignment */
+    margin: 30px; /* affects top/bottom & left/right alignment */
+    font-size: 16px;
+    font-family: Product Sans;
 }
 
 button, image {
@@ -10,8 +12,7 @@ button, image {
 }
 
 button {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     margin: 5px
 }
 

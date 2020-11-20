@@ -10,6 +10,8 @@ overlay = true
 # config file.
 suppress_default_binds = true
 
+title_text = $(pwd | grep -o 'mangas/.*' | sed 's/mangas//' | sed 's|/| |g')
+
 scaling_mode = full
 
 width = 822

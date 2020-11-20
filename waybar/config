@@ -5,7 +5,7 @@
     // "width": 2560, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll", "custom/media"],
-    "modules-center": ["wlr/taskbar"],
+    "modules-center": ["sway/window"],
     "modules-right": ["pulseaudio","custom/weather", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight","custom/pacman","tray","clock","custom/power",],
     // Modules configuration
     "sway/workspaces": {
@@ -44,7 +44,7 @@
           "Paused": "",
           "Music": ""
        },
-       // "max-length":35,
+       "max-length":45,
        "interval":2,
        "exec": "fish -c playerstatus | tail -1",
        "exec-on-event":"fish -c playerstatus | tail -1",
