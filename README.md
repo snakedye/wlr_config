@@ -2,7 +2,7 @@
 
 ![rice](screenshot.png)
 
-##### Optional but recommended
+#### Optional but recommended
 
 - waybar
 
@@ -11,8 +11,6 @@
 - kdeconnect
 
 - [wofer](https://gitlab.com/snakedye/wofer)
-
-- <a href="https://aur.archlinux.org/packages/rofi-lbonn-wayland-git/">rofi</a>
 
 - brightnessctl
 
@@ -26,13 +24,11 @@
 
 - oguri (for dynamic wallpapers)
 
-- <a href="https://github.com/adi1090x/dynamic-wallpaper">dynamic wallpapers</a>
-
 - nwg-launchers
 
 - font awesome & nerd-fonts
 
-##### Install config files
+#### Install config files
 
 The script is written for pacman. If you use another package manager it will install config files but not packages.
 
@@ -40,9 +36,9 @@ The script is written for pacman. If you use another package manager it will ins
 
 2. `cd sway_config`
 
-3. `./install.sh`
+3. `./install.sh` (use with the argument `y` for a quick install)
 
-##### Manga library
+#### Manga library
 
 Dependancies
 
@@ -56,15 +52,18 @@ Dependancies
 
 5. [mangadexdl](https://github.com/frozenpandaman/mangadex-dl) (optionnal)
 
+6. fd (optionnal)
+
 You need to set the `$HOME/.mangas` directory first otherwise the command will fail.
 
 - `addmanga` adds mangas to the .mangas directory. If you have mangadexdl it will also curl the covers.
 - `update_mangas` will update your library.
+- `update_mangas argv[1] argv[2] ...` will update the titles passed.
 - `manga_menu` displays the manga library using using nwggrid.
 
 Wofer also has a manga extension.
 
-##### If you have Qt apps that aren't displayed in the desired theme
+#### If you have Qt apps that aren't displayed in the desired theme
 
 1. Install `qt5ct`
 
