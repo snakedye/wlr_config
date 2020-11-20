@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-AUTOMATIC="$1"
-
 # Confirmation prompt
 prompt () {
   echo -e "Do you want to $1 $2 (y/n)"
@@ -12,11 +10,11 @@ prompt () {
 
 # Pacman
 install () {
-if [[ ! -f /usr/bin/"$1" ]]; then
+if ! pacman -Q | grep "$1"; then
   ans=""
   prompt install $1
   if [[ $ans == "y"  ]]; then
-    if [[ ! -f /usr/bin/yay ]]; then
+    if pacman -Q | grep yay; then
     sudo pacman -S yay
     fi
     if yay -S $1; then
@@ -34,7 +32,7 @@ do
     continue
   else
     ans=""
-    if [[ $AUTOMATIC != 'y' ]]; then
+    if [[ $1 != 'y' ]]; then
       prompt copy $config
     else
       ans="y"
@@ -61,7 +59,7 @@ done
 echo "Optionnal but recommended"
 echo ""
 
-for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts-symbols" "autotiling"
+for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts-symbols" "autotiling" 
 do
   if ! install $pkg; then
     continue
