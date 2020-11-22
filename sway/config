@@ -64,7 +64,7 @@ font pango:ProductSansMedium 13px
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #5e81ac #5e81ac #ffffff #88c0d0   #81a1c1
+client.focused          #5e81ac #5e81ac #ffffff #88c0d0   #5e81ac
 client.focused_inactive #4c566a #4c566a #ffffff #88c0d0   #434c5e
 client.unfocused        #4c566a #4c566a #888888 #ebcb8b   #434c5e
 client.urgent           #7c818c #bf616a #ffffff #900000   #bf616a

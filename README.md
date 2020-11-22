@@ -6,7 +6,7 @@
 
 - waybar
 
-- azole
+- azote
 
 - kdeconnect
 

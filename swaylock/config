@@ -5,7 +5,7 @@ indicator
 indicator-caps-lock
 timestr=%k:%M
 datestr=%B %d %Y
-image=~/wallpapers/arch.png
+image=~/wallpapers/ghosts.png
 # screenshots
 scaling=fill
 effect-scale=0.4

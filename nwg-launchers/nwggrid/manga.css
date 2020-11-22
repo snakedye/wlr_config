@@ -11,6 +11,7 @@ button, label, image {
 }
 
 button {
+    box-shadow: 0 0 6 3 #2e3440;
     background-color: #2e3440;
     padding: 25px;
     margin: 20px;
@@ -18,7 +19,7 @@ button {
 }
 
 button:hover {
-    background-color: rgba(46,52,64,0.5);
+    background-color: rgba(46,52,64,0.7);
 }
 
 button:focus {
@@ -37,7 +38,7 @@ button:focus {
 }
 
 #separator {
-    background-color: #4c566a;
+    /* background-color: #4c566a; */
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 10px;

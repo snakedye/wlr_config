@@ -11,7 +11,9 @@ button, label, image {
 }
 
 button {
+    box-shadow: 0 0 6 5 #2e3440;
     background-color: #3b4252;
+    box-shadow: 0 0 6 5 #2e3440;
     padding: 15px;
     margin: 20px;
     border-radius: 10px;
@@ -37,7 +39,7 @@ button:focus {
 }
 
 #separator {
-    background-color: #4c566a;
+    background-color: #3b4252;
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 10px;
