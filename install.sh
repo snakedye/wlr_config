@@ -10,9 +10,8 @@ prompt () {
 
 # Pacman
 install () {
-if ! pacman -Q | grep "$1"; then
+if ! pacman -Q | grep "$1" | head -1; then
   ans=""
-  prompt install $1
   if [[ $ans == "y"  ]]; then
     if pacman -Q | grep yay; then
     sudo pacman -S yay
@@ -21,7 +20,6 @@ if ! pacman -Q | grep "$1"; then
     	break
     fi
   fi
-  echo ""
 fi
 }
 
@@ -37,30 +35,31 @@ do
     else
       ans="y"
     fi
-    while [ "$ans" != "n" ]
-    do
-      if [[ $ans == "y" ]]; then
-        case $config in
-          .vimrc | .zshrc | wallpapers)
-            cp ./$config ~/
-            ;;
-          *)
-            cp -r ./$config ~/.config/
-            ;;
-        esac
-        prompt install $config
-      fi
-    echo "Done!\n"
-    done
+    if [[ $ans == "y" ]]; then
+      case $config in
+        .vimrc | .zshrc)
+          cp ./$config ~/
+          ;;
+        wallpapers)
+          cp -r ./$config ~/
+          ;;
+        *)
+          cp -r ./$config ~/.config/
+          ;;
+      esac
+      install $config
+    fi
+    echo "Done!"
+    echo ""
 fi
 done
 
 # Extra packages
 echo "Optionnal but recommended"
-echo ""
 
 for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts-symbols" "autotiling" 
 do
+  echo ""
   if ! install $pkg; then
     continue
   fi
