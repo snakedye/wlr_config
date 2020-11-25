@@ -30,7 +30,7 @@ function addmanga --description "Add manga to my library"
 Type=Application
 Name=$title Ch.$number
 Icon=$HOME/.mangas/.covers/$title.jpg
-Exec=cd $dir ; ls ./ | sort -n |imv_config=~/.config/imv/manga imv
+Exec=cd $dir ; ls ./ | sort -n | imv_config=~/.config/imv/manga imv
 Categories=Manga" > ~/.mangas/$title/.chapter/$title$number.desktop
   end
 end

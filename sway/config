@@ -64,11 +64,11 @@ font pango:ProductSansMedium 13px
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #5e81ac #5e81ac #ffffff #88c0d0   #5e81ac
-client.focused_inactive #4c566a #4c566a #ffffff #88c0d0   #434c5e
-client.unfocused        #4c566a #4c566a #888888 #ebcb8b   #434c5e
-client.urgent           #7c818c #bf616a #ffffff #900000   #bf616a
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #5e81ac #5e81ac #eceff4 #2e3440   #5e81ac
+client.focused_inactive #4c566a #4c566a #d8dee9 #4c566a   #434c5e
+client.unfocused        #4c566a #4c566a #d8dee9 #4c566a   #434c5e
+client.urgent           #7c818c #bf616a #eceff4 #900000   #bf616a
+client.placeholder      #000000 #0c0c0c #eceff4 #000000   #0c0c0c
 
 #Asignments
 assign [app_id="lutris"] 4

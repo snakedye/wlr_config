@@ -8,7 +8,7 @@ datestr=%B %d %Y
 image=~/wallpapers/ghosts.png
 # screenshots
 scaling=fill
-effect-scale=0.4
+effect-scale=1.4
 effect-vignette=0.2:0.5
 effect-blur=4x4
 font=ProductSans

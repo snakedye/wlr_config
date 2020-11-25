@@ -31,5 +31,11 @@ set completion-highlight-bg     "#81A1C1"
 set recolor-lightcolor          "#2E3440"
 set recolor-darkcolor           "#ECEFF4"
 
-set recolor                     "false"
-set recolor-keephue             "false"
+set recolor                     "true"
+set recolor-keephue             "true"
+
+set font "productsans regular 10"
+
+map <C-r> reload
+map <C-j> zoom in
+map <C-k> zoom out

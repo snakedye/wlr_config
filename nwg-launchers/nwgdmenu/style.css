@@ -1,10 +1,7 @@
 /* Don't delete, just in case: the menu anchor is a button */
 button {
-    background: none;
     padding: 10px;
     border-radius: 5px;
-    border-style: none;
-    box-shadow: none;
 }
 
 box {
