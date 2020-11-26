@@ -170,10 +170,10 @@ end
 
 function wofar
  # set -l TERM alacritty
- set -l EXTENSIONS ~/wofer/extensions
+ set EXTENSIONS ~/wofer/extensions
  # set -l EDITOR nvim
- set -l FM "$TERM -e ranger"
- set -l SHOW_HIDDEN false
+ set FM "$TERM -e ranger"
+ set SHOW_HIDDEN false
 
   while true
     set stdout (lsi (pwd) $argv[1] | wofi -i -c ~/wofer/config -s ~/wofer/style.css | sed 's|^~|/home/bryan|' )

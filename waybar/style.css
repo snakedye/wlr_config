@@ -184,13 +184,18 @@ label:focus {
 #idle_inhibitor.activated {
 	color: #ffffff;
 }
-#clock, #custom-power, #tray {
+#clock, #custom-power, #custom-recorder, #tray {
 	background-color: #3b4252;
 	padding: 2px 10px 2px 10px;
 	margin: 2px 0px 2px 0px;
 }
 #clock {
 	font-size: 14px;
+}
+#custom-recorder {
+	color:#c57078;
+	padding: 2px 5px 2px 5px;
+  font-size: 18px;
 }
 #tray {
 	border-radius: 10px 0px 0px 10px;
