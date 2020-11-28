@@ -1,32 +1,31 @@
 #entry {
-/* background-color: transparent; */
-border-radius: 3;
-padding: 2px 3px 2px 3px;
+border-radius: 5px;
+padding: 5px;
+margin-bottom: 5px;
+text-align: center;
 }
 
 #entry:selected {
 background-color: #5e81ac;
-/* border: none; */
 }
  
 #text:selected {
 color: #d8dee9;
-font-weight: bold;
 }
  
 #window {
 padding: 2px;
-background-color: rgba(53,59,73,0.97);
-border: 3px solid #3b4252;
-border-radius: 2px;
+background-color: rgba(53,59,73,1.0);
+/* border: 3px solid #3b4252; */
+/* border-radius: 3px; */
 font-family: Product Sans;
 }
 
 #input {
-text-align: center;
 border: 2px solid #5e81ac;
 background-color: #4c566a;
-padding: 3 5 3 5;
+padding: 5px;
+font-size: 16px;
 border-radius: 5px;
 }
 
@@ -43,13 +42,11 @@ background-color: transparent;
 
 #scroll {
 margin-top: 10px;
-background-color: none;
-border: none;
 }
 
 #text {
-padding: 6px;
-font-size: 14px;
+padding: 5px;
+font-size: 16px;
 background-color: transparent;
 } 
 

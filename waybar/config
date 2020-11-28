@@ -4,7 +4,7 @@
     // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 2560, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll", "custom/media"],
+    "modules-left": ["river/tags", "sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll", "custom/media"],
     "modules-center": ["sway/window"],
     "modules-right": ["pulseaudio","custom/weather", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight", "custom/pacman","tray","custom/recorder","clock","custom/power",],
     // Modules configuration
@@ -29,6 +29,9 @@
         "default": ""
       },
       "icon-size": 15
+    },
+    "river/tags": {
+      "num-tags": 5
     },
     "sway/mode": {
       "format": "<span style=\"italic\">{}</span>"
@@ -151,7 +154,7 @@
         "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
     },
     "custom/weather": {
-        "exec": "~/.config/waybar/weather.sh Terrebonne",
+        "exec": "~/.config/waybar/scripts/weather.sh Terrebonne",
         "format": "{}",
         "return-type": "json",
         "interval": 3600
@@ -162,7 +165,7 @@
         // "restart-interval": 3600,
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "alacritty -e sudo pacman -Syu; pkill -SIGRTMIN+8 waybar", // update system
+        "on-click": "alacritty -e yay; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8,
     },
     "disk": {
@@ -172,7 +175,7 @@
     },
     "custom/power": {
       	"format": "⏻",
-      	"on-click": "nwgbar -o 0.4",
+      	"on-click": "/home/bryan/.config/waybar/scripts/power.sh",
     	  "tooltip": false 
     },
     "custom/github": {

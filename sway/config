@@ -7,7 +7,6 @@
 # Autostart
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-exec corectrl
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
@@ -22,7 +21,7 @@ exec ~/.azotebg
 # exec dwall -s flcl &
 
 # Windows Rules 
-for_window [title="~nwg"] border none 
+# for_window [title="~nwg"] border none 
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
 for_window [app_id="imv"] floating enable
