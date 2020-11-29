@@ -12,7 +12,7 @@ function river_c
   ~/.azotebg
 
   # Use the "logo" key as the primary modifier
-  set  mod "Mod4"
+  set mod "Mod4"
 
   # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
   riverctl map normal $mod Return spawn alacritty

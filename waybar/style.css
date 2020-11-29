@@ -14,7 +14,7 @@ window#waybar {
 	font-size: 15px;
 	border-radius: 10px;
 }
-#workspaces button, #tags button.occupied {
+#workspaces button {
 	font-size: 14px;
 	border-radius: 0px;
 	margin: 0;
@@ -35,14 +35,18 @@ window#waybar {
 	box-shadow: inherit;
 	color: #5e81ac;
 }
-#workspaces button.focused, #tags button.focused {
+#workspaces button.focused,#tags button.occupied {
 	color: #81a1c1;
+}
+#tags button.focused {
+	color: #5e81ac;
 }
 #workspaces button.urgent {
 	color: #eb4d4b;
 }
 #tags button {
 	font-family: Product Sans ,Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
 #mpd {
 	padding: 0px 10px;
@@ -73,7 +77,7 @@ window#waybar {
 #custom-newtab, #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail, #custom-library {
 	background-color: transparent;
 	font-size: 14px;
-	padding: 0px 12px 0px 12px ;
+	padding: 0px 15px 0px 15px ;
 }
 #custom-newtab {
 	color: #bf616a;
@@ -98,6 +102,7 @@ window#waybar {
 }
 #custom-mail {
 	color: #88c0d0;
+  font-size: 17px;
 }
 /* WIDGETS */
 #cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {

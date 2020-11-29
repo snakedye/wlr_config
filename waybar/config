@@ -5,7 +5,7 @@
     // "width": 2560, // Waybar width
     // Choose the order of the modules
     "modules-left": ["river/tags", "sway/workspaces", "custom/github", "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll", "custom/media"],
-    "modules-center": ["sway/window"],
+    "modules-center": ["wlr/taskbar"],
     "modules-right": ["pulseaudio","custom/weather", "disk", "memory", "cpu", "temperature", "battery#bat2", "backlight", "custom/pacman","tray","custom/recorder","clock","custom/power",],
     // Modules configuration
     "sway/workspaces": {
@@ -31,7 +31,7 @@
       "icon-size": 15
     },
     "river/tags": {
-      "num-tags": 5
+      "num-tags": 7
     },
     "sway/mode": {
       "format": "<span style=\"italic\">{}</span>"
@@ -47,7 +47,7 @@
           "Paused": "",
           "Music": ""
        },
-       "max-length":45,
+       // "max-length":45,
        "interval":3,
        "exec": "fish -c playerstatus | tail -1",
        "exec-on-event":"fish -c playerstatus | tail -1",
@@ -194,7 +194,7 @@
     	  "tooltip": false 
     },
     "custom/mail": {
-       	"format": "",
+       	"format": "",
         "on-click": "xdg-open https://moncourriel.etsmtl.ca/",
     	  "tooltip": false 
     },

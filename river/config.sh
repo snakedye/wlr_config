@@ -2,10 +2,10 @@
 
 # Autostart
 riverctl spawn 'waybar'
-# riverctl spawn 'sleep 1; mako'
-# riverctl spawn 'nm-applet --indicator'
-# riverctl spawn '/usr/lib/kdeconnectd'
-# riverctl spawn 'kdeconnect-indicator'
+riverctl spawn 'sleep 1; mako'
+riverctl spawn 'nm-applet --indicator'
+riverctl spawn '/usr/lib/kdeconnectd'
+riverctl spawn 'kdeconnect-indicator'
 
 # Wallpaper
 ~/.azotebg
@@ -16,20 +16,20 @@ mod="Mod4"
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal $mod Return spawn alacritty
 
-# Mod+Space Launch nwggrid
+# Mod+Space Launch wofi -drun
 riverctl map normal $mod Space spawn wofi -i -c ~/.config/wofi/config -s ~/.config/wofi/style.css -S drun -I
 
-# Mod+C Launch nwggrid
+# Mod+C Launch wofer
 riverctl map normal $mod C spawn 'fish -c wofer'
+
+# Screen lock
+riverctl map normal $mod f1 spawn '~/.config/sway/lockman.sh'
 
 # Mod+Q to close the focused view
 riverctl map normal $mod X close
 
 # Mod+E to exit river
 riverctl map normal $mod+Shift E exit
-
-# Mod+R to exit river
-riverctl map normal $mod+Shift E exit; river -c ~/.config/river/config.sh
 
 # Mod+J and Mod+K to focus the next/previous view in the layout stack
 riverctl map normal $mod J focus-view next
@@ -40,9 +40,12 @@ riverctl map normal $mod K focus-view previous
 riverctl map normal $mod+Shift J swap next
 riverctl map normal $mod+Shift K swap previous
 
+riverctl map normal Control print spawn 'grim -g "$(slurp)" - | swappy -f -'
+riverctl map normal Shift print spawn 'grim - | swappy -f -'
+
 # Mod+Period and Mod+Comma to focus the next/previous output
-riverctl map normal $mod Period focus-output next
-riverctl map normal $mod Comma focus-output previous
+riverctl map normal Control+Mod1 L focus-output next
+riverctl map normal Control+Mod1 H focus-output previous
 
 # Mod+Shift+{Period,Comma} to send the focused view to the next/previous output
 riverctl map normal $mod+Shift Period send-to-output next
@@ -101,6 +104,12 @@ for i in $(seq 1 9); do
     riverctl map normal $mod+Shift+Control $i toggle-view-tags $tagmask
 done
 
+# Mod+Shift L next tag
+# riverctl map normal $mod+shift L set-focused-tags $((1 << ($tagmask + 1)))
+
+# Mod+Shift H next tag
+# riverctl map normal $mod+shift H set-focused-tags $((1 << ($tagmask - 1)))
+
 # Mod+0 to focus all tags
 # Mod+Shift+0 to tag focused view with all tags
 all_tags_mask=$(((1 << 32) - 1))
@@ -121,6 +130,9 @@ riverctl map normal $mod Left layout rivertile left
 
 # Mod+S to change to Full layout
 riverctl map normal $mod S layout full
+
+# riverbsp
+riverctl map normal $mod B layout ~/.config/river/riverbsp
 
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
@@ -153,21 +165,26 @@ riverctl set-repeat 50 300
 # Set the layout on startup
 riverctl layout rivertile left
 
+# Set new windows at the bottom of the stack
+riverctl attach-mode bottom
+
 # Set app-ids of views which should float
 riverctl float-filter-add "float"
 riverctl float-filter-add "popup"
 
 # Set app-ids of views which should use client side decorations
 riverctl csd-filter-add "gedit"
+riverctl csd-filter-add "swappy"
+riverctl float-filter-add "swappy"
 
 # Set opacity and fade effect
 riverctl opacity 1.0 0.75 0.0 0.1 20
 
 # Border color focused
-riverctl border-color-focused 5e81ac
+riverctl border-color-focused '#5e81ac'
 
 # Border color focused
-riverctl border-color-unfocused 4c566a
+riverctl border-color-unfocused '#4c566a'
 
 # Border width
 riverctl border-width 3
