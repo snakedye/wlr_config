@@ -1,5 +1,3 @@
-# sway
-
 ![rice](screenshot.png)
 
 #### Optional but recommended
