@@ -8,7 +8,7 @@ function gofile --description 'Upload files'
   # set server (curl https://apiv2.gofile.io/getServer | jq .data.server | sed 's/["]//g')
   set message (curl -sF email="$email" -F file=@"$file" https://"$server".gofile.io/uploadFile)
   set code (echo $message | jq .data.code | sed 's/["]//g')
-  echo $message > "$HOME/.config/gofile/log"
+  echo $message >> "$HOME/.config/gofile/log"
   set -l url "https://gofile.io/d/$code"
   wl-copy "$url"
   notify-send "$file - $email" "$url" -i (pwd)/$file
