@@ -37,7 +37,7 @@ colors:
     blue: '#81a1c1'
     magenta: '#b48ead'
     cyan: '#88c0d0'
-    white: '#e5e9f0'
+    white: '#d8dee9'
   bright:
     black: '#4c566a'
     red: '#bf616a'
@@ -46,7 +46,7 @@ colors:
     blue: '#81a1c1'
     magenta: '#b48ead'
     cyan: '#8fbcbb'
-    white: '#eceff4'
+    white: '#d8dee9'
   dim:
     black: '#373e4d'
     red: '#94545d'
@@ -55,7 +55,7 @@ colors:
     blue: '#68809a'
     magenta: '#8c738c'
     cyan: '#6d96a5'
-    white: '#aeb3bb'
+    white: '#d8dee9'
 key_bindings:
     - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
 background_opacity: 0.9

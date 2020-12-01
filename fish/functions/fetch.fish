@@ -7,12 +7,11 @@ function fetch --description 'custom fetch'
   set -l packages (pacman -Q | wc -l)
   set -l shell (basename "$SHELL")
 
-  printf "
-    $host (UwU)
-   $os
-   $compositor
-   $shell
-   $kernel
-   $packages
-   $uptime"
+  set_color -l blue; echo  $host '(UwU)'
+  echo '  '  '  '  $os
+  echo '  '  '  '  $compositor
+  echo '  '  '  '  $shell
+  echo '  '  '  '  $kernel
+  echo '  '  '  '  $packages
+  echo '  '  '  '  $uptime
 end

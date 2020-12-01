@@ -2,7 +2,6 @@
 
 # Autostart
 riverctl spawn 'waybar'
-riverctl spawn 'sleep 1; mako'
 riverctl spawn 'nm-applet --indicator'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
@@ -148,8 +147,8 @@ riverctl map passthrough $mod F11 enter-mode normal
 for mode in normal locked
 do
 	riverctl map "${mode}" None XF86Eject             spawn eject -T
-	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn pamixer -i 5
-	riverctl map "${mode}" None XF86AudioLowerVolume  spawn pamixer -d 5
+	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn 'pamixer -i 5;pamixer --get-volume > /tmp/wobpipe'
+	riverctl map "${mode}" None XF86AudioLowerVolume  spawn 'pamixer -d 5;pamixer --get-volume > /tmp/wobpipe'
 	riverctl map "${mode}" None XF86AudioMute         spawn pamixer --toggle-mute
 	riverctl map "${mode}" None XF86AudioMedia        spawn playerctl play-pause
 	riverctl map "${mode}" None XF86AudioPlay         spawn playerctl play-pause
@@ -188,3 +187,9 @@ riverctl border-color-unfocused '#4c566a'
 
 # Border width
 riverctl border-width 3
+
+# Mako
+riverctl spawn 'mako'
+
+# Wob
+mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'

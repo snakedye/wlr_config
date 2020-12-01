@@ -23,14 +23,14 @@ function addmanga --description "Add manga to my library"
   set -l nlatest (ls -t ~/.mangas/(ls -t ~/.mangas | head -1) | head -1)
   if test "$nlatest" != "$latest"
     set chap (ls -t ~/.mangas/$title/ | head -1 )
-    set dir "'$HOME/.mangas/$title/$chap'"
+    set dir (echo "$HOME/.mangas/$title/$chap" | sed 's| |\\\ |g')
     set number (math $number-1)
     touch ~/.mangas/$title/.chapter/$title$number.desktop
     echo "[Desktop Entry]
 Type=Application
 Name=$title Ch.$number
 Icon=$HOME/.mangas/.covers/$title.jpg
-Exec=cd $dir ; ls ./ | sort -n | imv_config=~/.config/imv/manga imv
+Exec=fish -c '"openmanga $dir"'
 Categories=Manga" > ~/.mangas/$title/.chapter/$title$number.desktop
   end
 end

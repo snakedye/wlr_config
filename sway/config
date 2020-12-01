@@ -21,12 +21,11 @@ exec ~/.azotebg
 # exec dwall -s flcl &
 
 # Windows Rules 
-# for_window [title="~nwg"] border none 
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
-for_window [app_id="imv"] floating enable
+for_window [app_id="imv"] floating enable, border pixel 3
 for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set width 550 px height 600px, move position cursor, move down 330
-for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable 
+for_window [title=".*sharing"] floating enable, move to scratchpad
 for_window [title="Copying"] floating enable
 for_window [title="Discord Updater"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
@@ -165,7 +164,7 @@ bindsym Shift+print exec grim - | swappy -f -
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+e exec nwgbar -o 0.4
+    bindsym $mod+Shift+e exec wlogout -p layer-shell
 #
 # Moving around:
 #
