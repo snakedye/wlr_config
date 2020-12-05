@@ -6,6 +6,7 @@
 }
 window#waybar {
 	background-color: #353b49;
+  box-shadow: 0 0 6 5 #2e3440;
 	color: #d8dee9;
 }
 #workspaces {
@@ -27,8 +28,12 @@ window#waybar {
 	border-radius: 10px;
 	padding: 0px 6px 0px 6px;
 }
-#window.empty {
-	background-color: transparent;
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+window#waybar.empty {
+  /* background-color: #353b49; */
 }
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
@@ -42,7 +47,7 @@ window#waybar {
 	color: #5e81ac;
 }
 #workspaces button.urgent {
-	color: #eb4d4b;
+	color:  #BF616A;
 }
 #tags button {
 	font-family: Product Sans ,Arial, Helvetica, sans-serif;
@@ -119,6 +124,9 @@ window#waybar {
 #cpu {
 	color:#c57078;
 }
+#network {
+  color: #9da98d;
+}
 #custom-weather {
 	color:#81a1c1;
 }
@@ -134,11 +142,15 @@ window#waybar {
 	color: #81a1c1;
 	border-radius: 0px;
 	font-weight: 500;
+  animation: fadeIn;
+  animation-duration: 1s;
 }
 #custom-media.Music {
 	color: #b48ead;
 	border-radius: 0px;
 	font-weight: 500;
+  animation: fadeIn;
+  animation-duration: 1s;
 }
 #custom-pacman {
 	color: #ebcb8b;

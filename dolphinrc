@@ -18,6 +18,7 @@ ViewPropsTimestamp=2020,9,10,20,20,58
 
 [IconsMode]
 FontWeight=50
+IconSize=64
 
 [KPropertiesDialog]
 DP-2 Height 1080=426
@@ -44,10 +45,9 @@ DisplayPort-2 XPosition=0
 DisplayPort-2 YPosition=25
 HDMI-A-1 Height 1440=1027
 HDMI-A-1 Width 2560=1265
-HDMI-A-1 Window-Maximized 1440x2560=true
 Height 1080=1080
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAwAAAAAAAACgAAAEi/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAABABAAAJ+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAqAAAEiwAAAGMBAAAJAAAAAQAAALYAAASL/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAQAAACoAAASLAAABGAEAAAkAAAADAAAJ3AAAAJ78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawEAAAAAAAAJ3AAAAKkBAAAJAAAIhAAABIsAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+State=AAAA/wAAAAD9AAAAAwAAAAAAAACgAAAD2fwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAABABAAAJ+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAqAAAD2QAAAGMBAAAJAAAAAQAAALYAAAPZ/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAQAAACoAAAPZAAABGAEAAAkAAAADAAAE5gAAAV/8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAAAAAE5gAAABABAAAJAAADmQAAA9kAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
 ToolBarsMovable=Disabled
 Width 1920=1920
 Window-Maximized 1080x1920=true
@@ -58,15 +58,16 @@ XWAYLAND0 XPosition=1288
 XWAYLAND0 YPosition=58
 XWAYLAND2 Height 1080=765
 XWAYLAND2 Width 1920=952
-XWAYLAND2 XPosition=484
-XWAYLAND2 YPosition=179
+XWAYLAND2 Window-Maximized 1440x2560=true
+XWAYLAND2 XPosition=1288
+XWAYLAND2 YPosition=58
 
 [MainWindow][Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
 
 [Open-with settings]
 CompletionMode=1
-History=imv,krit,mpv,kdeve,kate,imv -r,okula,base,xou
+History=zat,imv,krit,mpv,kdeve,kate,imv -r,okula,base,xou
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail

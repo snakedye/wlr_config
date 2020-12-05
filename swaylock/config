@@ -1,11 +1,11 @@
 clock
-indicator
+# indicator
 # no-unlock-indicator
 # daemonize
 indicator-caps-lock
 timestr=%k:%M
 datestr=%B %d %Y
-image=~/wallpapers/vending_machines.jpg
+image=~/wallpapers/nordic.jpg
 # screenshots
 scaling=fill
 effect-scale=1.4

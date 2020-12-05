@@ -10,7 +10,7 @@ exec kdeconnect-indicator
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
-exec autotiling
+exec ~/.local/bin/autotiling
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 exec ~/.azotebg
 # exec syncthing -no-browser
@@ -21,11 +21,12 @@ exec ~/.azotebg
 # exec dwall -s flcl &
 
 # Windows Rules 
+# for_window [app_id=".*" workspace="[^45]"] split toggle
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
 for_window [app_id="imv"] floating enable, border pixel 3
 for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set width 550 px height 600px, move position cursor, move down 330
-for_window [title=".*sharing"] floating enable, move to scratchpad
+for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
 for_window [title="Copying"] floating enable
 for_window [title="Discord Updater"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
@@ -48,11 +49,11 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #
-set $menu nwggrid -o 1.00 -b 353b49 -c style.css
+set $menu nwggrid -b 353b49
 bindsym $mod+backspace exec fish -c wofer
 bindsym $mod+c exec fish -c wofer
 bindsym $mod+d exec wofi-emoji
-bindsym $mod+m exec fish -c 'manga_menu 1.0'
+bindsym $mod+m exec fish -c 'manga_menu'
 
 # Disable titlebar
 default_border pixel 3
@@ -62,9 +63,9 @@ font pango:ProductSansMedium 13px
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #5e81ac #5e81ac #eceff4 #2e3440   #5e81ac
-client.focused_inactive #4c566a #4c566a #d8dee9 #4c566a   #434c5e
-client.unfocused        #4c566a #4c566a #d8dee9 #4c566a   #434c5e
+client.focused          #5e81ac #5e81ac #eceff4 #434c5e   #5e81ac
+client.focused_inactive #4c566a #4c566a #d8dee9 #3b4252   #434c5e
+client.unfocused        #4c566a #4c566a #d8dee9 #3b4252   #434c5e
 client.urgent           #7c818c #bf616a #eceff4 #900000   #bf616a
 client.placeholder      #000000 #0c0c0c #eceff4 #000000   #0c0c0c
 
@@ -164,7 +165,7 @@ bindsym Shift+print exec grim - | swappy -f -
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+e exec wlogout -p layer-shell
+    bindsym $mod+Shift+e exec nwgbar -o 0.4
 #
 # Moving around:
 #

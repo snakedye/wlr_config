@@ -61,8 +61,8 @@ key_bindings:
 background_opacity: 0.9
 window:
   padding:
-    x: 20
-    y: 20
+    x: 30
+    y: 30
 font:
   normal:
     family: JetBrainsMono

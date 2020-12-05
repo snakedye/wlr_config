@@ -1,4 +1,4 @@
 function fish_greeting
-  echo "Welcome back bryan."
-  ufetch
+	# Customize fish greeting message
+	# Greetings are overrated, I hate everyone equally.
 end

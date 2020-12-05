@@ -12,6 +12,9 @@ call plug#begin('~/.vim/plugged')
 " Nord Theme
 Plug 'arcticicestudio/nord-vim'
 
+" Lightline
+Plug 'itchyny/lightline.vim'
+
 "Markdown plugins
 Plug 'gabrielelana/vim-markdown'
 
@@ -20,6 +23,13 @@ Plug 'oknozor/illumination', { 'dir': '~/.illumination', 'do': '.install.sh' }
 
 "Fugitive Vim Github Wrapper
 Plug 'tpope/vim-fugitive'
+
+" Fish syntax highlightning
+Plug 'aliva/vim-fish'
+
+" File explorer
+Plug 'shougo/vimfiler.vim'
+Plug 'shougo/unite.vim'
 
 " Commentary
 Plug 'tpope/vim-commentary'
@@ -104,8 +114,9 @@ set clipboard+=unnamedplus
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
-" Ranger shortcut
-:nnoremap <C-space> :RangerCurrentDirectory<CR>
+" File explorer shortcut
+:nnoremap <C-space> :VimFiler<CR>
+:let g:vimfiler_as_default_explorer = 1
 
 " Speed up scrolling in Vim
 set ttyfast
