@@ -37,7 +37,7 @@ do
     fi
     if [[ $ans == "y" ]]; then
       case $config in
-        .vimrc | .zshrc)
+        .vimrc | .zshrc | .azotegb)
           cp ./$config ~/
           ;;
         wallpapers)

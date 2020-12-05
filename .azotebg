@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+pkill swaybg
+swaybg -o* -i '/home/bryan/wallpapers/nordic.jpg' -m fill &
