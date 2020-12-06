@@ -1,10 +1,16 @@
 * {
 	background-image: none;
 }
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 window {
   background-color: rgba(46,52,64, 0.9);
   font-size: 26px;
   font-family: Product Sans;
+  animation: fadeIn;
+  animation-duration: 0.5s;
 }
 button {
   color: #eceff4;
@@ -14,7 +20,6 @@ button {
   border: 3px solid #3b4252;
 	background-repeat: no-repeat;
 	background-position: center;
-	/* background-size: 20%; */
 }
 
 button:focus, button:active, button:hover {

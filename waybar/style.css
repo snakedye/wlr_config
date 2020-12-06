@@ -6,7 +6,6 @@
 }
 window#waybar {
 	background-color: #353b49;
-  box-shadow: 0 0 6 5 #2e3440;
 	color: #d8dee9;
 }
 #workspaces {
@@ -25,6 +24,7 @@ window#waybar {
 #window {
 	color: #d8dee9;
 	margin: 0px;
+  font-size: 14px;
 	border-radius: 10px;
 	padding: 0px 6px 0px 6px;
 }
@@ -111,6 +111,7 @@ window#waybar.empty {
 }
 /* WIDGETS */
 #cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
+  font-size: 14px;
 	background-color: #2e3440;
 	padding: 0px 14px 0px 14px;
 	margin: 2px 0px 2px 0px;
@@ -142,15 +143,11 @@ window#waybar.empty {
 	color: #81a1c1;
 	border-radius: 0px;
 	font-weight: 500;
-  animation: fadeIn;
-  animation-duration: 1s;
 }
 #custom-media.Music {
 	color: #b48ead;
 	border-radius: 0px;
 	font-weight: 500;
-  animation: fadeIn;
-  animation-duration: 1s;
 }
 #custom-pacman {
 	color: #ebcb8b;

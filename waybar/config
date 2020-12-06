@@ -31,7 +31,7 @@
     "icon-size": 15
   },
   "river/tags": {
-    "num-tags": 7
+    "num-tags": 5
   },
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
@@ -48,8 +48,8 @@
       "Paused": "   ",
       "Music": "   "
     },
-    "max-length":45,
-    "interval": 2,
+    "max-length":55,
+    "interval": 1,
     "exec": "fish -c playerstatus | tail -1",
     "exec-on-event": "fish -c playerstatus | tail -1",
     "on-click": "playerctl play-pause",
@@ -148,7 +148,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["","   --","   ---","   ----","   -----","   ------","   -------","   --------","   ---------","   ----------"]
+      "default": ["","   -","   --","   ---","   ----","   -----","   ------","   -------","   --------","   ---------","   ----------","   -----------","   ------------","   -------------","   --------------","   ---------------","   ----------------","   -----------------","   ------------------","   -------------------"]
     },
     "on-click": "pavucontrol",
     "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
@@ -171,12 +171,12 @@
   },
   "disk": {
     "interval": 30,
-    "format": "{percentage_free}   ",
+    "format": "{free}",
     "path": "/run/media/bryan/",
   },
   "custom/power": {
     "format": "⏻",
-    "on-click": "~/.config/waybar/scripts/power.sh",
+    "on-click": "wlogout -p layer-shell",
     "tooltip": false
   },
   "custom/github": {

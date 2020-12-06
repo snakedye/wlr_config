@@ -10,7 +10,7 @@ exec kdeconnect-indicator
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet --indicator
-exec ~/.local/bin/autotiling
+exec autotiling-rs
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 exec ~/.azotebg
 # exec syncthing -no-browser
@@ -49,7 +49,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #
-set $menu nwggrid -b 353b49
+set $menu wofi -c ~/.config/wofi/config -I 
 bindsym $mod+backspace exec fish -c wofer
 bindsym $mod+c exec fish -c wofer
 bindsym $mod+d exec wofi-emoji
@@ -59,7 +59,7 @@ bindsym $mod+m exec fish -c 'manga_menu'
 default_border pixel 3
 
 # Font
-font pango:ProductSansMedium 13px 
+font pango:ProductSansMedium 14px 
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
@@ -165,7 +165,7 @@ bindsym Shift+print exec grim - | swappy -f -
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+e exec nwgbar -o 0.4
+    bindsym $mod+Shift+e exec wlogout -p layer-shell
 #
 # Moving around:
 #

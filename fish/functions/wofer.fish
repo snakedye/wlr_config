@@ -18,8 +18,12 @@ function lsi --description "ls with icons"
           echo "辶   $entry"
         case Music
           echo "   $entry"
+        case Audiobooks
+          echo "   $entry"
         case Pictures
           echo "   $entry"
+        case Downloads
+          echo "   $entry"
         case Documents
           echo "   $entry"
         case *
@@ -89,7 +93,7 @@ end
 
 function menu --description "file/folder menu options"
   set -l OPTION ( prompt "$argv[1]"\
-  			| wofi -i -c ~/wofer/config -s ~/wofer/style.css | sed 's|^[^a-zA-Z0-9]*||' );
+  			| wofi -i -c ~/wofer/config | sed 's|^[^a-zA-Z0-9]*||' );
   set LOC ''
   if test -d $argv[1]
     set LOC (pwd)
@@ -121,7 +125,7 @@ function menu --description "file/folder menu options"
       mv "$OBJECT" "$DESTINATION" 
       cd "$DESTINATION"
     case Rename
-      mv "$LOC" (echo   Enter the new name | wofi -c ~/wofer/config -s ~/wofer/style.css)
+      mv "$LOC" (echo   Enter the new name | wofi -c ~/wofer/config)
     case Upload
       if contains imgur $OPTION
         $EXTENSIONS/imgur "$LOC"
@@ -169,6 +173,14 @@ function shortcuts
       else
         set SHOW_HIDDEN true
       end
+    case ':sway'
+      cd ~/.config/sway
+    case ':waybar'
+      cd ~/.config/waybar
+    case ':fish'
+      cd ~/.config/fish/functions
+    case ':sc'
+      cd ~/School
     case !delete
       rm -r "(pwd)"
     case :m
@@ -178,7 +190,7 @@ function shortcuts
     case '*'
       if echo $argv[1] | grep '?.*'
         set -l query ( echo "$argv[1]" | grep -o '[^?].*' )
-        set -l finder ( fd $query | wofi -i -c ~/wofer/config -s ~/wofer/style.css )
+        set -l finder ( fd $query | wofi -i -c ~/wofer/config )
         if ! cd $finder
           menu "$finder"
         end
@@ -203,7 +215,7 @@ function wofer --description 'loops wofi'
       set action "Move Here"
   end
   while true
-    set stdout (lsi $action | wofi -i -m -c ~/wofer/config -s ~/wofer/style.css | sed 's|^~|/home/bryan|')
+    set stdout (lsi $action | wofi -i -m -c ~/wofer/config | sed 's|^~|/home/bryan|')
     set ENTRY (echo "$stdout" | grep -o " .*" | sed "s| *||")
     if test -z $stdout
       break

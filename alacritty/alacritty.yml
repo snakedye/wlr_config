@@ -67,6 +67,6 @@ font:
   normal:
     family: JetBrainsMono
     style: Regular
-  size: 11
+  size: 12
 live_config_reload: true
 dynamic_padding: true

@@ -1,8 +1,12 @@
 #entry {
 border-radius: 5px;
-padding: 5px;
-margin-bottom: 5px;
-text-align: center;
+padding: 10px;
+margin: 0px 5px 5px 5px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 #entry:selected {
@@ -15,29 +19,35 @@ color: #d8dee9;
  
 #window {
 padding: 2px;
-background-color: rgba(53,59,73,1.0);
-/* border: 3px solid #3b4252; */
-/* border-radius: 3px; */
+background-color: #3b4252;
+background-color: transparent;
+border-radius: 15px;
 font-family: Product Sans;
+animation: fadeIn;
+animation-duration: 0.3s;
 }
 
 #input {
 border: 2px solid #5e81ac;
 background-color: #4c566a;
 padding: 5px;
+margin: 15px;
+margin-bottom: 0px;
 font-size: 16px;
 border-radius: 5px;
 }
 
 #inner-box {
 color: #d8dee9;
-padding: 2px;
+padding: 10px;
 background-color: transparent;
 }
 
 #outer-box {
 margin: 15px;
-background-color: transparent;
+border-radius: 15px;
+background-color: rgba(53,59,73,1.0);
+box-shadow: 0 0 5 0 #2e3440;
 }
 
 #scroll {
@@ -45,8 +55,8 @@ margin-top: 10px;
 }
 
 #text {
-padding: 5px;
 font-size: 16px;
+color: #d8dee9;
 background-color: transparent;
 } 
 
