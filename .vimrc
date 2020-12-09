@@ -19,17 +19,13 @@ Plug 'itchyny/lightline.vim'
 Plug 'gabrielelana/vim-markdown'
 
 "Illuminate
-Plug 'oknozor/illumination', { 'dir': '~/.illumination', 'do': '.install.sh' }
-
-"Fugitive Vim Github Wrapper
-Plug 'tpope/vim-fugitive'
+Plug 'oknozor/illumination'
 
 " Fish syntax highlightning
 Plug 'aliva/vim-fish'
 
 " File explorer
-Plug 'shougo/vimfiler.vim'
-Plug 'shougo/unite.vim'
+Plug 'scrooloose/nerdtree'
 
 " Commentary
 Plug 'tpope/vim-commentary'
@@ -49,7 +45,13 @@ Plug 'pearofducks/ansible-vim'
 " Ranger integration
 Plug 'francoiscabrol/ranger.vim'
 
+" Vim icons
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
+
+" Nerdtree
+" autocmd vimenter * NERDTree
 
 " Turn on syntax highlighting.
 syntax on
@@ -115,8 +117,7 @@ set clipboard+=unnamedplus
 set backspace=indent,eol,start
 
 " File explorer shortcut
-:nnoremap <C-space> :VimFiler<CR>
-:let g:vimfiler_as_default_explorer = 1
+:nnoremap <C-space> :NERDTreeToggle<CR>
 
 " Speed up scrolling in Vim
 set ttyfast

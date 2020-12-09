@@ -1,13 +1,12 @@
-style=/home/bryan/.config/wofi/style.css
 stylesheet=/home/bryan/.config/wofi/style.css
 xoffset=0%
 yoffset=0%
+hide_scroll=true
 show=drun
 width=15%
 lines=19
-dynamic_lines=true
 line_wrap=word
-term=termite
+term=alacritty
 allow_markup=true
 always_parse_args=true
 show_all=true

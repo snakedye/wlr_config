@@ -1,0 +1,27 @@
+stylesheet=/home/bryan/.config/wofi/style.css
+show=dmenu
+width=30%
+term=alacritty
+allow_markup=true
+content_halign=start
+hide_scroll=true
+always_parse_args=true
+parse_search=true
+show_all=true
+print_command=true
+hide_scroll=true
+layer=overlay
+allow-images=true
+insensitive=true
+matching=contains
+prompt=
+columns=1
+line_wrap=word
+image_size=25
+display_generic=true
+
+# Vi keybindings
+ # key_forward=j
+ # key_backward=k
+ # key_submit=l
+ # key_pgup=Tab

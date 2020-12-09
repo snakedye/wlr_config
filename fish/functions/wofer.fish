@@ -1,7 +1,7 @@
 # Wofi file browser
 
 set SHOW_HIDDEN false
-set EXTENSIONS ~/wofer/extensions
+set -g EXEC wofi -c ~/.config/wofi/wofer
 
 function lsi --description "ls with icons"
   echo "   .. "
@@ -21,7 +21,7 @@ function lsi --description "ls with icons"
         case Audiobooks
           echo "   $entry"
         case Pictures
-          echo "   $entry"
+          echo "   $entry"
         case Downloads
           echo "   $entry"
         case Documents
@@ -29,7 +29,6 @@ function lsi --description "ls with icons"
         case *
           echo "   $entry"
       end
-
     else
       switch $entry
         case '*.sh'
@@ -37,7 +36,7 @@ function lsi --description "ls with icons"
         case '*.'{md,txt,log}
           echo "   $entry"
         case '*.'{png,jpg,svg,webp,gif}
-          echo "   $entry"
+          echo "   $entry"
         case '*.fish'
           echo "   $entry"
         case '*.rs'
@@ -87,13 +86,18 @@ function prompt
     echo "   Move $argv[1]"
     echo "   Upload $argv[1] to gofile.io"
     echo "   Rename $argv[1]"
+    echo "   Move to trash $argv[1]"
     echo "   Delete $argv[1]"
   end
 end
 
+function extension
+  ~/wofer/extensions/$argv
+end
+
 function menu --description "file/folder menu options"
   set -l OPTION ( prompt "$argv[1]"\
-  			| wofi -i -c ~/wofer/config | sed 's|^[^a-zA-Z0-9]*||' );
+  			| wofi -i -c ~/.config/wofi/wofer | sed 's|^[^a-zA-Z0-9]*||' );
   set LOC ''
   if test -d $argv[1]
     set LOC (pwd)
@@ -101,47 +105,49 @@ function menu --description "file/folder menu options"
   else
     set LOC $argv[1]
   end
-  switch (echo "$OPTION" | sed 's/ .*//')
-    case Execute
+  switch $OPTION
+    case Execute'*'
       ./$LOC
       exit
-    case Edit
+    case Edit'*'
       alacritty -e fish -c "vim $LOC" &
       exit
-    case Launch
+    case Launch'*'
       launcher "$LOC"
-    case Open
+    case Open'*'
       alacritty -e ranger "$LOC" &
       exit
-    case Send
-      $EXTENSIONS/kdeconnect "$LOC"
-    case Copy
+    case Send'*'
+      extension kdeconnect "$LOC"
+    case Copy'*'
       set -l OBJECT (pwd)"/$LOC"
       set -l DESTINATION (wofer -c)
       cp $d "$OBJECT" "$DESTINATION" 
-    case Move
+    case 'Move to trash*'
+      mv "$LOC" ~/.local/share/Trash/files/
+    case Move'*'
       set -l OBJECT (pwd)"/$LOC"
       set -l DESTINATION (wofer -m)
       mv "$OBJECT" "$DESTINATION" 
       cd "$DESTINATION"
-    case Rename
-      mv "$LOC" (echo   Enter the new name | wofi -c ~/wofer/config)
-    case Upload
-      if contains imgur $OPTION
-        $EXTENSIONS/imgur "$LOC"
+    case Rename'*'
+      mv "$LOC" (echo   Enter the new name | wofi -c ~/.config/wofi/wofer)
+    case Upload'*'
+      if string match -rq 'imgur' $OPTION
+        extension imgur "$LOC"
         set -l image (pwd)/$LOC
         notify-send 'Uploaded to imgur' (wl-paste) -i "$image"
       else
         gofile "$LOC"
       end
-    case Extract
+    case Extract'*'
       set -l DESTINATION (wofer -e)
       if unzip -q "$LOC" -d "$DESTINATION"
         :
       else
         tar xzf "$LOC" -C "$DESTINATION"
       end
-    case Delete
+    case Delete'*'
       rm $d -f "$LOC"
     end
 end
@@ -181,16 +187,18 @@ function shortcuts
       cd ~/.config/fish/functions
     case ':sc'
       cd ~/School
+    case ':wall'
+      cd ~/wallpapers
     case !delete
       rm -r "(pwd)"
     case :m
-      $EXTENSIONS/manga
+      extension manga
       # manga_menu
       exit
     case '*'
       if echo $argv[1] | grep '?.*'
         set -l query ( echo "$argv[1]" | grep -o '[^?].*' )
-        set -l finder ( fd $query | wofi -i -c ~/wofer/config )
+        set -l finder ( fd $query | wofi -i -c ~/.config/wofi/wofer )
         if ! cd $finder
           menu "$finder"
         end
@@ -205,7 +213,7 @@ function shortcuts
   end
 end
 
-function wofer --description 'loops wofi'
+function wofer
   switch $argv
     case -c
       set action "Copy Here"
@@ -215,7 +223,7 @@ function wofer --description 'loops wofi'
       set action "Move Here"
   end
   while true
-    set stdout (lsi $action | wofi -i -m -c ~/wofer/config | sed 's|^~|/home/bryan|')
+    set stdout (lsi $action | wofi -i -m -p (pwd) -c ~/.config/wofi/wofer | sed 's|^~|/home/bryan|')
     set ENTRY (echo "$stdout" | grep -o " .*" | sed "s| *||")
     if test -z $stdout
       break

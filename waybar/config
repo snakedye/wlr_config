@@ -180,17 +180,17 @@
     "tooltip": false
   },
   "custom/github": {
-    "format": "",
+    "format": "",
     "on-click": "xdg-open https://github.com",
     "tooltip": false
   },
   "custom/reddit": {
-    "format": "",
+    "format": "樓",
     "on-click": "xdg-open https://www.reddit.com/",
     "tooltip": false
   },
   "custom/youtube": {
-    "format": "",
+    "format": "輸",
     "on-click": "xdg-open https://www.youtube.com/",
     "tooltip": false
   },
@@ -200,18 +200,13 @@
     "tooltip": false
   },
   "custom/crunchyroll": {
-    "format": "",
+    "format": "",
     "on-click": "firefox 'ext+container:name=Crunchyroll&url=https://www.crunchyroll.com/'",
-    "tooltip": false
-  },
-  "custom/library": {
-    "format": "",
-    "on-click": "fish -c manga_menu",
     "tooltip": false
   },
   "wlr/taskbar": {
     "format": "{icon}",
-    // "format": "{title:.16}",
+    // "format": "{app_id}",
     "icon-theme": "Papirus",
     "icon-size": 15,
     "on-click": "activate",

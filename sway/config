@@ -13,15 +13,14 @@ exec nm-applet --indicator
 exec autotiling-rs
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 exec ~/.azotebg
+# exec /usr/share/sway/scripts/inactive-windows-transparency.py
 # exec syncthing -no-browser
-# exec fish -c update_mangas
 
 # Dynamic Wallpaper
 # exec oguri -c ~/.config/oguri/config
 # exec dwall -s flcl &
 
 # Windows Rules 
-# for_window [app_id=".*" workspace="[^45]"] split toggle
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
 for_window [app_id="imv"] floating enable, border pixel 3
@@ -59,6 +58,7 @@ bindsym $mod+m exec fish -c 'manga_menu'
 default_border pixel 3
 
 # Font
+# title_align center
 font pango:ProductSansMedium 14px 
 
 # Window decoration
@@ -116,6 +116,7 @@ gaps outer 5
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+# Screenlocking
 bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 
@@ -163,8 +164,7 @@ bindsym Shift+print exec grim - | swappy -f -
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
-    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    # Power menu
     bindsym $mod+Shift+e exec wlogout -p layer-shell
 #
 # Moving around:

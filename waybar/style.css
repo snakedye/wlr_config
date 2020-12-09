@@ -1,7 +1,7 @@
 * {
 	border: none;
 	font-size: 13px;
-	margin: 2px;
+	margin: 2.5px;
 	font-family: Product Sans ,Arial, Helvetica, sans-serif;
 }
 window#waybar {
@@ -63,13 +63,14 @@ window#waybar.empty {
 }
 #taskbar button {
 	border-radius: 10px;
+  font-size: 14px;
 	margin: 0px 5px 0px 5px;
 	padding: 0px 6px 0px 6px;
 	background-color: #2e3440;
 }
 #taskbar button.active {
-	background-color: #3b4252;
-	color: #81a1c1;
+	/* background-color: #434c5e; */
+	color: #5e81ac;
 }
 #taskbar button.minimized {
 	color: #ebcb8b;
@@ -79,16 +80,16 @@ window#waybar.empty {
 	background-color: rgba(35,39,49,0.4);
 }
 /* BROWSER BOOKMARKS */
-#custom-newtab, #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail, #custom-library {
-	background-color: transparent;
-	font-size: 14px;
+#custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail, #custom-library {
+	background-color: #3B4252;
+	font-size: 18px;
+  margin-left: 0;
+  margin-right: 0;
 	padding: 0px 15px 0px 15px ;
 }
-#custom-newtab {
-	color: #bf616a;
-	font-size: 18px;
-}
 #custom-github {
+  margin-left: 10px;
+	border-radius: 10px 0px 0px 10px;
 	color: #d08770;
 }
 #custom-reddit {
@@ -98,16 +99,15 @@ window#waybar.empty {
 	color: #c57078;
 }
 #custom-crunchyroll {
-	font-size: 13px;
 	color: #a3be8c;
+	border-radius: 0px 10px 10px 0px;
 }
 #custom-youtube {
-	font-size: 13px;
 	color: #b48ead;
 }
 #custom-mail {
 	color: #88c0d0;
-  font-size: 17px;
+  font-size: 15px;
 }
 /* WIDGETS */
 #cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
@@ -137,7 +137,8 @@ window#waybar.empty {
 #custom-media {
 	color: #818896;
 	border-radius: 10px;
-	margin-left: 5px;
+  margin-left: 10px;
+	padding: 0px 14px 0px 14px;
 }
 #custom-media.Playing {
 	color: #81a1c1;
@@ -153,7 +154,6 @@ window#waybar.empty {
 	color: #ebcb8b;
 	border-radius: 0px 10px 10px 0px;
 	font-weight: 600;
-	margin-right: 5px;
 }
 #pulseaudio {
 	color: #8fbcbb;
@@ -216,10 +216,11 @@ label:focus {
 }
 #tray {
 	border-radius: 10px 0px 0px 10px;
-	margin-left: 8px;
+	margin-left: 10px;
 	color: #8fbcbb;
 }
 #custom-power {
+  color: #eceff4;
 	font-size: 17px;
 	border-radius: 0px 10px 10px 0px;
 	margin-right: 2px;
