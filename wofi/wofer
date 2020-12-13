@@ -1,4 +1,4 @@
-stylesheet=/home/bryan/.config/wofi/style.css
+stylesheet=/home/bryan/.config/wofi/wofer.css
 show=dmenu
 width=30%
 term=alacritty

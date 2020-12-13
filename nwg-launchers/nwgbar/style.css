@@ -2,6 +2,13 @@
     margin: 30px; /* affects top/bottom & left/right alignment */
     font-size: 16px;
     font-family: Product Sans;
+    animation: fadeIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 button, image {
@@ -25,7 +32,7 @@ button:focus {
 }
 
 grid {
-    background-color: rgba(46,52,64, 1);
+    background-color: #2e3440;
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0 0 5px black;

@@ -8,17 +8,18 @@ window#waybar {
 	background-color: #353b49;
 	color: #d8dee9;
 }
-#workspaces {
+#workspaces, #tags {
 	background-color: #2e3440;
 	padding: 1px 5px 1px 5px;
 	font-size: 15px;
+  margin-right: 10px;
 	border-radius: 10px;
 }
-#workspaces button {
+#workspaces button, #tags button {
+  background-color: transparent;
 	font-size: 14px;
 	border-radius: 0px;
 	margin: 0;
-	background-color: transparent;
 	color: #ffffff;
 }
 #window {
@@ -36,7 +37,7 @@ window#waybar.empty {
   /* background-color: #353b49; */
 }
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
+#workspaces button:hover, #tags button:hover {
 	box-shadow: inherit;
 	color: #5e81ac;
 }
@@ -45,13 +46,12 @@ window#waybar.empty {
 }
 #tags button.focused {
 	color: #5e81ac;
+  font-weight: 600;
 }
 #workspaces button.urgent {
 	color:  #BF616A;
 }
 #tags button {
-	font-family: Product Sans ,Arial, Helvetica, sans-serif;
-  font-weight: 600;
 }
 #mpd {
 	padding: 0px 10px;
@@ -66,14 +66,13 @@ window#waybar.empty {
   font-size: 14px;
 	margin: 0px 5px 0px 5px;
 	padding: 0px 6px 0px 6px;
-	background-color: #2e3440;
 }
 #taskbar button.active {
 	/* background-color: #434c5e; */
-	color: #5e81ac;
+	background-color: #2e3440;
 }
 #taskbar button.minimized {
-	color: #ebcb8b;
+	/* color: #ebcb8b; */
 }
 #taskbar button:hover {
 	box-shadow: inherit;
@@ -88,7 +87,6 @@ window#waybar.empty {
 	padding: 0px 15px 0px 15px ;
 }
 #custom-github {
-  margin-left: 10px;
 	border-radius: 10px 0px 0px 10px;
 	color: #d08770;
 }
@@ -210,9 +208,11 @@ label:focus {
 	font-size: 14px;
 }
 #custom-recorder {
-	color:#c57078;
 	padding: 2px 5px 2px 5px;
   font-size: 18px;
+}
+#custom-recorder.recording {
+	color:#c57078;
 }
 #tray {
 	border-radius: 10px 0px 0px 10px;

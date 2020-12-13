@@ -49,8 +49,7 @@ set $term alacritty
 # on the original workspace that the command was run on.
 #
 set $menu wofi -c ~/.config/wofi/config -I 
-bindsym $mod+backspace exec fish -c wofer
-bindsym $mod+c exec fish -c wofer
+bindsym $mod+c exec wofer
 bindsym $mod+d exec wofi-emoji
 bindsym $mod+m exec fish -c 'manga_menu'
 
@@ -82,7 +81,7 @@ assign [title="discord"] 5
 assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-gaps inner 10
+gaps inner 12
 gaps outer 5
 
 ### Output configuration
@@ -123,6 +122,10 @@ bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 # Screenshot with grim and swappy
 bindsym print exec grim -g "$(slurp)" - | swappy -f -
 bindsym Shift+print exec grim - | swappy -f -
+
+# Screen recording with wf-recorder
+bindsym $mod+Shift+r exec fish -c recording
+
 
 ### Input configuration
 #
@@ -165,7 +168,7 @@ bindsym Shift+print exec grim - | swappy -f -
     bindsym $mod+Shift+c reload
 
     # Power menu
-    bindsym $mod+Shift+e exec wlogout -p layer-shell
+    bindsym $mod+Shift+e exec nwgbar -o 0.4
 #
 # Moving around:
 #

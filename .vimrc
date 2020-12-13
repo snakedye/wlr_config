@@ -19,7 +19,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'gabrielelana/vim-markdown'
 
 "Illuminate
-Plug 'oknozor/illumination'
+Plug 'oknozor/illumination', { 'dir': '~/.illumination', 'do': '.install.sh' }
 
 " Fish syntax highlightning
 Plug 'aliva/vim-fish'
@@ -52,6 +52,17 @@ call plug#end()
 
 " Nerdtree
 " autocmd vimenter * NERDTree
+
+" Lightline nord
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+
+" Move between split windows
+:nmap <silent> <A-h> :wincmd h<CR>
+:nmap <silent> <A-j> :wincmd j<CR>
+:nmap <silent> <A-k> :wincmd k<CR>
+:nmap <silent> <A-l> :wincmd l<CR>
 
 " Turn on syntax highlighting.
 syntax on

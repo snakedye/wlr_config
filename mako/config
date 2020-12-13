@@ -1,16 +1,18 @@
-font=SanFranciscoFont 10
+font=ProductSans 12
 
 background-color=#353b49
-progress-color=source #81a1c1
 text-color=#e5e9f0
 padding=10
-margin=5
+margin=10
+progress-color=over #eceff480
+icon-path=/usr/share/icons/Papirus-Dark
+max-icon-size=100
 
 border-size=3
-border-radius=5
+border-radius=10
 border-color=#3b4252
 
-default-timeout=9000
+default-timeout=5000
 
 [urgency=high]
 ignore-timeout=1

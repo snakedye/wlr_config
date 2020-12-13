@@ -1,11 +1,5 @@
 #!/bin/sh
 
-# Autostart
-riverctl spawn 'waybar'
-riverctl spawn 'nm-applet --indicator'
-riverctl spawn '/usr/lib/kdeconnectd'
-riverctl spawn 'kdeconnect-indicator'
-
 # Wallpaper
 ~/.azotebg
 
@@ -16,7 +10,7 @@ mod="Mod4"
 riverctl map normal $mod Return spawn alacritty
 
 # Mod+Space Launch wofi -drun
-riverctl map normal $mod Space spawn wofi -i -c ~/.config/wofi/config -s ~/.config/wofi/style.css -S drun -I
+riverctl map normal $mod Space spawn wofi -i -I
 
 # Mod+C Launch wofer
 riverctl map normal $mod C spawn 'fish -c wofer'
@@ -28,7 +22,8 @@ riverctl map normal $mod f1 spawn '~/.config/sway/lockman.sh'
 riverctl map normal $mod X close
 
 # Mod+E to exit river
-riverctl map normal $mod+Shift E exit
+# riverctl map normal $mod+Shift E exit
+riverctl map normal $mod+Shift E wlogout -p layer-shell
 
 # Mod+J and Mod+K to focus the next/previous view in the layout stack
 riverctl map normal $mod J focus-view next
@@ -103,6 +98,8 @@ for i in $(seq 1 9); do
     riverctl map normal $mod+Shift+Control $i toggle-view-tags $tagmask
 done
 
+export tagmask
+
 # Mod+Shift L next tag
 # riverctl map normal $mod+shift L set-focused-tags $((1 << ($tagmask + 1)))
 
@@ -173,11 +170,12 @@ riverctl float-filter-add "popup"
 
 # Set app-ids of views which should use client side decorations
 riverctl csd-filter-add "gedit"
+riverctl csd-filter-add "firefox"
 riverctl csd-filter-add "swappy"
 riverctl float-filter-add "swappy"
 
 # Set opacity and fade effect
-riverctl opacity 1.0 0.75 0.0 0.1 20
+# riverctl opacity 1.0 0.75 0.0 0.1 20
 
 # Border color focused
 riverctl border-color-focused '#5e81ac'
@@ -188,8 +186,13 @@ riverctl border-color-unfocused '#4c566a'
 # Border width
 riverctl border-width 3
 
-# Mako
+# Autostart
+riverctl spawn 'waybar'
+riverctl spawn 'nm-applet --indicator'
+riverctl spawn '/usr/lib/kdeconnectd'
+riverctl spawn 'kdeconnect-indicator'
 riverctl spawn 'mako'
 
 # Wob
 mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
+

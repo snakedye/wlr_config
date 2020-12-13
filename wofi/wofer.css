@@ -1,6 +1,5 @@
 #entry {
 border-radius: 5px;
-padding: 7px;
 margin: 0px 5px 0px 5px;
 }
 
@@ -22,8 +21,8 @@ background-color: #3b4252;
 background-color: transparent;
 border-radius: 15px;
 font-family: Product Sans;
-animation: fadeIn;
-animation-duration: 0.3s;
+/* animation: fadeIn; */
+/* animation-duration: 0.3s; */
 }
 
 #input {
@@ -56,7 +55,7 @@ margin-bottom: 10px;
 
 #text {
 font-size: 16px;
-padding: 7px;
+padding: 8px;
 color: #d8dee9;
 background-color: transparent;
 } 

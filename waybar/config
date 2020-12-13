@@ -48,7 +48,7 @@
       "Paused": "   ",
       "Music": "   "
     },
-    "max-length":55,
+    //  "max-length":55,
     "interval": 1,
     "exec": "fish -c playerstatus | tail -1",
     "exec-on-event": "fish -c playerstatus | tail -1",
@@ -57,11 +57,11 @@
   },
   "custom/recorder": {
     "return-type": "json",
-    "format": "{}",
-    "interval": 3,
-    "exec": "fish -c recording | tail -1",
-    "exec-on-event": "fish -c recording | tail -1",
-    "on-click": "kill -INT -$(pgrep wf-recorder)"
+    "format": "壘",
+    "interval": 1,
+		"exec-if": "pgrep wf-recorder",
+		"exec": "echo '{\"class\": \"recording\"}'",
+    "on-click": "fish -c recording"
   },
   "tray": {
     "spacing": 10,
@@ -176,7 +176,7 @@
   },
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout -p layer-shell",
+    "on-click": "~/.config/waybar/scripts/power.sh",
     "tooltip": false
   },
   "custom/github": {
@@ -205,8 +205,8 @@
     "tooltip": false
   },
   "wlr/taskbar": {
-    "format": "{icon}",
-    // "format": "{app_id}",
+    // "format": "{icon}",
+    "format": "{app_id}",
     "icon-theme": "Papirus",
     "icon-size": 15,
     "on-click": "activate",
