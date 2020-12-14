@@ -1,6 +1,6 @@
 function playerstatus --description "player status"
   set mpris_status (playerctl status)
-  if pgrep cmus
+  if pgrep cmus 2> /dev/null
     set text (cmus-remote -C "format_print '%a - %t'")
     set tooltip "cmus - playing"
     set mpris_status "Music"

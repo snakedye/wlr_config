@@ -11,7 +11,7 @@
 colors:
   primary:
     background: '#2e3440'
-    foreground: '#d8dee9'
+    foreground: '#b7bbc3'
     dim_foreground: '#a5abb6'
   cursor:
     text: '#2e3440'
@@ -32,11 +32,11 @@ colors:
   normal:
     black: '#3b4252'
     red: '#bf616a'
-    green: '#a3be8c'
+    green: '#8cbe8e'
     yellow: '#ebcb8b'
-    blue: '#81a1c1'
+    blue: '#8fa7bc'
     magenta: '#b48ead'
-    cyan: '#88c0d0'
+    cyan: '#8fbcbb'
     white: '#d8dee9'
   bright:
     black: '#4c566a'
@@ -46,7 +46,7 @@ colors:
     blue: '#81a1c1'
     magenta: '#b48ead'
     cyan: '#8fbcbb'
-    white: '#d8dee9'
+    white: '#eceff4'
   dim:
     black: '#373e4d'
     red: '#94545d'
@@ -55,10 +55,10 @@ colors:
     blue: '#68809a'
     magenta: '#8c738c'
     cyan: '#6d96a5'
-    white: '#d8dee9'
+    white: '#aeb3bb'
 key_bindings:
     - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
-background_opacity: 1.0
+background_opacity: 1.00
 window:
   padding:
     x: 30

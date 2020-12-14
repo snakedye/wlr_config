@@ -1,6 +1,6 @@
 # Update manga library
 
-function update_mangas --description 'Update my manga library'
+function updatemanga --description 'Update my manga library'
   set mangas $argv
   if test "$mangas" = ""
     for manga in (ls ~/.mangas/)

@@ -39,6 +39,9 @@ Plug 'townk/vim-autoclose'
 " Rust
 Plug 'rust-lang/rust.vim'
 
+"CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Install ansible plugin 
 Plug 'pearofducks/ansible-vim'
 
@@ -127,8 +130,10 @@ set clipboard+=unnamedplus
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
+"Delay vim
+
 " File explorer shortcut
-:nnoremap <C-space> :NERDTreeToggle<CR>
+:nnoremap <C-space> :RangerWorkingDirectory<CR>
 
 " Speed up scrolling in Vim
 set ttyfast

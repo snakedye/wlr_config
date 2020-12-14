@@ -8,13 +8,12 @@
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 exec mako
-exec /usr/lib/polkit-kde-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec nm-applet --indicator
 exec autotiling-rs
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 exec ~/.azotebg
-# exec /usr/share/sway/scripts/inactive-windows-transparency.py
-# exec syncthing -no-browser
+exec /usr/share/sway/scripts/inactive-windows-transparency.py
 
 # Dynamic Wallpaper
 # exec oguri -c ~/.config/oguri/config
@@ -23,10 +22,11 @@ exec ~/.azotebg
 # Windows Rules 
 for_window [class="(?i)ark"] floating enable
 for_window [class="(?i)mpv"] floating enable
-for_window [app_id="imv"] floating enable, border pixel 3
+for_window [app_id="imv"] floating enable
 for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set width 550 px height 600px, move position cursor, move down 330
 for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
 for_window [title="Copying"] floating enable
+for_window [title="Authenticate"] resize set height 210px
 for_window [title="Discord Updater"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
@@ -58,14 +58,14 @@ default_border pixel 3
 
 # Font
 # title_align center
-font pango:ProductSansMedium 14px 
+font pango:ProductSansMedium 13px 
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
 client.focused          #5e81ac #5e81ac #eceff4 #434c5e   #5e81ac
 client.focused_inactive #4c566a #4c566a #d8dee9 #3b4252   #434c5e
 client.unfocused        #4c566a #4c566a #d8dee9 #3b4252   #434c5e
-client.urgent           #7c818c #bf616a #eceff4 #900000   #bf616a
+client.urgent           #bf616a #bf616a #eceff4 #900000   #bf616a
 client.placeholder      #000000 #0c0c0c #eceff4 #000000   #0c0c0c
 
 #Asignments
