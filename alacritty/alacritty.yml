@@ -11,7 +11,7 @@
 colors:
   primary:
     background: '#2e3440'
-    foreground: '#b7bbc3'
+    foreground: '#d8dee9'
     dim_foreground: '#a5abb6'
   cursor:
     text: '#2e3440'
@@ -32,7 +32,7 @@ colors:
   normal:
     black: '#3b4252'
     red: '#bf616a'
-    green: '#8cbe8e'
+    green: '#a3be8c'
     yellow: '#ebcb8b'
     blue: '#8fa7bc'
     magenta: '#b48ead'
@@ -61,11 +61,11 @@ key_bindings:
 background_opacity: 1.00
 window:
   padding:
-    x: 30
-    y: 30
+    x: 20
+    y: 20
 font:
   normal:
-    family: JetBrainsMono
+    family: JetbrainsMonoNL
     style: Regular
   size: 12
 live_config_reload: true

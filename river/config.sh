@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# Autostart
+riverctl spawn 'waybar'
+riverctl spawn 'nm-applet --indicator'
+riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
+riverctl spawn '/usr/lib/kdeconnectd'
+riverctl spawn 'kdeconnect-indicator'
+riverctl spawn 'mako'
+riverctl spawn "mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'"
+
 # Wallpaper
 ~/.azotebg
 
@@ -23,7 +32,7 @@ riverctl map normal $mod X close
 
 # Mod+E to exit river
 # riverctl map normal $mod+Shift E exit
-riverctl map normal $mod+Shift E wlogout -p layer-shell
+riverctl map normal $mod+Shift E 'wlogout -p layer-shell'
 
 # Mod+J and Mod+K to focus the next/previous view in the layout stack
 riverctl map normal $mod J focus-view next
@@ -175,7 +184,7 @@ riverctl csd-filter-add "swappy"
 riverctl float-filter-add "swappy"
 
 # Set opacity and fade effect
-# riverctl opacity 1.0 0.75 0.0 0.1 20
+riverctl opacity 1.0 0.75 0.0 0.1 20
 
 # Border color focused
 riverctl border-color-focused '#5e81ac'
@@ -186,13 +195,4 @@ riverctl border-color-unfocused '#4c566a'
 # Border width
 riverctl border-width 3
 
-# Autostart
-riverctl spawn 'waybar'
-riverctl spawn 'nm-applet --indicator'
-riverctl spawn '/usr/lib/kdeconnectd'
-riverctl spawn 'kdeconnect-indicator'
-riverctl spawn 'mako'
-
-# Wob
-mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 

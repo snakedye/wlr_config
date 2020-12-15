@@ -133,7 +133,7 @@ set backspace=indent,eol,start
 "Delay vim
 
 " File explorer shortcut
-:nnoremap <C-space> :RangerWorkingDirectory<CR>
+:nnoremap <C-space> :NERDTree<CR>
 
 " Speed up scrolling in Vim
 set ttyfast

@@ -40,17 +40,18 @@ window#waybar.empty {
 	box-shadow: inherit;
 	color: #5e81ac;
 }
-#workspaces button.focused,#tags button.occupied {
+#workspaces button.focused, #tags button.focused {
 	color: #81a1c1;
 }
 #tags button.focused {
-	color: #5e81ac;
   font-weight: 600;
 }
 #workspaces button.urgent {
 	color:  #BF616A;
 }
 #tags button {
+  color: #4c566a;
+  font-weight: 600;
 }
 #mpd {
 	padding: 0px 10px;
