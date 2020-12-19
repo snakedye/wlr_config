@@ -1,10 +1,11 @@
 function playerstatus --description "player status"
+  set mpd_status (mpc current --host 127.0.0.1 --port 6002)
   set mpris_status (playerctl status)
-  if pgrep cmus 2> /dev/null
-    set text (cmus-remote -C "format_print '%a - %t'")
-    set tooltip "cmus - playing"
+  if test $mpd_status!=""
+    set text $mpd_status
+    set tooltip "mpd - playing"
     set mpris_status "Music"
-  else
+  else if test $mpris_status!="No players found"
     set text (playerctl metadata title)
     set tooltip (playerctl metadata --format "{{ playerName }} : {{ title }}")
   end

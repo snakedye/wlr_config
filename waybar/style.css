@@ -53,10 +53,6 @@ window#waybar.empty {
   color: #4c566a;
   font-weight: 600;
 }
-#mpd {
-	padding: 0px 10px;
-	color: #ffffff;
-}
 /* TASKBAR */
 #taskbar {
 	margin: 2px 0px 2px 0px;
@@ -108,7 +104,7 @@ window#waybar.empty {
   font-size: 15px;
 }
 /* WIDGETS */
-#cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature, #mpd {
+#cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature {
   font-size: 14px;
 	background-color: #2e3440;
 	padding: 0px 14px 0px 14px;
@@ -132,11 +128,12 @@ window#waybar.empty {
 #custom-weather {
 	padding: 0px 8px 0px 8px;
 }
-#custom-media {
+#custom-media, #mpd {
 	color: #818896;
 	border-radius: 10px;
   margin-left: 10px;
-	padding: 0px 14px 0px 14px;
+	padding: 0px 10px 0px 10px;
+  background-color: transparent;
 }
 #custom-media.Playing {
 	color: #81a1c1;
@@ -147,6 +144,15 @@ window#waybar.empty {
 	color: #b48ead;
 	border-radius: 0px;
 	font-weight: 500;
+}
+#mpd.paused {
+	color: #818896;
+}
+#mpd.playing {
+	color: #81a1c1;
+}
+#mpd.stopped {
+  color: #3b4252;
 }
 #custom-pacman {
 	color: #ebcb8b;

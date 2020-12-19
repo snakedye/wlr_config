@@ -14,14 +14,15 @@ layer=overlay
 allow-images=true
 insensitive=true
 matching=contains
-prompt=
+prompt=wofer
 columns=1
 line_wrap=word
 image_size=25
 display_generic=true
 
 # Vi keybindings
- # key_forward=j
- # key_backward=k
- # key_submit=l
- # key_pgup=Tab
+key_forward=j
+key_backward=k
+key_submit=l
+key_hide_search=q
+key_pgup=Tab

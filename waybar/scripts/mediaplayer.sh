@@ -1,3 +1,8 @@
 #!/bin/bash
 
-echo '{"text": "'$(playerctl metadata title)'", "alt": "'$(playerctl status)'", "tooltip": "'$(playerctl metadata --format "{{ playerName }} : {{ artist }} - {{ title }}")'", "class": "'$(playerctl status)'" }'
+if [ -z $(mpc current --host 127.0.0.1 --port 6002) ]; then
+  playerctl play-pause
+else
+  mpc toggle --host 127.0.0.1 --port 6002
+fi
+

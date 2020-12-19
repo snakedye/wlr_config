@@ -17,3 +17,4 @@ insensitive=true
 prompt=
 image_size=25
 display_generic=true
+key_expand=Tab

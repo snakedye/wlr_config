@@ -7,6 +7,7 @@ riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
 riverctl spawn 'mako'
+riverctl spawn 'mpd ~/.config/mpd/mpd.conf'
 riverctl spawn "mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'"
 
 # Wallpaper
@@ -16,7 +17,7 @@ riverctl spawn "mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color
 mod="Mod4"
 
 # Mod+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
-riverctl map normal $mod Return spawn alacritty
+riverctl map normal $mod Return spawn foot
 
 # Mod+Space Launch wofi -drun
 riverctl map normal $mod Space spawn wofi -i -I
@@ -90,6 +91,8 @@ riverctl map-pointer normal $mod BTN_LEFT move-view
 
 # Mod + Right Mouse Button to resize views
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
+
+EXPORT tagmask
 
 for i in $(seq 1 9); do
     tagmask=$((1 << ($i - 1)))

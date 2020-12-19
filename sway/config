@@ -5,15 +5,15 @@
 # Read `man 5 sway` for a complete reference.
 
 # Autostart
+exec mako
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-exec mako
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec nm-applet --indicator
-exec autotiling-rs
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 exec ~/.azotebg
-exec /usr/share/sway/scripts/inactive-windows-transparency.py
+exec autotiling
+exec nm-applet --indicator
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec mpd ~/.config/mpd/mpd.conf
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 
 # Dynamic Wallpaper
 # exec oguri -c ~/.config/oguri/config
@@ -30,7 +30,6 @@ for_window [title="Authenticate"] resize set height 210px
 for_window [title="Discord Updater"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
-for_window [workspace="4"] layout tabbed
 for_window [workspace="5"] layout tabbed
 
 ### Variables
@@ -43,7 +42,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -168,7 +167,7 @@ bindsym $mod+Shift+r exec fish -c recording
     bindsym $mod+Shift+c reload
 
     # Power menu
-    bindsym $mod+Shift+e exec nwgbar -o 0.4
+    bindsym $mod+Shift+e exec wlogout -p layer-shell
 #
 # Moving around:
 #

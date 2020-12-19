@@ -12,8 +12,9 @@ call plug#begin('~/.vim/plugged')
 " Nord Theme
 Plug 'arcticicestudio/nord-vim'
 
-" Lightline
-Plug 'itchyny/lightline.vim'
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "Markdown plugins
 Plug 'gabrielelana/vim-markdown'
@@ -57,9 +58,8 @@ call plug#end()
 " autocmd vimenter * NERDTree
 
 " Lightline nord
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " Move between split windows
 :nmap <silent> <A-h> :wincmd h<CR>
@@ -133,7 +133,7 @@ set backspace=indent,eol,start
 "Delay vim
 
 " File explorer shortcut
-:nnoremap <C-space> :NERDTree<CR>
+:nnoremap <C-space> :NERDTreeToggle<CR>
 
 " Speed up scrolling in Vim
 set ttyfast
