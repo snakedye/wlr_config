@@ -1,12 +1,15 @@
 # Wofi file browser
 
 set SHOW_HIDDEN false
-set -Ux EXEC wofi -c ~/.config/wofi/wofer
+# set -Ux EXEC wofi -c ~/.config/wofi/wofer
 
 function lsi --description "ls with icons"
-  echo "   .. "
+  echo "   .."
   if $SHOW_HIDDEN
     set all -A
+  end
+  if test $argv!=''
+    echo "$argv here"
   end
   if ! test -z $argv[1]
     echo $argv[1]
@@ -70,7 +73,7 @@ function prompt
     echo "   Open directory in ranger"
     echo "   Copy "(pwd)
     echo "   Move "(pwd)
-    echo "   Delete "(pwd)
+    echo "   Delete "(pwd)
   else
     echo "   Launch $argv[1]"
     switch $argv[1]
@@ -100,32 +103,35 @@ function extension
 end
 
 function menu --description "file/folder menu options"
-  set -l OPTION ( prompt "$argv[1]"\
-  			| wofi -i -c ~/.config/wofi/wofer | sed 's|^[^a-zA-Z0-9]*||' );
   set LOC ''
   if test -d $argv[1]
-    set LOC (pwd)
+    set -l OPTION ( prompt "$argv[1]" | wofi -c ~/.config/wofi/wofer | tail -1 );
+    set LOC $PWD
     set d "-r"
-  else
+  else if test -f $argv[1]
+    set -l OPTION ( prompt "$argv[1]" | wofi -c ~/.config/wofi/wofer | tail -1 );
     set LOC $argv[1]
+  else if test -n $argv
+    set OPTION $argv[1]
+    set LOC $argv[2]
   end
-  switch $OPTION
+  switch (string sub -s 5 $OPTION)
     case Execute'*'
       ./$LOC
       exit
     case Edit'*'
-      alacritty -e fish -c "vim $LOC" &
+      foot fish -c "vim $LOC" &
       exit
     case Launch'*'
       launcher "$LOC"
     case Open'*'
-      alacritty -e ranger "$LOC" &
+      foot ranger "$LOC" &
       exit
     case Send'*'
       extension kdeconnect "$LOC"
-    case Copy'*'
-      set -l OBJECT (pwd)"/$LOC"
-      set -l DESTINATION (wofish -c)
+    case Copy'*' cp
+      set -l OBJECT "$PWD/$LOC"
+      set -l DESTINATION (runner Copy)
       cp $d "$OBJECT" "$DESTINATION" 
     case Set'*'
       pkill swaybg
@@ -133,8 +139,8 @@ function menu --description "file/folder menu options"
     case 'Move to trash*'
       mv "$LOC" ~/.local/share/Trash/files/
     case Move'*'
-      set -l OBJECT (pwd)"/$LOC"
-      set -l DESTINATION (wofish -m)
+      set -l OBJECT "$PWD/$LOC"
+      set -l DESTINATION (runner Move)
       mv "$OBJECT" "$DESTINATION" 
       cd "$DESTINATION"
     case Rename'*'
@@ -142,13 +148,13 @@ function menu --description "file/folder menu options"
     case Upload'*'
       if string match -rq 'imgur' $OPTION
         extension imgur "$LOC"
-        set -l image (pwd)/$LOC
+        set -l image "$PWD/$LOC"
         notify-send 'Uploaded to imgur' (wl-paste) -i "$image"
       else
         gofile "$LOC"
       end
     case Extract'*'
-      set -l DESTINATION (wofish -e)
+      set -l DESTINATION (runner Extract)
       if unzip -q "$LOC" -d "$DESTINATION"
         :
       else
@@ -176,8 +182,8 @@ end
 
 function shortcuts
   switch $argv[1]
-    case '?' :
-      menu 
+    case 'ZZ'
+      menu
     case ':help'
       xdg-open https://gitlab.com/snakedye/wofer
     case :h :hidden
@@ -200,55 +206,59 @@ function shortcuts
       rm -r "(pwd)"
     case :m
       extension manga
-      # manga_menu
       exit
     case '*'
-      if echo $argv[1] | grep '?.*'
-        set -l query ( echo "$argv[1]" | grep -o '[^?].*' )
-        set -l finder ( fd $query | wofi -i -c ~/.config/wofi/wofer )
-        if ! cd $finder
+      if string match -rq '^[?].*' $argv[1]
+        set -l query string sub -s 1 "$argv[1]"
+        set -l finder ( fd $query | wofi -c ~/.config/wofi/wofer )
+        if test -d $finder
+          cd "$finder"
+        else
           menu "$finder"
         end
-      else if contains / "$argv[1]"
+      else if string match -rq '^/.*' $argv[1]
         cd $argv[1]
-      else
-        set -l finder (fd $argv[1] | head -1)
-        if ! cd "$finder"
-          menu "$finder"
+      else if string match -rq '~/.*' $argv[1] # a corriger
+        set dir (string replace '~' $HOME $argv[1])
+        cd $dir
+      else if test -n $argv
+        menu $argv
       end
-    end
   end
 end
 
-function wofish
-  switch $argv
-    case -c
-      set action "Copy Here"
-    case -e
-      set action "Extract here"
-    case -m
-      set action "Move Here"
-  end
+function runner
   while true
-    set stdout (lsi $action | wofi -i -m -p (pwd) -c ~/.config/wofi/wofer | sed 's|^~|/home/bryan|')
-    set ENTRY (echo "$stdout" | grep -o " .*" | sed "s| *||")
+    set stdout (lsi $argv | wofi -c ~/.config/wofi/wofer)
+    set ENTRY (echo "$stdout" | sed 's/.[ ]*//')
     if test -z $stdout
       break
     else if test -f "$ENTRY"
       menu "$ENTRY"
     else if test -f "$stdout"
       menu "$stdout"
-    else if test -d "$stdout"
-      cd "$stdout"
+    else if test -d "$stdout" || string match -rq '^[~]/.*' $stdout
+      switch $stdout
+        case /'*'
+          cd "$stdout"
+        case ~'*'
+          set dir (string replace '~' $HOME/$stdout)
+          cd $dir
+      end
     else if test -d "$ENTRY"
       cd "$ENTRY"
-    else if contains $action $stdout
-      echo (pwd)
+      echo $ENTRY
+    else if string match '.* here' "$stdout"
+      echo $PWD
       break
-    else if test '..'=$ENTRY
+    else if string match '\.\.' $ENTRY
       cd ..
     else
       shortcuts $stdout
     end
   end
+end
+
+function wofish
+  runner
 end

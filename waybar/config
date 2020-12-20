@@ -41,7 +41,7 @@
       "Paused": "   ",
       "Music": "   "
     },
-    //  "max-length":55,
+    "max-length":55,
     "interval": 1,
     "exec": "fish -c playerstatus | tail -1",
     "exec-on-event": "fish -c playerstatus | tail -1",
@@ -56,7 +56,8 @@
     "interval": 1,
 		"exec-if": "pgrep wf-recorder",
 		"exec": "echo '{\"class\": \"recording\"}'",
-    "on-click": "fish -c recording"
+    "on-click": "fish -c recording",
+    "tooltip": false,
   },
   "tray": {
     "spacing": 10,

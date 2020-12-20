@@ -48,7 +48,7 @@ set $term foot
 # on the original workspace that the command was run on.
 #
 set $menu wofi -c ~/.config/wofi/config -I 
-bindsym $mod+c exec wofer
+bindsym $mod+c exec wofer wofi -c ~/.config/wofi/wofer
 bindsym $mod+d exec wofi-emoji
 bindsym $mod+m exec fish -c 'manga_menu'
 
