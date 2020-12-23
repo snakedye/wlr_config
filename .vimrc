@@ -12,9 +12,17 @@ call plug#begin('~/.vim/plugged')
 " Nord Theme
 Plug 'arcticicestudio/nord-vim'
 
+" One Dark
+Plug 'joshdick/onedark.vim'
+
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 "Markdown plugins
 Plug 'gabrielelana/vim-markdown'
@@ -30,9 +38,6 @@ Plug 'scrooloose/nerdtree'
 
 " Commentary
 Plug 'tpope/vim-commentary'
-
-" Status line
-Plug 'vim-airline/vim-airline'
 
 " Autoclose
 Plug 'townk/vim-autoclose'
@@ -57,15 +62,31 @@ call plug#end()
 " Nerdtree
 " autocmd vimenter * NERDTree
 
-" Lightline nord
+" Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme='onedark'
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
 " Move between split windows
 :nmap <silent> <A-h> :wincmd h<CR>
 :nmap <silent> <A-j> :wincmd j<CR>
 :nmap <silent> <A-k> :wincmd k<CR>
 :nmap <silent> <A-l> :wincmd l<CR>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Turn on syntax highlighting.
 syntax on
@@ -82,7 +103,7 @@ setlocal foldmethod=expr
 " Turn off modelines
 set modelines=0
 
-colorscheme nord
+colorscheme onedark
 
 " Highlighted row
 let g:nord_cursor_line_number_background = 1

@@ -1,5 +1,5 @@
 # Config file for wofer
 UWU=false # uwu mode
-TERM=alacritty # set terminal emulator
+SHOW_HIDDEN=false
 EXTENSIONS=~/wofer/extensions # extension directory
-FM="$TERM -e ranger" # file manager
+FM="foot ranger" # file manager

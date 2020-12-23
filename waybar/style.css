@@ -7,6 +7,7 @@
 window#waybar {
 	background-color: #353b49;
 	color: #d8dee9;
+  border-bottom: 2px solid rgba(46,52,64,0.7);
 }
 #workspaces, #tags {
 	background-color: #2e3440;
@@ -59,9 +60,9 @@ window#waybar.empty {
 }
 #taskbar button {
 	border-radius: 10px;
-  font-size: 14px;
-	margin: 0px 5px 0px 5px;
-	padding: 0px 6px 0px 6px;
+  font-size: 13px;
+	margin: 0px 3px 0px 3px;
+	padding: 0px 3px 0px 3px;
 }
 #taskbar button.active {
 	/* background-color: #434c5e; */
@@ -129,10 +130,9 @@ window#waybar.empty {
 	padding: 0px 8px 0px 8px;
 }
 #custom-media, #mpd {
-	color: #818896;
+	font-size: 14px;
 	border-radius: 10px;
   margin-left: 10px;
-	padding: 0px 10px 0px 10px;
   background-color: transparent;
 }
 #custom-media.Playing {
@@ -164,7 +164,6 @@ window#waybar.empty {
 	border-radius: 10px 0px 0px 10px;
 }
 #pulseaudio.muted {
-	border-radius: 10px;
 	color: #4c566a;
 }
 #temperature{

@@ -6,12 +6,11 @@ riverctl spawn 'nm-applet --indicator'
 riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
-riverctl spawn 'mako'
+riverctl spawn 'mako &'
 riverctl spawn 'mpd ~/.config/mpd/mpd.conf'
-riverctl spawn "mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'"
 
 # Wallpaper
-~/.azotebg
+riverctl spawn '~/.azotebg'
 
 # Use the "logo" key as the primary modifier
 mod="Mod4"
@@ -23,17 +22,19 @@ riverctl map normal $mod Return spawn foot
 riverctl map normal $mod Space spawn wofi -i -I
 
 # Mod+C Launch wofer
-riverctl map normal $mod C spawn 'fish -c wofer'
+riverctl map normal $mod C spawn wofer
 
 # Screen lock
-riverctl map normal $mod f1 spawn '~/.config/sway/lockman.sh'
+riverctl map normal $mod f1 spawn 'swaylock -c ~/.config/swaylock/config'
 
 # Mod+Q to close the focused view
 riverctl map normal $mod X close
 
 # Mod+E to exit river
 # riverctl map normal $mod+Shift E exit
-riverctl map normal $mod+Shift E 'wlogout -p layer-shell'
+
+# Mod+E for logout menu
+riverctl map normal $mod+Shift E wlogout -p layer-shell
 
 # Mod+J and Mod+K to focus the next/previous view in the layout stack
 riverctl map normal $mod J focus-view next
@@ -44,8 +45,12 @@ riverctl map normal $mod K focus-view previous
 riverctl map normal $mod+Shift J swap next
 riverctl map normal $mod+Shift K swap previous
 
+# Screenshot with Swappy
 riverctl map normal Control print spawn 'grim -g "$(slurp)" - | swappy -f -'
 riverctl map normal Shift print spawn 'grim - | swappy -f -'
+
+# Screen recording with wf-recorder
+riverctl map normal $mod+Shift R spawn 'fish -c recording'
 
 # Mod+Period and Mod+Comma to focus the next/previous output
 riverctl map normal Control+Mod1 L focus-output next
@@ -98,7 +103,7 @@ for i in $(seq 1 9); do
     tagmask=$((1 << ($i - 1)))
 
     # Mod+[1-9] to focus tag [0-8]
-    riverctl map normal $mod $i set-focused-tags $tagmask
+    riverctl map normal $mod $i set-focused-tags $tagmask; export $tagmask
 
     # Mod+Shift+[1-9] to tag focused view with tag [0-8]
     riverctl map normal $mod+Shift $i set-view-tags $tagmask
@@ -109,8 +114,6 @@ for i in $(seq 1 9); do
     # Mod+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
     riverctl map normal $mod+Shift+Control $i toggle-view-tags $tagmask
 done
-
-export tagmask
 
 # Mod+Shift L next tag
 # riverctl map normal $mod+shift L set-focused-tags $((1 << ($tagmask + 1)))
@@ -131,16 +134,20 @@ riverctl map normal Mod1 Space toggle-float
 riverctl map normal $mod F toggle-fullscreen
 
 # Mod+{Up,Right,Down,Left} to change master orientation
-riverctl map normal $mod Up layout rivertile top
-riverctl map normal $mod Right layout rivertile right
-riverctl map normal $mod Down layout rivertile down
-riverctl map normal $mod Left layout rivertile left
+riverctl map normal $mod Down layout rivertile top
+riverctl map normal $mod Left layout rivertile right
+riverctl map normal $mod Up layout rivertile down
+riverctl map normal $mod Right layout rivertile left
+riverctl map normal $mod Y layout rivertile left
 
 # Mod+S to change to Full layout
 riverctl map normal $mod S layout full
 
 # riverbsp
 riverctl map normal $mod B layout ~/.config/river/riverbsp
+
+# rivertab
+riverctl map normal $mod T layout ~/.config/river/rivertab
 
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
@@ -156,8 +163,8 @@ riverctl map passthrough $mod F11 enter-mode normal
 for mode in normal locked
 do
 	riverctl map "${mode}" None XF86Eject             spawn eject -T
-	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn 'pamixer -i 5;pamixer --get-volume > /tmp/wobpipe'
-	riverctl map "${mode}" None XF86AudioLowerVolume  spawn 'pamixer -d 5;pamixer --get-volume > /tmp/wobpipe'
+	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn pamixer -i 5
+	riverctl map "${mode}" None XF86AudioLowerVolume  spawn pamixer -d 5
 	riverctl map "${mode}" None XF86AudioMute         spawn pamixer --toggle-mute
 	riverctl map "${mode}" None XF86AudioMedia        spawn playerctl play-pause
 	riverctl map "${mode}" None XF86AudioPlay         spawn playerctl play-pause
@@ -181,8 +188,8 @@ riverctl float-filter-add "float"
 riverctl float-filter-add "popup"
 
 # Set app-ids of views which should use client side decorations
-riverctl csd-filter-add "gedit"
-riverctl csd-filter-add "firefox"
+riverctl csd-filter-add "kwrite"
+# riverctl csd-filter-add "firefox"
 riverctl csd-filter-add "swappy"
 riverctl float-filter-add "swappy"
 

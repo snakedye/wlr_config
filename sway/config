@@ -6,13 +6,14 @@
 
 # Autostart
 exec mako
-exec /usr/lib/kdeconnectd
-exec kdeconnect-indicator
 exec ~/.azotebg
 exec autotiling
+exec /usr/lib/kdeconnectd
+exec kdeconnect-indicator
 exec nm-applet --indicator
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mpd ~/.config/mpd/mpd.conf
+exec_always killall inactive-windows-transparency.py; inactive-windows-transparency.py &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 
 # Dynamic Wallpaper
