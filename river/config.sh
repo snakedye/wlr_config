@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# Autostart
+Autostart
 riverctl spawn 'waybar'
 riverctl spawn 'nm-applet --indicator'
 riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
-riverctl spawn 'mako &'
+riverctl spawn 'mako'
 riverctl spawn 'mpd ~/.config/mpd/mpd.conf'
 
 # Wallpaper
@@ -34,7 +34,7 @@ riverctl map normal $mod X close
 # riverctl map normal $mod+Shift E exit
 
 # Mod+E for logout menu
-riverctl map normal $mod+Shift E wlogout -p layer-shell
+riverctl map normal $mod+Shift E 'wlogout -p layer-shell'
 
 # Mod+J and Mod+K to focus the next/previous view in the layout stack
 riverctl map normal $mod J focus-view next
@@ -70,8 +70,8 @@ riverctl map normal $mod L mod-master-factor +0.05
 
 # Mod+Shift+H and Mod+Shift+L to increment/decrement the number of
 # master views in the layout
-riverctl map normal $mod+Shift H mod-master-count +1
-riverctl map normal $mod+Shift L mod-master-count -1
+riverctl map normal $mod+Shift L mod-master-count +1
+riverctl map normal $mod+Shift H mod-master-count -1
 
 # Mod+Alt+{H,J,K,L} to move views
 riverctl map normal $mod+Mod1 H move left 100
@@ -103,7 +103,7 @@ for i in $(seq 1 9); do
     tagmask=$((1 << ($i - 1)))
 
     # Mod+[1-9] to focus tag [0-8]
-    riverctl map normal $mod $i set-focused-tags $tagmask; export $tagmask
+    riverctl map normal $mod $i set-focused-tags $tagmask
 
     # Mod+Shift+[1-9] to tag focused view with tag [0-8]
     riverctl map normal $mod+Shift $i set-view-tags $tagmask
@@ -114,12 +114,6 @@ for i in $(seq 1 9); do
     # Mod+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
     riverctl map normal $mod+Shift+Control $i toggle-view-tags $tagmask
 done
-
-# Mod+Shift L next tag
-# riverctl map normal $mod+shift L set-focused-tags $((1 << ($tagmask + 1)))
-
-# Mod+Shift H next tag
-# riverctl map normal $mod+shift H set-focused-tags $((1 << ($tagmask - 1)))
 
 # Mod+0 to focus all tags
 # Mod+Shift+0 to tag focused view with all tags
@@ -138,16 +132,15 @@ riverctl map normal $mod Down layout rivertile top
 riverctl map normal $mod Left layout rivertile right
 riverctl map normal $mod Up layout rivertile down
 riverctl map normal $mod Right layout rivertile left
-riverctl map normal $mod Y layout rivertile left
 
 # Mod+S to change to Full layout
 riverctl map normal $mod S layout full
 
-# riverbsp
+# Custom layouts
 riverctl map normal $mod B layout ~/.config/river/riverbsp
-
-# rivertab
 riverctl map normal $mod T layout ~/.config/river/rivertab
+riverctl map normal $mod U layout ~/.config/river/riverhive
+riverctl map normal $mod Y layout rivertile left
 
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
@@ -178,7 +171,7 @@ done
 riverctl set-repeat 50 300
 
 # Set the layout on startup
-riverctl layout rivertile left
+riverctl layout ~/.config/river/riverhive
 
 # Set new windows at the bottom of the stack
 riverctl attach-mode bottom
@@ -189,7 +182,7 @@ riverctl float-filter-add "popup"
 
 # Set app-ids of views which should use client side decorations
 riverctl csd-filter-add "kwrite"
-# riverctl csd-filter-add "firefox"
+riverctl csd-filter-add "firefox"
 riverctl csd-filter-add "swappy"
 riverctl float-filter-add "swappy"
 

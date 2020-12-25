@@ -50,11 +50,12 @@
       "Paused": "   ",
       "Music": "   "
     },
-    "max-length":55,
-    "interval": 1,
-    "exec": "fish -c playerstatus | tail -1",
-    "exec-on-event": "fish -c playerstatus | tail -1",
-    "on-click": "$HOME/.config/waybar/scripts/mediaplayer.sh",
+    "max-length":65,
+    "interval": 2,
+    "exec": "fish -c playerstatus",
+    "exec-on-event": "fish -c playerstatus",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "mpc toggle --host 127.0.0.1 --port 6002",
   },
   "river/tags": {
     "num-tags": 6,
@@ -177,7 +178,7 @@
   "disk": {
     "interval": 30,
     "format": "{free}",
-    "path": "/run/media/bryan/Games",
+    "path": "/run/media/bryan/",
   },
   "custom/power": {
     "format": "⏻",

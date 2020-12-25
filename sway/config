@@ -33,6 +33,9 @@ for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [workspace="5"] layout tabbed
 
+# Repeat delay
+input * repeat_delay 300
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.

@@ -1,6 +1,6 @@
 # Config file for wofer
 UWU=false # uwu mode
-SHOW_HIDDEN=true
+SHOW_HIDDEN=false
 EDITOR=nvim
 EXTENSIONS=~/wofer/extensions # extension directory
-FM=ranger # file manager
+FM=fish # file manager

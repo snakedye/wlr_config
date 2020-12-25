@@ -1,7 +1,7 @@
 function playerstatus --description "player status"
   set mpd_status (mpc current --host 127.0.0.1 --port 6002)
   set mpris_status (playerctl status)
-  if pgrep ncmpcpp
+  if test (pgrep -c ncmpcpp) -gt 0
     set text $mpd_status
     set tooltip "mpd - playing"
     set mpris_status "Music"
