@@ -1,0 +1,40 @@
+# mpd
+ncmpcpp_directory = /home/bryan/.config/ncmpcpp
+mpd_host = "127.0.0.1"
+mpd_port = 6002
+mpd_music_dir = /home/bryan/Music
+mpd_crossfade_time = "5"
+
+# functionality
+cyclic_scrolling = yes
+
+# looks
+header_visibility = no
+clock_display_seconds = yes
+display_volume_level = no
+display_remaining_time = no
+browser_display_mode = columns
+titles_visibility = no
+user_interface = classic
+
+progressbar_look = 
+main_window_color = black
+# main_window_highlight_color = blue
+player_state_color = blue
+window_border_color = blue
+empty_tag_color = red
+state_line_color = black:b
+alternative_ui_separator_color = black:b
+active_window_border = blue
+progressbar_color = blue
+progressbar_elapsed_color = blue
+color1 = green
+color2 = blue
+
+visualizer_color = cyan, green, yellow, magenta, red
+
+# format
+
+song_list_format = "%a  -  %t$R$(end) "
+song_library_format = $/b{{%a - %t} (%b)}|{%f}
+song_columns_list_format = "(90)[]{t}"

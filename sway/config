@@ -12,7 +12,7 @@ exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 exec nm-applet --indicator
 exec mpd ~/.config/mpd/mpd.conf
-exec_always killall inactive-windows-transparency.py; inactive-windows-transparency.py &
+exec_always killall ~/.local/bin/inactive-windows-transparency.py; ~/.local/bin/inactive-windows-transparency.py &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 
@@ -52,7 +52,7 @@ set $term foot
 # on the original workspace that the command was run on.
 #
 set $menu wofi -c ~/.config/wofi/config -I 
-bindsym $mod+c exec wofer wofi -c ~/.config/wofi/wofer
+bindsym $mod+c exec wofer
 bindsym $mod+d exec wofi-emoji
 bindsym $mod+m exec fish -c 'manga_menu'
 

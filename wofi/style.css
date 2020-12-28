@@ -1,7 +1,7 @@
 #entry {
 border-radius: 5px;
 padding: 7px;
-margin: 0px 5px 0px 5px;
+margin: 0px 5px 9px 5px;
 }
 
 @keyframes fadeIn {
@@ -11,6 +11,7 @@ margin: 0px 5px 0px 5px;
 
 #entry:selected {
 background-color: #5e81ac;
+font-weight: bold;
 }
  
 #text:selected {
@@ -18,18 +19,18 @@ color: #d8dee9;
 }
  
 #window {
-background-color: #3b4252;
+background-color: #434c5e;
 background-color: transparent;
 border-radius: 15px;
-font-family: Product Sans;
+font-family: Jetbrains Mono;
 animation: fadeIn;
 animation-duration: 0.3s;
 }
 
 #input {
-border: 2px solid #5e81ac;
+border: none;
 background-color: #4c566a;
-padding: 6px;
+padding: 9px;
 margin: 15px;
 margin-bottom: 0px;
 font-size: 16px;
@@ -38,8 +39,9 @@ border-radius: 5px;
 
 #inner-box {
 color: #d8dee9;
-padding: 10px;
 padding-top: 5px;
+margin: 10px;
+border-radius: 10px;
 }
 
 #outer-box {
@@ -50,13 +52,12 @@ box-shadow: 0px 0px 5px 0  #0F0F0F;
 }
 
 #scroll {
-margin-top: 10px;
 margin-bottom: 10px;
 }
 
 #text {
-font-size: 16px;
-padding: 7px;
+font-size: 14px;
+padding: 5px;
 color: #d8dee9;
 background-color: transparent;
 } 

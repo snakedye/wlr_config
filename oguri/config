@@ -1,6 +1,6 @@
 [output *]
 # image=/usr/share/dynamic-wallpaper/images/flcl
-image=$HOME/wallpapers/cop.gif
+image=$HOME/wallpapers/mario.gif
 filter=best
 scaling-mode=fill
 anchor=center

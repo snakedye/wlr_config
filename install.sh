@@ -10,7 +10,7 @@ prompt () {
 
 # Pacman
 install () {
-if ! pacman -Q | grep "$1" | head -1; then
+  if [ -n $(pacman -Q | grep "$1") ] ; then
   ans=""
   if [[ $ans == "y"  ]]; then
     if pacman -Q | grep yay; then
@@ -37,7 +37,7 @@ do
     fi
     if [[ $ans == "y" ]]; then
       case $config in
-        .vimrc | .zshrc | .azotegb)
+        .vimrc | .zshrc | .azotebg)
           cp ./$config ~/
           ;;
         wallpapers)

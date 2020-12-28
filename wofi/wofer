@@ -1,24 +1,18 @@
 stylesheet=/home/bryan/.config/wofi/wofer.css
 show=dmenu
 width=30%
-term=alacritty
 allow_markup=true
-content_halign=start
 hide_scroll=true
 always_parse_args=true
 parse_search=true
+no_actions=true
 show_all=true
 print_command=true
-hide_scroll=true
 layer=overlay
 allow-images=true
 insensitive=true
 matching=contains
-prompt=wofer
-columns=1
-line_wrap=word
-image_size=25
-display_generic=true
+prompt=
 
 # Vi keybindings
 key_forward=j

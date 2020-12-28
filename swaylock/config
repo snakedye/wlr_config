@@ -10,7 +10,7 @@ image=~/wallpapers/darkbrr_1440p.png
 # screenshots
 scaling=fill
 effect-scale=1.4
-effect-blur=7x7
+effect-blur=9x9
 effect-vignette=0.9:0.9
 font=JetbrainsMonoNL
 font-size=25

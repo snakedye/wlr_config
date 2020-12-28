@@ -1,13 +1,13 @@
 #!/bin/sh
 
-Autostart
+# Autostart
 riverctl spawn 'waybar'
 riverctl spawn 'nm-applet --indicator'
 riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
-riverctl spawn 'mako'
 riverctl spawn 'mpd ~/.config/mpd/mpd.conf'
+riverclt spawn "mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'"
 
 # Wallpaper
 riverctl spawn '~/.azotebg'
@@ -22,7 +22,7 @@ riverctl map normal $mod Return spawn foot
 riverctl map normal $mod Space spawn wofi -i -I
 
 # Mod+C Launch wofer
-riverctl map normal $mod C spawn wofer
+riverctl map normal $mod C spawn fish -c 'wofer wofi -c ~/.config/wofi/config --dmenu'
 
 # Screen lock
 riverctl map normal $mod f1 spawn 'swaylock -c ~/.config/swaylock/config'
@@ -156,9 +156,9 @@ riverctl map passthrough $mod F11 enter-mode normal
 for mode in normal locked
 do
 	riverctl map "${mode}" None XF86Eject             spawn eject -T
-	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn pamixer -i 5
-	riverctl map "${mode}" None XF86AudioLowerVolume  spawn pamixer -d 5
-	riverctl map "${mode}" None XF86AudioMute         spawn pamixer --toggle-mute
+	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn 'pamixer -i 5 && pamixer --get-volume > /tmp/wobpipe'
+	riverctl map "${mode}" None XF86AudioLowerVolume  spawn 'pamixer -d && pamixer --get-volume 5 > /tmp/wobpipe'
+	riverctl map "${mode}" None XF86AudioMute         spawn 'pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob )'
 	riverctl map "${mode}" None XF86AudioMedia        spawn playerctl play-pause
 	riverctl map "${mode}" None XF86AudioPlay         spawn playerctl play-pause
 	riverctl map "${mode}" None XF86AudioPrev         spawn playerctl previous
@@ -171,7 +171,8 @@ done
 riverctl set-repeat 50 300
 
 # Set the layout on startup
-riverctl layout ~/.config/river/riverhive
+# riverctl layout ~/.config/river/riverhive
+riverctl layout rivertile left
 
 # Set new windows at the bottom of the stack
 riverctl attach-mode bottom
@@ -182,12 +183,11 @@ riverctl float-filter-add "popup"
 
 # Set app-ids of views which should use client side decorations
 riverctl csd-filter-add "kwrite"
-riverctl csd-filter-add "firefox"
 riverctl csd-filter-add "swappy"
 riverctl float-filter-add "swappy"
 
 # Set opacity and fade effect
-riverctl opacity 1.0 0.75 0.0 0.1 20
+riverctl opacity 1.0 0.80 0.0 0.1 20
 
 # Border color focused
 riverctl border-color-focused '#5e81ac'
@@ -198,4 +198,4 @@ riverctl border-color-unfocused '#4c566a'
 # Border width
 riverctl border-width 3
 
-
+mako &
