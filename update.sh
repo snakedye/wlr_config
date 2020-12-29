@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 set -euo pipefail
 
-INSTALL=$(ls -A ./)
 CONFIG=~/.config
 
 # Confirmation prompt

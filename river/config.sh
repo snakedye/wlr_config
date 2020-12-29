@@ -46,7 +46,7 @@ riverctl map normal $mod+Shift J swap next
 riverctl map normal $mod+Shift K swap previous
 
 # Screenshot with Swappy
-riverctl map normal Control print spawn 'grim -g "$(slurp)" - | swappy -f -'
+riverctl map normal None print spawn 'grim -g "$(slurp)" - | swappy -f -'
 riverctl map normal Shift print spawn 'grim - | swappy -f -'
 
 # Screen recording with wf-recorder
@@ -198,4 +198,4 @@ riverctl border-color-unfocused '#4c566a'
 # Border width
 riverctl border-width 3
 
-mako &
+riverctl spawn mako
