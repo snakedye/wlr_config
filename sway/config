@@ -12,7 +12,7 @@ exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 exec nm-applet --indicator
 exec mpd ~/.config/mpd/mpd.conf
-exec_always killall ~/.local/bin/inactive-windows-transparency.py; ~/.local/bin/inactive-windows-transparency.py &
+exec_always ~/.local/bin/inactive-windows-transparency.py
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 
@@ -31,10 +31,13 @@ for_window [title="Authenticate"] resize set height 210px
 for_window [title="Discord Updater"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
 for_window [title="File Already Exist"] floating enable
-for_window [workspace="5"] layout tabbed
+# for_window [workspace="5"] layout tabbed
 
 # Repeat delay
 input * repeat_delay 300
+
+# Disable tiling grab
+tiling_drag disable
 
 ### Variables
 #
@@ -56,8 +59,9 @@ bindsym $mod+c exec wofer
 bindsym $mod+d exec wofi-emoji
 bindsym $mod+m exec fish -c 'manga_menu'
 
-# Disable titlebar
+# Borders
 default_border pixel 3
+smart_borders on
 
 # Font
 # title_align center
@@ -66,8 +70,8 @@ font pango:ProductSansMedium 13px
 # Window decoration
 # class                 border  backgr. text    indicator child_border
 client.focused          #5e81ac #5e81ac #eceff4 #434c5e   #5e81ac
-client.focused_inactive #4c566a #4c566a #d8dee9 #3b4252   #434c5e
-client.unfocused        #4c566a #4c566a #d8dee9 #3b4252   #434c5e
+client.focused_inactive #353b49 #353b49 #d8dee9 #3b4252   #353b49
+client.unfocused        #353b49 #353b49 #d8dee9 #3b4252   #353b49
 client.urgent           #bf616a #bf616a #eceff4 #900000   #bf616a
 client.placeholder      #000000 #0c0c0c #eceff4 #000000   #0c0c0c
 
@@ -81,11 +85,14 @@ assign [app_id="Signal"] 5
 assign [title="Signal"] 5
 assign [app_id="discord"] 5
 assign [title="discord"] 5
-assign [title="Wine System Tray"] scratchpad
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-gaps inner 12
+gaps inner 15
 gaps outer 5
+smart_gaps on
+
+# Select monitor
+focus left
 
 ### Output configuration
 #
@@ -95,7 +102,7 @@ gaps outer 5
 #
 # Example configuration:
 #
-  output HDMI-A-I {
+  output HDMI-A-1 {
     pos 0 0
     res 2560x1440
     adaptive_sync off
@@ -140,6 +147,9 @@ bindsym $mod+Shift+r exec fish -c recording
        natural_scroll enabled
        middle_emulation enabled
    }
+
+   input "1386:884:Wacom_Intuos_S_Pad" map_to_output HDMI-A-1
+   input "1386:884:Wacom_Intuos_S_Pen" map_to_output HDMI-A-1
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -199,6 +209,15 @@ bindsym $mod+Shift+r exec fish -c recording
 #
 # Workspaces:
 #
+    workspace 1 output  HDMI-A-1
+    workspace 2 output  HDMI-A-1
+    workspace 3 output  HDMI-A-1
+    workspace 4 output  HDMI-A-1
+
+    workspace 5 output  DP-2
+    workspace 6 output  DP-2
+    workspace 7 output  DP-2
+
     # Switch to workspace
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
@@ -223,11 +242,16 @@ bindsym $mod+Shift+r exec fish -c recording
     bindsym $mod+Shift+0 move container to workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-    # Switch to next/previous workspace
-    bindsym ctrl+Alt+Right workspace next_on_output
+    #
+    # Switch to next/previous workspace on output
     bindsym ctrl+Alt+$right workspace next_on_output
-    bindsym ctrl+Alt+Left workspace prev_on_output
     bindsym ctrl+Alt+$left workspace prev_on_output
+    #
+    # Switch to next/previous workspace
+    # bindsym ctrl+Alt+$right workspace next
+    # bindsym ctrl+$mod+$left workspace previous
+    # bindsym ctrl+Alt+$left workspace prev
+    # bindsym ctrl+$mod+$right workspace next
 #
 # Layout stuff:
 #

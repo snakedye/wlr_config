@@ -2,4 +2,4 @@
 UWU=false # uwu mode
 TERM=foot # set terminal emulator
 EXTENSIONS=~/wofer/extensions # extension directory
-FM="ranger" # file manager
+FM=nemo # file manager

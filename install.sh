@@ -57,7 +57,8 @@ done
 # Extra packages
 echo "Optionnal but recommended"
 
-for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl" "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts-symbols" "autotiling" 
+for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "brightnessctl"
+  "otf-font-awesome" "kdeconnect" "ttf-nerd-fonts-symbols" "autotiling" "fish"
 do
   echo ""
   if ! install $pkg; then

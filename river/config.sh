@@ -7,7 +7,7 @@ riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
 riverctl spawn 'mpd ~/.config/mpd/mpd.conf'
-riverclt spawn "mkfifo /tmp/wobpipe && tail -f /tmp/wobpipe | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'"
+riverctl spawn 'mako'
 
 # Wallpaper
 riverctl spawn '~/.azotebg'
@@ -26,6 +26,9 @@ riverctl map normal $mod C spawn fish -c 'wofer wofi -c ~/.config/wofi/config --
 
 # Screen lock
 riverctl map normal $mod f1 spawn 'swaylock -c ~/.config/swaylock/config'
+
+# Cursor behaviour
+riverctl  focus-follows-cursor normal
 
 # Mod+Q to close the focused view
 riverctl map normal $mod X close
@@ -156,9 +159,9 @@ riverctl map passthrough $mod F11 enter-mode normal
 for mode in normal locked
 do
 	riverctl map "${mode}" None XF86Eject             spawn eject -T
-	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn 'pamixer -i 5 && pamixer --get-volume > /tmp/wobpipe'
-	riverctl map "${mode}" None XF86AudioLowerVolume  spawn 'pamixer -d && pamixer --get-volume 5 > /tmp/wobpipe'
-	riverctl map "${mode}" None XF86AudioMute         spawn 'pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob )'
+	riverctl map "${mode}" None XF86AudioRaiseVolume  spawn pamixer -i 5
+	riverctl map "${mode}" None XF86AudioLowerVolume  spawn pamixer -d 5
+	riverctl map "${mode}" None XF86AudioMute         spawn pamixer --toggle-mute
 	riverctl map "${mode}" None XF86AudioMedia        spawn playerctl play-pause
 	riverctl map "${mode}" None XF86AudioPlay         spawn playerctl play-pause
 	riverctl map "${mode}" None XF86AudioPrev         spawn playerctl previous
@@ -198,4 +201,8 @@ riverctl border-color-unfocused '#4c566a'
 # Border width
 riverctl border-width 3
 
-riverctl spawn mako
+# Because two monitors
+riverctl focus-output next
+riverctl layout rivertile left
+riverctl attach-mode bottom
+riverctl spawn 'makoctl reload'

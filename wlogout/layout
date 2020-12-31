@@ -6,7 +6,7 @@
 }
 {
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
+    "action" : "systemctl hibernate; makoctl reload",
     "text" : "Hibernate",
 }
 {
@@ -23,7 +23,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend;swaylock -C ~/.config/swaylock/config",
+    "action" : "systemctl suspend;swaylock -C ~/.config/swaylock/config; makoctl reload",
     "text" : "Suspend",
     "keybind" : "u"
 }

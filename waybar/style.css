@@ -33,8 +33,8 @@ window#waybar {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-window#waybar.empty {
-  /* background-color: #353b49; */
+window#waybar.firefox {
+  background-color: #2e3440;
 }
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover, #tags button:hover {

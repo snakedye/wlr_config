@@ -3,16 +3,15 @@ xoffset=0%
 yoffset=0%
 hide_scroll=true
 show=drun
-width=15%
+width=400
 lines=15
 line_wrap=word
-term=alacritty
+term=foot
 allow_markup=true
 always_parse_args=true
 show_all=true
 print_command=true
 layer=overlay
-allow-images=true
 insensitive=true
 prompt=
 image_size=30
@@ -21,8 +20,8 @@ line_wrap=word
 key_expand=Tab
 
 # Vi keybindings
-key_forward=j
-key_backward=k
-key_submit=l
-key_hide_search=q
-key_pgup=Tab
+# key_forward=j
+# key_backward=k
+# key_submit=l
+# key_hide_search=q
+# key_pgup=Tabey_pgup=Tab

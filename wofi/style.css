@@ -1,7 +1,7 @@
 #entry {
 border-radius: 5px;
-padding: 7px;
-margin: 0px 5px 9px 5px;
+padding: 3px;
+margin: 0px 3px 3px 3px;
 }
 
 @keyframes fadeIn {
@@ -19,7 +19,6 @@ color: #d8dee9;
 }
  
 #window {
-background-color: #434c5e;
 background-color: transparent;
 border-radius: 15px;
 font-family: Jetbrains Mono;
@@ -31,16 +30,14 @@ animation-duration: 0.3s;
 border: none;
 background-color: #4c566a;
 padding: 9px;
-margin: 15px;
-margin-bottom: 0px;
-font-size: 16px;
+margin: 15px 15px 10px 15px;
 border-radius: 5px;
 }
 
 #inner-box {
 color: #d8dee9;
 padding-top: 5px;
-margin: 10px;
+margin: 0px 10px 10px 10px;
 border-radius: 10px;
 }
 
@@ -56,7 +53,7 @@ margin-bottom: 10px;
 }
 
 #text {
-font-size: 14px;
+font-size: 13px;
 padding: 5px;
 color: #d8dee9;
 background-color: transparent;

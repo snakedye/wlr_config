@@ -7,19 +7,21 @@
   "modules-left": ["river/tags", "sway/workspaces", "custom/github",
   "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",
   "custom/media"],
-  "modules-center": ["wlr/taskbar"],
+  "modules-center": [],
   "modules-right": ["pulseaudio", "custom/weather", "disk", "memory", "cpu", "temperature", "network", "battery#bat2", "backlight", "custom/pacman", "tray", "custom/recorder", "clock", "custom/power", ],
   // Modules configuration
   "sway/workspaces": {
     "disable-scroll": false,
-    "all-outputs": true,
+    "all-outputs": false,
     "format": "{icon}",
     "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
+      "1": ["HDMI-A-1"],
+      "2": ["HDMI-A-1"],
+      "3": ["HDMI-A-1"],
+      "4": ["HDMI-A-1"],
+      "5": ["DP-2"],
+      "6": ["DP-2"],
+      "7": ["DP-2"],
     },
     "format-icons": {
       "1": "",
@@ -27,6 +29,8 @@
       "3": "",
       "4": "",
       "5": "",
+      "6": "ﲵ",
+      "7": "",
       "focused": "",
       "urgent": "",
       "default": ""

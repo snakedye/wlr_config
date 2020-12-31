@@ -47,17 +47,31 @@ function display_packages
 end
 
 function display_uptime
-  set -l uptime (uptime -p | sed 's/[a-z]*[,]*//g')
-  set -l days (echo $uptime | awk '{print $1}')
-  set -l hours (echo $uptime | awk '{print $2}')
-  set -l minutes (echo $uptime | awk '{print $3}')
+  set -l uptime (uptime -p | grep -o '[0-9]* [a-z]*')
+  set -l days (echo $uptime | grep day | awk '{print $1}')
+  set -l hours (echo $uptime | grep hour | awk '{print $1}')
+  set -l minutes (uptime -p | grep -o '[0-9]* [a-z]*' | grep minute| awk '{print $1}')
   set -l title_block '  '(set_color blue) uptime
-  if test -z $minutes
-    set text_block (set_color yellow) $days'd' 00:$hours
-  else
-    set text_block (set_color yellow) $days'd' $hours:$minutes
+  set -l i 1
+  for name in $days $hours $minutes
+    if test -z $name
+      switch $i
+        case 1
+          set days 00
+        case 2
+          set hours 00
+        case 3
+          set minutes 00
+      end
+    end
+    set i math $i+1
   end
+  set text_block (set_color yellow) $days'd' $hours:$minutes
   echo -ne $title_block '    ' (seperator) $text_block \n
+end
+
+function color_block
+  echo -ne '   '(set_color -b black)'  '(set_color -b red)'  '(set_color -b green)'  '(set_color -b yellow)'  '(set_color -b blue)'  '(set_color -b cyan)'  '(set_color -b purple)'  '(set_color -b normal)\n
 end
 
 function fetch --description 'custom fetch'
@@ -69,6 +83,8 @@ function fetch --description 'custom fetch'
   display_uptime
   display_packages
   display_term
+  echo ""
+  color_block
   footer
   echo ""
 end
