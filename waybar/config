@@ -166,7 +166,7 @@
     "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
   },
   "custom/weather": {
-    "exec": "~/.config/waybar/scripts/weather.sh Terrebonne",
+    "exec": "~/.config/waybar/scripts/weather.sh bruh",
     "format": "{}",
     "return-type": "json",
     "interval": 600
@@ -183,7 +183,7 @@
   "disk": {
     "interval": 30,
     "format": "{free}",
-    "path": "/run/media/bryan/",
+    "path": "",
   },
   "custom/power": {
     "format": "⏻",
@@ -207,7 +207,7 @@
   },
   "custom/mail": {
     "format": "",
-    "on-click": "xdg-open https://moncourriel.etsmtl.ca/",
+    "on-click": "",
     "tooltip": false
   },
   "custom/crunchyroll": {
