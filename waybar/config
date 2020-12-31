@@ -8,6 +8,7 @@
   "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",
   "custom/media"],
   "modules-center": [],
+  "output": ["HDMI-A-1"],
   "modules-right": ["pulseaudio", "custom/weather", "disk", "memory", "cpu", "temperature", "network", "battery#bat2", "backlight", "custom/pacman", "tray", "custom/recorder", "clock", "custom/power", ],
   // Modules configuration
   "sway/workspaces": {

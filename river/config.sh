@@ -7,6 +7,7 @@ riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
 riverctl spawn 'mpd ~/.config/mpd/mpd.conf'
+riverctl spawn 'lavalauncher -c ~/.config/lavalauncher/config.conf'
 riverctl spawn 'mako'
 
 # Wallpaper
@@ -68,13 +69,13 @@ riverctl map normal $mod+Shift Comma send-to-output previous
 riverctl map normal $mod+Shift Return zoom
 
 # Mod+H and Mod+L to decrease/increase the width of the master column by 5%
-riverctl map normal $mod H mod-master-factor -0.05
-riverctl map normal $mod L mod-master-factor +0.05
+riverctl map normal $mod H mod-main-factor -0.05
+riverctl map normal $mod L mod-main-factor +0.05
 
 # Mod+Shift+H and Mod+Shift+L to increment/decrement the number of
 # master views in the layout
-riverctl map normal $mod+Shift L mod-master-count +1
-riverctl map normal $mod+Shift H mod-master-count -1
+riverctl map normal $mod+Shift L mod-main-count +1
+riverctl map normal $mod+Shift H mod-main-count -1
 
 # Mod+Alt+{H,J,K,L} to move views
 riverctl map normal $mod+Mod1 H move left 100

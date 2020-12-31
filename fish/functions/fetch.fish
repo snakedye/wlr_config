@@ -1,5 +1,5 @@
 function header -d 'message header can be whatever'
-  set -l block (set_color cyan) 'ʕっ•ᴥ•ʔっ hello'
+  set -l block (set_color cyan) 'ʕっ•ᴥ•ʔっ happy new year!'
   echo -ne $block\n
 end
 
@@ -22,7 +22,7 @@ end
 
 function display_compositor
   set -l title_block '  '(set_color blue) compositor
-  set -l text_block (set_color yellow) $XDG_CURRENT_DESKTOP
+  set -l text_block (set_color yellow) river
   echo -ne $title_block '' (seperator) $text_block \n
 end
 
