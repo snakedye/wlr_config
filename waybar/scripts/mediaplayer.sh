@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ -z $(pgrep ncmpcpp) ]; then
-  playerctl play-pause
+if ! pgrep ncmpcpp; then
+  exit 0
 else
-  mpc toggle --host 127.0.0.1 --port 6002
+  exit 1
 fi
 

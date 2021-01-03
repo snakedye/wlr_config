@@ -16,13 +16,13 @@ end
 function display_host
   set -l host (cat /etc/hostname)
   set -l title_block '  '(set_color blue) host
-  set -l text_block (set_color yellow) snakedye
+  set -l text_block (set_color yellow) $host
   echo -ne $title_block '      ' (seperator) $text_block \n
 end
 
 function display_compositor
   set -l title_block '  '(set_color blue) compositor
-  set -l text_block (set_color yellow) river
+  set -l text_block (set_color yellow) $XDG_CURRENT_DESKTOP
   echo -ne $title_block '' (seperator) $text_block \n
 end
 
@@ -46,27 +46,26 @@ function display_packages
   echo -ne $title_block '  ' (seperator) $text_block \n
 end
 
+function display_shell
+  set -l title_block '  '(set_color blue) shell
+  set -l text_block (set_color yellow) (basename $SHELL)
+  echo -ne $title_block '     ' (seperator) $text_block \n
+end
+
 function display_uptime
   set -l uptime (uptime -p | grep -o '[0-9]* [a-z]*')
   set -l days (echo $uptime | grep day | awk '{print $1}')
   set -l hours (echo $uptime | grep hour | awk '{print $1}')
   set -l minutes (uptime -p | grep -o '[0-9]* [a-z]*' | grep minute| awk '{print $1}')
   set -l title_block '  '(set_color blue) uptime
-  set -l i 1
-  for name in $days $hours $minutes
-    if test -z $name
-      switch $i
-        case 1
-          set days 00
-        case 2
-          set hours 00
-        case 3
-          set minutes 00
-      end
-    end
-    set i math $i+1
+  if test -z days
+    set days '00'
+  else if test -z days
+    set hours '00'
+  else if test -z days
+    set minutes '00'
   end
-  set text_block (set_color yellow) $days'd' $hours:$minutes
+  set text_block (set_color yellow) $days'd' $hours'h' $minutes'm'
   echo -ne $title_block '    ' (seperator) $text_block \n
 end
 
@@ -83,6 +82,7 @@ function fetch --description 'custom fetch'
   display_uptime
   display_packages
   display_term
+  display_shell
   echo ""
   color_block
   footer

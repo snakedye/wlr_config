@@ -17,7 +17,7 @@ browser_display_mode = columns
 titles_visibility = no
 user_interface = classic
 
-progressbar_look = 
+progressbar_look = 
 main_window_color = black
 # main_window_highlight_color = blue
 player_state_color = blue
@@ -26,7 +26,7 @@ empty_tag_color = red
 state_line_color = black:b
 alternative_ui_separator_color = black:b
 active_window_border = blue
-progressbar_color = blue
+progressbar_color = black
 progressbar_elapsed_color = blue
 color1 = green
 color2 = blue

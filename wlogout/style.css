@@ -8,7 +8,7 @@
 window {
   background-color: rgba(46,52,64, 0.9);
   font-size: 26px;
-  font-family: Product Sans;
+  font-family: Cascadia Code;
   animation: fadeIn;
   animation-duration: 0.5s;
 }

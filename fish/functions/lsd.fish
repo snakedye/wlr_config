@@ -6,7 +6,7 @@ function lsd --description "ls with icons"
     set list (ls $stdin)
   else if test -e $stdin
     set entry $stdin
-    tail -200 $entry
+    head -200 $entry
   else
     # set list (ls)
     echo $argv

@@ -5,14 +5,16 @@
 # Read `man 5 sway` for a complete reference.
 
 # Autostart
-exec mako
 exec ~/.azotebg
+exec mako
 exec autotiling
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 exec nm-applet --indicator
 exec mpd ~/.config/mpd/mpd.conf
-exec_always ~/.local/bin/inactive-windows-transparency.py
+exec sed -i 's/hidden-mode=river-auto/hidden-mode=always/g' ~/.config/lavalauncher/config.conf
+exec lavalauncher -c ~/.config/lavalauncher/config.conf
+exec_always /usr/share/sway/scripts/inactive-windows-transparency.py
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 
@@ -21,23 +23,21 @@ exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81
 # exec dwall -s flcl &
 
 # Windows Rules 
-for_window [class="(?i)ark"] floating enable
-for_window [class="(?i)mpv"] floating enable
+for_window [workspace="5"] layout tabbed
 for_window [app_id="imv"] floating enable
-for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set width 550 px height 600px, move position cursor, move down 330
 for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
 for_window [title="Copying"] floating enable
 for_window [title="Authenticate"] resize set height 210px
-for_window [title="Discord Updater"] floating enable
 for_window [app_id="dolphin" window_type="utility"] floating enable
+for_window [title="Discord Updater"] floating enable
 for_window [title="File Already Exist"] floating enable
-# for_window [workspace="5"] layout tabbed
+for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set width 550 px height 600px, move position cursor, move down 330
 
 # Repeat delay
 input * repeat_delay 300
 
 # Disable tiling grab
-tiling_drag disable
+# tiling_drag disable
 
 ### Variables
 #
@@ -54,18 +54,16 @@ set $term foot
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #
-set $menu wofi -c ~/.config/wofi/config -I 
-bindsym $mod+c exec wofer
+set $menu wofi -c ~/.config/wofi/config -I
 bindsym $mod+d exec wofi-emoji
-bindsym $mod+m exec fish -c 'manga_menu'
 
 # Borders
 default_border pixel 3
-smart_borders on
+# smart_borders on
 
 # Font
 # title_align center
-font pango:ProductSansMedium 13px 
+font pango:CascadiaMono 13px 
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
@@ -89,7 +87,11 @@ assign [title="discord"] 5
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 gaps inner 15
 gaps outer 5
-smart_gaps on
+# smart_gaps on
+
+# Title format for windows
+for_window [shell="xdg_shell"] title_format "%title (%app_id)"
+for_window [shell="x_wayland"] title_format "%class - %title"
 
 # Select monitor
 focus left
@@ -97,7 +99,7 @@ focus left
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output "*" bg ~/wallpapers/1.jpg fill
+# output "*" bg ~/wallpapers/darkbr.png fill
 # swaybg_command -
 #
 # Example configuration:
@@ -116,26 +118,24 @@ focus left
 #
 # Example configuration:
 #
-# exec swayidle -w\
-#     timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
-#     timeout 770 'swaymsg "output * dpms off"' \
-#     resume 'swaymsg "output * dpms on"' \
-#     before-sleep 'swaylock -C ~/.config/swaylock/config'
+exec swayidle -w\
+    timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
+    timeout 770 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -C ~/.config/swaylock/config'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 # Screenlocking
 bindsym $mod+f1 exec ~/.config/sway/lockman.sh
-bindsym $mod+f12 exec ~/.config/sway/lockman.sh
 
 # Screenshot with grim and swappy
-bindsym print exec grim -g "$(slurp)" - | swappy -f -
-bindsym Shift+print exec grim - | swappy -f -
+bindsym print exec fish -c "slurpshot -g"
+bindsym Shift+print fish -c "slurpshot -f"
 
 # Screen recording with wf-recorder
 bindsym $mod+Shift+r exec fish -c recording
-
 
 ### Input configuration
 #

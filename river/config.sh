@@ -7,6 +7,7 @@ riverctl spawn '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 riverctl spawn '/usr/lib/kdeconnectd'
 riverctl spawn 'kdeconnect-indicator'
 riverctl spawn 'mpd ~/.config/mpd/mpd.conf'
+riverctl spawn sed -i 's/hidden-mode=always/hidden-mode=river-auto/g' ~/.config/lavalauncher/config.conf
 riverctl spawn 'lavalauncher -c ~/.config/lavalauncher/config.conf'
 riverctl spawn 'mako'
 

@@ -21,9 +21,7 @@ color: #d8dee9;
 #window {
 background-color: transparent;
 border-radius: 15px;
-font-family: Jetbrains Mono;
-animation: fadeIn;
-animation-duration: 0.3s;
+font-family: Cascadia Code;
 }
 
 #input {
@@ -53,7 +51,7 @@ margin-bottom: 10px;
 }
 
 #text {
-font-size: 13px;
+font-size: 15px;
 padding: 5px;
 color: #d8dee9;
 background-color: transparent;

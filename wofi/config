@@ -1,8 +1,8 @@
 stylesheet=/home/bryan/.config/wofi/style.css
 hide_scroll=true
-show=drun
-width=400
-lines=15
+show=run
+width=420
+lines=17
 line_wrap=word
 term=foot
 location=top_left

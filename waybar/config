@@ -5,24 +5,24 @@
   // "width": 2560, // Waybar width
   // Choose the order of the modules
   "modules-left": ["river/tags", "sway/workspaces", "custom/github",
-  "custom/reddit", "custom/youtube", "custom/mail", "custom/crunchyroll",
-  "custom/media"],
+  "custom/reddit", "custom/youtube", "custom/mail",
+  "custom/crunchyroll","custom/media", "custom/mpd"],
   "modules-center": [],
   "output": ["HDMI-A-1"],
   "modules-right": ["pulseaudio", "custom/weather", "disk", "memory", "cpu", "temperature", "network", "battery#bat2", "backlight", "custom/pacman", "tray", "custom/recorder", "clock", "custom/power", ],
   // Modules configuration
   "sway/workspaces": {
     "disable-scroll": false,
-    "all-outputs": false,
+    "all-outputs": true,
     "format": "{icon}",
     "persistent_workspaces": {
       "1": ["HDMI-A-1"],
       "2": ["HDMI-A-1"],
       "3": ["HDMI-A-1"],
       "4": ["HDMI-A-1"],
-      "5": ["DP-2"],
-      "6": ["DP-2"],
-      "7": ["DP-2"],
+      "5": [],
+      "6": [],
+      "7": [],
     },
     "format-icons": {
       "1": "",
@@ -39,8 +39,9 @@
     "icon-size": 15
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+    "format-stopped": "",
+    "format-disconnected": "",
     "interval": 10,
     "state-icons": {
       "paused": "",
@@ -51,15 +52,22 @@
     "format": "{icon}{}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "   ",
-      "Paused": "   ",
-      "Music": "   "
+      "Playing": " ",
+      "Paused": " ",
     },
     "max-length":65,
     "interval": 2,
+    "exec-if": "if ! pgrep ncmpcpp; then exit 0; else exit 1; fi",
     "exec": "fish -c playerstatus",
     "exec-on-event": "fish -c playerstatus",
     "on-click": "playerctl play-pause",
+  },
+  "custom/mpd": {
+    "format": " {}",
+    "max-length":65,
+    "interval": 2,
+    "exec": "mpc current --host 127.0.0.1 --port 6002",
+    "exec-if": "pgrep ncmpcpp",
     "on-click-right": "mpc toggle --host 127.0.0.1 --port 6002",
   },
   "river/tags": {
@@ -159,14 +167,14 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["","   -","   --","   ---","   ----","   -----","   ------","   -------","   --------","   ---------","   ----------","   -----------","   ------------","   -------------","   --------------"]
+      "default": ["","   -","   --","   ---","   ----","   -----","   ------","   -------","   --------","   ---------","   ----------","   -----------","   ------------",]
     },
     "on-click": "pavucontrol",
     "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
     "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
   },
   "custom/weather": {
-    "exec": "~/.config/waybar/scripts/weather.sh bruh",
+    "exec": "~/.config/waybar/scripts/weather.sh Terrebonne",
     "format": "{}",
     "return-type": "json",
     "interval": 600
@@ -183,7 +191,7 @@
   "disk": {
     "interval": 30,
     "format": "{free}",
-    "path": "",
+    "path": "/run/media/bryan/",
   },
   "custom/power": {
     "format": "⏻",
@@ -207,7 +215,7 @@
   },
   "custom/mail": {
     "format": "",
-    "on-click": "",
+    "on-click": "xdg-open https://moncourriel.etsmtl.ca/",
     "tooltip": false
   },
   "custom/crunchyroll": {
