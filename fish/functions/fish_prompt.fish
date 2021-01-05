@@ -84,7 +84,7 @@ function _block_user_host -d 'Returns username and hostname block'
 		set user_hostname (set_color -o brblue)$USER(set_color -o brred)@(set_color -o brgreen)(prompt_hostname)
 	end
 
-	set block (set_color -o $user_bg )$user_hostname
+	set block (set_color -o $user_bg )$hostname
 	echo $block
 end
 

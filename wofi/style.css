@@ -20,14 +20,14 @@ color: #d8dee9;
  
 #window {
 background-color: transparent;
-border-radius: 15px;
-font-family: Cascadia Code;
+border-radius: 17px;
+font-family: Ubuntu Mono;
 }
 
 #input {
 border: none;
 background-color: #4c566a;
-padding: 9px;
+padding: 10px;
 margin: 15px 15px 10px 15px;
 border-radius: 5px;
 }
@@ -51,7 +51,6 @@ margin-bottom: 10px;
 }
 
 #text {
-font-size: 15px;
 padding: 5px;
 color: #d8dee9;
 background-color: transparent;

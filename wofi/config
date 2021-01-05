@@ -1,6 +1,6 @@
 stylesheet=/home/bryan/.config/wofi/style.css
 hide_scroll=true
-show=run
+show=drun
 width=420
 lines=17
 line_wrap=word

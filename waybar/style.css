@@ -1,8 +1,8 @@
 * {
 	border: none;
 	font-size: 13px;
-	margin: 2.5px;
-	font-family: Cascadia Mono, Product Sans ,Arial, Helvetica, sans-serif;
+	margin: 2px;
+	font-family: Ubuntu Mono, Cascadia Mono, Product Sans ,Arial, Helvetica, sans-serif;
 }
 window#waybar {
 	background-color: #353b49;
@@ -11,7 +11,7 @@ window#waybar {
 }
 #workspaces, #tags {
 	background-color: #2e3440;
-	padding: 1px 5px 1px 5px;
+	padding: 0px 5px 0px 5px;
 	font-size: 15px;
   margin-right: 10px;
 	border-radius: 10px;
@@ -33,9 +33,10 @@ window#waybar {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-window#waybar.firefox {
-  background-color: #2e3440;
-}
+/* window#waybar.empty { */
+/*   background-color: rgba(46,52,64,0.1); */
+/*   border-bottom: 2px solid rgba(46,52,64,0.1); */
+/* } */
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover, #tags button:hover {
 	box-shadow: inherit;
@@ -56,7 +57,7 @@ window#waybar.firefox {
 }
 /* TASKBAR */
 #taskbar {
-	margin: 10px 0px 10px 0px;
+	margin: 0px;
 }
 #taskbar button {
 	border-radius: 10px;
@@ -96,13 +97,14 @@ window#waybar.firefox {
 #custom-crunchyroll {
 	color: #a3be8c;
 	border-radius: 0px 10px 10px 0px;
+	font-size: 15px;
 }
 #custom-youtube {
 	color: #b48ead;
 }
 #custom-mail {
 	color: #88c0d0;
-  font-size: 15px;
+	font-size: 16px;
 }
 /* WIDGETS */
 #cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature {

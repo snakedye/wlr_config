@@ -176,8 +176,6 @@ done
 riverctl set-repeat 50 300
 
 # Set the layout on startup
-# riverctl layout ~/.config/river/riverhive
-riverctl layout rivertile left
 
 # Set new windows at the bottom of the stack
 riverctl attach-mode bottom
@@ -205,6 +203,6 @@ riverctl border-width 3
 
 # Because two monitors
 riverctl focus-output next
-riverctl layout rivertile left
+riverctl layout ~/.config/river/riverhive
 riverctl attach-mode bottom
 riverctl spawn 'makoctl reload'

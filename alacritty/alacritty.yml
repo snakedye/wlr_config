@@ -10,9 +10,9 @@
 
 colors:
   primary:
-    background: '#2e3440'
+    background: '#282c34'
     foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
+    dim_foreground: '#282c34'
   cursor:
     text: '#2e3440'
     cursor: '#d8dee9'
@@ -30,23 +30,23 @@ colors:
       background: '#434c5e'
       foreground: '#d8dee9'
   normal:
-    black: '#3b4252'
-    red: '#bf616a'
-    green: '#a3be8c'
+    black: '#434c5e'
+    red: '#f9929b'
+    green: '#98c379'
     yellow: '#ebcb8b'
-    blue: '#8fa7bc'
+    blue: '#81a1c1'
     magenta: '#b48ead'
-    cyan: '#8fbcbb'
+    cyan: '#88c0d0'
     white: '#d8dee9'
   bright:
     black: '#4c566a'
     red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
+    green: '#8fbcbb'
+    yellow: '#fbdf90'
     blue: '#81a1c1'
-    magenta: '#b48ead'
+    magenta: '#d2b8ed'
     cyan: '#8fbcbb'
-    white: '#eceff4'
+    white: '#d8dee9'
   dim:
     black: '#373e4d'
     red: '#94545d'

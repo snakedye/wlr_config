@@ -12,8 +12,10 @@ exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 exec nm-applet --indicator
 exec mpd ~/.config/mpd/mpd.conf
+exec mpDris2
 exec sed -i 's/hidden-mode=river-auto/hidden-mode=always/g' ~/.config/lavalauncher/config.conf
 exec lavalauncher -c ~/.config/lavalauncher/config.conf
+exec sh /home/bryan/.nix-profile/etc/profile.d/nix.sh
 exec_always /usr/share/sway/scripts/inactive-windows-transparency.py
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
@@ -59,11 +61,10 @@ bindsym $mod+d exec wofi-emoji
 
 # Borders
 default_border pixel 3
-# smart_borders on
 
 # Font
 # title_align center
-font pango:CascadiaMono 13px 
+font pango:UbuntuMono 15px
 
 # Window decoration
 # class                 border  backgr. text    indicator child_border
@@ -76,17 +77,15 @@ client.placeholder      #000000 #0c0c0c #eceff4 #000000   #0c0c0c
 #Asignments
 assign [app_id="lutris"] 4
 assign [app_id="gamehub"] 4
-assign [app_id="steam"] 4
-assign [app_id="virt-manager"] 6
-assign [app_id="virtualbox"] 6
-assign [app_id="Signal"] 5
+assign [class="steam"] 4
+assign [class="Signal"] 5
 assign [title="Signal"] 5
 assign [app_id="discord"] 5
 assign [title="discord"] 5
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-gaps inner 15
-gaps outer 5
+for_window [workspace="[567]"] gaps outer 0
+gaps inner 20
 # smart_gaps on
 
 # Title format for windows
@@ -132,10 +131,10 @@ bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 
 # Screenshot with grim and swappy
 bindsym print exec fish -c "slurpshot -g"
-bindsym Shift+print fish -c "slurpshot -f"
+bindsym Shift+print exec fish -c "slurpshot -f"
 
 # Screen recording with wf-recorder
-bindsym $mod+Shift+r exec fish -c recording
+bindsym $mod+Shift+r exec fish -c "slurpshot -wf"
 
 ### Input configuration
 #
@@ -147,7 +146,7 @@ bindsym $mod+Shift+r exec fish -c recording
        natural_scroll enabled
        middle_emulation enabled
    }
-
+   # Wacom tablet configuration
    input "1386:884:Wacom_Intuos_S_Pad" map_to_output HDMI-A-1
    input "1386:884:Wacom_Intuos_S_Pen" map_to_output HDMI-A-1
 #
