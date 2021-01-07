@@ -8,13 +8,13 @@
 
 #### install script (for pacman)
 
-1. `git clone https://github.com/snakedye/sway_config.git`
+1. `git clone https://gitlab.com/snakedye/wlr_config.git`
 
-2. `cd sway_config`
+2. `cd wlr_config`
 
 3. `./install.sh` (use with the argument `y` for a quick install)
 
 #### why are you removing stuff from your config?
 
-because
+<br>
 ![stare](https://i.ytimg.com/vi/LuzAUulrfXs/maxresdefault.jpg)
