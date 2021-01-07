@@ -1,28 +1,10 @@
 #### usefull stuff
 
-- waybar
-
-- azote
-
-- kdeconnect
-
 - [wofer](https://gitlab.com/snakedye/wofer)
 
-- brightnessctl
+- [river-layouts](https://gitlab.com/snakedye/river-layouts)
 
-- grim
-
-- slurp
-
-- swappy
-
-- swaylock-effects
-
-- oguri (for dynamic wallpapers)
-
-- nwg-launchers
-
-- font awesome & nerd-fonts
+- That's it, everything else is in the script.
 
 #### install script (for pacman)
 
@@ -32,3 +14,7 @@
 
 3. `./install.sh` (use with the argument `y` for a quick install)
 
+#### why are you removing stuff from your config?
+
+because
+![stare](https://i.ytimg.com/vi/LuzAUulrfXs/maxresdefault.jpg)
