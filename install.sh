@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+if [ -z $@ ]; then
+  QUICK_INSTALL=n
+else
+  QUICK_INSTALL=$@
+fi
+
 # Confirmation prompt
 prompt () {
   echo -e "Do you want to $1 $2 (y/n)"
@@ -10,10 +16,10 @@ prompt () {
 
 # Pacman
 install () {
-  if [ -n $(pacman -Q | grep "$1") ] ; then
+  if [[ -n $(pacman -Q | grep "$1") ]] ; then
   ans=""
   if [[ $ans == "y"  ]]; then
-    if pacman -Q | grep yay; then
+    if [[ -n $(pacman -Q | grep "$1") ]]; then
     sudo pacman -S yay
     fi
     if yay -S $1; then
@@ -30,7 +36,7 @@ do
     continue
   else
     ans=""
-    if [[ $1 != 'y' ]]; then
+    if [[ $QUICK_INSTALL != 'y' ]]; then
       prompt copy $config
     else
       ans="y"
@@ -49,7 +55,6 @@ do
       esac
       install $config
     fi
-    echo "Done!"
     echo ""
 fi
 done
@@ -60,7 +65,6 @@ echo "Optionnal but recommended"
 for pkg in "azote" "qt5ct" "grim" "slurp" "swappy" "wf-recorder" "brightnessctl" "otf-font-awesome" "ttf-nerd-fonts-symbols" "autotiling" "fish"
 
 do
-  echo ""
   if ! install $pkg; then
     continue
   fi
