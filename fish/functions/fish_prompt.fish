@@ -84,7 +84,7 @@ function _block_user_host -d 'Returns username and hostname block'
 		set user_hostname (set_color -o brblue)$USER(set_color -o brred)@(set_color -o brgreen)(prompt_hostname)
 	end
 
-	set block (set_color -o $user_bg )$hostname
+	set block (set_color -o $user_bg )
 	echo $block
 end
 
@@ -96,12 +96,12 @@ function _block_pwd -d 'Returns PWD block'
 	else
 		set pwd_color red
 	end
-	set block (set_color $pwd_color) (prompt_pwd)' '
+	set block (set_color $pwd_color)(prompt_pwd)' '
 	echo $block
 end
 
 function _seperator_ -d 'Vertical seperator'
-  set_color purple; echo ' |'
+  set_color purple; echo '| '
 end
 
 # ░█░░░█▀▀░█▀▀░▀█▀░░░░░█░█░█▀█░█▀█░█▀▄░░░█▀█░█▀▄░█▀█░█▄█░█▀█░▀█▀
@@ -118,5 +118,5 @@ function fish_prompt
 	end
 
 	# Print right-hand prompt
-	echo (_block_ssh)(_block_user_host)(_seperator_)(_block_pwd)(set_color normal)
+	echo (_block_ssh)(_block_user_host)(_block_pwd)(_seperator_)(set_color normal)
 end

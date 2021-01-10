@@ -4,7 +4,11 @@ function slurpshot
       grim - | swappy -f -
     case -g
       set -l geometry (swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
-      grim -g $geometry - | swappy -f -
+      if string match -r $geometry "[0-9]+.*" $geometry
+        grim -g $geometry - | swappy -f -
+      else
+        grim -o (printf "HDMI-A-1\nDP-2" | wofi --dmenu -L 2) - | swappy -f -
+      end
     case -wf
       set -l geometry (swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
       if string match -r $geometry "[0-9]+.*" $geometry

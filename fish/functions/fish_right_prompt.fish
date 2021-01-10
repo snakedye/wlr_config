@@ -4,7 +4,7 @@
 
 # Time stamp block
 function _block_time_stamp -d 'Returns time stamp block'
-	set block (set_color brcyan -o) '~ '(date +%H:%M:%S)
+	set block (set_color brcyan -o) '|' (date +%H:%M:%S)
 	echo $block
 end
 

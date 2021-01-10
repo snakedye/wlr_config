@@ -8,13 +8,12 @@
 
 #### install script (for pacman)
 
-1. `git clone https://gitlab.com/snakedye/wlr_config.git`
+1. `git clone https://gitlab.com/snakedye/wlr_config.git .dotfiles`
 
-2. `cd wlr_config`
+2. `cd .dotfiles`
 
 3. `./install.sh` (use with the argument `y` for a quick install)
 
 #### why are you removing stuff from your config?
-
 <br>
 ![stare](https://i.ytimg.com/vi/LuzAUulrfXs/maxresdefault.jpg)

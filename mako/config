@@ -1,12 +1,14 @@
-font=JetbrainsMonoNL 11
+font=UbuntuMono 12.5
 
-background-color=#353b49
+background-color=#353b49F2
 text-color=#e5e9f0
+width=315
+height=170
 padding=10
 margin=10
 progress-color=over #eceff480
 icon-path=/usr/share/icons/Papirus-Dark
-max-icon-size=90
+max-icon-size=70
 
 border-size=3
 border-radius=10

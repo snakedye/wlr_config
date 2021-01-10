@@ -1,6 +1,6 @@
 # Config file for wofer
 UWU=false # uwu mode
-EXEC=~/wofer/extensions/wofi_pwd
+EXEC=fzf
 SHOW_HIDDEN=false
 TERM=foot
 EXTENSIONS=~/wofer/extensions # extension directory

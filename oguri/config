@@ -1,6 +1,6 @@
 [output *]
 # image=/usr/share/dynamic-wallpaper/images/flcl
-image=$HOME/wallpapers/mid_air.gif
+image=$HOME/wallpapers/darkbr.png
 filter=best
 scaling-mode=fill
 anchor=center

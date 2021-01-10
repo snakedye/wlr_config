@@ -143,8 +143,9 @@ riverctl map normal $mod S layout full
 
 # Custom layouts
 riverctl map normal $mod B layout ~/.config/river/riverbsp
-riverctl map normal $mod T layout ~/.config/river/rivertab
-riverctl map normal $mod U layout ~/.config/river/riverhive
+riverctl map normal $mod T layout ~/.config/river/rivertiler tab
+riverctl map normal $mod U layout ~/.config/river/rivertiler hive
+riverctl map normal $mod G layout ~/.config/river/rivertiler grid
 riverctl map normal $mod Y layout rivertile left
 
 # Declare a passthrough mode. This mode has only a single mapping to return to

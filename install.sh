@@ -43,14 +43,11 @@ do
     fi
     if [[ $ans == "y" ]]; then
       case $config in
-        .vimrc | .zshrc | .azotebg)
-          cp ./$config ~/
-          ;;
-        wallpapers)
-          cp -r ./$config ~/
+        .vimrc | .zshrc | .azotebg | wallpapers )
+          ln ./$config ~/
           ;;
         *)
-          cp -r ./$config ~/.config/
+          ln ./$config ~/.config/
           ;;
       esac
       install $config

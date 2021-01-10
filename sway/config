@@ -5,7 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 
 # Autostart
-exec ~/.azotebg
+# exec ~/.azotebg
 exec mako
 exec autotiling
 exec /usr/lib/kdeconnectd
@@ -21,12 +21,12 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#ff5e81ac' --background-color '#cc2e3440' --bar-color '#ff5e81ac'
 
 # Dynamic Wallpaper
-# exec oguri -c ~/.config/oguri/config
+exec "oguri -c ~/.config/oguri/config"
 # exec dwall -s flcl &
 
 # Windows Rules 
 for_window [workspace="5"] layout tabbed
-for_window [app_id="imv"] floating enable
+for_window [app_id="imv"] floating enable, border pixel 3
 for_window [title=".+[Ss]haring (Indicator|your screen)"] floating enable, move to scratchpad
 for_window [title="Copying"] floating enable
 for_window [title="Authenticate"] resize set height 210px
@@ -106,7 +106,7 @@ focus left
   output HDMI-A-1 {
     pos 0 0
     res 2560x1440
-    adaptive_sync off
+    adaptive_sync on
     scale 1
   }
   # output HDMI-A-1 resolution 2560x1440 position 0,0 scale

@@ -1,3 +1,5 @@
+@import "nord.css";
+
 * {
 	border: none;
 	font-size: 13px;
@@ -6,11 +8,11 @@
 }
 window#waybar {
 	background-color: #353b49;
-	color: #d8dee9;
+	color: @base04;
   border-bottom: 2px solid rgba(46,52,64,0.7);
 }
 #workspaces, #tags {
-	background-color: #2e3440;
+	background-color: @base00;
 	padding: 0px 5px 0px 5px;
 	font-size: 15px;
   margin-right: 10px;
@@ -20,10 +22,10 @@ window#waybar {
   background-color: transparent;
 	font-size: 14px;
 	margin: 0;
-	color: #ffffff;
+	color: @base06;
 }
 #window {
-	color: #d8dee9;
+	color: @base04;
 	margin: 0px;
   font-size: 14px;
 	border-radius: 10px;
@@ -33,26 +35,22 @@ window#waybar {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-/* window#waybar.empty { */
-/*   background-color: rgba(46,52,64,0.1); */
-/*   border-bottom: 2px solid rgba(46,52,64,0.1); */
-/* } */
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover, #tags button:hover {
 	box-shadow: inherit;
-	color: #5e81ac;
+	color: @base0A;
 }
 #workspaces button.focused, #tags button.focused {
-	color: #81a1c1;
+	color: @base09;
 }
 #tags button.focused {
   font-weight: 600;
 }
 #workspaces button.urgent {
-	color:  #BF616A;
+	color:  @base0B;
 }
 #tags button {
-  color: #4c566a;
+  color: @base03;
   font-weight: 600;
 }
 /* TASKBAR */
@@ -62,15 +60,13 @@ window#waybar {
 #taskbar button {
 	border-radius: 10px;
   font-size: 13px;
-	margin: 0px 3px 0px 3px;
-	padding: 0px 3px 0px 3px;
+	padding: 0px 2px 0px 2px;
 }
 #taskbar button.active {
-	/* background-color: #434c5e; */
-	background-color: #2e3440;
+	background-color: @base00;
 }
 #taskbar button.minimized {
-	/* color: #ebcb8b; */
+	/* color: @base0D; */
 }
 #taskbar button:hover {
 	box-shadow: inherit;
@@ -78,7 +74,8 @@ window#waybar {
 }
 /* BROWSER BOOKMARKS */
 #custom-name, #custom-github,#custom-reddit,#custom-crunchyroll,#custom-youtube,#custom-mail, #custom-library {
-	background-color: #3B4252;
+  border-bottom: 2px solid rgba(46,52,64,0.7);
+	background-color: rgba(46,52,64,0.5);
 	font-size: 18px;
   margin-left: 0;
   margin-right: 0;
@@ -86,47 +83,44 @@ window#waybar {
 }
 #custom-github {
 	border-radius: 10px 0px 0px 10px;
-	color: #d08770;
+	color: @base0C;
 }
 #custom-reddit {
-	color: #ebcb8b;
-}
-#custom-library {
-	color: #c57078;
+	color: @base0D;
 }
 #custom-crunchyroll {
-	color: #a3be8c;
+	color: @base0E;
 	border-radius: 0px 10px 10px 0px;
 	font-size: 15px;
 }
 #custom-youtube {
-	color: #b48ead;
+	color: @base0F;
 }
 #custom-mail {
-	color: #88c0d0;
+	color: @base08;
 	font-size: 16px;
 }
 /* WIDGETS */
 #cpu, #idle_inhibitor, #custom-pacman, #memory, #backlight, #disk, #network, #pulseaudio, #custom-weather, #temperature {
   font-size: 14px;
-	background-color: #2e3440;
+	background-color: @base00;
 	padding: 0px 14px 0px 14px;
 	margin: 2px 0px 2px 0px;
 }
 #disk {
-	color:#b48ead;
+	color: @base0F;
 }
 #memory {
-	color:#d08770;
+	color: @base0C;
 }
 #cpu {
-	color:#c57078;
+	color: @base0B-light;
 }
 #network {
   color: #9da98d;
 }
 #custom-weather {
-	color:#81a1c1;
+	color: @base09;
 }
 #custom-weather {
 	padding: 0px 8px 0px 8px;
@@ -138,58 +132,58 @@ window#waybar {
   background-color: transparent;
 }
 #custom-media.Playing {
-	color: #81a1c1;
+	color: @base09;
 	border-radius: 0px;
 	font-weight: 500;
 }
 #custom-mpd {
-	color: #b48ead;
+	color: @base0F;
 	border-radius: 0px;
 	font-weight: 500;
 }
 #mpd.paused {
-	color: #818896;
+	color: @base03;
 }
 #mpd.playing {
-	color: #81a1c1;
+	color: @base09;
 }
 #mpd.stopped {
-  color: #3b4252;
+  color: @base01;
 }
 #custom-pacman {
-	color: #ebcb8b;
+	color: @base0D;
 	border-radius: 0px 10px 10px 0px;
 	font-weight: 600;
 }
 #pulseaudio {
-	color: #8fbcbb;
+	color: @base07;
 	border-radius: 10px 0px 0px 10px;
 }
 #pulseaudio.muted {
-	color: #4c566a;
+	color: @base03;
 }
 #temperature{
-	color: #88c0d0;
+	color: @base08;
 }
 #temperature.critical {
-	color: #eb4d4b;
+	color: @base0D;
 }
 #battery {
-	color: #8fbcbb;
+	color: @base07;
 	padding: 0px 8px 0px 8px;
 }
 #battery.charging {
-	color: #ffffff;
+	color: @base06;
 }
 @keyframes blink {
 	to {
-		background-color: #ffffff;
-		color: #000000;
+		background-color: #eceff4;
+		color: @base00;
 	}
 }
 #battery.critical:not(.charging) {
-	background-color: #f53c3c;
-	color: #ffffff;
+	background-color: @base0B;
+	color: @base06;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: linear;
@@ -197,19 +191,20 @@ window#waybar {
 	animation-direction: alternate;
 }
 label:focus {
-	background-color: #000000;
+	background-color: @base00;
 }
 #idle_inhibitor {
 	font-size: 20px;
 	color: #6f7787;
 }
 #idle_inhibitor.activated {
-	color: #ffffff;
+	color: @base00;
 }
 #clock, #custom-power, #custom-recorder, #tray {
-	background-color: #3b4252;
+	background-color: rgba(46,52,64,0.5);
 	padding: 2px 10px 0px 10px;
 	margin: 2px 0px 2px 0px;
+  border-bottom: 2px solid rgba(46,52,64,0.7);
 }
 #clock {
 	font-size: 14px;
@@ -219,26 +214,16 @@ label:focus {
   font-size: 18px;
 }
 #custom-recorder.recording {
-	color:#c57078;
+	color: @base0B;
 }
 #tray {
 	border-radius: 10px 0px 0px 10px;
 	margin-left: 10px;
-	color: #8fbcbb;
+	color: @base07;
 }
 #custom-power {
-  color: #eceff4;
+  color: @base06;
 	font-size: 17px;
 	border-radius: 0px 10px 10px 0px;
 	margin-right: 2px;
 }
-#mpd.disconnected {
-	background-color: #f53c3c;
-}
-#mpd.stopped {
-	background-color: #90b1b1;
-}
-#mpd.paused {
-	background-color: #51a37a;
-}
-

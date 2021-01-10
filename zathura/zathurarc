@@ -34,7 +34,7 @@ set recolor-darkcolor           "#ECEFF4"
 set recolor                     "true"
 set recolor-keephue             "true"
 
-set font "productsans regular 10"
+set font "ubuntumono regular 12"
 
 map <C-r> reload
 map <C-j> zoom in

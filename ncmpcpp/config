@@ -9,8 +9,8 @@ mpd_crossfade_time = "5"
 cyclic_scrolling = yes
 
 # looks
-header_visibility = no
-clock_display_seconds = yes
+header_visibility = yes
+clock_display_seconds = no
 display_volume_level = no
 display_remaining_time = no
 browser_display_mode = columns
@@ -27,9 +27,15 @@ state_line_color = black:b
 alternative_ui_separator_color = black:b
 active_window_border = blue
 progressbar_color = black
+colors_enabled = yes
 progressbar_elapsed_color = blue
+execute_on_song_change = ~/.config/ncmpcpp/notification-music.sh
+discard_colors_if_item_is_selected = no
+state_flags_color = blue
 color1 = green
 color2 = blue
+
+# notification
 
 visualizer_color = cyan, green, yellow, magenta, red
 
@@ -37,4 +43,5 @@ visualizer_color = cyan, green, yellow, magenta, red
 
 song_list_format = "%a  -  %t$R$(end) "
 song_library_format = $/b{{%a - %t} (%b)}|{%f}
-song_columns_list_format = "(90)[]{t}"
+song_columns_list_format = (20)[blue]{a} (50)[blue]{t|f:Title}
+#
