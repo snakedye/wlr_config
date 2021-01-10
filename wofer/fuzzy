@@ -1,5 +1,0 @@
-# Config file for wofer
-UWU=false # uwu mode
-TERM=foot # set terminal emulator
-EXTENSIONS=~/wofer/extensions # extension directory
-FM=nemo # file manager

@@ -1,7 +1,0 @@
-# Config file for wofer
-UWU=false # uwu mode
-EXEC=fzf
-SHOW_HIDDEN=false
-TERM=foot
-EXTENSIONS=~/wofer/extensions # extension directory
-FM="foot ranger" # file manager
